@@ -1,0 +1,17 @@
+---
+
+name: arturo-debugging
+description: Diagnose and fix Arturo runtime errors, unexpected results, scope or aliasing bugs, and regressions. Use when .art programs fail or behave differently from their intended output.
+---
+
+# Arturo debugging
+
+Capture the exact failing invocation, interpreter version, error text, and expected result. Reduce it to a bounded reproduction that preserves the failure. Read [diagnostic patterns](references/debugging.md) for the relevant failure class.
+
+Check function arity and types before changing syntax. Trace expressions from right to left, then inspect evaluation of blocks, stack results, scope boundaries, and shared values. Compare the installed runtime with the [official reference](https://arturo-lang.io/llms.txt); examples can reflect another version.
+
+Use `inspect`, `type`, `info`, and `arity` as appropriate after confirming their signatures. Keep diagnostic output out of final machine-readable output. Do not catch and discard errors merely to make a reproduction appear successful.
+
+Add a check that fails for the observed bug and passes after the fix, using `ensure [condition]` for small standalone scripts. Verify the original invocation plus relevant edge cases. Report the cause, change, validation, and any behavior that could not be tested.
+
+[examples/errors.art](examples/errors.art) demonstrates offline assertions and captured errors. Avoid executing an arbitrary upstream example as a diagnostic: review its effects and cost first.

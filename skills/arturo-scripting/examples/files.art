@@ -1,0 +1,6 @@
+write "first" "fixture.txt"
+ensure [exists? "fixture.txt"]
+ensure ["first" = read "fixture.txt"]
+write.append " second" "fixture.txt"
+ensure ["first second" = read "fixture.txt"]
+print "files ok"

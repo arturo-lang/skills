@@ -1,0 +1,13 @@
+ensure [14 = 2 * 3 + 4]
+ensure [10 = (2 * 3) + 4]
+double: function [x][x * 2]
+ensure [8 = double 4]
+original: [3 1 2]
+ordered: sort original
+ensure [original = [3 1 2]]
+ensure [ordered = [1 2 3]]
+copy: new original
+sort 'copy
+ensure [original = [3 1 2]]
+ensure [copy = [1 2 3]]
+print "language ok"
