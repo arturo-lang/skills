@@ -1,4 +1,6 @@
 {
+  "markdown": { "parser": { "frontmatter": true } },
+  "yaml": { "formatter": { "enabled": true, "indentWidth": 2 } },
   "files": { "ignoreUnknown": true },
   "formatter": { "enabled": true, "indentStyle": "space" },
   "linter": { "enabled": true, "rules": { "preset": "recommended" } },
