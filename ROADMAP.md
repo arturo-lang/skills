@@ -14,6 +14,8 @@ Expand existing language, collections, math, and scripting guidance before split
 
 Exit: each supported task has a normal case, relevant failure or boundary cases, and assertions for outputs and scope/mutation effects. Record remaining gaps explicitly.
 
+Progress: language, collections, math, and scripting now include asserted semantic recipes for the priorities above. References record remaining gaps, including resource copying, exceptional iterator cleanup, grapheme handling, and numeric precision limits; broad task completeness is not yet claimed.
+
 ## 3. Project organization and integrations
 
 Teach multi-file loading and reusable logic early. Deepen HTTP/JSON, structured data, filesystem, CLI, dates, and database lifecycle guidance. Testing, CI, validation, web, and packages already exist; expand their incomplete workflows rather than recreating them.

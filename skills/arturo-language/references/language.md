@@ -8,9 +8,28 @@ Square brackets preserve code/data without evaluation. `@[expression ...]` evalu
 
 `;` introduces a line comment. Strings use double quotes; brace strings are useful for embedded JSON. Paths use backslashes, such as `person\name`; path labels assign members, such as `person\name: "Ada"`.
 
+Arity also determines where a call ends: `add` requires two arguments; `do [add 1]` fails rather than inventing a second argument. Typed function parameters reject incompatible values; they do not implicitly parse strings. The [executable checks](../examples/basics.art) contrast successful calls with these failures.
+
 ## Functions and control flow
 
 Define `double: function [x][x * 2]`, then call `double 4`. `$` aliases `function`. A function can leave its result on the stack or use `return`; avoid unintended extra results. Parameter blocks can include types, e.g. `[x :integer]`.
+
+A final `return` does not erase earlier unconsumed results. For example:
+
+```arturo
+extraResult: function [x][
+    x + 1
+    return x * 2
+]
+ensure [@[extraResult 3] = [4 6]]
+oneResult: function [x][
+    intermediate: x + 1
+    return intermediate * 2
+]
+ensure [@[oneResult 3] = [8]]
+```
+
+Use bindings for intermediate computations when the caller expects one result. `@[...]` collects all results, so it can reveal an accidental extra value that a single assignment or print might miss.
 
 Control-flow words are actual [Core functions](https://arturo-lang.io/documentation/library/core), not reserved syntax. Their arity determines which values are arguments; action blocks are values supplied to those functions. They can be rebound like other words, so check local definitions when behavior differs from the standard library.
 
@@ -37,9 +56,35 @@ Control-flow words are actual [Core functions](https://arturo-lang.io/documentat
 - Passing a literal identifier enables mutation only for functions whose signature supports it. Do not infer literal support for every function.
 - Values can share storage. `b: a` is not a promise of an independent copy; `b: new a` expresses that intent. Also inspect direct collection updates via `set` when tracing shared changes.
 
+### Contrasting scope and shared data
+
+The executable checks accumulate `total` in a loop while restoring an existing `item` binding afterward. A previously undefined iterator argument disappears after the loop. An empty collection leaves both outer bindings unchanged. This differs from ordinary function assignment, whose local reassignment is restored on return.
+
+Function isolation does not protect a shared collection from `set`:
+
+```arturo
+nested: [[1 2] [3]]
+shared: nested
+set shared\0 0 9
+ensure [nested = [[9 2] [3]]]
+independent: new nested
+set independent\0 0 7
+ensure [nested = [[9 2] [3]]]
+changeFirst: function [items][set items\0 0 42]
+changeFirst nested
+ensure [nested = [[42 2] [3]]]
+ensure [independent = [[7 2] [3]]]
+```
+
+Adapt a mutating helper by copying its input before using `set` when the caller's nested blocks must remain unchanged. These checks establish independent copying for nested blocks; they do not establish cloning behavior for resources such as databases or sockets, or every custom object.
+
 Logical values include `true`, `false`, and `maybe`. Equality is `=`; `==` is not its standard alias. Use `to :integer text` for conversion and check invalid input instead of assuming parsing succeeds.
 
 ## Sources
+
+Reviewed 2026-10-30 against the [official language guide](https://arturo-lang.io/documentation/language#important-concepts), [Core/function](https://arturo-lang.io/documentation/library/core/function/), and [Core/return](https://arturo-lang.io/documentation/library/core/return/). Guidance condenses and adapts documentation by Yanis Zafirópulos and the Arturo project under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); changes include contrasting examples and explanations of observed stack and mutation behavior.
+
+Verification: `arturo --no-color examples/basics.art` from this skill directory passes on Arturo 0.10.0 Arizona Bark, amd64/Linux, printing `language ok`. It asserts results, rejected calls, iterator restoration including empty input, function assignment isolation, and shared versus independent nested block mutation. Export/inline/import variants and exceptional iterator unwinding are not covered by these checks.
 
 - [Official Core reference](https://arturo-lang.io/documentation/library/core): case, when, if, unless, switch, while, and function; also available in the official text reference below.
 - [Official reference](https://arturo-lang.io/llms.txt): Precedence and Evaluation; Scope and rules; In-place variable modification; Core/function; Core/new; Types/to.

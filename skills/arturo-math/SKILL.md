@@ -18,7 +18,7 @@ Choose integer division, floating division, or rational arithmetic deliberately.
 
 Ask the installed interpreter for signatures with `inspect info.get 'functionName`; see [runtime guidance](references/runtime.md) for metadata and evaluation rules; verify unfamiliar behavior against official sources.
 
-[examples/checks.art](examples/checks.art) supplies bounded offline checks.
+[Numeric recipes](references/numeric-recipes.md) contrast grouping, explicit conversions, mutation, empty reducers, and failed numeric operations. [examples/checks.art](examples/checks.art) supplies bounded offline assertions for these cases.
 
 ## units and dimensional quantities
 
