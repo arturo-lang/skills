@@ -6,7 +6,7 @@ ensure [10 = (2 * 3) + 4]
 ensure ["3 items" = (to :string 3) ++ " items"]
 ensure [throws? [to :string 3 ++ " items"]]
 ensure [throws? [do [add 1]]]
-double: function [x][x * 2]
+double: $[x :integer] -> x * 2
 ensure [8 = double 4]
 typedDouble: function [x :integer][x * 2]
 ensure [8 = typedDouble 4]
@@ -27,7 +27,7 @@ scopeValue: 1
 do [scopeValue: 2 blockCreated: 4]
 ensure [scopeValue = 2]
 ensure [blockCreated = 4]
-localValue: function [][
+localValue: $[][
     scopeValue: 3
     functionCreated: true
     return scopeValue
@@ -87,4 +87,14 @@ ensure [between? 2 1 3]
 ensure [not? same? 3 3.0]
 ensure [and? true true]
 ensure [is? :integer to :integer "42"]
+ensure -> "fallback" = (null ?? "fallback")
+ensure -> "fallback" = (false ?? "fallback")
+ensure -> 0 = (0 ?? 99)
+ensure -> throws? [7 ?? (throw "fallback evaluated")]
+ensure -> 1 = (true ? -> 1 -> 2)
+ensure -> 2 = (false ? -> 1 -> 2)
+ensure -> [3 6] = @[1 + 2 2 * 3]
+ensure -> dictionary? #[name: "Ada"]
+ensure -> color? #red
+ensure -> throws? [double "bad"]
 print "language ok"

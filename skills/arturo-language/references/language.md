@@ -12,7 +12,7 @@ Arity also determines where a call ends: `add` requires two arguments; `do [add 
 
 ## Functions and control flow
 
-Define `double: function [x][x * 2]`, then call `double 4`. `$` aliases `function`. A function can leave its result on the stack or use `return`; avoid unintended extra results. Parameter blocks can include types, e.g. `[x :integer]`.
+Define `double: $[x :integer] -> x * 2`, then call `double 4`. Prefer `$`, the alias for `function`. A function can leave its result on the stack or use `return`; avoid unintended extra results. Parameter blocks can include types, e.g. `[x :integer]`.
 
 A final `return` does not erase earlier unconsumed results. For example:
 
@@ -33,18 +33,20 @@ Use bindings for intermediate computations when the caller expects one result. `
 
 Control-flow words are actual [Core functions](https://arturo-lang.io/documentation/library/core), not reserved syntax. Their arity determines which values are arguments; action blocks are values supplied to those functions. They can be rebound like other words, so check local definitions when behavior differs from the standard library.
 
-| Function form                             | Behavior                                                                                             |
-| ----------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `if condition [body]`                     | Runs the body when the condition is neither `false` nor `null`.                                      |
-| `unless condition [body]`                 | Runs the body when the condition is `false` or `null`.                                               |
-| `switch condition [action] [alternative]` | Chooses the first block when the condition is neither `false` nor `null`, otherwise the second.      |
-| `case value [candidate [action] ...]`     | Matches a value against candidates; `any` provides a fallback. A dictionary can also supply matches. |
-| `when [condition [action] ...]`           | Runs the first matching action; `.any` checks all conditions.                                        |
-| `while [condition] [body]`                | Reevaluates the condition block for each iteration.                                                  |
+| Function form                         | Behavior                                                                                             |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `if condition [body]`                 | Runs the body when the condition is neither `false` nor `null`.                                      |
+| `unless condition [body]`             | Runs the body when the condition is `false` or `null`.                                               |
+| `condition ? [action] [alternative]`  | Chooses the first block when the condition is neither `false` nor `null`, otherwise the second.      |
+| `case value [candidate [action] ...]` | Matches a value against candidates; `any` provides a fallback. A dictionary can also supply matches. |
+| `when [condition [action] ...]`       | Runs the first matching action; `.any` checks all conditions.                                        |
+| `while [condition] [body]`            | Reevaluates the condition block for each iteration.                                                  |
 
-`if` and `unless` return nothing; do not use them as two-way value selectors. `switch` can supply a selected result. The outer blocks passed to `case` and `when` are evaluated; use blocks for action bodies and deferred conditions rather than assuming every expression is lazy. In `when`, `[condition]` defers that condition until needed; a final `true [body]` supplies a fallback.
+`if` and `unless` return nothing; do not use them as two-way value selectors. `?` (`switch`) can supply a selected result. The outer blocks passed to `case` and `when` are evaluated; use blocks for action bodies and deferred conditions rather than assuming every expression is lazy. In `when`, `[condition]` defers that condition until needed; a final `true [body]` supplies a fallback.
 
-`->` wraps one following terminal expression into a block, not an arbitrary sequence of statements. Prefer explicit blocks for multi-step bodies.
+Prefer `->` for a single-expression action or assertion: `ensure -> count >= 0`. It wraps one following terminal expression into a block, not an arbitrary sequence of statements. Keep explicit blocks for multi-step bodies. Use parameter annotations such as `[count :integer]` for a concrete function contract, then `ensure` for range and state invariants before effects.
+
+Prefer `value ?? fallback` for `coalesce`; it substitutes for both `null` and `false`. Both arguments are evaluated, so use `condition ? [action] [alternative]` when only the selected branch should run. `@[...]` evaluates its contents; `[...]` preserves data/code. `#[...]` constructs a dictionary, while `#red` and hexadecimal color literals denote colors. These aliases do not change evaluation, scope, or mutation rules.
 
 `map collection 'item [expression]` and `loop collection 'item [body]` bind iterator variables temporarily. `=>` offers anonymous-parameter shorthand; consult the reference before changing a named-parameter form into shorthand. A pipe passes an expression's result into a subsequent call; it is not a shell pipe.
 
@@ -94,3 +96,5 @@ Verification: `arturo --no-color examples/basics.art` from this skill directory 
 - [Function composition example](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Function%20composition.art).
 
 Upstream tests: [copying](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/core/new.test.art); [nested mutation](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/set.test.art); [iteration](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/iterators/loop.test.art).
+
+Symbol forms and fail-fast contracts reviewed and asserted on Arturo 0.10.0 Linux amd64, 2026-10-30, in [basics.art](../examples/basics.art). Source: official text reference entries for function, relative, coalesce, switch, array, dictionary, and ensure; `->` is terminal-expression block syntax.

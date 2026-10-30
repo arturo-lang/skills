@@ -6,7 +6,7 @@ Run these examples with Arturo 0.10.0 in a disposable working directory. They us
 
 ## Validate CLI input before effects
 
-[cli-count.art](../examples/cli-count.art) accepts exactly one raw argument, converts it to an integer, rejects negatives, and prints the value. `arturo cli-count.art 003` prints `3`. Numeric conversion is intentional for this count; retain raw strings for identifiers. The function also asserts zero, missing/extra arguments, invalid conversion, and negative input. It validates argument count before calling `first`.
+[cli-count.art](../examples/cli-count.art) accepts exactly one raw argument, converts it to an integer, rejects negatives, and prints the value. `arturo cli-count.art 003` prints `3`. Numeric conversion is intentional for this count; retain raw strings for identifiers. Its `$[inputs :block][...]` definition requires a block of arguments and uses `ensure` before reading or converting inputs. The function also asserts zero, missing/extra arguments, invalid conversion, and negative input. It validates argument count before calling `first`.
 
 At the entry point, a captured failure calls `panic.unstyled` with usage text and exits with status 1; `arturo cli-count.art invalid` demonstrates the actual process failure. Success exits with status 0. Built-in `exit` takes no positional status argument on this runtime. This example accepts the runtime's integer-conversion syntax; add lexical validation if a product requires decimal digits only. For richer options and subcommands, use the existing Climax guide.
 
