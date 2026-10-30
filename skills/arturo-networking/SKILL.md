@@ -5,6 +5,8 @@ description: Implement Arturo HTTP clients and services, JSON interchange, downl
 
 # Arturo HTTP, JSON, and networking
 
+Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+
 Read only the module reference relevant to the task:
 
 - [Net](references/net-library.md).

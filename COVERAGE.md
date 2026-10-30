@@ -4,4 +4,4 @@
 
 Verification dimensions are independent: documented; metadata inspected; executed; results asserted; edge cases tested. Sources and verification notes in each linked reference establish these dimensions; absence of evidence means unverified. Historical 418-fragment execution does not establish output correctness. The smoke suite asserts representative behavior, not every symbol.
 
-Package guidance is source-reviewed; package execution remains unverified by default. Upstream example classification and task-level evidence remain backlog work. Update this catalog whenever ownership or coverage changes.
+Package guidance is source-reviewed; package execution remains unverified by default. Skills link directly to the official upstream examples; exhaustive example classification is not required. Task-level evidence remains backlog work. Update this catalog whenever ownership or coverage changes.

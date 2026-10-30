@@ -5,6 +5,8 @@ description: Write, explain, or port Arturo (.art) code using its evaluation rul
 
 # Arturo language
 
+Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+
 ## Task defaults
 
 - Follow existing `.art` style and project instructions; these defaults fill gaps.

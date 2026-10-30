@@ -5,6 +5,8 @@ description: Use lanx (Lanx) to serve static files or preview a local site with 
 
 # Arturo web packages
 
+Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+
 For static file serving or a local site preview, start with [lanx](references/lanx.md), including its CLI and embedded server guidance.
 
 Use this skill for HTML generation, static file serving, MediaWiki integration, and browser-backed equation or diagram rendering. Read the package reference for the task; each preserves its documented release, evaluation behavior, side effects, examples, and upstream sources.

@@ -5,6 +5,8 @@ description: Create, review, and troubleshoot Arturo GitHub Actions CI workflows
 
 # Arturo CI
 
+Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+
 Use [workflow guidance](references/workflows.md) to install Arturo with `arturo-lang/setup-arturo`, run tests, or build executables with `arturo-lang/bundler`. Inspect the project's existing workflow, test entry points, package metadata, and supported platforms before choosing jobs or a matrix.
 
 Use Unitt as the primary Arturo project testing tool; it is used officially. Read [Unitt guidance](references/unitt.md) for test cases, discovery configuration, and reporting. Keep test failures visible in the job exit status. A successful bundle does not establish correctness.

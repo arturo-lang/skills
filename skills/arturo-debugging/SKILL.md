@@ -5,6 +5,8 @@ description: Diagnose and fix Arturo runtime errors, scope or aliasing bugs, and
 
 # Arturo debugging
 
+Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+
 Capture the exact failing invocation, interpreter version, error text, and expected result. Reduce it to a bounded reproduction that preserves the failure. Use [diagnostic patterns](references/debugging.md) for the failure class involved.
 
 Check function arity and types before changing syntax. Trace expressions from right to left, then inspect evaluation of blocks, stack results, scope boundaries, and shared values. Compare the installed runtime with the [official reference](https://arturo-lang.io/llms.txt); examples can reflect another version.
