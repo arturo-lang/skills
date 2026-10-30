@@ -91,4 +91,4 @@ Verification: `arturo --no-color examples/basics.art` from this skill directory 
 - [Function definition example](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Function%20definition.art).
 - [Function composition example](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Function%20composition.art).
 
-Additional behavioral examples are available in the [official Arturo unit tests](https://github.com/arturo-lang/arturo/tree/master/tests/unitt).
+Upstream tests: [copying](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/core/new.test.art); [nested mutation](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/set.test.art); [iteration](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/iterators/loop.test.art).
