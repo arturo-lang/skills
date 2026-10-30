@@ -107,6 +107,8 @@ These are curated working notes and examples. Keep the [Arturo documentation](ht
 
 Found a confusing explanation, a missing example, or guidance that does not match your runtime? [Open an issue](https://github.com/arturo-lang/skills/issues) or send a pull request. Small improvements are welcome. For runtime-specific problems, include your Arturo version and a short example that reproduces the issue.
 
+Follow [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow for adding or modifying skills, copyright and licensing requirements, and validation. All new skills and all modifications require a pull request and investigation and approval by a [code owner](.github/CODEOWNERS) before merging: @RickBarretto or @drkameleon (Yanis Zafirópulos).
+
 To work on the library locally, clone this repository and run:
 
 ```sh
