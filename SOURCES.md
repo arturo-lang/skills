@@ -42,3 +42,9 @@ Authors, upstream copyright statements, and license texts were checked on 2026-1
 ## Coverage maintenance
 
 Use [the roadmap](ROADMAP.md), [coverage baseline](COVERAGE.md), and [editorial templates](templates/skill.md). Update coverage evidence with content changes. Verify interpreter changes, upstream API/package revisions, and reported discrepancies against official sources and minimal reproducers. Preserve historical review dates; distinguish source review, execution, and asserted results. The recorded baseline is Arturo 0.10.0 Linux amd64; other combinations remain unverified. Hosted runtime CI results must be observed before claiming they passed.
+
+## Runtime CI installation
+
+Runtime CI installs Ubuntu 24.04 GUI and numeric runtime dependencies before calling [setup-arturo at the reviewed revision](https://github.com/arturo-lang/setup-arturo/blob/59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7/action.yml). It explicitly uses `do: fetch`, `from: stable`, and `mode: full`. The stable channel selects the latest official release; this action revision does not expose a release-version input. CI prints the installed version before running smoke checks. The recorded local verification baseline remains Arturo 0.10.0 Linux amd64, distinct from the moving CI channel.
+
+The previous source build failed with Homebrew Nim 2.4.0 (`GC_Strategy` undefined in mimalloc). The action's compile path installs floating Homebrew Nim even if another compiler is preinstalled. Fetch mode avoids that compilation path. Runtime dependencies are installed before setup; smoke checks remain offline and headless. Hosted execution still requires a successful GitHub run.
