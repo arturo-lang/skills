@@ -24,3 +24,18 @@ jobs:
       - run: bun run check
       - run: bun test
       - run: bun run skills:list
+
+  runtime:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.3.12"
+      - uses: arturo-lang/setup-arturo@59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          do: compile
+          src: 8bea10b7306a17bd4538301332edb7ac656ce2b7
+      - run: arturo --version
+      - run: bun run smoke

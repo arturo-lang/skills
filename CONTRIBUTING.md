@@ -43,3 +43,7 @@ For adapted documentation, identify the source, license, attribution, and change
 The owners in `.github/CODEOWNERS` cover every file, including these contribution rules and the ownership file itself. Their review must investigate source accuracy, examples, portability, licensing, and the reported checks before approval.
 
 Repository administrators should configure the target branch's GitHub ruleset or branch protection to require a pull request and code owner approval before merging. CODEOWNERS requests review but does not enforce merge restrictions by itself. Keep required checks enabled and resolve review findings before merge.
+
+## Coverage maintenance
+
+Use [the roadmap](ROADMAP.md), [coverage baseline](COVERAGE.md), and [editorial templates](templates/skill.md). Update coverage evidence with content changes. Verify interpreter changes, upstream API/package revisions, and reported discrepancies against official sources and minimal reproducers. Preserve historical review dates; distinguish source review, execution, and asserted results. The recorded baseline is Arturo 0.10.0 Linux amd64; other combinations remain unverified. Hosted runtime CI results must be observed before claiming they passed.

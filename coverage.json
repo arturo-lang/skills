@@ -1,0 +1,314 @@
+{
+  "entries": [
+    {
+      "id": "arturo-ci",
+      "kind": "skill",
+      "owner": "arturo-ci",
+      "evidence": ["skills/arturo-ci/SKILL.md"],
+      "status": "partial"
+    },
+    {
+      "id": "arturo-collections",
+      "kind": "skill",
+      "owner": "arturo-collections",
+      "evidence": ["skills/arturo-collections/SKILL.md"],
+      "status": "partial"
+    },
+    {
+      "id": "arturo-debugging",
+      "kind": "skill",
+      "owner": "arturo-debugging",
+      "evidence": ["skills/arturo-debugging/SKILL.md"],
+      "status": "partial"
+    },
+    {
+      "id": "arturo-language",
+      "kind": "skill",
+      "owner": "arturo-language",
+      "evidence": ["skills/arturo-language/SKILL.md"],
+      "status": "partial"
+    },
+    {
+      "id": "arturo-math",
+      "kind": "skill",
+      "owner": "arturo-math",
+      "evidence": ["skills/arturo-math/SKILL.md"],
+      "status": "partial"
+    },
+    {
+      "id": "arturo-networking",
+      "kind": "skill",
+      "owner": "arturo-networking",
+      "evidence": ["skills/arturo-networking/SKILL.md"],
+      "status": "partial"
+    },
+    {
+      "id": "arturo-packages",
+      "kind": "skill",
+      "owner": "arturo-packages",
+      "evidence": ["skills/arturo-packages/SKILL.md"],
+      "status": "partial"
+    },
+    {
+      "id": "arturo-scripting",
+      "kind": "skill",
+      "owner": "arturo-scripting",
+      "evidence": ["skills/arturo-scripting/SKILL.md"],
+      "status": "partial"
+    },
+    {
+      "id": "arturo-testing",
+      "kind": "skill",
+      "owner": "arturo-testing",
+      "evidence": ["skills/arturo-testing/SKILL.md"],
+      "status": "partial"
+    },
+    {
+      "id": "arturo-validation",
+      "kind": "skill",
+      "owner": "arturo-validation",
+      "evidence": ["skills/arturo-validation/SKILL.md"],
+      "status": "partial"
+    },
+    {
+      "id": "arturo-web",
+      "kind": "skill",
+      "owner": "arturo-web",
+      "evidence": ["skills/arturo-web/SKILL.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Arithmetic",
+      "kind": "module",
+      "owner": "arturo-math",
+      "evidence": ["skills/arturo-math/references/arithmetic-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Bitwise",
+      "kind": "module",
+      "owner": "arturo-math",
+      "evidence": ["skills/arturo-math/references/bitwise-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Collections",
+      "kind": "module",
+      "owner": "arturo-collections",
+      "evidence": [
+        "skills/arturo-collections/references/collections-library.md"
+      ],
+      "status": "partial"
+    },
+    {
+      "id": "module-Colors",
+      "kind": "module",
+      "owner": "arturo-math",
+      "evidence": ["skills/arturo-math/references/colors-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Comparison",
+      "kind": "module",
+      "owner": "arturo-language",
+      "evidence": ["skills/arturo-language/references/comparison-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Core",
+      "kind": "module",
+      "owner": "arturo-language",
+      "evidence": ["skills/arturo-language/references/core.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Crypto",
+      "kind": "module",
+      "owner": "arturo-scripting",
+      "evidence": ["skills/arturo-scripting/references/crypto-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Databases",
+      "kind": "module",
+      "owner": "arturo-scripting",
+      "evidence": ["skills/arturo-scripting/references/databases-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Dates",
+      "kind": "module",
+      "owner": "arturo-scripting",
+      "evidence": ["skills/arturo-scripting/references/dates-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Exceptions",
+      "kind": "module",
+      "owner": "arturo-debugging",
+      "evidence": ["skills/arturo-debugging/references/exceptions-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Files",
+      "kind": "module",
+      "owner": "arturo-scripting",
+      "evidence": ["skills/arturo-scripting/references/files-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Io",
+      "kind": "module",
+      "owner": "arturo-scripting",
+      "evidence": ["skills/arturo-scripting/references/io-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Iterators",
+      "kind": "module",
+      "owner": "arturo-collections",
+      "evidence": ["skills/arturo-collections/references/iterators-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Logic",
+      "kind": "module",
+      "owner": "arturo-language",
+      "evidence": ["skills/arturo-language/references/logic-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Net",
+      "kind": "module",
+      "owner": "arturo-networking",
+      "evidence": ["skills/arturo-networking/references/net-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Numbers",
+      "kind": "module",
+      "owner": "arturo-math",
+      "evidence": ["skills/arturo-math/references/numbers-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Paths",
+      "kind": "module",
+      "owner": "arturo-scripting",
+      "evidence": ["skills/arturo-scripting/references/paths-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Quantities",
+      "kind": "module",
+      "owner": "arturo-math",
+      "evidence": ["skills/arturo-math/references/quantities-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Reflection",
+      "kind": "module",
+      "owner": "arturo-debugging",
+      "evidence": ["skills/arturo-debugging/references/reflection-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Sets",
+      "kind": "module",
+      "owner": "arturo-collections",
+      "evidence": ["skills/arturo-collections/references/sets-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Sockets",
+      "kind": "module",
+      "owner": "arturo-networking",
+      "evidence": ["skills/arturo-networking/references/sockets-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Statistics",
+      "kind": "module",
+      "owner": "arturo-math",
+      "evidence": ["skills/arturo-math/references/statistics-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Strings",
+      "kind": "module",
+      "owner": "arturo-collections",
+      "evidence": ["skills/arturo-collections/references/strings-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-System",
+      "kind": "module",
+      "owner": "arturo-scripting",
+      "evidence": ["skills/arturo-scripting/references/system-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Types",
+      "kind": "module",
+      "owner": "arturo-language",
+      "evidence": ["skills/arturo-language/references/types-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "module-Ui",
+      "kind": "module",
+      "owner": "arturo-scripting",
+      "evidence": ["skills/arturo-scripting/references/ui-library.md"],
+      "status": "partial"
+    },
+    {
+      "id": "language-foundations",
+      "kind": "task",
+      "owner": null,
+      "evidence": ["ROADMAP.md"],
+      "status": "backlog"
+    },
+    {
+      "id": "package-guidance",
+      "kind": "task",
+      "owner": null,
+      "evidence": ["ROADMAP.md"],
+      "status": "backlog"
+    },
+    {
+      "id": "upstream-example-inventory",
+      "kind": "task",
+      "owner": null,
+      "evidence": ["ROADMAP.md"],
+      "status": "backlog"
+    },
+    {
+      "id": "project-organization",
+      "kind": "task",
+      "owner": null,
+      "evidence": ["ROADMAP.md"],
+      "status": "backlog"
+    },
+    {
+      "id": "agent-evaluation",
+      "kind": "task",
+      "owner": null,
+      "evidence": ["ROADMAP.md"],
+      "status": "backlog"
+    },
+    {
+      "id": "unicode-and-regex",
+      "kind": "task",
+      "owner": null,
+      "evidence": ["ROADMAP.md"],
+      "status": "backlog"
+    },
+    {
+      "id": "refactoring-and-performance",
+      "kind": "task",
+      "owner": null,
+      "evidence": ["ROADMAP.md"],
+      "status": "backlog"
+    }
+  ]
+}
