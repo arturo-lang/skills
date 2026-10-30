@@ -22,7 +22,7 @@ Ask the installed interpreter for signatures with `inspect info.get 'functionNam
 
 Read [HTTP and JSON patterns](references/http-json.md) for client requests and serialization. Confirm method, payload, headers, and response shape. Keep credentials configurable; distinguish transport errors, HTTP status, and application data. Preserve missing keys, null, false, and empty collections. Use offline fixtures before live calls; avoid live mutations just to test serialization.
 
-[Offline checks](examples/json.art).
+[Offline serialization checks](examples/json.art). For a complete response-processing workflow with malformed inputs, failed staging, and scratch-file cleanup, use [response.art](examples/response.art) with the [HTTP and JSON guide](references/http-json.md). Treat `read.json` as a resource loader: stage untrusted body text and parse the known file with `read.file.json` rather than allowing body text to select a resource.
 
 ## External API clients
 

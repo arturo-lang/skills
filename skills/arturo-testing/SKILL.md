@@ -16,3 +16,5 @@ For command performance comparisons, read [Peregrino](references/peregrino.md). 
 Use deterministic fixtures and cover the relevant ordinary, invalid, and boundary inputs. A regression test should fail before the fix and pass after it. Inspect the installed package release before choosing APIs.
 
 Package imports can download and evaluate code. These package examples are documentation-derived; repository smoke checks stay offline and do not install or run external packages.
+
+For package integration verification, use a separate opt-in job with an exact release import, such as `import.version:3.1.1 "unitt"!` for the reviewed Unitt API. Verify both a passing suite and a deliberately failing suite's process status. Keep package acquisition failures distinct from assertion failures, bound execution time, and discard the temporary workspace afterward. An exact version selects a release; record resolved source revisions when immutable provenance is required.

@@ -40,6 +40,8 @@ These are separate usage alternatives. `.lean` returns a dictionary for namespac
 
 ## Create and publish
 
+Before distributing reusable logic, verify a local package without registry access. [The local workflow](../examples/local-package.art) resolves its package beside the script using `relative`, then uses `.lean` to retain a dictionary namespace. Its typed `doubleValue` helper accepts integers and leaves I/O to the entry script. The checks assert normal and zero results, rejection of a string, absence of an unqualified `doubleValue` binding, and a missing local file error. No files or handles are created, so cleanup is empty. Keep missing-code errors fatal before application effects begin; a failed import must not leave the application running with an incomplete interface.
+
 The [official registry guide](https://github.com/arturo-lang/pkgr.art#creating-packages) defines a package as a directory whose default entry is `main.art`. Optional `info.art` configures it:
 
 ```arturo

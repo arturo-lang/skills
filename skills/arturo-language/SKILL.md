@@ -13,7 +13,7 @@ Additional relevant examples are available in the [official Arturo examples repo
 - Check `arturo --version` and `arturo --help` before relying on version-sensitive behavior. Read [language rules](references/language.md) for the constructs involved and [CLI verification](references/cli.md) for execution commands and their limits.
 - Use the [official language guide](https://arturo-lang.io/documentation/language) for evaluation and syntax, and the [official reference](https://arturo-lang.io/llms.txt) for unfamiliar function arity, accepted types, attributes, and literal support. Do not translate another language's APIs by name.
 - Ask the installed Arturo runtime for function signatures with `inspect info.get 'functionName`. Read [runtime inspection](references/inspection.md) to interpret the output. For Core function purposes, when to use them, and short examples, consult [Core functions](references/core.md).
-- Prefer built-ins and bounded offline examples. Separate reusable functions from entry-point effects; verify loading and scope before splitting files.
+- Prefer built-ins and bounded offline examples. For multi-file programs, read [project organization](references/projects.md) and separate reusable functions from entry-point effects; verify loading and scope before splitting files.
 - Write readable `.art` manually: separate statements onto lines, indent nested blocks consistently, and use `;` comments to explain surprising grouping or mutation. Use explicit function and iterator parameters before introducing shorthand.
 
 ## Naming defaults

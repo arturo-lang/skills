@@ -32,7 +32,9 @@
       "evidence": [
         "skills/arturo-language/SKILL.md",
         "skills/arturo-language/references/language.md",
-        "skills/arturo-language/examples/basics.art"
+        "skills/arturo-language/examples/basics.art",
+        "skills/arturo-language/references/projects.md",
+        "skills/arturo-language/examples/project/main.art"
       ],
       "status": "partial"
     },
@@ -51,14 +53,21 @@
       "id": "arturo-networking",
       "kind": "skill",
       "owner": "arturo-networking",
-      "evidence": ["skills/arturo-networking/SKILL.md"],
+      "evidence": [
+        "skills/arturo-networking/SKILL.md",
+        "skills/arturo-networking/references/http-json.md",
+        "skills/arturo-networking/examples/response.art"
+      ],
       "status": "partial"
     },
     {
       "id": "arturo-packages",
       "kind": "skill",
       "owner": "arturo-packages",
-      "evidence": ["skills/arturo-packages/SKILL.md"],
+      "evidence": [
+        "skills/arturo-packages/SKILL.md",
+        "skills/arturo-packages/examples/local-package.art"
+      ],
       "status": "partial"
     },
     {
@@ -68,7 +77,12 @@
       "evidence": [
         "skills/arturo-scripting/SKILL.md",
         "skills/arturo-scripting/references/scripting.md",
-        "skills/arturo-scripting/examples/input-count.art"
+        "skills/arturo-scripting/examples/input-count.art",
+        "skills/arturo-scripting/references/workflows.md",
+        "skills/arturo-scripting/examples/cli-count.art",
+        "skills/arturo-scripting/examples/files.art",
+        "skills/arturo-scripting/examples/dates.art",
+        "skills/arturo-scripting/examples/databases.art"
       ],
       "status": "partial"
     },
@@ -134,7 +148,10 @@
       "id": "module-Core",
       "kind": "module",
       "owner": "arturo-language",
-      "evidence": ["skills/arturo-language/references/core.md"],
+      "evidence": [
+        "skills/arturo-language/references/core.md",
+        "skills/arturo-language/examples/project/main.art"
+      ],
       "status": "partial"
     },
     {
@@ -148,14 +165,20 @@
       "id": "module-Databases",
       "kind": "module",
       "owner": "arturo-scripting",
-      "evidence": ["skills/arturo-scripting/references/databases-library.md"],
+      "evidence": [
+        "skills/arturo-scripting/references/databases-library.md",
+        "skills/arturo-scripting/examples/databases.art"
+      ],
       "status": "partial"
     },
     {
       "id": "module-Dates",
       "kind": "module",
       "owner": "arturo-scripting",
-      "evidence": ["skills/arturo-scripting/references/dates-library.md"],
+      "evidence": [
+        "skills/arturo-scripting/references/dates-library.md",
+        "skills/arturo-scripting/examples/dates.art"
+      ],
       "status": "partial"
     },
     {
@@ -169,7 +192,10 @@
       "id": "module-Files",
       "kind": "module",
       "owner": "arturo-scripting",
-      "evidence": ["skills/arturo-scripting/references/files-library.md"],
+      "evidence": [
+        "skills/arturo-scripting/references/files-library.md",
+        "skills/arturo-scripting/examples/files.art"
+      ],
       "status": "partial"
     },
     {
@@ -197,7 +223,10 @@
       "id": "module-Net",
       "kind": "module",
       "owner": "arturo-networking",
-      "evidence": ["skills/arturo-networking/references/net-library.md"],
+      "evidence": [
+        "skills/arturo-networking/references/net-library.md",
+        "skills/arturo-networking/examples/response.art"
+      ],
       "status": "partial"
     },
     {
@@ -260,7 +289,10 @@
       "id": "module-System",
       "kind": "module",
       "owner": "arturo-scripting",
-      "evidence": ["skills/arturo-scripting/references/system-library.md"],
+      "evidence": [
+        "skills/arturo-scripting/references/system-library.md",
+        "skills/arturo-scripting/examples/cli-count.art"
+      ],
       "status": "partial"
     },
     {
@@ -297,9 +329,13 @@
     {
       "id": "project-organization",
       "kind": "task",
-      "owner": null,
-      "evidence": ["ROADMAP.md"],
-      "status": "backlog"
+      "owner": "arturo-language",
+      "evidence": [
+        "skills/arturo-language/references/projects.md",
+        "skills/arturo-language/examples/project/main.art",
+        "skills/arturo-packages/examples/local-package.art"
+      ],
+      "status": "partial"
     },
     {
       "id": "agent-evaluation",
@@ -324,6 +360,28 @@
       "owner": null,
       "evidence": ["ROADMAP.md"],
       "status": "backlog"
+    },
+    {
+      "id": "integration-workflows",
+      "kind": "task",
+      "owner": "arturo-scripting",
+      "status": "partial",
+      "evidence": [
+        "skills/arturo-scripting/references/workflows.md",
+        "skills/arturo-networking/references/http-json.md",
+        "scripts/smoke.ts"
+      ]
+    },
+    {
+      "id": "pinned-package-verification",
+      "kind": "task",
+      "owner": "arturo-testing",
+      "status": "partial",
+      "evidence": [
+        "scripts/package-smoke.ts",
+        "scripts/package-smoke.test.ts",
+        ".github/workflows/packages.yml"
+      ]
     }
   ]
 }

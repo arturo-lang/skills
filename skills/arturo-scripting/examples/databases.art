@@ -1,7 +1,16 @@
+; Copyright © RickBarretto, Arturo programming language. MIT licensed.
 db: open.sqlite ":memory:"
-ensure [database? db]
-rows: query.with: ["Ada"] db "SELECT ? AS name"
-ensure [1 = size rows]
-ensure [contains? to :string rows "Ada"]
+failure: try [
+    ensure [database? db]
+    query db "CREATE TABLE people (name TEXT UNIQUE)"
+    query.with: ["Ada"] db "INSERT INTO people VALUES (?)"
+    rows: query db "SELECT name FROM people"
+    ensure [[ ["Ada"] ] = rows]
+    ; A constraint failure is operational failure; malformed SQL is distinct.
+    ensure [throws? [query.with: ["Ada"] db "INSERT INTO people VALUES (?)"]]
+    ensure [throws? [query db "SELECT FROM people"]]
+    ensure [[["Ada"]] = query db "SELECT name FROM people"]
+]
 close db
+if error? failure [throw to :string failure]
 print "databases ok"

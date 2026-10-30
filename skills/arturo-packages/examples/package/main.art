@@ -1,1 +1,2 @@
-doubleValue: function [value] [value * 2]
+; Copyright © RickBarretto, Arturo programming language. MIT licensed.
+doubleValue: function [value :integer] [value * 2]
