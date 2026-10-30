@@ -1,5 +1,9 @@
 # Sources and maintenance
 
+## Filesystem cleanup diagnostics
+
+Reviewed and asserted 2026-10-30 on Arturo 0.10.0 Arizona Bark, amd64/Linux: Files/delete, write and exists?, Exceptions/try and throw, and the official deletion example at the recorded examples revision. The scripting [workflow reference](skills/arturo-scripting/references/workflows.md#preserve-action-and-cleanup-failures) links the sources and the pinned Files implementation investigated separately from runtime behavior. An original offline example detects a path left behind by `delete`, retains action and cleanup diagnostics, and asserts all four outcome combinations, continued cleanup, empty/missing inputs, and scope/input preservation. The upstream deletion example was source-reviewed only; its root-relative operations were not executed. No symbol inventory or external-package coverage changed.
+
 ## Semantic recipes
 
 Additional behavioral examples are available in the [official Arturo unit tests](https://github.com/arturo-lang/arturo/tree/master/tests/unitt).

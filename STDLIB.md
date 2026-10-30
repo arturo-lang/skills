@@ -33,6 +33,8 @@ Reviewed 2026-10-29: all 26 official modules and 521 entries are mapped below. F
 
 ## Verification boundaries
 
+The Files workflow additionally [asserts cleanup postconditions](skills/arturo-scripting/references/workflows.md#preserve-action-and-cleanup-failures) and separate action/cleanup errors on Arturo 0.10.0 Linux amd64. This bounded recipe adds behavioral evidence without changing module or symbol counts; other filesystem platforms and concurrent/symlink cases remain unverified.
+
 All names were resolved via metadata lookup on the recorded runtime. Examples distinguish executable offline checks from documentation-only effects; metadata lookup does not execute a target function. GUI, external network, process termination, and persistent user-data operations are excluded from default smoke checks.
 
 The snapshot in [stdlib.json](stdlib.json) records source digest, runtime, and per-module symbol coverage. It is a maintenance inventory, not a runtime signature database. Refresh it from the official module index and text reference when upstream changes.

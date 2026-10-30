@@ -28,6 +28,8 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 
 ## Sources and verification
 
+For verified removal and separate action/cleanup errors, see [the cleanup workflow](workflows.md#preserve-action-and-cleanup-failures) and its [offline assertions](../examples/file-cleanup.art). On Arturo 0.10.0 Linux, `delete` can return normally with a path still present; catching errors alone does not establish removal. The workflow checks the postcondition and continues with later owned files. These assertions extend the historical metadata checks below; they do not verify every filesystem API or platform.
+
 Sources: the [official Files module](https://arturo-lang.io/documentation/library/files); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 17 names resolved.

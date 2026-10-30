@@ -84,6 +84,7 @@
         "skills/arturo-scripting/references/workflows.md",
         "skills/arturo-scripting/examples/cli-count.art",
         "skills/arturo-scripting/examples/files.art",
+        "skills/arturo-scripting/examples/file-cleanup.art",
         "skills/arturo-scripting/examples/dates.art",
         "skills/arturo-scripting/examples/databases.art"
       ],
@@ -201,7 +202,9 @@
       "owner": "arturo-scripting",
       "evidence": [
         "skills/arturo-scripting/references/files-library.md",
-        "skills/arturo-scripting/examples/files.art"
+        "skills/arturo-scripting/examples/files.art",
+        "skills/arturo-scripting/references/workflows.md",
+        "skills/arturo-scripting/examples/file-cleanup.art"
       ],
       "status": "partial"
     },
@@ -376,6 +379,17 @@
       "evidence": [
         "skills/arturo-scripting/references/workflows.md",
         "skills/arturo-networking/references/http-json.md",
+        "scripts/smoke.ts"
+      ]
+    },
+    {
+      "id": "filesystem-cleanup",
+      "kind": "task",
+      "owner": "arturo-scripting",
+      "status": "partial",
+      "evidence": [
+        "skills/arturo-scripting/references/workflows.md",
+        "skills/arturo-scripting/examples/file-cleanup.art",
         "scripts/smoke.ts"
       ]
     },
