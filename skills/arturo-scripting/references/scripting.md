@@ -59,3 +59,5 @@ The recipe summarizes the Arturo project/Yanis Zafirópulos documentation ([CC B
 - [Official reference](https://arturo-lang.io/llms.txt): Files; Paths; System/arg, args, script, path, execute, process, exit; Exceptions/try.
 - [Command-line arguments](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Command-line%20arguments.art).
 - [Read entire file](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Read%20entire%20file.art).
+
+Additional behavioral examples are available in the [official Arturo unit tests](https://github.com/arturo-lang/arturo/tree/master/tests/unitt).

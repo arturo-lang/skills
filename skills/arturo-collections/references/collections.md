@@ -49,3 +49,5 @@ When a pattern must treat supplied text literally, construct it with `to :regex 
 - [Dictionary iteration](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Associative%20array%252FIteration.art).
 
 Reviewed 2026-10-30: [language scope rules](https://arturo-lang.io/documentation/language/#scope-and-rules), [match](https://arturo-lang.io/documentation/library/strings/match/), and [escape](https://arturo-lang.io/documentation/library/strings/escape/). Adapted and condensed from documentation by Yanis Zafirópulos and the Arturo project, licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); examples and boundary checks are original additions.
+
+Additional behavioral examples are available in the [official Arturo unit tests](https://github.com/arturo-lang/arturo/tree/master/tests/unitt).
