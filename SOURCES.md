@@ -48,3 +48,9 @@ Use [the roadmap](ROADMAP.md), [coverage baseline](COVERAGE.md), and [editorial 
 Runtime CI installs Ubuntu 24.04 GUI and numeric runtime dependencies before calling [setup-arturo at the reviewed revision](https://github.com/arturo-lang/setup-arturo/blob/59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7/action.yml). It explicitly uses `do: fetch`, `from: stable`, and `mode: full`. The stable channel selects the latest official release; this action revision does not expose a release-version input. CI prints the installed version before running smoke checks. The recorded local verification baseline remains Arturo 0.10.0 Linux amd64, distinct from the moving CI channel.
 
 The previous source build failed with Homebrew Nim 2.4.0 (`GC_Strategy` undefined in mimalloc). The action's compile path installs floating Homebrew Nim even if another compiler is preinstalled. Fetch mode avoids that compilation path. Runtime dependencies are installed before setup; smoke checks remain offline and headless. Hosted execution still requires a successful GitHub run.
+
+## Machine-readable verification evidence
+
+[verification.json](verification.json) records claim scope, verification dimensions, dates, runtime, platform, commands, results, limitations, and local evidence. Historical fragment execution is retained with its missing-command limitation. The smoke suite passed all 15 cases locally on 2026-10-30 with Arturo 0.10.0 Arizona Bark, amd64/Linux; this is separate from hosted CI evidence.
+
+Validation requires each skill's local licensing files and checks the attribution source, author, license, and adaptation notes in its licensing statement. It also checks local notice links. These checks establish structural completeness, not source accuracy, license compatibility, or code owner approval.

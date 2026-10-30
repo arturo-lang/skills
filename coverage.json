@@ -278,9 +278,13 @@
     {
       "id": "upstream-example-inventory",
       "kind": "task",
-      "owner": null,
-      "evidence": ["ROADMAP.md"],
-      "status": "backlog"
+      "owner": "arturo-language",
+      "evidence": [
+        "upstream-examples.json",
+        "scripts/upstream.ts",
+        "scripts/upstream.test.ts"
+      ],
+      "status": "partial"
     },
     {
       "id": "project-organization",

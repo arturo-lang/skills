@@ -46,6 +46,33 @@ export async function validateLibrary(root: string): Promise<string[]> {
       errors.push(`${container.name}: duplicate name`);
     if (name) names.add(name);
 
+    for (const file of [
+      "LICENSING.md",
+      "LICENSE-CC-BY-4.0.txt",
+      "LICENSE-MIT.txt",
+    ]) {
+      try {
+        const destination = await realpath(resolve(skillRoot, file));
+        if (relative(skillRoot, destination).startsWith(".."))
+          throw new Error("Outside skill");
+        const license = await readFile(destination, "utf8");
+        if (!license.trim()) throw new Error("Empty license");
+        if (file === "LICENSING.md") {
+          for (const [label, pattern] of [
+            ["copyright", /Copyright/i],
+            ["source", /https:\/\/arturo-lang\.io\//],
+            ["attribution", /Arturo project/],
+            ["license", /creativecommons\.org\/licenses\/by\/4\.0/],
+            ["adaptation notes", /Changes include/],
+          ] as const)
+            if (!pattern.test(license))
+              errors.push(`${container.name}: licensing missing ${label}`);
+        }
+      } catch {
+        errors.push(`${container.name}: missing, empty or nonportable ${file}`);
+      }
+    }
+
     async function inspect(directory: string): Promise<void> {
       for (const entry of await readdir(directory, { withFileTypes: true })) {
         const path = resolve(directory, entry.name);

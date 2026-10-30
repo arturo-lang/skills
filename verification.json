@@ -1,0 +1,28 @@
+{
+  "records": [
+    {
+      "id": "historical-fragment-execution",
+      "date": "2026-10-29",
+      "dimensions": ["executed"],
+      "scope": "418 bounded reference table fragments across 17 modules",
+      "runtime": "Arturo 0.10.0 Arizona Bark",
+      "platform": "amd64/Linux",
+      "command": "Historical fragment probe; exact command was not retained",
+      "result": "SOURCES.md records exit zero and no stderr",
+      "limitations": "Historical report only; not rerunnable from a retained command, and does not establish output correctness or boundary behavior",
+      "evidence": ["SOURCES.md"]
+    },
+    {
+      "id": "offline-smoke-suite",
+      "date": "2026-10-30",
+      "dimensions": ["executed", "results-asserted"],
+      "scope": "15 smoke cases selected in scripts/smoke.ts",
+      "runtime": "Arturo 0.10.0 Arizona Bark",
+      "platform": "amd64/Linux",
+      "command": "bun run smoke",
+      "result": "All 15 cases passed locally on 2026-10-30",
+      "limitations": "Representative assertions only; networking and UI cases inspect metadata. No claim of hosted CI success or full symbol coverage",
+      "evidence": ["scripts/smoke.ts"]
+    }
+  ]
+}

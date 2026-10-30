@@ -1,5 +1,5 @@
 import { afterEach, expect, test } from "bun:test";
-import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 import { validateLibrary } from "./validate";
@@ -20,6 +20,15 @@ async function fixture(body: string): Promise<string> {
     resolve(directory, "SKILL.md"),
     `---\nname: arturo-fixture\ndescription: A fixture skill.\n---\n${body}\n`,
   );
+  for (const file of [
+    "LICENSING.md",
+    "LICENSE-CC-BY-4.0.txt",
+    "LICENSE-MIT.txt",
+  ])
+    await writeFile(
+      resolve(directory, file),
+      await readFile(resolve(import.meta.dir, "../skills/arturo-math", file)),
+    );
   return root;
 }
 
@@ -47,4 +56,19 @@ test("rejects metadata that would identify a different skill", async () => {
     "---\nname: another-name\ndescription: Example.\n---\n",
   );
   expect((await validateLibrary(root)).join("\n")).toContain("mismatched name");
+});
+
+test("requires local licenses and meaningful attribution", async () => {
+  const root = await fixture("Example.");
+  await rm(resolve(root, "skills/arturo-fixture/LICENSE-MIT.txt"));
+  await writeFile(
+    resolve(root, "skills/arturo-fixture/LICENSING.md"),
+    "Copyright Example.",
+  );
+  const errors = (await validateLibrary(root)).join("\n");
+  expect(errors).toContain("LICENSE-MIT.txt");
+  expect(errors).toContain("licensing missing source");
+  expect(errors).toContain("licensing missing attribution");
+  expect(errors).toContain("licensing missing license");
+  expect(errors).toContain("licensing missing adaptation notes");
 });

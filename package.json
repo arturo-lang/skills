@@ -3,12 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "bun run scripts/validate.ts && bun run scripts/stdlib.ts && bun run scripts/coverage.ts && biome check .",
+    "check": "bun run scripts/validate.ts && bun run scripts/stdlib.ts && bun run scripts/coverage.ts && bun run scripts/upstream.ts && bun run scripts/verification.ts && biome check .",
     "format": "biome format --write .",
     "test": "bun test",
     "smoke": "bun run scripts/smoke.ts",
     "skills:list": "skills add . --list",
-    "stdlib:inspect": "bun run scripts/stdlib.ts --inspect"
+    "stdlib:inspect": "bun run scripts/stdlib.ts --inspect",
+    "upstream:check": "bun run scripts/upstream.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.6.4",
