@@ -1,2 +1,2 @@
 ; Copyright © RickBarretto, Arturo programming language. MIT licensed.
-projectDouble: function [value :integer] [value * 2]
+projectDouble: $[value :integer] -> value * 2

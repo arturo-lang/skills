@@ -3,25 +3,24 @@
 
 ; scratchPath must be an unused file inside a private, caller-owned directory.
 ; Staging avoids read interpreting untrusted body text as a URL or local path.
-decodeProfile: function [response scratchPath][
-    unless dictionary? response [throw "transport returned no response"]
-    unless key? response 'status [throw "missing HTTP status"]
-    unless 200 = response\status [throw "unexpected HTTP status"]
-    unless key? response 'body [throw "missing HTTP body"]
-    unless string? response\body [throw "HTTP body must be text"]
-    if exists? scratchPath [throw "scratch file already exists"]
+decodeProfile: $[response :dictionary scratchPath :string][
+    ensure.that: "missing HTTP status" -> key? response 'status
+    ensure.that: "unexpected HTTP status" -> 200 = response\status
+    ensure.that: "missing HTTP body" -> key? response 'body
+    ensure.that: "HTTP body must be text" -> string? response\body
+    ensure.that: "scratch file already exists" -> not? exists? scratchPath
 
     profile: null
     failure: try [
         write response\body scratchPath
         profile: read.file.json scratchPath
-        unless dictionary? profile [throw "profile must be an object"]
-        unless key? profile 'name [throw "missing name"]
-        unless string? profile\name [throw "name must be text"]
-        unless key? profile 'active [throw "missing active"]
-        unless logical? profile\active [throw "active must be logical"]
-        unless key? profile 'tags [throw "missing tags"]
-        unless block? profile\tags [throw "tags must be an array"]
+        ensure.that: "profile must be an object" -> dictionary? profile
+        ensure.that: "missing name" -> key? profile 'name
+        ensure.that: "name must be text" -> string? profile\name
+        ensure.that: "missing active" -> key? profile 'active
+        ensure.that: "active must be logical" -> logical? profile\active
+        ensure.that: "missing tags" -> key? profile 'tags
+        ensure.that: "tags must be an array" -> block? profile\tags
     ]
     if exists? scratchPath [delete scratchPath]
     if error? failure [throw "invalid profile or staging failure"]
