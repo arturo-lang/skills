@@ -1,0 +1,7 @@
+db: open.sqlite ":memory:"
+ensure [database? db]
+rows: query.with: ["Ada"] db "SELECT ? AS name"
+ensure [1 = size rows]
+ensure [contains? to :string rows "Ada"]
+close db
+print "databases ok"

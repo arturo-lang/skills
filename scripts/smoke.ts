@@ -19,6 +19,14 @@ const cases = [
   ["arturo-scripting/examples/files.art", [], "files ok"],
   ["arturo-http-json/examples/json.art", [], "json ok"],
   ["arturo-debugging/examples/errors.art", [], "debugging ok"],
+  ["arturo-math/examples/checks.art", [], "math ok"],
+  ["arturo-colors/examples/checks.art", [], "colors ok"],
+  ["arturo-crypto/examples/checks.art", [], "crypto ok"],
+  ["arturo-databases/examples/checks.art", [], "databases ok"],
+  ["arturo-dates/examples/checks.art", [], "dates ok"],
+  ["arturo-quantities/examples/checks.art", [], "quantities ok"],
+  ["arturo-networking/examples/checks.art", [], "networking metadata ok"],
+  ["arturo-ui/examples/checks.art", [], "ui metadata ok"],
 ] as const;
 
 try {

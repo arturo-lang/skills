@@ -11,4 +11,14 @@ Reviewed on 2026-10-28:
 
 The library's prose and smoke examples are original summaries and adaptations. Upstream examples are linked rather than vendored. Paths containing `%2F` are literal upstream filenames; encode `%` as `%25` when constructing browser URLs. Do not treat `src/.drafts` as verified examples. A `.res` companion provides useful expected output but does not establish compatibility with every interpreter version.
 
+## Standard-library catalogue
+
+Reviewed 2026-10-29 against the [official library index](https://arturo-lang.io/documentation/library) and text reference. The [coverage map](STDLIB.md) and [source inventory](stdlib.json) record all 26 modules, 521 entries, ownership, source digest, and runtime. Names include functions, predicates, and constants. Per-function URLs were taken from the live index, including its lowercase and question-mark-to-hyphen slugs.
+
+Selection guides condense and adapt upstream descriptions and examples, with attribution to the Arturo project and its [CC BY 4.0 documentation license](https://creativecommons.org/licenses/by/4.0/). They intentionally defer signatures to `inspect info.get` on the installed runtime. Existing language and workflow references remain the place for deeper semantics.
+
+All 521 names passed metadata inspection on Arturo 0.10.0 Arizona Bark, amd64/Linux. Separately, 418 bounded table fragments across 17 modules completed with exit status zero and no stderr; this checks execution, not every output or edge case. Smoke programs assert representative results, including in-memory SQL. GUI, network, shell execution, termination, persistent stores, and archive operations were not run as catalogue probes. References distinguish these documentation-only effects from executed checks.
+
+`bun run check` verifies that the recorded inventory and module tables agree. `bun run stdlib:inspect` checks metadata availability without invoking target APIs. When refreshing, compare the live module/symbol inventory as well as updating the source digest; a passing local coverage check only proves agreement with the checked-in snapshot, not freshness against upstream.
+
 To refresh, read the live reference sections used by the affected skill, inspect relevant examples at a recorded commit, update that skill's guidance and source links, and run repository validation and smoke checks. Record the interpreter version used for verification. Do not execute the whole upstream collection: some examples use network access, files, interactive input, or expensive computations.

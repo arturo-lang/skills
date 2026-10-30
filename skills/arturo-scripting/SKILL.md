@@ -15,3 +15,12 @@ Prefer built-in file and path operations to shell commands. `write` takes conten
 Keep reusable logic in functions and CLI effects at the entry point. Consult the official Core/do and Core/function entries before splitting programs across files or exporting names; do not invent JavaScript-style imports.
 
 Run an ordinary input and relevant invalid/empty input. Verify resulting file contents and exit behavior, not just whether the interpreter starts. [examples/arguments.art](examples/arguments.art) demonstrates raw argument iteration.
+
+## Standard-library selection guides
+
+- [Files](references/files-library.md): 17 functions, predicates, or constants.
+- [Io](references/io-library.md): 8 functions, predicates, or constants.
+- [Paths](references/paths-library.md): 6 functions, predicates, or constants.
+- [System](references/system-library.md): 14 functions, predicates, or constants.
+
+Ask Arturo for signatures with `inspect info.get 'functionName`; see [runtime inspection and defaults](references/runtime.md) before reading argument types, attributes, and results.

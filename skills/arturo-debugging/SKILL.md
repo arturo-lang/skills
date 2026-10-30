@@ -1,7 +1,7 @@
 ---
 
 name: arturo-debugging
-description: Diagnose and fix Arturo runtime errors, unexpected results, scope or aliasing bugs, and regressions. Use when .art programs fail or behave differently from their intended output.
+description: Diagnose and fix Arturo runtime errors, scope or aliasing bugs, and regressions using Exceptions and Reflection. Use for .art failures, error handling, runtime inspection, and call-attribute introspection.
 ---
 
 # Arturo debugging
@@ -15,3 +15,10 @@ Use `inspect`, `type`, `info`, and `arity` as appropriate after confirming their
 Add a check that fails for the observed bug and passes after the fix, using `ensure [condition]` for small standalone scripts. Verify the original invocation plus relevant edge cases. Report the cause, change, validation, and any behavior that could not be tested.
 
 [examples/errors.art](examples/errors.art) demonstrates offline assertions and captured errors. Avoid executing an arbitrary upstream example as a diagnostic: review its effects and cost first.
+
+## Standard-library selection guides
+
+- [Exceptions](references/exceptions-library.md): 17 functions, predicates, or constants.
+- [Reflection](references/reflection-library.md): 11 functions, predicates, or constants.
+
+Ask Arturo for signatures with `inspect info.get 'functionName`; see [runtime inspection and defaults](references/runtime.md) before reading argument types, attributes, and results.

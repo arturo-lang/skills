@@ -38,3 +38,11 @@ Use `=` for equality; do not assume `==` or another language's `if/else` syntax.
 Run the smallest relevant program, checking expected results and relevant empty or invalid inputs. For scope or mutation changes, assert both the returned value and the affected outer bindings or collections. Prefer `ensure [condition]` checks that fail on incorrect behavior over printed output alone.
 
 [examples/basics.art](examples/basics.art) is an offline executable example covering grouping, function results, block and function scope, sorting, and independent copies. Run it with `arturo --no-color examples/basics.art` from this skill directory. Report the interpreter version and checks run; distinguish locally executed behavior from documentation-only claims. If Arturo is unavailable, state which behavior remains unverified. If local behavior differs from the reference, isolate a minimal reproduction before recommending a form.
+
+## Standard-library selection guides
+
+- [Comparison](references/comparison-library.md): 9 functions, predicates, or constants.
+- [Logic](references/logic-library.md): 14 functions, predicates, or constants.
+- [Types](references/types-library.md): 47 functions, predicates, or constants.
+
+Query the runtime as described in [inspection guidance](references/inspection.md).

@@ -1,0 +1,6 @@
+ensure [color? blend #red #blue]
+ensure [color? darken #red 0.2]
+ensure [color? grayscale #red]
+ensure [#123456 = spin #123456 360]
+ensure [3 = size palette.triad #red]
+print "colors ok"

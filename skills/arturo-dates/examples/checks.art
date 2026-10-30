@@ -1,0 +1,8 @@
+ensure [leap? 2024]
+ensure [not? leap? 2023]
+captured: now
+ensure [date? captured]
+ensure [(before.days: 1 captured) < captured]
+ensure [(after.days: 1 captured) > captured]
+ensure [today? captured]
+print "dates ok"

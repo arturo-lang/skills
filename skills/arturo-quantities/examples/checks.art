@@ -1,0 +1,6 @@
+ensure [length? 3`m]
+ensure [not? mass? 3`m]
+ensure [300 = scalar in `cm 3`m]
+ensure [3 = scalar 3`m]
+ensure [unit? units 3`m]
+print "quantities ok"

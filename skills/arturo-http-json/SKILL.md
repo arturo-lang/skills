@@ -15,3 +15,5 @@ Use `read.json` for JSON decoding and `write.json` for encoding. Do not use Artu
 Keep endpoint URLs and credentials configurable. Verify parsing and response handling offline with representative fixtures before performing network requests. Use live calls only within the user's requested scope; avoid live mutation merely to test serialization.
 
 Consult the [official reference](https://arturo-lang.io/llms.txt) for current request attributes and return types. [examples/json.art](examples/json.art) checks JSON interchange without network access.
+
+Ask Arturo for signatures with `inspect info.get 'request`; see [runtime inspection](references/runtime.md).
