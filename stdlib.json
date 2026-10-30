@@ -93,7 +93,7 @@
     },
     {
       "name": "Colors",
-      "skill": "arturo-colors",
+      "skill": "arturo-math",
       "reference": "references/colors-library.md",
       "symbols": [
         "blend",
@@ -167,19 +167,19 @@
     },
     {
       "name": "Crypto",
-      "skill": "arturo-crypto",
+      "skill": "arturo-scripting",
       "reference": "references/crypto-library.md",
       "symbols": ["crc", "decode", "digest", "encode", "hash"]
     },
     {
       "name": "Databases",
-      "skill": "arturo-databases",
+      "skill": "arturo-scripting",
       "reference": "references/databases-library.md",
       "symbols": ["close", "open", "query", "store"]
     },
     {
       "name": "Dates",
-      "skill": "arturo-dates",
+      "skill": "arturo-scripting",
       "reference": "references/dates-library.md",
       "symbols": [
         "after",
@@ -392,7 +392,7 @@
     },
     {
       "name": "Quantities",
-      "skill": "arturo-quantities",
+      "skill": "arturo-math",
       "reference": "references/quantities-library.md",
       "symbols": [
         "acceleration?",
@@ -679,7 +679,7 @@
     },
     {
       "name": "Ui",
-      "skill": "arturo-ui",
+      "skill": "arturo-scripting",
       "reference": "references/ui-library.md",
       "symbols": ["alert", "clip", "dialog", "popup", "unclip", "webview"]
     }

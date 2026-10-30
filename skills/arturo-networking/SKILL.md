@@ -1,10 +1,10 @@
 ---
 
 name: arturo-networking
-description: Build Arturo network integrations using Net and Sockets for HTTP services, downloads, mail, TCP or UDP clients, and listeners. Use for network transport and server lifecycles beyond offline data processing.
+description: Implement Arturo HTTP clients and services, JSON interchange, downloads, mail, TCP, and UDP integrations.
 ---
 
-# Arturo network utilities and sockets
+# Arturo HTTP, JSON, and networking
 
 Read only the module reference relevant to the task:
 
@@ -15,4 +15,10 @@ Establish protocol, addresses, payloads, framing, timeout units, and shutdown be
 
 Ask the installed interpreter for signatures with `inspect info.get 'functionName`; read [runtime inspection and defaults](references/runtime.md) for argument types, attributes, return values, naming, and evaluation rules. Confirm unfamiliar behavior against the linked official documentation rather than guessing APIs.
 
-[examples/checks.art](examples/checks.art) supplies bounded offline checks. These checks do not imply that network, GUI, or persistent operations have been executed.
+[examples/checks.art](examples/checks.art) supplies bounded offline checks.
+
+## HTTP and JSON
+
+Read [HTTP and JSON patterns](references/http-json.md) for client requests and serialization. Confirm method, payload, headers, and response shape. Keep credentials configurable; distinguish transport errors, HTTP status, and application data. Preserve missing keys, null, false, and empty collections. Use offline fixtures before live calls; avoid live mutations just to test serialization.
+
+[Offline checks](examples/json.art).

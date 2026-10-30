@@ -17,16 +17,16 @@ const cases = [
     "001\ntwo words",
   ],
   ["arturo-scripting/examples/files.art", [], "files ok"],
-  ["arturo-http-json/examples/json.art", [], "json ok"],
+  ["arturo-networking/examples/json.art", [], "json ok"],
   ["arturo-debugging/examples/errors.art", [], "debugging ok"],
   ["arturo-math/examples/checks.art", [], "math ok"],
-  ["arturo-colors/examples/checks.art", [], "colors ok"],
-  ["arturo-crypto/examples/checks.art", [], "crypto ok"],
-  ["arturo-databases/examples/checks.art", [], "databases ok"],
-  ["arturo-dates/examples/checks.art", [], "dates ok"],
-  ["arturo-quantities/examples/checks.art", [], "quantities ok"],
+  ["arturo-math/examples/colors.art", [], "colors ok"],
+  ["arturo-scripting/examples/crypto.art", [], "crypto ok"],
+  ["arturo-scripting/examples/databases.art", [], "databases ok"],
+  ["arturo-scripting/examples/dates.art", [], "dates ok"],
+  ["arturo-math/examples/quantities.art", [], "quantities ok"],
   ["arturo-networking/examples/checks.art", [], "networking metadata ok"],
-  ["arturo-ui/examples/checks.art", [], "ui metadata ok"],
+  ["arturo-scripting/examples/ui.art", [], "ui metadata ok"],
 ] as const;
 
 try {

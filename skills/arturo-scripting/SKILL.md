@@ -1,7 +1,7 @@
 ---
 
 name: arturo-scripting
-description: Build Arturo command-line scripts and local automation using arguments, files, directories, paths, and process integration. Use for .art utilities and filesystem workflows.
+description: Build Arturo automation with CLI arguments, files, paths, processes, dates, encodings, databases, persistent stores, and desktop integration.
 ---
 
 # Arturo scripting
@@ -24,3 +24,35 @@ Run an ordinary input and relevant invalid/empty input. Verify resulting file co
 - [System](references/system-library.md): 14 functions, predicates, or constants.
 
 Ask Arturo for signatures with `inspect info.get 'functionName`; see [runtime inspection and defaults](references/runtime.md) before reading argument types, attributes, and results.
+
+## encodings, checksums, and hashes
+
+Separate reversible encodings from checksums and digests. Inspect defaults and supported algorithms; digest uses MD5 by default and supports SHA1 through .sha. Do not present these compatibility primitives as modern password hashing or authenticated encryption. Check round trips, malformed input, and byte/string assumptions.
+
+- [Crypto](references/crypto-library.md).
+
+[Offline checks](examples/crypto.art).
+
+## databases and persistent stores
+
+Establish the backend, database location, schema, and lifecycle first. Use query.with: for SQL parameters and close connections on success and failure. Keep store persistence destinations and deferred writes explicit. Verify in-memory SQL or disposable files before touching persistent user data; do not assume transaction or driver APIs.
+
+- [Databases](references/databases-library.md).
+
+[Offline checks](examples/databases.art).
+
+## dates and calendar arithmetic
+
+Capture a shared now value once when comparing related dates. Establish timezone, daylight-saving, and month-boundary behavior. Use fixed calendar checks where possible, and test relationships rather than exact current-time strings. Distinguish calendar intervals from elapsed durations.
+
+- [Dates](references/dates-library.md).
+
+[Offline checks](examples/dates.art).
+
+## desktop dialogs and clipboard
+
+Inspect the installed runtime and GUI support before choosing a function. Treat clipboard reads/writes, browser windows, and dialogs as real effects. Handle cancellation and returned selection values explicitly. Verify signatures headlessly; exercise interactive behavior only in a suitable desktop session within the requested task.
+
+- [Ui](references/ui-library.md).
+
+[Offline checks](examples/ui.art).

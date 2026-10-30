@@ -1,18 +1,18 @@
 # Standard-library coverage
 
-Reviewed 2026-10-29: all 26 official modules and 521 entries are mapped below. Functions, predicates, and constants are counted together, as in the official index. Load the owning skill and only the relevant local reference. Every skill is independently installable. The HTTP/JSON skill remains a focused recipe; Net and Sockets live together in networking.
+Reviewed 2026-10-29: all 26 official modules and 521 entries are mapped below. Functions, predicates, and constants are counted together, as in the official index. Load the owning skill and only the relevant local reference. Every skill is independently installable. HTTP/JSON recipes, Net, and Sockets share networking. Math includes quantities and colors; scripting includes dates, encodings, persistence, and desktop integration.
 
 | Module      | Entries | Owning skill and reference                                                        |
 | ----------- | ------- | --------------------------------------------------------------------------------- |
 | Arithmetic  | 11      | [arturo-math](skills/arturo-math/references/arithmetic-library.md)                |
 | Bitwise     | 9       | [arturo-math](skills/arturo-math/references/bitwise-library.md)                   |
 | Collections | 46      | [arturo-collections](skills/arturo-collections/references/collections-library.md) |
-| Colors      | 9       | [arturo-colors](skills/arturo-colors/references/colors-library.md)                |
+| Colors      | 9       | [arturo-math](skills/arturo-math/references/colors-library.md)                    |
 | Comparison  | 9       | [arturo-language](skills/arturo-language/references/comparison-library.md)        |
 | Core        | 35      | [arturo-language](skills/arturo-language/references/core.md)                      |
-| Crypto      | 5       | [arturo-crypto](skills/arturo-crypto/references/crypto-library.md)                |
-| Databases   | 4       | [arturo-databases](skills/arturo-databases/references/databases-library.md)       |
-| Dates       | 14      | [arturo-dates](skills/arturo-dates/references/dates-library.md)                   |
+| Crypto      | 5       | [arturo-scripting](skills/arturo-scripting/references/crypto-library.md)          |
+| Databases   | 4       | [arturo-scripting](skills/arturo-scripting/references/databases-library.md)       |
+| Dates       | 14      | [arturo-scripting](skills/arturo-scripting/references/dates-library.md)           |
 | Exceptions  | 17      | [arturo-debugging](skills/arturo-debugging/references/exceptions-library.md)      |
 | Files       | 17      | [arturo-scripting](skills/arturo-scripting/references/files-library.md)           |
 | Io          | 8       | [arturo-scripting](skills/arturo-scripting/references/io-library.md)              |
@@ -21,7 +21,7 @@ Reviewed 2026-10-29: all 26 official modules and 521 entries are mapped below. F
 | Net         | 5       | [arturo-networking](skills/arturo-networking/references/net-library.md)           |
 | Numbers     | 60      | [arturo-math](skills/arturo-math/references/numbers-library.md)                   |
 | Paths       | 6       | [arturo-scripting](skills/arturo-scripting/references/paths-library.md)           |
-| Quantities  | 112     | [arturo-quantities](skills/arturo-quantities/references/quantities-library.md)    |
+| Quantities  | 112     | [arturo-math](skills/arturo-math/references/quantities-library.md)                |
 | Reflection  | 11      | [arturo-debugging](skills/arturo-debugging/references/reflection-library.md)      |
 | Sets        | 8       | [arturo-collections](skills/arturo-collections/references/sets-library.md)        |
 | Sockets     | 7       | [arturo-networking](skills/arturo-networking/references/sockets-library.md)       |
@@ -29,7 +29,7 @@ Reviewed 2026-10-29: all 26 official modules and 521 entries are mapped below. F
 | Strings     | 26      | [arturo-collections](skills/arturo-collections/references/strings-library.md)     |
 | System      | 14      | [arturo-scripting](skills/arturo-scripting/references/system-library.md)          |
 | Types       | 47      | [arturo-language](skills/arturo-language/references/types-library.md)             |
-| Ui          | 6       | [arturo-ui](skills/arturo-ui/references/ui-library.md)                            |
+| Ui          | 6       | [arturo-scripting](skills/arturo-scripting/references/ui-library.md)              |
 
 ## Verification boundaries
 
