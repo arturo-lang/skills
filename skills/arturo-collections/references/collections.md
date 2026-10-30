@@ -18,13 +18,13 @@ Ranges use `1..10` and include endpoints. Many iterators accept ranges directly;
 
 Iterator arguments and injected indices temporarily shadow existing bindings, then restore them. Other assignments in the body persist. For example, `loop [2 3] 'item [total: total + item]` can accumulate into an existing `total`, while an outer `item` retains its previous value. Use distinct names when that distinction would obscure intent.
 
-`map`, `select`, and `filter` return `[]` for empty blocks. A seeded fold returns its seed without calling the body. `first []` returns `null` on the verified runtime; an absent dictionary key accessed with `get` raises an error. Check `empty?` or `key?` before access when absence needs a separate outcome. Do not substitute `filter` for `select`: their predicates have opposite retention behavior.
+`map`, `select`, and `filter` return `[]` for empty blocks. A seeded fold returns its seed without calling the body; the executable check uses seed `17` and a body that would throw if evaluated. The numeric transform checks also assert that their source block remains unchanged; a mixed-type numeric map fails rather than parsing its string element. `first []` returns `null` on the verified runtime; an absent dictionary key accessed with `get` raises an error. Check `empty?` or `key?` before access when absence needs a separate outcome. Do not substitute `filter` for `select`: their predicates have opposite retention behavior.
 
 ## Dictionaries and strings
 
-Construct a dictionary with `#[name: "Ada" count: 2]`. Access members with paths such as `record\name` or `get record 'name`. Check `key? record 'name` when absence is meaningful. `loop record [key value] [body]` iterates pairs; `keys record` and `values record` expose each side. Avoid depending on an ordering unless the operation establishes one.
+Construct a dictionary with `#[name: "Ada" count: 2]`. Access members with paths such as `record\name` or `get record 'name`. Check `key? record 'name` when absence is meaningful. `loop record [key value] [body]` iterates pairs; `keys record` and `values record` expose each side. Avoid depending on an ordering unless the operation establishes one. The worked dictionary loop sums counts without changing the source dictionary; an empty dictionary runs no body. A present key holding `null` still satisfies `key?`, unlike an absent key.
 
-`split "abc"` splits into character strings; `split.words "a b"` splits words. `split.lines text` is useful for line processing. Confirm delimiter-specific attributes in Collections/split. `join parts` combines strings; verify `.with:` for separators. `strip`, `replace`, `match?`, and `match` address different text operations; regex syntax is not interchangeable with ordinary string syntax.
+`split "abc"` splits into character strings; `split.words "a b"` splits words. `split.lines text` is useful for line processing. Both `split ""` and `split.words ""` return `[]`; `join.with: "," []` returns `""`. Confirm delimiter-specific attributes in Collections/split. `join parts` combines strings; verify `.with:` for separators. `strip`, `replace`, `match?`, and `match` address different text operations; regex syntax is not interchangeable with ordinary string syntax.
 
 `sort values` returns a sorted result; `sort 'values` intentionally changes the variable. `unique`, `tally`, `size`, `first`, `last`, and `slice` cover common operations. Check bounds and empty input before assuming an element exists.
 
@@ -40,7 +40,7 @@ When a pattern must treat supplied text literally, construct it with `to :regex 
 
 ## Verification
 
-[The runnable checks](../examples/collections.art) assert retained versus removed values, seeded and empty iteration, restored iterator bindings, persistent body assignments, absent-key failure, Unicode code points versus bytes, and literal versus escaped dynamic regexes. Run `arturo --no-color examples/collections.art` from this skill directory; success prints `collections ok`. Verified offline on Arturo 0.10.0 Arizona Bark, amd64/Linux, 2026-10-30. These assertions do not establish locale-specific case behavior, grapheme segmentation, or arbitrary regex compatibility.
+[The runnable checks](../examples/collections.art) assert retained versus removed values, seeded and empty iteration with skipped bodies, unchanged transformation inputs, dictionary iteration and missing-versus-null keys, empty text, mixed-type transformation failure, restored iterator bindings, persistent body assignments, absent-key failure, Unicode code points versus bytes, and literal versus escaped dynamic regexes. Run `arturo --no-color examples/collections.art` from this skill directory; success prints `collections ok`. Verified offline on Arturo 0.10.0 Arizona Bark, amd64/Linux, 2026-10-30. These assertions do not establish locale-specific case behavior, grapheme segmentation, or arbitrary regex compatibility.
 
 ## Sources
 

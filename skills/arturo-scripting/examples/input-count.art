@@ -20,6 +20,9 @@ ensure [throws? [countFrom ["1" "2"]]]
 ensure [throws? [countFrom [""]]]
 ensure [throws? [countFrom ["invalid"]]]
 ensure [throws? [countFrom ["-1"]]]
+; A failure after the local assignment must also restore the caller's binding.
+ensure [count = 99]
+ensure [raw = ["001"]]
 
 ; try returns null/error, so keep a successful result in a separate binding.
 parsed: null

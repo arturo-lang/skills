@@ -128,3 +128,5 @@ Sources: the [official Quantities module](https://arturo-lang.io/documentation/l
 Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 112 names resolved.
 
 Checks: 112 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+
+Additional checks reviewed and asserted 2026-10-30: [quantities.art](../examples/quantities.art) verifies `convert value unit` against `in unit value`, 3 m to 300 cm, zero conversion, compatible versus incompatible dimensions, and an error converting length to time. Successful and failed conversions leave the source quantity unchanged. Check `conforms?` before conversion when inputs can have different dimensions; remove units with `scalar` only after that validation. These original bounded adaptations follow the official `convert`, `in`, and `conforms?` reference entries above. Executed on Arturo 0.10.0 amd64/Linux; stdout `quantities ok`, no stderr. Affine units, currencies, custom units, and precision boundaries remain outside these assertions.

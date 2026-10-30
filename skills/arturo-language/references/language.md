@@ -76,7 +76,9 @@ ensure [nested = [[42 2] [3]]]
 ensure [independent = [[7 2] [3]]]
 ```
 
-Adapt a mutating helper by copying its input before using `set` when the caller's nested blocks must remain unchanged. These checks establish independent copying for nested blocks; they do not establish cloning behavior for resources such as databases or sockets, or every custom object.
+The runnable example also adapts this helper into `changedFirst items value`: clone with `new`, reject an empty outer or first inner block, set the cloned element, and return the clone. Its assertions check the returned nested value, unchanged caller input, and rejected `[]`/`[[]]` inputs. Bind the clone before updating it so a helper intended to return data does not accidentally mutate its caller.
+
+These checks establish independent copying for nested blocks; they do not establish cloning behavior for resources such as databases or sockets, or every custom object.
 
 Logical values include `true`, `false`, and `maybe`. Equality is `=`; `==` is not its standard alias. Use `to :integer text` for conversion and check invalid input instead of assuming parsing succeeds.
 
@@ -84,7 +86,7 @@ Logical values include `true`, `false`, and `maybe`. Equality is `=`; `==` is no
 
 Reviewed 2026-10-30 against the [official language guide](https://arturo-lang.io/documentation/language#important-concepts), [Core/function](https://arturo-lang.io/documentation/library/core/function/), and [Core/return](https://arturo-lang.io/documentation/library/core/return/). Guidance condenses and adapts documentation by Yanis Zafirópulos and the Arturo project under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); changes include contrasting examples and explanations of observed stack and mutation behavior.
 
-Verification: `arturo --no-color examples/basics.art` from this skill directory passes on Arturo 0.10.0 Arizona Bark, amd64/Linux, printing `language ok`. It asserts results, rejected calls, iterator restoration including empty input, function assignment isolation, and shared versus independent nested block mutation. Export/inline/import variants and exceptional iterator unwinding are not covered by these checks.
+Verification: `arturo --no-color examples/basics.art` from this skill directory passes on Arturo 0.10.0 Arizona Bark, amd64/Linux, printing `language ok`. It asserts results, rejected calls, iterator restoration including empty input, function assignment isolation and local-name visibility, and shared versus independent nested block mutation including empty-input rejection. Export/inline/import variants and exceptional iterator unwinding are not covered by these checks.
 
 - [Official Core reference](https://arturo-lang.io/documentation/library/core): case, when, if, unless, switch, while, and function; also available in the official text reference below.
 - [Official reference](https://arturo-lang.io/llms.txt): Precedence and Evaluation; Scope and rules; In-place variable modification; Core/function; Core/new; Types/to.

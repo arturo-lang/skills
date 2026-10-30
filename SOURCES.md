@@ -4,6 +4,8 @@
 
 Additional behavioral examples are available in the [official Arturo unit tests](https://github.com/arturo-lang/arturo/tree/master/tests/unitt).
 
+The focused completion pass also asserts input preservation on success/failure, copied nested updates, empty iterator/dictionary/text behavior, and local empty/missing-file handling. Specific test-file links in each reference provide optional topic-level examples; they are not fetched by the smoke suite.
+
 Reviewed 2026-10-30 against the [official language guide](https://arturo-lang.io/documentation/language), relevant official library entries, and the [text reference](https://arturo-lang.io/llms.txt). Language, collections, math, and scripting references record their specific sources and limits. Original offline assertions cover evaluation and arity, function results, scope and nested mutation, empty inputs, numeric conversion, Unicode, regex escaping, and CLI count validation. Verified on Arturo 0.10.0 Arizona Bark, amd64/Linux through the expanded smoke suite. Historical metadata and fragment-execution claims below remain separate from these assertions. No external package or upstream example collection was downloaded or executed for these recipes.
 
 ## CI guidance

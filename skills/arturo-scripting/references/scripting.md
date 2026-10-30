@@ -39,6 +39,8 @@ This fragment assumes `countFrom` from the worked example is already defined. Ad
 
 For ambiguous text/path inputs, check the `read.file` attribute. `read` can also accept URLs or format content; do not assume every string is treated as a local filename.
 
+[files.art](../examples/files.art) contrasts a normal read/append with an empty file and a missing-file failure. It asserts the resulting contents, that a failed read leaves the previous result binding unchanged, and that it does not create the missing file. Run it in a disposable working directory: the example overwrites its named fixtures. Use `read.file` when a missing local file must raise an error rather than allowing another interpretation of the input.
+
 Paths/absolute, relative, normalize, extract, and list provide path operations. Their attributes affect output and resolution; check the current signature before using them. A script's location and the process working directory are distinct concepts. Confirm how System/script and System/path behave when the task depends on that distinction.
 
 For external processes, look up System/execute and System/process and their result/exit semantics. Keep untrusted values out of interpolated shell command strings. Do not replace a built-in operation with an assumed shell utility unless the target environment supports it.
@@ -51,10 +53,13 @@ For external processes, look up System/execute and System/process and their resu
 
 Count recipe reviewed and asserted on 2026-10-30 using Arturo 0.10.0 Arizona Bark, amd64/Linux: `arturo --no-color examples/input-count.art` prints `input count ok`. It is offline and does not read or write files. The CLI adaptation uses the same routine; shell invocation and process exit handling are application-specific.
 
+The same runtime verifies `examples/files.art` in a temporary working directory, printing `files ok`, and checks that count-parser failures restore the outer `count` binding. File permission failures, concurrent modification, and atomic writes belong to later filesystem workflow coverage.
+
 The recipe summarizes the Arturo project/Yanis Zafirópulos documentation ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)), reorganized with original contrasting examples and assertions:
 
 - [Language evaluation and scope](https://arturo-lang.io/documentation/language/).
 - [System/arg](https://arturo-lang.io/documentation/library/system/arg/), [Types/to](https://arturo-lang.io/documentation/library/types/to/), and [Exceptions/try](https://arturo-lang.io/documentation/library/exceptions/try/).
+- [Files/read](https://arturo-lang.io/documentation/library/files/read/): explicit file interpretation and missing-file errors.
 
 - [Official reference](https://arturo-lang.io/llms.txt): Files; Paths; System/arg, args, script, path, execute, process, exit; Exceptions/try.
 - [Command-line arguments](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Command-line%20arguments.art).
