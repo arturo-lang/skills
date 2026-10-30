@@ -30,4 +30,6 @@ The recipe is source-checked, not package-runtime tested. Test node counts and r
 
 Filters are nested property criteria, for example `fetch 'person [age: [over: 30]]`. Documented filters include `contains`, `prefix`, `suffix`, `under`, `overOrEqual`, `underOrEqual`, `in`, and `not`. `.helpers: [person book]` creates tag-specific DSL helpers inside the graph environment; use explicit commands for a small integration before introducing sugar. `preview` opens the interactive visualization, so exclude it from headless checks.
 
-Sources: [upstream README and examples](https://github.com/drkameleon/grafito), [implementation](https://github.com/drkameleon/grafito/blob/master/grafito.art), [registry command reference](https://grafito.pkgr.art/#command-reference), and [Arturo import reference](https://arturo-lang.io/documentation/library/core/import/).
+Sources: [upstream README and examples](https://github.com/drkameleon/grafito), [implementation](https://github.com/drkameleon/grafito/blob/v0.2.12/grafito.art), [registry command reference](https://grafito.pkgr.art/#command-reference), and [Arturo import reference](https://arturo-lang.io/documentation/library/core/import/).
+
+Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2024 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#grafito) for the upstream revision and full license text.

@@ -125,3 +125,7 @@ bunx skills add /path/to/your/checkout --skill arturo-language arturo-collection
 ```
 
 The CLI discovers `skills/<name>/SKILL.md` directly; no custom manifest or npm publication is needed. See its [skill discovery documentation](https://github.com/vercel-labs/skills/blob/main/docs/creating-skills.md) for details.
+
+## License
+
+Documentation is licensed under [CC BY 4.0](LICENSE-CC-BY-4.0.txt). Original standalone code examples, scripts, tests, and configuration are licensed under [MIT](LICENSE-MIT.txt). Upstream material retains its own notices; see [third-party notices](THIRD-PARTY-NOTICES.md) for external package credits and licenses. See [LICENSING.md](LICENSING.md) for scope and attribution; each skill includes its own license texts and notice for independent installation.

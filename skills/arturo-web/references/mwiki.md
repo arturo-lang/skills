@@ -26,3 +26,5 @@ For a live read, construct a client with the user's intended endpoint, call `wik
 Do not use login or edits as smoke tests. The reviewed implementation reports an edit as successful when the response has an `edit` key; verify the resulting page when confirmation of the actual stored content matters. It exposes no conflict-resolution or revision-precondition interface. Examples here are source-checked, not service-tested.
 
 Sources: [upstream README](https://github.com/drkameleon/mwiki.art/blob/bace1e015ae93876b5669b52351ce4a1ad5fa1d8/README.md), [implementation](https://github.com/drkameleon/mwiki.art/blob/bace1e015ae93876b5669b52351ce4a1ad5fa1d8/src/mwiki.art), and [Arturo import reference](https://arturo-lang.io/documentation/library/core/import/).
+
+Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2026 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#mwiki) for the upstream revision and full license text.

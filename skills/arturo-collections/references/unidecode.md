@@ -14,3 +14,5 @@ print unidecode "доброе утро!"
 The example is from the documentation and is excluded from offline smoke checks. With the package installed, verify representative scripts and punctuation from the intended data, including cases where multiple source strings collapse into one result.
 
 Sources: [package documentation](https://unidecode.pkgr.art/), [0.0.3 repository](https://github.com/drkameleon/unidecode.art/tree/v0.0.3), [official import reference](https://arturo-lang.io/documentation/library/core/import/).
+
+Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2024 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#unidecode) for the upstream revision and full license text.

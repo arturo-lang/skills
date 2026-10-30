@@ -23,3 +23,5 @@ rows
 `.align:` accepts a literal for all columns or a block for individual columns; documented choices are `'left`, `'center`, and `'right`. `.padding:` similarly accepts an integer or block. Add `.unicode` for Unicode borders; omit it for ASCII output.
 
 Validate empty data and long cell contents against the installed version when needed. Table rendering is presentation, so preserve the underlying data for sorting, numeric operations, or machine-readable export.
+
+Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2024 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#tabular) for the upstream revision and full license text.

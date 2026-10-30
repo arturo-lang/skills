@@ -18,3 +18,5 @@ This adapts the upstream example. It opens a GUI and is not run by offline smoke
 Keep TeX in Arturo strings intact: do not introduce escaping rules from another language. Diagnose the generated content, injection, and browser resource loading separately. The upstream documentation lists offline support as future work; do not promise an offline renderer. Inspect the selected release's JavaScript dependencies before choosing an offline deployment strategy or assuming a MathJax version/configuration.
 
 Sources: [package documentation](https://mathjax.pkgr.art/), [release 0.0.2](https://codeberg.org/Eloitor/mathjax.art/src/tag/v0.0.2), [Arturo webview](https://arturo-lang.io/documentation/library/ui/webview/).
+
+Attribution: Eloi Torrents (Eloitor). Upstream license: Beerware (Revision 42). See [third-party notices](../THIRD-PARTY-NOTICES.md#mathjax) for the upstream revision and full license text.
