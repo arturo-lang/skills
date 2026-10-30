@@ -1,0 +1,33 @@
+---
+
+name: arturo-html
+description: Generate HTML strings using Arturo's experimental html package, its element methods, nested blocks, and attribute DSL.
+---
+
+# HTML DSL
+
+Use `html` for the experimental Arturo HTML generator. This guidance follows release 0.0.4 source and tests; the registry README contains little API documentation. Verify behavior against the chosen release before expanding the DSL.
+
+```arturo
+import "html"!
+
+print html\element 'p "Hello"
+print html\element.class: "notice" 'div [
+    "Welcome"
+    html\element 'strong "reader"
+]
+print html\element 'input #[type: "text" name: "user"]
+```
+
+These bounded examples adapt upstream tests and have not been executed by the repository smoke suite. Import can download and evaluate package code.
+
+- String content produces an opening tag, content, and closing tag.
+- Block content is evaluated and its resulting values joined with newlines and indented. It is executable Arturo, not inert markup or a sandbox. Use qualified `html\element` calls when scope would make short tag names ambiguous.
+- Dictionary content selects void-element rendering (`<input .../>`). Passing a string to an input element instead follows the ordinary closing-tag path.
+- Arturo attributes become HTML attributes. Underscores in attribute names become hyphens; `.aria_label:` renders `aria-label`.
+
+The `html` object provides tag methods and an `html` method for a document with a doctype; `fragment` joins evaluated content without that wrapper. Prefer explicit element calls while diagnosing evaluation or scope problems.
+
+The implementation interpolates content and attribute values without HTML escaping. Escape untrusted text and attribute values for their specific contexts before rendering; generating markup does not sanitize it. Keep script/style insertion deliberate.
+
+Sources: [registry](https://html.pkgr.art/), [0.0.4 implementation](https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/src/html.art), [element tests](https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/test/element.test.art), [document example](https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/exp.art).

@@ -1,5 +1,11 @@
 # Sources and maintenance
 
+## External package skills
+
+Reviewed 2026-10-29 against the official package pages and linked upstream documentation or release sources for schema, climax, validator, claude, optionally, artsembly, grafito, html, lanx, mathjax, mermaid, mimetypes, mwiki, peregrino, progressive, recase, rsv, states, tabular, tasks, unidecode, and unitt. Each `arturo-<package>/SKILL.md` records its specific source links and reviewed release where available. HTML guidance also follows its tagged implementation and element tests because the registry README does not explain the DSL.
+
+These are curated package guides, not additional standard-library coverage. Package snippets are documentation/source-derived and are explicitly distinguished from runtime verification. The default checks validate skill metadata, portable links, formatting, and existing offline programs; they do not install or execute external packages. Refresh package APIs against the release used by the target project, especially experimental packages and wrappers whose remote services or browser dependencies may change.
+
 Package guidance reviewed 2026-10-29 against [pkgr.art](https://pkgr.art/), the [registry README](https://github.com/arturo-lang/pkgr.art), its [package list](https://github.com/arturo-lang/pkgr.art/blob/main/packages/list.art), [Core/import](https://arturo-lang.io/documentation/library/core/import/), and the [CLI reference](https://arturo-lang.io/documentation/command-line/). Registry entry syntax was checked against the live raw package list. Local package imports are smoke-tested offline; registry downloads, release creation, and publishing are not executed by validation.
 
 Reviewed on 2026-10-28:

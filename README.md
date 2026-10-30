@@ -16,6 +16,25 @@ The [standard-library coverage map](STDLIB.md) assigns all 26 modules and 521 en
 
 The former `arturo-http-json` skill is now part of `arturo-networking`; `arturo-quantities` and `arturo-colors` are part of `arturo-math`; `arturo-crypto`, `arturo-databases`, `arturo-dates`, and `arturo-ui` are part of `arturo-scripting`. Select the owning skill when installing.
 
+## External packages
+
+Each package has an independently installable `arturo-<package>` skill. The skills link to package documentation and release sources, explain package-specific evaluation and effects, and distinguish documentation examples from executed smoke checks.
+
+| Skills                                                                     | Use them for                                                    |
+| -------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| `arturo-schema`, `arturo-validator`                                        | Whole-value schemas and string validation                       |
+| `arturo-climax`, `arturo-optionally`                                       | CLI building and typed attribute interfaces                     |
+| `arturo-unitt`                                                             | Preferred package for Arturo project unit tests                 |
+| `arturo-peregrino`, `arturo-progressive`, `arturo-tabular`, `arturo-tasks` | Benchmarks, progress bars, terminal tables, and task automation |
+| `arturo-recase`, `arturo-unidecode`, `arturo-rsv`, `arturo-mimetypes`      | Case conversion, transliteration, RSV, and MIME recognition     |
+| `arturo-claude`, `arturo-mwiki`                                            | Claude and MediaWiki API clients                                |
+| `arturo-grafito`, `arturo-states`                                          | Graph databases and finite state machines                       |
+| `arturo-lanx`                                                              | Static file serving                                             |
+| `arturo-mathjax`, `arturo-mermaid`                                         | Equations and diagrams in webviews                              |
+| `arturo-html`, `arturo-artsembly`                                          | Experimental HTML DSL and bytecode assembly                     |
+
+Package imports can download and evaluate code. The default smoke suite stays offline and does not install these dependencies, call remote APIs, or launch servers or webviews.
+
 ## Install with the skills CLI
 
 From this checkout, choose skills and agents interactively:
