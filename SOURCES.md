@@ -68,3 +68,8 @@ Local opt-in lane executed 2026-10-30 on Arturo 0.10.0 Linux amd64: Unitt 3.1.1 
 Symbolic style guidance now prefers `$`, `./`, `??`, `?`, `->`, `@`, and `#`, with parameter contracts and fail-fast `ensure`. The language basics assert conditional selection, eager coalescing (including false/null fallback and zero preservation), evaluated arrays, dictionary/color distinction, and rejection of invalid typed arguments on Arturo 0.10.0 Linux amd64. Existing multi-file, CLI, and response smoke cases assert the updated symbolic forms.
 
 The language [symbol reference](skills/arturo-language/references/symbols.md) maps all 43 aliases in the official library symbol index, reviewed 2026-10-30. Their target names and prefix/infix positions were asserted with `info.get` on Arturo 0.10.0 Linux amd64. This metadata check does not execute all operations or establish their output correctness. The reference distinguishes library aliases from terminal-expression syntax and records lookalike pitfalls.
+
+## Named-color catalog
+
+Reviewed 2026-10-30: the 578-name `colorNames` table in [vcolor.nim, lines 620–1199](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199). The [math reference](skills/arturo-math/references/color-names.md) preserves every spelling and groups native color literals by initial;
+

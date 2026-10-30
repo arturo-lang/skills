@@ -33,5 +33,6 @@ Preserve units through computation and validate dimensions before extracting sca
 Use native color values and documented fractional adjustments. Inspect hue rotation and palette attributes rather than importing color-space assumptions. Check actual values and accepted ranges; prefer deterministic offline transforms to GUI-based checks.
 
 - [Colors](references/colors-library.md).
+- [Named colors](references/color-names.md): the 578 native `#name` literals at the reviewed source revision.
 
 [Offline checks](examples/colors.art).

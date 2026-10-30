@@ -48,7 +48,9 @@
       "evidence": [
         "skills/arturo-math/SKILL.md",
         "skills/arturo-math/references/numeric-recipes.md",
-        "skills/arturo-math/examples/checks.art"
+        "skills/arturo-math/examples/checks.art",
+        "skills/arturo-math/references/color-names.md",
+        "skills/arturo-math/examples/colors.art"
       ],
       "status": "partial"
     },
@@ -137,7 +139,11 @@
       "id": "module-Colors",
       "kind": "module",
       "owner": "arturo-math",
-      "evidence": ["skills/arturo-math/references/colors-library.md"],
+      "evidence": [
+        "skills/arturo-math/references/colors-library.md",
+        "skills/arturo-math/references/color-names.md",
+        "skills/arturo-math/examples/colors.art"
+      ],
       "status": "partial"
     },
     {

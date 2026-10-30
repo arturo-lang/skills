@@ -14,4 +14,8 @@ ensure [baseColor = #CC0000]
 ensure [color? grayscale #red]
 ensure [#123456 = spin #123456 360]
 ensure [3 = size palette.triad #red]
+ensure -> color? #aliceBlue
+ensure -> #F0F8FF = #aliceBlue
+ensure -> #663399 = #rebeccaPurple
+ensure -> dictionary? #[foreground: #rebeccaPurple]
 print "colors ok"

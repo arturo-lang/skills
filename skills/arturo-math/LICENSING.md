@@ -19,3 +19,5 @@ These licenses apply to different parts of the work; they are not alternative li
 Reference guides contain condensed summaries and adaptations of documentation by Yanis Zafirópulos and the Arturo project, available from the [official Arturo reference](https://arturo-lang.io/llms.txt) and [library documentation](https://arturo-lang.io/documentation/library), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Changes include selection, condensation, reorganization, and additional guidance and examples. Individual references identify their sources and review dates, including external package sources where applicable.
 
 Retain upstream attribution, license links, and notices of changes when redistributing adapted material. This repository's licenses do not replace licenses on linked third-party projects, documentation, examples, or artwork, and do not grant rights to the Arturo name or logo.
+
+The adapted named-color catalog retains Arturo’s upstream MIT terms; see [third-party notices](THIRD-PARTY-NOTICES.md#arturo-color-names).
