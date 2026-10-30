@@ -72,4 +72,3 @@ The language [symbol reference](skills/arturo-language/references/symbols.md) ma
 ## Named-color catalog
 
 Reviewed 2026-10-30: the 578-name `colorNames` table in [vcolor.nim, lines 620–1199](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199). The [math reference](skills/arturo-math/references/color-names.md) preserves every spelling and groups native color literals by initial;
-
