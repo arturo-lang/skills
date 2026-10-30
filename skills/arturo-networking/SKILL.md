@@ -1,7 +1,7 @@
 ---
 
 name: arturo-networking
-description: Implement Arturo HTTP clients and services, JSON interchange, downloads, mail, TCP, and UDP integrations.
+description: Implement Arturo HTTP clients and services, JSON interchange, downloads, mail, TCP, UDP, and Claude API integrations.
 ---
 
 # Arturo HTTP, JSON, and networking
@@ -22,3 +22,7 @@ Ask the installed interpreter for signatures with `inspect info.get 'functionNam
 Read [HTTP and JSON patterns](references/http-json.md) for client requests and serialization. Confirm method, payload, headers, and response shape. Keep credentials configurable; distinguish transport errors, HTTP status, and application data. Preserve missing keys, null, false, and empty collections. Use offline fixtures before live calls; avoid live mutations just to test serialization.
 
 [Offline checks](examples/json.art).
+
+## External API clients
+
+Read [Claude](references/claude.md) for the Arturo Anthropic API wrapper, message construction, responses, and mutable client defaults. Verify response handling with fixtures before live requests. Package examples are source-derived; offline smoke checks do not install the package or call the API.

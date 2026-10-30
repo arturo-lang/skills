@@ -1,7 +1,7 @@
 ---
 
 name: arturo-collections
-description: Implement Arturo collection and text transformations using Collections, Iterators, Strings, and Sets. Use for blocks, dictionaries, ranges, data pipelines, sorting, regex matching, text processing, and set operations.
+description: Implement Arturo collection and text transformations using Collections, Iterators, Strings, and Sets. Use for blocks, dictionaries, ranges, data pipelines, sorting, regex matching, text processing, set operations, Recase case conversion, Unidecode transliteration, and RSV data.
 ---
 
 # Arturo collections
@@ -24,3 +24,11 @@ Check empty input, a single element, duplicates, absent dictionary keys, and ele
 - [Strings](references/strings-library.md).
 
 Query signatures with `inspect info.get 'functionName`; see [runtime guidance](references/runtime.md) when interpreting metadata.
+
+## External text and data packages
+
+- [Recase](references/recase.md): naming and case conversion.
+- [Unidecode](references/unidecode.md): ASCII transliteration.
+- [RSV](references/rsv.md): binary row data encoding and decoding.
+
+Read only the package needed; imports can download and evaluate code. Package examples are documentation-derived and excluded from offline smoke checks.

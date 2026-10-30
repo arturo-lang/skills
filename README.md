@@ -10,6 +10,9 @@ A portable skill library for writing, understanding, and fixing [Arturo](https:/
 | `arturo-debugging`   | Error diagnosis, assertions, and regression checks              |
 | `arturo-math`        | Arithmetic, statistics, bit operations, units, and colors       |
 | `arturo-networking`  | HTTP/JSON clients, services, network utilities, TCP, and UDP    |
+| `arturo-testing`     | Unitt project tests and command benchmarks                      |
+| `arturo-validation`  | Structured schemas, coercion, and string validation             |
+| `arturo-web`         | Static serving, HTML, MediaWiki, equations, and diagrams        |
 | `arturo-packages`    | pkgr.art discovery, installation, imports, and publishing       |
 
 The [standard-library coverage map](STDLIB.md) assigns all 26 modules and 521 entries to their owning skills. Related modules share a skill: Collections, Iterators, Strings, and Sets live in `arturo-collections`; Arithmetic, Bitwise, Numbers, Statistics, Quantities, and Colors live in `arturo-math`. HTTP/JSON recipes live with Net and Sockets in `arturo-networking`; local integration guides live in `arturo-scripting`. Comparison, Logic, and Types extend `arturo-language`. Each module reference gives purpose, when to use, examples, and official links. Signatures come from the installed runtime using `inspect info.get 'functionName`.
@@ -18,20 +21,19 @@ The former `arturo-http-json` skill is now part of `arturo-networking`; `arturo-
 
 ## External packages
 
-Each package has an independently installable `arturo-<package>` skill. The skills link to package documentation and release sources, explain package-specific evaluation and effects, and distinguish documentation examples from executed smoke checks.
+External libraries share skills by task. Each skill remains independently installable, with package guidance, examples, and source links in its own references.
 
-| Skills                                                                     | Use them for                                                    |
-| -------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| `arturo-schema`, `arturo-validator`                                        | Whole-value schemas and string validation                       |
-| `arturo-climax`, `arturo-optionally`                                       | CLI building and typed attribute interfaces                     |
-| `arturo-unitt`                                                             | Preferred package for Arturo project unit tests                 |
-| `arturo-peregrino`, `arturo-progressive`, `arturo-tabular`, `arturo-tasks` | Benchmarks, progress bars, terminal tables, and task automation |
-| `arturo-recase`, `arturo-unidecode`, `arturo-rsv`, `arturo-mimetypes`      | Case conversion, transliteration, RSV, and MIME recognition     |
-| `arturo-claude`, `arturo-mwiki`                                            | Claude and MediaWiki API clients                                |
-| `arturo-grafito`, `arturo-states`                                          | Graph databases and finite state machines                       |
-| `arturo-lanx`                                                              | Static file serving                                             |
-| `arturo-mathjax`, `arturo-mermaid`                                         | Equations and diagrams in webviews                              |
-| `arturo-html`, `arturo-artsembly`                                          | Experimental HTML DSL and bytecode assembly                     |
+| Skill                | External packages and uses                                                                                                                |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `arturo-testing`     | Unitt, the primary official unit testing tool; Peregrino command benchmarks                                                               |
+| `arturo-validation`  | schema for structured values, coercion, defaults, and faults; validator for string formats                                                |
+| `arturo-scripting`   | Climax CLI building, Progressive progress bars, Tabular terminal tables, Tasks automation, MIMEtypes recognition, Grafito graph databases |
+| `arturo-language`    | optionally for typed attributes and DSL building, States finite state machines, ArtSembly bytecode experiments                            |
+| `arturo-collections` | Recase case conversion, Unidecode transliteration, RSV row data                                                                           |
+| `arturo-networking`  | Claude API client                                                                                                                         |
+| `arturo-web`         | Lanx static serving, HTML DSL, mwiki MediaWiki API client, MathJax equations, Mermaid diagrams                                            |
+
+The former individual `arturo-<package>` skills are merged into the owning skills above; select the owner when installing. Unitt has its own dedicated reference within testing. The mwiki package targets MediaWiki, rather than MDWiki.
 
 Package imports can download and evaluate code. The default smoke suite stays offline and does not install these dependencies, call remote APIs, or launch servers or webviews.
 

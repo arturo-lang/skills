@@ -1,7 +1,7 @@
 ---
 
 name: arturo-language
-description: Write, explain, or port Arturo (.art) code using its evaluation rules, values, functions, scope, and mutation semantics. Use for language-level implementation and syntax questions.
+description: Write, explain, or port Arturo (.art) code using its evaluation rules, values, functions, scope, and mutation semantics. Use for language-level implementation, syntax questions, typed attribute DSLs with optionally, States machines, and experimental ArtSembly bytecode.
 ---
 
 # Arturo language
@@ -32,6 +32,14 @@ Distinguish returned values from in-place operations. A supported literal argume
 Control flow uses actual Core functions: `if`, `unless`, `switch`, `case`, `when`, and loops such as `while`. They are ordinary callable words with defined arity and argument types, not reserved language syntax; even `function` is a function. Use `if` or `unless` for a conditional action, `switch` for two alternatives, `case` for value matching, and `when` for condition chains. Read the [control-flow forms](references/language.md#functions-and-control-flow) before choosing or combining them.
 
 Use `=` for equality; do not assume `==` or another language's `if/else` syntax. Review function bodies for unintended extra stack results. When porting code, verify grouping, scope, copying, and mutation independently of surface syntax.
+
+## Function attributes, DSLs, and VM packages
+
+- [optionally](references/optionally.md): build typed function attributes and DSL command interfaces using generated attribute bindings. Required operands remain positional; the package returns a function body block and is not a standalone DSL parser or closure mechanism.
+- [States](references/states.md): model finite state machines with explicit initial states, event transitions, and mutable current-state inspection.
+- [ArtSembly](references/artsembly.md): explore experimental VM bytecode assembly, stack operations, labels, and jumps. Check compatibility with the installed VM before execution.
+
+Read the relevant package guide for evaluation rules and documented releases. Package imports may download and evaluate code; their documentation-derived examples are not executed by the offline smoke suite.
 
 ## Verification defaults
 
