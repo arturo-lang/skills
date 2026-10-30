@@ -1,5 +1,4 @@
 ---
-
 name: arturo-networking
 description: Implement Arturo HTTP clients and services, JSON interchange, downloads, mail, TCP, UDP, and Claude API integrations.
 ---

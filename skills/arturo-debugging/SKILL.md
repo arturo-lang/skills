@@ -1,5 +1,4 @@
 ---
-
 name: arturo-debugging
 description: Diagnose and fix Arturo runtime errors, scope or aliasing bugs, and regressions using Exceptions and Reflection. Use for .art failures, error handling, runtime inspection, and call-attribute introspection.
 ---

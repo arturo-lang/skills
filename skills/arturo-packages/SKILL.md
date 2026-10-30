@@ -1,5 +1,4 @@
 ---
-
 name: arturo-packages
 description: Find, install, import, create, and publish Arturo packages using the official pkgr.art registry, package metadata, and versioned releases.
 ---

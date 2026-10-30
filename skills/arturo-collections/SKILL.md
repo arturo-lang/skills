@@ -1,5 +1,4 @@
 ---
-
 name: arturo-collections
 description: Implement Arturo collection and text transformations using Collections, Iterators, Strings, and Sets. Use for blocks, dictionaries, ranges, data pipelines, sorting, regex matching, text processing, set operations, Recase case conversion, Unidecode transliteration, and RSV data.
 ---

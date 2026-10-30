@@ -1,5 +1,4 @@
 ---
-
 name: arturo-web
 description: Use lanx (Lanx) to serve static files or preview a local site with Arturo. Build web content with HTML, integrate MediaWiki through mwiki, and render MathJax equations or Mermaid diagrams in webviews.
 ---

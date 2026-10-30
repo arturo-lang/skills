@@ -1,5 +1,4 @@
 ---
-
 name: arturo-testing
 description: Use unitt (Unitt), the primary official Arturo testing tool, for unit tests, test suites, assertions, test runners, and regression tests. Use peregrino (Peregrino) for command benchmarks and performance comparisons.
 ---

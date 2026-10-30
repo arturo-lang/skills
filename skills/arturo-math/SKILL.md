@@ -1,5 +1,4 @@
 ---
-
 name: arturo-math
 description: Implement Arturo arithmetic, statistics, bit operations, unit-aware measurements, conversions, and color transformations.
 ---
