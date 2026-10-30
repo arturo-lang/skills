@@ -27,3 +27,5 @@ A singleton has an average equal to its element and population variance zero. `v
 Reviewed 2026-10-30 against the [official language guide](https://arturo-lang.io/documentation/language), and `to`, `convert`, `div`, `fdiv`, `sum`, `product`, `average`, and `variance` in the [official text reference](https://arturo-lang.io/llms.txt). Guidance condenses and adapts documentation by Yanis Zafirópulos and the Arturo project under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); the bounded checks are original examples.
 
 Executed with assertions using `arturo --no-color examples/checks.art` from this skill directory on Arturo 0.10.0 Arizona Bark, amd64/Linux (2026-10-30). Expected stdout: `math ok`; no stderr. This verifies only the cases stated here, not every numeric API or platform.
+
+Additional behavioral examples are available in the [official Arturo unit tests](https://github.com/arturo-lang/arturo/tree/master/tests/unitt).
