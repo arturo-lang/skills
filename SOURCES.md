@@ -1,5 +1,7 @@
 # Sources and maintenance
 
+Package guidance reviewed 2026-10-29 against [pkgr.art](https://pkgr.art/), the [registry README](https://github.com/arturo-lang/pkgr.art), its [package list](https://github.com/arturo-lang/pkgr.art/blob/main/packages/list.art), [Core/import](https://arturo-lang.io/documentation/library/core/import/), and the [CLI reference](https://arturo-lang.io/documentation/command-line/). Registry entry syntax was checked against the live raw package list. Local package imports are smoke-tested offline; registry downloads, release creation, and publishing are not executed by validation.
+
 Reviewed on 2026-10-28:
 
 - Language and standard library: https://arturo-lang.io/llms.txt

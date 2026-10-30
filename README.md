@@ -10,6 +10,7 @@ A portable skill library for writing, understanding, and fixing [Arturo](https:/
 | `arturo-debugging`   | Error diagnosis, assertions, and regression checks              |
 | `arturo-math`        | Arithmetic, statistics, bit operations, units, and colors       |
 | `arturo-networking`  | HTTP/JSON clients, services, network utilities, TCP, and UDP    |
+| `arturo-packages`    | pkgr.art discovery, installation, imports, and publishing       |
 
 The [standard-library coverage map](STDLIB.md) assigns all 26 modules and 521 entries to their owning skills. Related modules share a skill: Collections, Iterators, Strings, and Sets live in `arturo-collections`; Arithmetic, Bitwise, Numbers, Statistics, Quantities, and Colors live in `arturo-math`. HTTP/JSON recipes live with Net and Sockets in `arturo-networking`; local integration guides live in `arturo-scripting`. Comparison, Logic, and Types extend `arturo-language`. Each module reference gives purpose, when to use, examples, and official links. Signatures come from the installed runtime using `inspect info.get 'functionName`.
 

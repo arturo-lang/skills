@@ -9,6 +9,7 @@ if (!executable)
 const root = resolve(import.meta.dir, "..");
 const workspace = await mkdtemp(resolve(tmpdir(), "arturo-skills-smoke-"));
 const cases = [
+  ["arturo-packages/examples/local-package.art", [], "packages ok"],
   ["arturo-language/examples/basics.art", [], "language ok"],
   ["arturo-collections/examples/collections.art", [], "collections ok"],
   [
@@ -33,7 +34,13 @@ try {
   for (const [path, args, expected] of cases) {
     const child = Bun.spawn(
       [executable, "--no-color", resolve(root, "skills", path), ...args],
-      { cwd: workspace, stdout: "pipe", stderr: "pipe" },
+      {
+        cwd: path.startsWith("arturo-packages/")
+          ? resolve(root, "skills", "arturo-packages")
+          : workspace,
+        stdout: "pipe",
+        stderr: "pipe",
+      },
     );
     const timeout = setTimeout(() => child.kill(), 10_000);
     try {
