@@ -12,7 +12,20 @@ Square brackets preserve code/data without evaluation. `@[expression ...]` evalu
 
 Define `double: function [x][x * 2]`, then call `double 4`. `$` aliases `function`. A function can leave its result on the stack or use `return`; avoid unintended extra results. Parameter blocks can include types, e.g. `[x :integer]`.
 
-`if condition [body]` executes one branch. `switch condition [true-body] [false-body]` supplies both branches. `while [condition] [body]` reevaluates the condition. `->` wraps one following terminal expression into a block, not an arbitrary sequence of statements. Prefer explicit blocks for multi-step bodies.
+Control-flow words are actual [Core functions](https://arturo-lang.io/documentation/library/core), not reserved syntax. Their arity determines which values are arguments; action blocks are values supplied to those functions. They can be rebound like other words, so check local definitions when behavior differs from the standard library.
+
+| Function form                             | Behavior                                                                                             |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `if condition [body]`                     | Runs the body when the condition is neither `false` nor `null`.                                      |
+| `unless condition [body]`                 | Runs the body when the condition is `false` or `null`.                                               |
+| `switch condition [action] [alternative]` | Chooses the first block when the condition is neither `false` nor `null`, otherwise the second.      |
+| `case value [candidate [action] ...]`     | Matches a value against candidates; `any` provides a fallback. A dictionary can also supply matches. |
+| `when [condition [action] ...]`           | Runs the first matching action; `.any` checks all conditions.                                        |
+| `while [condition] [body]`                | Reevaluates the condition block for each iteration.                                                  |
+
+`if` and `unless` return nothing; do not use them as two-way value selectors. `switch` can supply a selected result. The outer blocks passed to `case` and `when` are evaluated; use blocks for action bodies and deferred conditions rather than assuming every expression is lazy. In `when`, `[condition]` defers that condition until needed; a final `true [body]` supplies a fallback.
+
+`->` wraps one following terminal expression into a block, not an arbitrary sequence of statements. Prefer explicit blocks for multi-step bodies.
 
 `map collection 'item [expression]` and `loop collection 'item [body]` bind iterator variables temporarily. `=>` offers anonymous-parameter shorthand; consult the reference before changing a named-parameter form into shorthand. A pipe passes an expression's result into a subsequent call; it is not a shell pipe.
 
@@ -28,6 +41,7 @@ Logical values include `true`, `false`, and `maybe`. Equality is `=`; `==` is no
 
 ## Sources
 
+- [Official Core reference](https://arturo-lang.io/documentation/library/core): case, when, if, unless, switch, while, and function; also available in the official text reference below.
 - [Official reference](https://arturo-lang.io/llms.txt): Precedence and Evaluation; Scope and rules; In-place variable modification; Core/function; Core/new; Types/to.
 - [Function definition example](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Function%20definition.art).
 - [Function composition example](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Function%20composition.art).

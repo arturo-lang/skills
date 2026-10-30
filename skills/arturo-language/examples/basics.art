@@ -2,6 +2,15 @@ ensure [14 = 2 * 3 + 4]
 ensure [10 = (2 * 3) + 4]
 double: function [x][x * 2]
 ensure [8 = double 4]
+scopeValue: 1
+do [scopeValue: 2]
+ensure [scopeValue = 2]
+localValue: function [][
+    scopeValue: 3
+    return scopeValue
+]
+ensure [3 = localValue]
+ensure [scopeValue = 2]
 original: [3 1 2]
 ordered: sort original
 ensure [original = [3 1 2]]
