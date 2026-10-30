@@ -13,6 +13,8 @@ For argument parsing or file operations, read [CLI and file patterns](references
 
 For complete input-validation and resource-lifecycle examples, read [bounded scripting workflows](references/workflows.md): raw CLI inputs, files, fixed dates, and SQLite success/failure/cleanup.
 
+When cleanup can fail too, use [separate action and cleanup diagnostics](references/workflows.md#preserve-action-and-cleanup-failures). A normal return from `delete` does not prove removal succeeded; verify the postcondition and attempt the remaining owned files.
+
 Use `arturo script.art` to execute Arturo; Bun may orchestrate repository tooling but does not interpret `.art`. Check `arturo --help` and `arturo --version` for the installed CLI. Use `arg` for raw arguments and `args` for parsed options, preserving strings when automatic conversion would lose information.
 
 Prefer built-in file and path operations to shell commands. `write` takes content first and destination second. Resolve paths deliberately; use a temporary directory for verification and do not overwrite user files as a test. Check existence and handle conversion/read errors according to the requested behavior.

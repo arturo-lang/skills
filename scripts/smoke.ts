@@ -32,6 +32,7 @@ const cases: readonly (readonly [
     1,
   ],
   ["arturo-scripting/examples/files.art", [], "files ok"],
+  ["arturo-scripting/examples/file-cleanup.art", [], "file cleanup ok"],
   ["arturo-scripting/examples/input-count.art", [], "input count ok"],
   ["arturo-networking/examples/json.art", [], "json ok"],
   ["arturo-networking/examples/response.art", [], "response workflow ok"],

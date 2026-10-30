@@ -49,6 +49,8 @@ For external processes, look up System/execute and System/process and their resu
 
 `err: try [ ... ]` captures an error value; `error? err` distinguishes failure. Assign a needed result inside the action because `try` itself reports null/error rather than the action's successful result. Test missing-file and invalid-input cases in an isolated directory.
 
+For cleanup that must continue after a failed removal, use [separate action and cleanup diagnostics](workflows.md#preserve-action-and-cleanup-failures). Verify that owned paths are gone: `try [delete path]` alone can report null even when deletion did not take effect.
+
 ## Sources
 
 Count recipe reviewed and asserted on 2026-10-30 using Arturo 0.10.0 Arizona Bark, amd64/Linux: `arturo --no-color examples/input-count.art` prints `input count ok`. It is offline and does not read or write files. The CLI adaptation uses the same routine; shell invocation and process exit handling are application-specific.

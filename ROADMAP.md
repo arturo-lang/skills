@@ -36,6 +36,8 @@ Use task failures and catalog gaps to prioritize focused functions, types, contr
 
 Exit: standalone discovery and use pass, references remain navigable, metadata/context size is reviewed, and compatibility claims have recorded evidence.
 
+First focused improvement (2026-10-30): existing scripting guidance now covers [filesystem cleanup diagnostics](skills/arturo-scripting/references/workflows.md#preserve-action-and-cleanup-failures), prompted by the lifecycle coverage gap and a reproducer showing that `delete` can return normally without removing a path. The independently installable skill adds bounded offline assertions and keeps activation metadata unchanged. This is one verified workflow improvement; broader expansion and roadmap exit criteria remain open.
+
 ## Research basis
 
 The following language libraries informed this roadmap. Their structures provide precedents, not proof that the same approaches will work for Arturo. Research reviewed on 2026-10-29.
