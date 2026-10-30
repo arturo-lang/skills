@@ -4,10 +4,10 @@ Use [Tasks documentation](https://tasks.pkgr.art/) and [v1.0.0 source](https://g
 
 Separate declarations from the runner. `routine` declares reusable work; `task` declares runnable work. `runTask` accepts a task name as string or literal. `.requires:` names prerequisite routines; `.defers:` declares deferred routines. Inspect the installed implementation before relying on failure or repeat-execution semantics.
 
-See the [upstream task examples](https://github.com/RickBarretto/tasks/blob/v1.0.0/readme.md) for declarations and runner usage. Upstream v1.0.0 has no declared license, so those examples are linked rather than reproduced here.
+See the [upstream task examples](https://github.com/RickBarretto/tasks/blob/v1.0.0/readme.md) for declarations and runner usage.
 
 `directory` creates a directory. `file filename action` supports file requirements; `.as:` binds a dictionary containing `file` and `requires` inside its action. Confirm timestamp and rebuild rules in source before designing incremental builds.
 
 `exec` (alias `|>`) runs shell commands and is available only within routine/task actions. Treat those commands and cleanup actions as real filesystem/process effects; do not copy upstream destructive cleanup examples into smoke checks.
 
-Attribution: RickBarretto (repository maintainer). Upstream license: Not declared. No copyright declaration found. See [third-party notices](../THIRD-PARTY-NOTICES.md#tasks) for the upstream revision and licensing status.
+Attribution: RickBarretto (repository maintainer). Upstream license: MIT, added after v1.0.0 at [`6cd03b031c2f`](https://github.com/RickBarretto/tasks/commit/6cd03b031c2f037ed39df675064b897960addbe2). Copyright (c) 2026 RickBarretto. See [third-party notices](../THIRD-PARTY-NOTICES.md#tasks) for the upstream revision and licensing status.
