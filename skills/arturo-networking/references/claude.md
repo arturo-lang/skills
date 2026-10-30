@@ -25,3 +25,5 @@ print message\role
 Test message construction and response consumers with local fixtures first. Live `chat`/`ask` calls transmit prompt data and consume API credits; keep them explicit integration checks. Non-200 responses throw a runtime error. The source has no retry loop or streaming implementation; do not promise either. Examples here were checked against source, not run against the service.
 
 Sources: [upstream README](https://github.com/drkameleon/claude.ai.art/blob/a0ea0e84a6b5e9debb1b661b000295345d482c59/README.md), [implementation](https://github.com/drkameleon/claude.ai.art/blob/a0ea0e84a6b5e9debb1b661b000295345d482c59/src/api.art), and [Arturo import reference](https://arturo-lang.io/documentation/library/core/import/).
+
+Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2026 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#claude) for the upstream revision and full license text.

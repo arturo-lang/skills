@@ -30,3 +30,7 @@ All 521 names passed metadata inspection on Arturo 0.10.0 Arizona Bark, amd64/Li
 `bun run check` verifies that the recorded inventory and module tables agree. `bun run stdlib:inspect` checks metadata availability without invoking target APIs. When refreshing, compare the live module/symbol inventory as well as updating the source digest; a passing local coverage check only proves agreement with the checked-in snapshot, not freshness against upstream.
 
 To refresh, read the live reference sections used by the affected skill, inspect relevant examples at a recorded commit, update that skill's guidance and source links, and run repository validation and smoke checks. Record the interpreter version used for verification. Do not execute the whole upstream collection: some examples use network access, files, interactive input, or expensive computations.
+
+## External package licensing
+
+Authors, upstream copyright statements, and license texts were checked on 2026-10-30 at the revisions listed in [third-party notices](THIRD-PARTY-NOTICES.md). Each affected skill includes its own notices so installations remain self-contained. Upstream-derived snippets retain upstream terms; original contributions use this repository’s documented license split. Tasks v1.0.0 has no declared license, so its examples are linked rather than reproduced. Refresh license notices alongside API guidance when changing reviewed revisions.

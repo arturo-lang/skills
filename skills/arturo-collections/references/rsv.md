@@ -20,3 +20,5 @@ Construct rows with `@[]` when cells contain expressions or `null`: ordinary blo
 This release represents the serialized payload as an Arturo string with control markers, rather than exposing a `:binary` API. Preserve the payload exactly; line splitting, whitespace trimming, or ad hoc CSV escaping will corrupt its framing. Check actual file and transport byte behavior against the consumer's RSV implementation before claiming interoperability. The decoder's end-marker check is not a complete validation guarantee for arbitrary malformed input.
 
 Sources: [package signatures](https://rsv.pkgr.art/), [0.1.1 implementation](https://github.com/asumbek/art-rsv/blob/v0.1.1/rsv.art), [official import reference](https://arturo-lang.io/documentation/library/core/import/).
+
+Attribution: Komo (asumbek). Upstream license: MIT. Copyright (c) 2024 Komo. See [third-party notices](../THIRD-PARTY-NOTICES.md#rsv) for the upstream revision and full license text.

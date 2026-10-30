@@ -19,3 +19,5 @@ This adapts the upstream example for a registry import; the upstream `import ./"
 Preserve the `mermaid` class on the container. Check diagram syntax, resulting HTML, script injection, and resource loading separately when rendering fails. Confirm webview support in the installed Arturo build and use a desktop session. Upstream lists offline support as future work; inspect the selected release's browser dependencies before promising offline operation or assuming support for newer Mermaid syntax. Treat injected markup/scripts as executable content and keep diagram inputs appropriate for the intended renderer.
 
 Sources: [package documentation](https://mermaid.pkgr.art/), [release 0.0.1](https://codeberg.org/Eloitor/mermaid.art/src/tag/v0.0.1), [Arturo webview](https://arturo-lang.io/documentation/library/ui/webview/).
+
+Attribution: Eloi Torrents (Eloitor). Upstream license: Beerware (Revision 42). See [third-party notices](../THIRD-PARTY-NOTICES.md#mermaid) for the upstream revision and full license text.

@@ -26,3 +26,5 @@ This is a documentation-based example, not part of the offline smoke suite. With
 - `example schema` is deterministic; `.random` varies fixtures. Regex and unsupported-type generation need an explicit `example:` value. Validate generated fixtures before relying on them.
 
 Sources: [tagged README and examples](https://github.com/Lulzx/schema.art/tree/v0.3.0), [official import reference](https://arturo-lang.io/documentation/library/core/import/).
+
+Attribution: Lulzx. Upstream license: MIT. Copyright (c) 2026 Lulzx. See [third-party notices](../THIRD-PARTY-NOTICES.md#schema) for the upstream revision and full license text.

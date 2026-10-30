@@ -25,3 +25,5 @@ The `html` object provides tag methods and an `html` method for a document with 
 The implementation interpolates content and attribute values without HTML escaping. Escape untrusted text and attribute values for their specific contexts before rendering; generating markup does not sanitize it. Keep script/style insertion deliberate.
 
 Sources: [registry](https://html.pkgr.art/), [0.0.4 implementation](https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/src/html.art), [element tests](https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/test/element.test.art), [document example](https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/exp.art).
+
+Attribution: RickBarretto (repository maintainer). Upstream license: MIT. Copyright (c) 2019-2020 Yanis Zafirópulos (aka Dr.Kameleon). See [third-party notices](../THIRD-PARTY-NOTICES.md#html) for the upstream revision and full license text.
