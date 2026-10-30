@@ -6,7 +6,7 @@ description: Build Arturo automation with CLI arguments, files, paths, processes
 
 # Arturo scripting
 
-Read [CLI and file patterns](references/scripting.md). Establish inputs, output destinations, current-directory assumptions, and exit behavior before implementing the script.
+For argument parsing or file operations, read [CLI and file patterns](references/scripting.md). Establish inputs, output destinations, current-directory assumptions, and exit behavior before implementing the script.
 
 Use `arturo script.art` to execute Arturo; Bun may orchestrate repository tooling but does not interpret `.art`. Check `arturo --help` and `arturo --version` for the installed CLI. Use `arg` for raw arguments and `args` for parsed options, preserving strings when automatic conversion would lose information.
 
@@ -16,14 +16,14 @@ Keep reusable logic in functions and CLI effects at the entry point. Consult the
 
 Run an ordinary input and relevant invalid/empty input. Verify resulting file contents and exit behavior, not just whether the interpreter starts. [examples/arguments.art](examples/arguments.art) demonstrates raw argument iteration.
 
-## Standard-library selection guides
+## References: load only the relevant module
 
-- [Files](references/files-library.md): 17 functions, predicates, or constants.
-- [Io](references/io-library.md): 8 functions, predicates, or constants.
-- [Paths](references/paths-library.md): 6 functions, predicates, or constants.
-- [System](references/system-library.md): 14 functions, predicates, or constants.
+- [Files](references/files-library.md).
+- [Io](references/io-library.md).
+- [Paths](references/paths-library.md).
+- [System](references/system-library.md).
 
-Ask Arturo for signatures with `inspect info.get 'functionName`; see [runtime inspection and defaults](references/runtime.md) before reading argument types, attributes, and results.
+Query signatures with `inspect info.get 'functionName`; see [runtime guidance](references/runtime.md) when interpreting metadata.
 
 ## encodings, checksums, and hashes
 

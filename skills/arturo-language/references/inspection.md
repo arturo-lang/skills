@@ -37,6 +37,6 @@ These are condensed readings of actual output, not a replacement for querying th
 | `function`     | Two arguments: `arguments :literal :block`, then `body :block`. `.import:` and `.export:` take blocks; `.memoize` and `.inline` are flags. Returns `:function`; `$` is prefix.                                                                      |
 | `sort`         | One argument accepting `:literal`, `:pathliteral`, `:dictionary`, or `:block`. `.descending` is a flag; `.by:` accepts a string or literal. Results include `:block` or `:nothing`; inspect literal mutation separately from value-returning calls. |
 
-Checked on 2026-10-29 with Arturo 0.10.0 Arizona Bark, amd64/Linux. All seven metadata queries and the literal/function-value contrasts were executed; this does not verify every operation in their examples.
+Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Checks: seven metadata queries and literal/function-value contrasts (2026-10-29); example operations not fully tested.
 
 Sources: [Reflection/inspect](https://arturo-lang.io/documentation/library/reflection/inspect), [Reflection/info](https://arturo-lang.io/documentation/library/reflection/info), and the [official text reference](https://arturo-lang.io/llms.txt).

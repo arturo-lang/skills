@@ -2,7 +2,7 @@
 
 Use for native dialogs, notifications, clipboard access, and webviews. These operations need a supported desktop/runtime build and may block or alter user state. Examples are documentation-only here; do not invoke GUI or clipboard functions just to discover their signatures.
 
-For signatures, ask the installed runtime with `inspect info.get 'alert`. Read [runtime inspection](runtime.md) before interpreting argument types and attributes.
+Query signatures with `inspect info.get 'alert`; see [runtime inspection](runtime.md) for metadata interpretation.
 
 Examples are independent fragments; names such as `value`, `items`, `settings`, `client`, `server`, `db`, and `childPid` denote inputs or resources prepared by the surrounding program. They are not implicit globals. Requires a supported desktop and explicit interaction.
 
@@ -17,6 +17,6 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 
 ## Sources and verification
 
-Reviewed 2026-10-29 against the [official Ui module](https://arturo-lang.io/documentation/library/ui), via the [official text reference](https://arturo-lang.io/llms.txt). This is a condensed, adapted selection guide; source documentation is by the Arturo project under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Sources: the [official Ui module](https://arturo-lang.io/documentation/library/ui); [official text reference](https://arturo-lang.io/llms.txt). License: [CC BY 4. Updated: 2026-10-29.0](https://creativecommons.org/licenses/by/4.0/).
 
-All 6 names resolved through runtime metadata lookup on Arturo 0.10.0 Arizona Bark, amd64/Linux. This establishes discoverability, not execution of their examples or correctness of all metadata. Table examples are documentation guidance unless explicitly covered by an executable example. Check signatures locally; report version differences and unverified behavior.
+Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 6 names resolved.

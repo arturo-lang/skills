@@ -6,7 +6,7 @@ description: Diagnose and fix Arturo runtime errors, scope or aliasing bugs, and
 
 # Arturo debugging
 
-Capture the exact failing invocation, interpreter version, error text, and expected result. Reduce it to a bounded reproduction that preserves the failure. Read [diagnostic patterns](references/debugging.md) for the relevant failure class.
+Capture the exact failing invocation, interpreter version, error text, and expected result. Reduce it to a bounded reproduction that preserves the failure. Use [diagnostic patterns](references/debugging.md) for the failure class involved.
 
 Check function arity and types before changing syntax. Trace expressions from right to left, then inspect evaluation of blocks, stack results, scope boundaries, and shared values. Compare the installed runtime with the [official reference](https://arturo-lang.io/llms.txt); examples can reflect another version.
 
@@ -16,9 +16,9 @@ Add a check that fails for the observed bug and passes after the fix, using `ens
 
 [examples/errors.art](examples/errors.art) demonstrates offline assertions and captured errors. Avoid executing an arbitrary upstream example as a diagnostic: review its effects and cost first.
 
-## Standard-library selection guides
+## References: load only the relevant module
 
-- [Exceptions](references/exceptions-library.md): 17 functions, predicates, or constants.
-- [Reflection](references/reflection-library.md): 11 functions, predicates, or constants.
+- [Exceptions](references/exceptions-library.md).
+- [Reflection](references/reflection-library.md).
 
-Ask Arturo for signatures with `inspect info.get 'functionName`; see [runtime inspection and defaults](references/runtime.md) before reading argument types, attributes, and results.
+Query signatures with `inspect info.get 'functionName`; see [runtime guidance](references/runtime.md) when interpreting metadata.

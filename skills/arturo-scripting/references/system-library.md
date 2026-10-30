@@ -2,7 +2,7 @@
 
 Use for CLI arguments, environment/process information, and local automation. `arg` preserves raw strings; `args` parses values. Do not dump environment variables while debugging. Inspect `execute` behavior and quote externally supplied arguments deliberately. `config` may use persistent global storage; process termination and exit are effects, not harmless probes.
 
-For signatures, ask the installed runtime with `inspect info.get 'arg`. Read [runtime inspection](runtime.md) before interpreting argument types and attributes.
+Query signatures with `inspect info.get 'arg`; see [runtime inspection](runtime.md) for metadata interpretation.
 
 Examples are independent fragments; names such as `value`, `items`, `settings`, `client`, `server`, `db`, and `childPid` denote inputs or resources prepared by the surrounding program. They are not implicit globals. Examples can access persistent configuration, launch processes, or exit the program.
 
@@ -25,6 +25,6 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 
 ## Sources and verification
 
-Reviewed 2026-10-29 against the [official System module](https://arturo-lang.io/documentation/library/system), via the [official text reference](https://arturo-lang.io/llms.txt). This is a condensed, adapted selection guide; source documentation is by the Arturo project under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Sources: the [official System module](https://arturo-lang.io/documentation/library/system); [official text reference](https://arturo-lang.io/llms.txt). License: [CC BY 4. Updated: 2026-10-29.0](https://creativecommons.org/licenses/by/4.0/).
 
-All 14 names resolved through runtime metadata lookup on Arturo 0.10.0 Arizona Bark, amd64/Linux. This establishes discoverability, not execution of their examples or correctness of all metadata. Table examples are documentation guidance unless explicitly covered by an executable example. Check signatures locally; report version differences and unverified behavior.
+Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 14 names resolved.

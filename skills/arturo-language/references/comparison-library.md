@@ -2,9 +2,9 @@
 
 Use for ordering, equality, and identity. `same?` is stricter than value equality. `between?` includes its endpoints. Confirm behavior for mixed types and custom objects instead of assuming another language’s coercion rules.
 
-For signatures, ask the installed runtime with `inspect info.get 'between?`. Read [inspection guidance](inspection.md) before interpreting argument types and attributes.
+Query signatures with `inspect info.get 'between?`; see [inspection guidance](inspection.md) for metadata interpretation.
 
-Examples are independent fragments; names such as `value`, `items`, `settings`, `client`, `server`, `db`, and `childPid` denote inputs or resources prepared by the surrounding program. They are not implicit globals. Keep inputs bounded and inspect literal mutation separately from returned values.
+Fragments require surrounding input/resource bindings. Bound inputs; distinguish literal mutation from returned values.
 
 | Name                                                                                       | Purpose / when to use                                      | Example               |
 | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------- | --------------------- |
@@ -20,8 +20,8 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 
 ## Sources and verification
 
-Reviewed 2026-10-29 against the [official Comparison module](https://arturo-lang.io/documentation/library/comparison), via the [official text reference](https://arturo-lang.io/llms.txt). This is a condensed, adapted selection guide; source documentation is by the Arturo project under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Sources: the [official Comparison module](https://arturo-lang.io/documentation/library/comparison); [official text reference](https://arturo-lang.io/llms.txt). License: [CC BY 4. Updated: 2026-10-29.0](https://creativecommons.org/licenses/by/4.0/).
 
-All 9 names resolved through runtime metadata lookup on Arturo 0.10.0 Arizona Bark, amd64/Linux. This establishes discoverability, not execution of their examples or correctness of all metadata. Table examples are documentation guidance unless explicitly covered by an executable example. Check signatures locally; report version differences and unverified behavior.
+Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 9 names resolved.
 
-All 9 bounded table fragments also completed independently with exit status zero and no stderr on that runtime. A null sample binding was supplied where a value predicate needed input. This checks execution, not every output, branch, or edge case.
+Checks: 9 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
