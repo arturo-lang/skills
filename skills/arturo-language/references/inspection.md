@@ -1,0 +1,42 @@
+# Ask Arturo for signatures
+
+Inspect runtime metadata before guessing a function's arguments or attributes:
+
+```sh
+arturo --no-color -e "inspect info.get 'if"
+arturo --no-color -e "inspect info.get 'switch"
+arturo --no-color -e "inspect info.get 'function"
+arturo --no-color -e "inspect info.get 'when"
+arturo --no-color -e "inspect info.get 'sort"
+```
+
+The shell uses double quotes here because Arturo literal identifiers contain `'`. `info.get` retrieves the named symbol's metadata as a dictionary; `inspect` displays its structure and types. `info 'if` is a compact human-readable alternative.
+
+Do not use `inspect 'if` for a signature: it inspects the literal identifier and prints `if :literal`. `inspect var 'if` retrieves and inspects the actual function value, but this runtime only shows `:function` and `(builtin)`, without its signature. Avoid `inspect if`: a bare callable word invokes the function and requires its arguments.
+
+## Reading the result
+
+- `name`, `type`, and `module` identify the symbol and its library. `description` states its purpose.
+- `args` maps positional argument names to blocks of accepted types, in call order. Each named argument consumes one value; several types in that argument's block are alternatives, not extra arguments. `any :type` means the accepted type is `:any`.
+- `attrs` lists optional attributes. Each entry contains `types` and a description. A logical flag is written `.flag`; an attribute-label passes a value, as in `.has: 2`. Optional attributes do not increase positional arity.
+- `returns` lists documented result types. `nothing :type` means no result value. Multiple listed types describe possible results, not a tuple of all of them. Check the behavior of the selected form when it matters.
+- `alias` and `infix?` identify an alias and whether it is used infix. They do not establish conventional arithmetic precedence.
+- `example` contains documentation strings, not automatically executed checks. `address`, `line`, and `source` are diagnostic metadata; an embedded source URL may name an older revision, so record `arturo --version` separately.
+
+## Observed signatures
+
+These are condensed readings of actual output, not a replacement for querying the installed runtime:
+
+| Inspected name | How to read its output                                                                                                                                                                                                                              |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `if`           | Two arguments: `condition :any`, then `action :block :bytecode`. No attributes; returns `:nothing`.                                                                                                                                                 |
+| `unless`       | Same argument types as `if`; its description specifies the opposite condition.                                                                                                                                                                      |
+| `switch`       | Three arguments: `condition :any`, `action :block`, `alternative :block`. Returns `:any`; alias `?` is infix.                                                                                                                                       |
+| `case`         | Two arguments: `argument :any`, `matches :dictionary :block`. Metadata lists `:logical`, but documented examples also yield selected values; verify result-dependent uses.                                                                          |
+| `when`         | One `conditions :block` argument. `.any` is a logical flag; `.has: value` accepts `:any`. Metadata lists `:logical`.                                                                                                                                |
+| `function`     | Two arguments: `arguments :literal :block`, then `body :block`. `.import:` and `.export:` take blocks; `.memoize` and `.inline` are flags. Returns `:function`; `$` is prefix.                                                                      |
+| `sort`         | One argument accepting `:literal`, `:pathliteral`, `:dictionary`, or `:block`. `.descending` is a flag; `.by:` accepts a string or literal. Results include `:block` or `:nothing`; inspect literal mutation separately from value-returning calls. |
+
+Checked on 2026-10-29 with Arturo 0.10.0 Arizona Bark, amd64/Linux. All seven metadata queries and the literal/function-value contrasts were executed; this does not verify every operation in their examples.
+
+Sources: [Reflection/inspect](https://arturo-lang.io/documentation/library/reflection/inspect), [Reflection/info](https://arturo-lang.io/documentation/library/reflection/info), and the [official text reference](https://arturo-lang.io/llms.txt).
