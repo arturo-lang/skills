@@ -22,7 +22,7 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 
 ## Sources and verification
 
-Sources: the [official Reflection module](https://arturo-lang.io/documentation/library/reflection); [official text reference](https://arturo-lang.io/llms.txt). License: [CC BY 4. Updated: 2026-10-29.0](https://creativecommons.org/licenses/by/4.0/).
+Sources: the [official Reflection module](https://arturo-lang.io/documentation/library/reflection); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 11 names resolved.
 

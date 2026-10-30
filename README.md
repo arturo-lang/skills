@@ -134,3 +134,7 @@ The CLI discovers `skills/<name>/SKILL.md` directly; no custom manifest or npm p
 ## License
 
 Documentation is licensed under [CC BY 4.0](LICENSE-CC-BY-4.0.txt). Original standalone code examples, scripts, tests, and configuration are licensed under [MIT](LICENSE-MIT.txt). Upstream material retains its own notices; see [third-party notices](THIRD-PARTY-NOTICES.md) for external package credits and licenses. See [LICENSING.md](LICENSING.md) for scope and attribution; each skill includes its own license texts and notice for independent installation.
+
+## Coverage maintenance
+
+Use [the roadmap](ROADMAP.md), [coverage baseline](COVERAGE.md), and [editorial templates](templates/skill.md). Update coverage evidence with content changes. Verify interpreter changes, upstream API/package revisions, and reported discrepancies against official sources and minimal reproducers. Preserve historical review dates; distinguish source review, execution, and asserted results. The recorded baseline is Arturo 0.10.0 Linux amd64; other combinations remain unverified. Hosted runtime CI results must be observed before claiming they passed.
