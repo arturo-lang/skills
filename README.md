@@ -85,10 +85,6 @@ Skills also cover external packages alongside the tasks they help with:
 
 Each skill keeps its package references, examples, and source links together. Importing a package can download and evaluate code; installing these skills does not install those Arturo packages.
 
-### Looking for an older skill name?
-
-Previously separate skills now live with their related tasks: `arturo-http-json` is in `arturo-networking`; `arturo-quantities` and `arturo-colors` are in `arturo-math`; and `arturo-crypto`, `arturo-databases`, `arturo-dates`, and `arturo-ui` are in `arturo-scripting`. Individual `arturo-<package>` skills have also moved into the skills listed above. Choose the containing skill when installing.
-
 ## Where the guidance comes from
 
 The library draws on the [official Arturo reference](https://arturo-lang.io/llms.txt) and [Arturo examples](https://github.com/arturo-lang/examples). References explain what functions do, when to use them, and how to try them, with links back to the source documentation.
