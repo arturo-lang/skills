@@ -2,6 +2,8 @@
 
 ## Expressions
 
+Use the [symbol reference](symbols.md) to look up the official aliases and their prefix/infix positions.
+
 `print add 2 3` calls `add` with two inputs, then prints the result. Infix symbols alias functions. `2 * 3 + 4` means `2 * (3 + 4)` and yields 14; `(2 * 3) + 4` yields 10. Parenthesize a conversion before concatenation: `(to :string 3) ++ " items"`.
 
 Square brackets preserve code/data without evaluation. `@[expression ...]` evaluates a block into an array; `#[key: value ...]` creates a dictionary. Parentheses evaluate inline. A block containing words does not automatically resolve them into values.

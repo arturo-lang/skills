@@ -36,7 +36,8 @@
         "skills/arturo-language/references/projects.md",
         "skills/arturo-language/examples/project/main.art",
         "skills/arturo-language/references/language.md",
-        "skills/arturo-language/examples/basics.art"
+        "skills/arturo-language/examples/basics.art",
+        "skills/arturo-language/references/symbols.md"
       ],
       "status": "partial"
     },
