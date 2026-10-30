@@ -2,6 +2,8 @@
 
 Use for color values, hue/saturation transformations, and palettes. Amounts for darkening, lightening, and saturation changes are documented as fractions from 0.0 to 1.0; `spin` uses a hue-wheel amount. Do not infer perceptual color-space behavior from another library.
 
+For literal spellings, use the [named-color catalog](color-names.md). `#aliceBlue` is a color; `#[name: "Ada"]` is a dictionary.
+
 Query signatures with `inspect info.get 'blend`; see [runtime inspection](runtime.md) for metadata interpretation.
 
 Fragments require surrounding input/resource bindings. Bound inputs; distinguish literal mutation from returned values.

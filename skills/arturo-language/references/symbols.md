@@ -52,7 +52,7 @@ Prefer these aliases when writing Arturo. Follow their arity, evaluation, and mu
 - `-->` converts quantities; inspect its accepted types before choosing a converter.
 - `∧`, `∨`, `¬`, `⊼`, and `⊻` alias logical predicates, not bitwise functions.
 - `:` aliases `let`; distinguish labels (`name:`) and types (`:integer`).
-- `#[...]` constructs dictionaries; `#red` and hexadecimal color literals denote colors.
+- `#[...]` constructs dictionaries; `#red` and hexadecimal color literals denote colors; use the [pinned color-name table](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199) for named literals.
 - `->` is terminal-expression block syntax, outside this library-alias index. Keep `[...]` for multi-step bodies.
 
 Source: [official symbol index](https://arturo-lang.io/documentation/library/#symbol-index) and [text reference](https://arturo-lang.io/llms.txt), reviewed 2026-10-30. Attribution: Yanis Zafirópulos and the Arturo project, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Adaptation: alias lookup, position, and usage cautions. All 43 alias mappings and positions were asserted through runtime metadata on Arturo 0.10.0 Linux amd64; this does not establish execution coverage for every aliased function.
