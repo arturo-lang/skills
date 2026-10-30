@@ -28,4 +28,4 @@ Reviewed 2026-10-30 against the [official language guide](https://arturo-lang.io
 
 Executed with assertions using `arturo --no-color examples/checks.art` from this skill directory on Arturo 0.10.0 Arizona Bark, amd64/Linux (2026-10-30). Expected stdout: `math ok`; no stderr. This verifies only the cases stated here, not every numeric API or platform.
 
-Additional behavioral examples are available in the [official Arturo unit tests](https://github.com/arturo-lang/arturo/tree/master/tests/unitt).
+Upstream [type-conversion tests](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/types/to.test.art) provide additional conversion examples.

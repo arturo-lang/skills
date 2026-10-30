@@ -50,4 +50,8 @@ When a pattern must treat supplied text literally, construct it with `to :regex 
 
 Reviewed 2026-10-30: [language scope rules](https://arturo-lang.io/documentation/language/#scope-and-rules), [match](https://arturo-lang.io/documentation/library/strings/match/), and [escape](https://arturo-lang.io/documentation/library/strings/escape/). Adapted and condensed from documentation by Yanis Zafirópulos and the Arturo project, licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); examples and boundary checks are original additions.
 
-Additional behavioral examples are available in the [official Arturo unit tests](https://github.com/arturo-lang/arturo/tree/master/tests/unitt).
+Upstream tests by topic:
+
+- Dictionaries: [lookup](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/get.test.art), [keys](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/keys.test.art), [values](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/values.test.art).
+- Collections: [empty inputs](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/empty.test.art), [indexing](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/get.test.art), [mutation](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/set.test.art).
+- Iterators: [map](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/iterators/map.test.art), [fold](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/iterators/fold.test.art), [loop](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/iterators/loop.test.art).

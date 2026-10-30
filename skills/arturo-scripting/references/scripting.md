@@ -60,4 +60,4 @@ The recipe summarizes the Arturo project/Yanis Zafirópulos documentation ([CC B
 - [Command-line arguments](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Command-line%20arguments.art).
 - [Read entire file](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Read%20entire%20file.art).
 
-Additional behavioral examples are available in the [official Arturo unit tests](https://github.com/arturo-lang/arturo/tree/master/tests/unitt).
+Upstream tests: [type conversion](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/types/to.test.art); [error handling](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/exceptions/functions.test.art).
