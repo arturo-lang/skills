@@ -15,4 +15,6 @@ Start with the project's required platforms and stable runtime. Match OS and arc
 
 Keep test jobs separate from publishing. Bundler can build and upload archives without creating a GitHub release. Prepare release workflows when requested, and publish only within the user's requested scope. Package installation and imports can download and execute code; the examples here are source-derived and are not run by this library's offline smoke checks.
 
+Keep external package verification in a separate opt-in lane when default checks must stay offline. Use exact release imports rather than `.latest` or `.min`, report acquisition errors separately from test failures, and verify that an intentional assertion failure produces a failing process status. Clean temporary workspaces after either outcome and retain the selected runtime, package release, and logs as evidence.
+
 Sources and retained licenses: [third-party notices](THIRD-PARTY-NOTICES.md). All local references are included for independent installation.

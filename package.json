@@ -8,7 +8,8 @@
     "test": "bun test",
     "smoke": "bun run scripts/smoke.ts",
     "skills:list": "skills add . --list",
-    "stdlib:inspect": "bun run scripts/stdlib.ts --inspect"
+    "stdlib:inspect": "bun run scripts/stdlib.ts --inspect",
+    "smoke:packages": "bun run scripts/package-smoke.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.6.4",

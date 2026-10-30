@@ -1,17 +1,32 @@
 ; Copyright © RickBarretto, Arturo programming language. MIT licensed.
-; Run in a disposable working directory; these fixtures are overwritten.
-write "first" "fixture.txt"
-ensure [exists? "fixture.txt"]
-ensure ["first" = read "fixture.txt"]
-write.append " second" "fixture.txt"
-ensure ["first second" = read "fixture.txt"]
-write "" "fixture-empty.txt"
-ensure ["" = read.file "fixture-empty.txt"]
-ensure [not? exists? "fixture-missing.txt"]
-contents: "unchanged"
-failed: try [contents: read.file "fixture-missing.txt"]
-ensure [error? failed]
-ensure [contents = "unchanged"]
-ensure [not? exists? "fixture-missing.txt"]
-ensure ["first second" = read.file "fixture.txt"]
+; Run in a disposable working directory; refuse existing fixtures.
+fixture: "scripting-files-fixture.txt"
+emptyFixture: "scripting-empty-fixture.txt"
+missingFixture: "scripting-missing-fixture.txt"
+ensure [not? exists? fixture]
+ensure [not? exists? emptyFixture]
+ensure [not? exists? missingFixture]
+failure: try [
+    write "first" fixture
+    ensure [file? fixture]
+    ensure ["first" = read.file fixture]
+    write.append " second" fixture
+    ensure ["first second" = read.file fixture]
+    write "" emptyFixture
+    ensure ["" = read.file emptyFixture]
+    contents: "unchanged"
+    failed: try [contents: read.file missingFixture]
+    ensure [error? failed]
+    ensure [contents = "unchanged"]
+    ensure [not? exists? missingFixture]
+    ensure ["first second" = read.file fixture]
+    ; Force a write failure without relying on platform permissions.
+    ensure [throws? [write "blocked" fixture ++ "/child.txt"]]
+]
+if exists? fixture [delete fixture]
+if exists? emptyFixture [delete emptyFixture]
+if error? failure [throw to :string failure]
+ensure [not? exists? fixture]
+ensure [not? exists? emptyFixture]
+ensure [throws? [read.file fixture]]
 print "files ok"

@@ -22,6 +22,8 @@ Teach multi-file loading and reusable logic early. Deepen HTTP/JSON, structured 
 
 Exit: worked workflows cover success, malformed inputs, operational failure, and cleanup. Add a separate opt-in pinned-package verification lane; preserve offline default checks.
 
+Implementation evidence (2026-10-30): multi-file and integration workflows are linked in [coverage](COVERAGE.md); the [manual package lane](CONTRIBUTING.md#optional-package-verification) checks exact Unitt 3.1.1 separately from offline defaults. Coverage limits and execution evidence remain explicit in the linked references.
+
 ## 4. Early agent evaluation
 
 Build a Bun runner with one host adapter outside distributed skills. Start with selection, implementation, explanation, debugging, and scope/mutation tasks. Compare with/without skills, keep held-out answers outside workspaces, and execute generated programs with isolation, resource limits, and network disabled.

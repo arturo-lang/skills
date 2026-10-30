@@ -1,0 +1,11 @@
+import.version:3.1.1 "unitt"!
+
+describe "pinned package verification" [
+    it "evaluates a passing assertion" [
+        expects.be: 'equal? @[3 add 1 2]
+    ]
+]
+result: unitt\results
+ensure -> not? result\failed?
+print "PINNED-CASE-READY"
+unitt\report 'minimal

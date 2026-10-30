@@ -32,6 +32,12 @@ bun run smoke
 
 `skills:list` checks CLI discovery without installing skills into an assistant. Smoke checks require `arturo` on PATH. Run them when Arturo is available; if it is unavailable, report that limitation in the pull request. Use `bun run format` for file types supported by Biome, including Markdown, and format Arturo files manually. Review [AGENTS.md](AGENTS.md) for additional repository guidance.
 
+## Optional package verification
+
+`bun run smoke:packages --allow-network` separately downloads and executes the exact `unitt` 3.1.1 release. It checks a passing assertion and a deliberately failing assertion, including the reporter's process status. Run it only when package/network verification is intended. It writes Arturo's normal package cache; temporary test output is removed, while installed packages are retained. Each process has a two-minute timeout. Failures before the fixture reaches reporting cannot count as expected assertion failures.
+
+The **Opt-in pinned package verification** GitHub Actions workflow runs the same lane through manual `workflow_dispatch` only. It is separate from default PR/push checks and uses a fresh runner without a restored package cache. The package version is exact; the stable Arturo channel still moves and its installed version is printed. A version pin is not a content digest or a lock on future transitive dependencies. This lane currently verifies Unitt only; the other external package guides remain source-reviewed.
+
 ## Copyright and licensing
 
 Contribute only material you have the right to submit under the applicable licenses described in [LICENSING.md](LICENSING.md). Documentation and original embedded snippets use CC BY 4.0; original standalone examples, scripts, tests, and configuration use MIT. Preserve existing copyright notices and include appropriate attribution for new or adapted material. Do not replace upstream copyright holders or extend their copyright years.
