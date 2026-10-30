@@ -49,6 +49,7 @@ Once installed, open your coding assistant in the project and ask for something 
 - “Explain how scope and mutation work in this function.”
 - “Find the cause of this Arturo error and add a regression check.”
 - “Help me test this package with Unitt.”
+- “Set up GitHub Actions to test and bundle my Arturo app.”
 
 Include your code, the result you expected, and any error output when you have them. You can also name a skill explicitly if you want the assistant to consult it.
 
@@ -65,6 +66,7 @@ Prefer to explore on your own? Start with the [language skill](skills/arturo-lan
 | [arturo-math](skills/arturo-math/SKILL.md)               | Work with arithmetic, statistics, bits, units, and colors                               |
 | [arturo-networking](skills/arturo-networking/SKILL.md)   | Use HTTP/JSON, network utilities, TCP, and UDP                                          |
 | [arturo-testing](skills/arturo-testing/SKILL.md)         | Write Unitt tests and benchmark commands with Peregrino                                 |
+| [arturo-ci](skills/arturo-ci/SKILL.md)                   | Set up GitHub Actions with setup-arturo, Unitt, and bundler                             |
 | [arturo-validation](skills/arturo-validation/SKILL.md)   | Validate structured data and strings, or coerce values                                  |
 | [arturo-web](skills/arturo-web/SKILL.md)                 | Serve static files and work with HTML, MediaWiki, equations, or diagrams                |
 | [arturo-packages](skills/arturo-packages/SKILL.md)       | Find, install, import, and publish packages through pkgr.art                            |
@@ -76,6 +78,7 @@ Skills also cover external packages alongside the tasks they help with:
 | Skill              | Packages                                                |
 | ------------------ | ------------------------------------------------------- |
 | arturo-testing     | Unitt, Peregrino                                        |
+| arturo-ci          | Unitt (with setup-arturo and bundler GitHub Actions)    |
 | arturo-validation  | schema, validator                                       |
 | arturo-scripting   | Climax, Progressive, Tabular, Tasks, MIMEtypes, Grafito |
 | arturo-language    | optionally, States, ArtSembly                           |
