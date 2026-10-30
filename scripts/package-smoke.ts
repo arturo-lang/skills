@@ -10,8 +10,13 @@ export function verifyPackageResult(
   errors: string,
 ): void {
   if (
-    !output.includes("PINNED-CASE-READY") ||
-    (expectFailure ? code === 0 : code !== 0)
+    !output.split(/\r?\n/).includes("PINNED-CASE-READY") ||
+    errors.trim() !== "" ||
+    (expectFailure
+      ? code !== 1 ||
+        !/FAILED:\s+1 assertion\r?\n/u.test(output) ||
+        !output.trimEnd().endsWith("\nSome tests failed!")
+      : code !== 0)
   ) {
     throw new Error(`${name}: exit ${code}\n${output}\n${errors}`);
   }
