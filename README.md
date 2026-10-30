@@ -39,6 +39,21 @@ Package imports can download and evaluate code. The default smoke suite stays of
 
 ## Install with the skills CLI
 
+Install from GitHub into the project that should receive the skills:
+
+```sh
+bunx skills add arturo-lang/skills
+```
+
+Preview the available skills or install selected skills for specific agents:
+
+```sh
+bunx skills add arturo-lang/skills --list
+bunx skills add arturo-lang/skills --skill arturo-language arturo-collections -a codex claude-code cursor
+```
+
+The CLI requires Node.js 22.20 or later. It discovers this repository's `skills/<name>/SKILL.md` layout directly; no custom manifest or npm publication is needed. See the upstream [skill discovery documentation](https://github.com/vercel-labs/skills/blob/main/docs/creating-skills.md).
+
 From this checkout, choose skills and agents interactively:
 
 ```sh
@@ -64,6 +79,8 @@ bun run smoke
 bun run stdlib:inspect
 bun run format
 ```
+
+CI runs validation, tests, and discovery with the locked Skills CLI dependency. `bun run skills:list` lists this checkout's skills without installing them into an agent.
 
 Bun powers repository tooling; Biome formats supported code, configuration, and Markdown files. Format `.art` files manually. Arturo runs the programs: `arturo file.art` or `arturo -e 'print 2 + 3'`. Smoke checks require `arturo` on PATH and explicitly fail when it is unavailable.
 
