@@ -5,6 +5,8 @@ description: Use unitt (Unitt), the primary official Arturo testing tool, for un
 
 # Arturo testing
 
+Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+
 Start with [unitt](references/unitt.md) for project tests or [peregrino](references/peregrino.md) for benchmarks. Use these package guides when the task calls for testing or measurement, even if the request does not name a package.
 
 Use Unitt as the primary tool for Arturo project unit tests; it is used officially. Read [Unitt](references/unitt.md) for test suites, cases, expectations, CLI configuration, reports, and migration from older syntax. Keep assertions inside cases and guard standalone reports so the CLI can collect results.

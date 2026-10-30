@@ -2,13 +2,13 @@
 
 Progress follows evidence and dependencies rather than calendar dates. Existing skills are starting points, not proof of complete task coverage. See [coverage baseline](COVERAGE.md).
 
-## 1. Verification and inventory — current priority
+## 1. Verification and inventory — done
 
-Maintain the coverage catalog, editorial templates, offline smoke CI, and attribution checks. Inventory upstream examples at recorded revisions; classify dependencies, effects, cost, and expected results.
+Coverage catalog, editorial templates, offline smoke CI, and attribution checks are in place. Skills link to the [official Arturo examples](https://github.com/arturo-lang/examples) for task-relevant patterns; a full upstream example inventory is not required.
 
-Exit: every existing skill and standard-library module has an owner and evidence; every upstream example has a disposition. Historical fragment execution remains distinct from asserted correctness.
+Historical fragment execution remains distinct from asserted correctness.
 
-## 2. Semantic depth and practical recipes
+## 2. Semantic depth and practical recipes — current priority
 
 Expand existing language, collections, math, and scripting guidance before splitting skills. Prioritize arity/grouping, function results, iterator scope, copying and nested mutation, empty inputs, conversions, Unicode, and regex escaping. Add contrasting programs and explained adaptations.
 

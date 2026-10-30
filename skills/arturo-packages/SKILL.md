@@ -5,6 +5,8 @@ description: Find, install, import, create, and publish Arturo packages using th
 
 # Arturo packages
 
+Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+
 Use [pkgr.art](https://pkgr.art/) to discover packages. Read the [package workflow](references/packages.md) for installation, imports, metadata, and publishing. Check `arturo --help` for the installed CLI before choosing flags.
 
 Distinguish registry installation from evaluation: an import can download a missing package and execute its entry file. Establish the intended package, version, and repository before running it. Keep local verification offline where possible; [examples/local-package.art](examples/local-package.art) checks a local package without registry access. Run it from this skill's directory with `arturo examples/local-package.art`.

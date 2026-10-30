@@ -276,13 +276,6 @@
       "status": "backlog"
     },
     {
-      "id": "upstream-example-inventory",
-      "kind": "task",
-      "owner": null,
-      "evidence": ["ROADMAP.md"],
-      "status": "backlog"
-    },
-    {
       "id": "project-organization",
       "kind": "task",
       "owner": null,

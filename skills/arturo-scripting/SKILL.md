@@ -5,6 +5,8 @@ description: Use climax (Climax) to build Arturo CLI tools with typed options, s
 
 # Arturo scripting
 
+Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+
 For CLI tools with typed options, subcommands, or generated help, start with [climax](references/climax.md). Use this guide when asked to build a command-line application, even if the request does not name the package.
 
 For argument parsing or file operations, read [CLI and file patterns](references/scripting.md). Establish inputs, output destinations, current-directory assumptions, and exit behavior before implementing the script.

@@ -5,6 +5,8 @@ description: Implement Arturo arithmetic, statistics, bit operations, unit-aware
 
 # Arturo math, quantities, and colors
 
+Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+
 Read only the module reference relevant to the task:
 
 - [Arithmetic](references/arithmetic-library.md).

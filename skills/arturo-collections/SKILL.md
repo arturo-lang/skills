@@ -5,6 +5,8 @@ description: Implement Arturo collection and text transformations using Collecti
 
 # Arturo collections
 
+Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+
 For iterator, dictionary, or text recipes, read [collection patterns](references/collections.md). Confirm signatures in the [official reference](https://arturo-lang.io/llms.txt) for the collection type being processed.
 
 Choose the operation by its result: `map` transforms, `select` retains matches, `filter` removes matches, `fold` accumulates, and `loop` performs effects. Arturo's `filter` is easy to confuse with other languages' keep-matching operation.

@@ -5,6 +5,8 @@ description: Use schema for Arturo structured data validation, nested schemas, c
 
 # Arturo validation and schemas
 
+Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+
 Start with [schema](references/schema.md) for structured inputs or [validator](references/validator.md) for string formats, including when the request names only the validation task.
 
 Choose validation by the input and required result:
