@@ -8,15 +8,15 @@ Coverage catalog, editorial templates, offline smoke CI, and attribution checks 
 
 Historical fragment execution remains distinct from asserted correctness.
 
-## 2. Semantic depth and practical recipes — current priority
+## 2. Semantic depth and practical recipes — done
 
 Expand existing language, collections, math, and scripting guidance before splitting skills. Prioritize arity/grouping, function results, iterator scope, copying and nested mutation, empty inputs, conversions, Unicode, and regex escaping. Add contrasting programs and explained adaptations.
 
 Exit: each supported task has a normal case, relevant failure or boundary cases, and assertions for outputs and scope/mutation effects. Record remaining gaps explicitly.
 
-Progress: language, collections, math, and scripting now include asserted semantic recipes for the priorities above. References record remaining gaps, including resource copying, exceptional iterator cleanup, grapheme handling, and numeric precision limits; broad task completeness is not yet claimed.
+Completed: the priority recipes above have normal and boundary/failure cases, result assertions, and relevant scope/mutation checks in the language, collections, math, and scripting examples. References record remaining gaps, including resource copying, exceptional iterator cleanup, grapheme handling, and numeric precision limits. This completes the focused recipe pass, not exhaustive verification of every API.
 
-## 3. Project organization and integrations
+## 3. Project organization and integrations — current priority
 
 Teach multi-file loading and reusable logic early. Deepen HTTP/JSON, structured data, filesystem, CLI, dates, and database lifecycle guidance. Testing, CI, validation, web, and packages already exist; expand their incomplete workflows rather than recreating them.
 

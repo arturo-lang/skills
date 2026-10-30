@@ -12,13 +12,13 @@ Use these patterns when porting arithmetic or accepting numeric input. [checks.a
 
 ## Convert inputs explicitly
 
-Use `to :integer "42"` for a numeric string and `to :floating 4` for floating representation. `to :integer 4.9` yields 4 and `to :integer neg 4.9` yields -4 on the checked runtime: this truncates toward zero rather than rounding to the nearest integer. Malformed input such as `"not-a-number"` raises an error; use `try` and inspect its error result before continuing. Do not silently replace invalid input with zero.
+Use `to :integer "42"` for a numeric string and `to :floating 4` for floating representation. `to :integer 4.9` yields 4 and `to :integer neg 4.9` yields -4 on the checked runtime: this truncates toward zero rather than rounding to the nearest integer. Malformed input such as `"not-a-number"` raises an error; use `try` and inspect its error result before continuing. Do not silently replace invalid input with zero. The checks assert that a failed conversion leaves both its input string and the previous destination binding unchanged; the preserved destination is not a successful parse result.
 
 Convert before combining unlike types: `(to :string 4) ++ " units"`. Without parentheses, the concatenation is attempted before conversion. Native `convert` instead converts quantities to units; it is not the general type converter.
 
 ## Decide what an empty dataset means
 
-`sum []` returns 0 and `product []` returns 1. These are useful identities, not evidence that every statistical function accepts an empty dataset. `average []` raises an error on the checked runtime. Guard emptiness and choose an application policy (for example, no result) rather than assigning an invented mean of zero.
+`sum []` returns 0 and `product []` returns 1. These are useful identities, not evidence that every statistical function accepts an empty dataset. `average []` raises an error on the checked runtime without changing the empty input. Guard emptiness and choose an application policy (for example, no result) rather than assigning an invented mean of zero. The normal-case checks also assert that `average`, `variance`, and `median sort samples` leave the original unsorted input unchanged; `sort samples` supplies a sorted result rather than sorting the input binding in place.
 
 A singleton has an average equal to its element and population variance zero. `variance` uses population variance by default; `.sample` changes the estimator: `[1 3]` has sample variance 2.0. Require at least two elements when your task calls for sample variance. The checked runtime returns 0.0 for a singleton sample instead of raising an error; that returned number does not make the estimator mathematically defined. Non-finite numbers, overflow, arbitrary precision, and mixed numeric-type combinations remain outside these assertions.
 

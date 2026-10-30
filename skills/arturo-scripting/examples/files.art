@@ -1,6 +1,17 @@
+; Copyright © RickBarretto, Arturo programming language. MIT licensed.
+; Run in a disposable working directory; these fixtures are overwritten.
 write "first" "fixture.txt"
 ensure [exists? "fixture.txt"]
 ensure ["first" = read "fixture.txt"]
 write.append " second" "fixture.txt"
 ensure ["first second" = read "fixture.txt"]
+write "" "fixture-empty.txt"
+ensure ["" = read.file "fixture-empty.txt"]
+ensure [not? exists? "fixture-missing.txt"]
+contents: "unchanged"
+failed: try [contents: read.file "fixture-missing.txt"]
+ensure [error? failed]
+ensure [contents = "unchanged"]
+ensure [not? exists? "fixture-missing.txt"]
+ensure ["first second" = read.file "fixture.txt"]
 print "files ok"
