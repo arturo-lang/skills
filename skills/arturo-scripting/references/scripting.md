@@ -6,6 +6,24 @@
 
 Validate the number of positional arguments before indexing. Use `to :integer` only after establishing expected input and handle conversion errors. Use `exit` for the intended process result after checking the installed function's signature.
 
+### A count is different from an identifier
+
+[input-count.art](../examples/input-count.art) defines `countFrom inputs`: require one argument, convert it with `to :integer`, reject negative counts, and return the result explicitly. `"001"` becomes `1` for a count; keep the raw string for an identifier. The assertions contrast valid counts with zero, missing/extra arguments, an empty string, malformed text, and a negative value. They also check that the input block and an outer `count` binding remain unchanged by function-local assignments.
+
+To adapt the routine to a CLI, pass `arg` instead of the example blocks. Assign the result inside `try`, then branch on `error?` before using it:
+
+```arturo
+parsed: null
+err: try [parsed: countFrom arg]
+switch error? err [
+    print "Expected one nonnegative integer count"
+][
+    print parsed
+]
+```
+
+This fragment assumes `countFrom` from the worked example is already defined. Add the application's chosen exit status at its entry point. `try` returns null on success, not the parsed count. If the right-hand side fails, an earlier `parsed` value remains; never treat it as the current result without checking `err`. This routine delegates accepted numeric text to the installed converter; it does not enforce a digits-only grammar or a workload limit. Add those constraints when the count will control expensive work.
+
 `arturo -e 'print 2 + 3'` is convenient for a small reproduction. Prefer a file for multi-line programs and shell-sensitive strings. Do not assume every experimental compile/bundle option is present across interpreter versions.
 
 ## Files and paths
@@ -30,6 +48,13 @@ For external processes, look up System/execute and System/process and their resu
 `err: try [ ... ]` captures an error value; `error? err` distinguishes failure. Assign a needed result inside the action because `try` itself reports null/error rather than the action's successful result. Test missing-file and invalid-input cases in an isolated directory.
 
 ## Sources
+
+Count recipe reviewed and asserted on 2026-10-30 using Arturo 0.10.0 Arizona Bark, amd64/Linux: `arturo --no-color examples/input-count.art` prints `input count ok`. It is offline and does not read or write files. The CLI adaptation uses the same routine; shell invocation and process exit handling are application-specific.
+
+The recipe summarizes the Arturo project/Yanis Zafirópulos documentation ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)), reorganized with original contrasting examples and assertions:
+
+- [Language evaluation and scope](https://arturo-lang.io/documentation/language/).
+- [System/arg](https://arturo-lang.io/documentation/library/system/arg/), [Types/to](https://arturo-lang.io/documentation/library/types/to/), and [Exceptions/try](https://arturo-lang.io/documentation/library/exceptions/try/).
 
 - [Official reference](https://arturo-lang.io/llms.txt): Files; Paths; System/arg, args, script, path, execute, process, exit; Exceptions/try.
 - [Command-line arguments](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Command-line%20arguments.art).

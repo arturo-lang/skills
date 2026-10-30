@@ -19,6 +19,8 @@ Keep reusable logic in functions and CLI effects at the entry point. Consult the
 
 Run an ordinary input and relevant invalid/empty input. Verify resulting file contents and exit behavior, not just whether the interpreter starts. [examples/arguments.art](examples/arguments.art) demonstrates raw argument iteration.
 
+[Count parsing](references/scripting.md#a-count-is-different-from-an-identifier) contrasts raw identifiers with numeric counts, missing/invalid inputs, function-local bindings, and successful versus failed `try` results; [offline assertions](examples/input-count.art) verify the routine.
+
 ## CLI tools and automation packages
 
 Use built-in argument handling for small scripts; use Climax when the tool needs typed options, subcommands, generated help, and dispatch. Package imports may download and evaluate code. Read only the package guide needed for the task and check its documented release against the installed version. These package examples are documentation-based; the default smoke suite stays offline and does not install them.

@@ -1,5 +1,9 @@
 # Sources and maintenance
 
+## Semantic recipes
+
+Reviewed 2026-10-30 against the [official language guide](https://arturo-lang.io/documentation/language), relevant official library entries, and the [text reference](https://arturo-lang.io/llms.txt). Language, collections, math, and scripting references record their specific sources and limits. Original offline assertions cover evaluation and arity, function results, scope and nested mutation, empty inputs, numeric conversion, Unicode, regex escaping, and CLI count validation. Verified on Arturo 0.10.0 Arizona Bark, amd64/Linux through the expanded smoke suite. Historical metadata and fragment-execution claims below remain separate from these assertions. No external package or upstream example collection was downloaded or executed for these recipes.
+
 ## CI guidance
 
 Reviewed 2026-10-30 using the GitHub CLI against [setup-arturo v2](https://github.com/arturo-lang/setup-arturo/tree/59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7), [bundler v2](https://github.com/arturo-lang/bundler/tree/856568f0f4c5baf6ee61e9a963abacda3dd4e2d9), and [Unitt v3.1.1](https://github.com/RickBarretto/unitt/tree/v3.1.1). The independently installable arturo-ci skill includes workflow and testing references plus retained MIT notices. Action source was checked alongside README examples, especially archive upload versus release publication and version inputs. Workflow examples are source-derived; local validation does not execute GitHub Actions, download Unitt, or build application binaries.

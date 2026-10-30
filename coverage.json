@@ -11,7 +11,11 @@
       "id": "arturo-collections",
       "kind": "skill",
       "owner": "arturo-collections",
-      "evidence": ["skills/arturo-collections/SKILL.md"],
+      "evidence": [
+        "skills/arturo-collections/SKILL.md",
+        "skills/arturo-collections/references/collections.md",
+        "skills/arturo-collections/examples/collections.art"
+      ],
       "status": "partial"
     },
     {
@@ -25,14 +29,22 @@
       "id": "arturo-language",
       "kind": "skill",
       "owner": "arturo-language",
-      "evidence": ["skills/arturo-language/SKILL.md"],
+      "evidence": [
+        "skills/arturo-language/SKILL.md",
+        "skills/arturo-language/references/language.md",
+        "skills/arturo-language/examples/basics.art"
+      ],
       "status": "partial"
     },
     {
       "id": "arturo-math",
       "kind": "skill",
       "owner": "arturo-math",
-      "evidence": ["skills/arturo-math/SKILL.md"],
+      "evidence": [
+        "skills/arturo-math/SKILL.md",
+        "skills/arturo-math/references/numeric-recipes.md",
+        "skills/arturo-math/examples/checks.art"
+      ],
       "status": "partial"
     },
     {
@@ -53,7 +65,11 @@
       "id": "arturo-scripting",
       "kind": "skill",
       "owner": "arturo-scripting",
-      "evidence": ["skills/arturo-scripting/SKILL.md"],
+      "evidence": [
+        "skills/arturo-scripting/SKILL.md",
+        "skills/arturo-scripting/references/scripting.md",
+        "skills/arturo-scripting/examples/input-count.art"
+      ],
       "status": "partial"
     },
     {
@@ -264,9 +280,12 @@
     {
       "id": "language-foundations",
       "kind": "task",
-      "owner": null,
-      "evidence": ["ROADMAP.md"],
-      "status": "backlog"
+      "owner": "arturo-language",
+      "evidence": [
+        "skills/arturo-language/references/language.md",
+        "skills/arturo-language/examples/basics.art"
+      ],
+      "status": "partial"
     },
     {
       "id": "package-guidance",
@@ -292,9 +311,12 @@
     {
       "id": "unicode-and-regex",
       "kind": "task",
-      "owner": null,
-      "evidence": ["ROADMAP.md"],
-      "status": "backlog"
+      "owner": "arturo-collections",
+      "evidence": [
+        "skills/arturo-collections/references/collections.md",
+        "skills/arturo-collections/examples/collections.art"
+      ],
+      "status": "partial"
     },
     {
       "id": "refactoring-and-performance",

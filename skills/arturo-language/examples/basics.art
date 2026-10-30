@@ -1,7 +1,28 @@
+; Copyright © RickBarretto, Arturo programming language. MIT licensed.
+
 ensure [14 = 2 * 3 + 4]
 ensure [10 = (2 * 3) + 4]
+; Arity determines argument boundaries; grouping the conversion matters.
+ensure ["3 items" = (to :string 3) ++ " items"]
+ensure [throws? [to :string 3 ++ " items"]]
+ensure [throws? [do [add 1]]]
 double: function [x][x * 2]
 ensure [8 = double 4]
+typedDouble: function [x :integer][x * 2]
+ensure [8 = typedDouble 4]
+ensure [throws? [typedDouble "4"]]
+
+; A function can leave several values, even when its final statement returns.
+extraResult: function [x][
+    x + 1
+    return x * 2
+]
+ensure [@[extraResult 3] = [4 6]]
+oneResult: function [x][
+    intermediate: x + 1
+    return intermediate * 2
+]
+ensure [@[oneResult 3] = [8]]
 scopeValue: 1
 do [scopeValue: 2]
 ensure [scopeValue = 2]
@@ -11,6 +32,18 @@ localValue: function [][
 ]
 ensure [3 = localValue]
 ensure [scopeValue = 2]
+; Iterator arguments are restored; other assignments persist.
+item: "outside"
+total: 0
+loop [1 2] 'item [total: total + item]
+ensure [item = "outside"]
+ensure [total = 3]
+loop [] 'item [total: 100]
+ensure [item = "outside"]
+ensure [total = 3]
+loop [1] 'temporary [ensure [temporary = 1]]
+ensure [throws? [print temporary]]
+
 original: [3 1 2]
 ordered: sort original
 ensure [original = [3 1 2]]
@@ -19,6 +52,19 @@ copy: new original
 sort 'copy
 ensure [original = [3 1 2]]
 ensure [copy = [1 2 3]]
+; set mutates shared nested data; new isolates this nested block copy.
+nested: [[1 2] [3]]
+shared: nested
+set shared\0 0 9
+ensure [nested = [[9 2] [3]]]
+independent: new nested
+set independent\0 0 7
+ensure [independent = [[7 2] [3]]]
+ensure [nested = [[9 2] [3]]]
+changeFirst: function [items][set items\0 0 42]
+changeFirst nested
+ensure [nested = [[42 2] [3]]]
+ensure [independent = [[7 2] [3]]]
 ensure [between? 2 1 3]
 ensure [not? same? 3 3.0]
 ensure [and? true true]
