@@ -5,7 +5,6 @@ metadata:
   package-version: 1.0.0
   arturo-version: 0.10.0
   review-date: 2026-10-29
-  source-revision: 6cd03b031c2f037ed39df675064b897960addbe2
 ---
 
 # Tasks automation
