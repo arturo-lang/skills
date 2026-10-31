@@ -7,16 +7,18 @@ metadata:
 
 # Arturo CI
 
-Use [workflow guidance](references/workflows.md) to install Arturo with `arturo-lang/setup-arturo`, run tests, or build executables with `arturo-lang/bundler`. Inspect the project's existing workflow, test entry points, package metadata, and supported platforms before choosing jobs or a matrix.
+Use [workflow guidance](references/workflows.md) to install Arturo with `arturo-lang/setup-arturo`, run tests, or build executables with `arturo-lang/bundler`. 
+
+Inspect the project's existing workflow, test entry points, package metadata, and supported platforms before choosing jobs or a matrix.
+
+## Testing
 
 Use [Unitt guidance](references/unitt.md) for test cases, discovery configuration, and reporting. Keep test failures visible in the job exit status.
 
-Start with the project's required platforms and stable runtime. Match OS and architecture to actual runners; selecting an action input does not provision a matching runner. Use the Windows MSYS2 or FreeBSD VM shell where required. Check upstream action metadata at the project's selected revision before changing inputs or version pins.
+## Principles
 
-Keep test jobs separate from publishing. Bundler can build and upload archives without creating a GitHub release. Prepare release workflows when requested, and publish only within the user's requested scope.
-
-Package installation and imports can download and execute code.
-
-Keep external package verification in a separate opt-in lane when default checks must stay offline. Use exact release imports rather than `.latest` or `.min`, report acquisition errors separately from test failures, and verify that an intentional assertion failure produces a failing process status.
-
-Clean temporary workspaces after either outcome and retain the selected runtime, package release, and logs as evidence.
+- Platform compatibility: Match OS, architecture, runners, and shells to project requirements. Verify upstream action metadata before changing versions or inputs.
+- Testing and publishing: Keep tests separate from releases. Build and upload artifacts independently; publish only when explicitly requested.
+- Security: Treat package installation and imports as potentially executable code.
+- External verification: Keep dependency tests opt-in and isolated. Pin exact versions, distinguish download errors from test failures, and verify nonzero exit codes on failed assertions.
+- Reproducibility: Always clean temporary workspaces and preserve runtime details, dependency versions, and logs.
