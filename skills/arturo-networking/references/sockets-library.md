@@ -11,9 +11,7 @@ metadata:
 
 Use for TCP or UDP transport rather than HTTP abstractions. Socket examples require a peer and are documentation-only here. Bound receiving and connection waits, define message framing, and close accepted client sockets as well as listeners. `.timeout:` on `receive` is documented in milliseconds; inspect every other timeout separately.
 
-Query signatures with `inspect info.get 'accept`; see [runtime inspection](runtime.md) for metadata interpretation.
-
-Examples are independent fragments; names such as `value`, `items`, `settings`, `client`, `server`, `db`, and `childPid` denote inputs or resources prepared by the surrounding program. They are not implicit globals. Requires prepared sockets and a peer; receive/accept can block.
+Examples are independent fragments with prepared sockets and a peer; `client` and `server` are caller-supplied handles. Receive/accept can block.
 
 | Name                                                                    | Purpose / when to use                                          | Example                               |
 | ----------------------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------- |

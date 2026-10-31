@@ -2,9 +2,24 @@
 metadata:
   arturo-version: 0.10.0
   review-date: 2026-10-30
+  sources:
+    - https://arturo-lang.io/documentation/library/net
+    - https://arturo-lang.io/llms.txt
 ---
 
-# HTTP and JSON patterns
+# HTTP, JSON, and Net helpers
+
+## Function selection
+
+Net selection guide reviewed 2026-10-29 against the [Net library](https://arturo-lang.io/documentation/library/net) and [official reference](https://arturo-lang.io/llms.txt). These independent fragments require configured destinations or resources; they are documentation-only and can perform external actions. Keep destinations and credentials configurable. Verify server routes and lifecycle against the installed runtime.
+
+| Name                                                                  | Purpose / when to use                                      | Example                                                            |
+| --------------------------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------ |
+| [browse](https://arturo-lang.io/documentation/library/net/browse)     | Open URL with default browser.                             | `browse "https://example.com"`                                     |
+| [download](https://arturo-lang.io/documentation/library/net/download) | Download file from url to disk.                            | `download "https://example.com/file.txt"`                          |
+| [mail](https://arturo-lang.io/documentation/library/net/mail)         | Send mail using subject and message to selected recipient. | `mail.using: settings "recipient@example.com" "Subject" "Message"` |
+| [request](https://arturo-lang.io/documentation/library/net/request)   | Perform HTTP request to url with data and get response.    | `request "https://example.com" null`                               |
+| [serve](https://arturo-lang.io/documentation/library/net/serve)       | Start web server using routes.                             | `serve.port: 18966 [GET "/" ["hello"]]`                            |
 
 ## JSON
 
@@ -50,7 +65,7 @@ profile: decodeProfile response scratchPath
 
 Any scratch directory remains the caller's responsibility to remove.
 
-`read "https://..."` is a short way to fetch content when metadata is unnecessary, as demonstrated upstream. Prefer `request` when status, headers, a method, or a timeout matters. Server implementation with `serve` is a separate API: inspect Net/serve rather than adapting the client interface.
+`read "https://..."` is a short way to fetch content when metadata is unnecessary, as demonstrated upstream. Prefer `request` when status, headers, a method, or a timeout matters. For servers, inspect [serve](https://arturo-lang.io/documentation/library/net/serve) rather than adapting the client interface.
 
 ## Worked offline response workflow
 
@@ -60,7 +75,7 @@ Ordinary function locals hold the parsed value; passing the response dictionary 
 
 Cleanup runs after the captured parse or validation failure, then a deliberate application error reaches the caller. Cleanup itself can fail and should be reported; the host should remove its temporary directory even if the program exits unsuccessfully.
 
-Remove the scratch file after success or parsing failure. Check live transport, timeouts, TLS, and retries separately.
+Check live transport, timeouts, TLS, and retries separately.
 
 - [Official reference](https://arturo-lang.io/llms.txt): Net/request; Files/read, write; Exceptions/try; Collections/key?.
 - [JSON example](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/JSON.art).

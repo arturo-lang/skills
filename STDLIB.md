@@ -18,7 +18,7 @@ Reviewed 2026-10-29: all 26 official modules and 521 entries are mapped below. F
 | Io          | 8       | [arturo-scripting](skills/arturo-scripting/references/io-library.md)              |
 | Iterators   | 15      | [arturo-collections](skills/arturo-collections/references/iterators-library.md)   |
 | Logic       | 14      | [arturo-language](skills/arturo-language/references/logic-library.md)             |
-| Net         | 5       | [arturo-networking](skills/arturo-networking/references/net-library.md)           |
+| Net         | 5       | [arturo-networking](skills/arturo-networking/references/http-json.md)             |
 | Numbers     | 60      | [arturo-math](skills/arturo-math/references/numeric.md#numbers)                   |
 | Paths       | 6       | [arturo-scripting](skills/arturo-scripting/references/paths-library.md)           |
 | Quantities  | 112     | [arturo-math](skills/arturo-math/references/quantities.md#quantities)             |
