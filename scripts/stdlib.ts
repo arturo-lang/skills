@@ -29,6 +29,12 @@ export async function validateStdlib(root: string): Promise<string[]> {
     modules.add(module.name);
     const path = resolve(root, "skills", module.skill, module.reference);
     const content = await readFile(path, "utf8");
+    const referenceSymbols = inventory.modules
+      .filter(
+        (entry) =>
+          entry.skill === module.skill && entry.reference === module.reference,
+      )
+      .flatMap((entry) => entry.symbols);
     const documented = [
       ...content.matchAll(/^\| (?:`([^`]+)`|\[([^\]]+)\]\([^)]*\))\s+\|/gm),
     ].map((match) => match[1] ?? match[2]);
@@ -39,7 +45,7 @@ export async function validateStdlib(root: string): Promise<string[]> {
         errors.push(`${module.name}/${symbol}: missing selection-guide entry`);
     }
     for (const symbol of documented) {
-      if (!module.symbols.includes(symbol))
+      if (!referenceSymbols.includes(symbol))
         errors.push(`${module.name}/${symbol}: absent from source inventory`);
       if (documented.filter((name) => name === symbol).length > 1)
         errors.push(

@@ -1,19 +1,22 @@
 ---
 metadata:
   arturo-version: 0.10.0
-  review-date: 2026-10-29
   sources:
-    - https://arturo-lang.io/documentation/library/quantities
     - https://arturo-lang.io/llms.txt
+    - https://arturo-lang.io/documentation/library/quantities
 ---
 
-# Quantities: function selection
+# Quantities reference
+
+## Quantities
+
+Source review: 2026-10-29.
 
 Use for dimensional quantities, units, conversion, custom units, and physical constants. A backtick introduces a unit (see the examples below). Keep the quantity until unit validation is complete; `scalar` removes units. Check dimensions and precision rather than treating unlike quantities as plain numbers.
 
 Currency examples may depend on external data and are not part of offline checks.
 
-Signatures and mutation: [runtime](runtime.md). Examples are fragments; bound inputs.
+Signatures and mutation: [runtime](numeric.md#runtime). Examples are fragments; bound inputs.
 
 | Name                                                                                                           | Purpose / example                                                                           |
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |

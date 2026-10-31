@@ -75,6 +75,6 @@ The language [symbol reference](skills/arturo-language/references/symbols.md) ma
 
 ## Named-color catalog
 
-Reviewed 2026-10-30: the 578-name `colorNames` table in [vcolor.nim, lines 620–1199](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199). The [math reference](skills/arturo-math/references/color-names.md) preserves every spelling and groups native color literals by initial;
+Reviewed 2026-10-30: the 578-name `colorNames` table in [vcolor.nim, lines 620–1199](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199). The [math reference](skills/arturo-math/references/colors.md#named-colors) preserves every spelling and groups native color literals by initial;
 
 Task #3 review follow-up, 2026-10-30: the filesystem and database examples now force errors to escape their action blocks, then assert cleanup after the workflow propagates the error. SQLite closure is recorded only after `close` returns; no closed handle is queried. Verified offline on Arturo 0.10.0 Linux amd64. The Unitt 3.1.1 negative fixture was also executed: exit 1, one reported failed assertion, the terminal failure message, and empty stderr. The runner enforces this result, and Bun regressions reject reporter crashes and unrelated failures.
