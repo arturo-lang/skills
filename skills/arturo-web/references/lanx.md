@@ -1,10 +1,10 @@
 ---
 metadata:
-  author: "Yanis Zafirópulos (drkameleon)"
-  license: "MIT"
-  package-version: "0.2.0"
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
+  author: Yanis Zafirópulos (drkameleon)
+  license: MIT
+  package-version: 0.2.0
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
   sources:
     - https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/src/lanx.art
     - https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/src/cli.art

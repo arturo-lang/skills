@@ -1,7 +1,7 @@
 ---
 metadata:
-  arturo-version: "0.10.0"
-  review-date: "2026-10-30"
+  arturo-version: 0.10.0
+  review-date: 2026-10-30
 ---
 
 # GitHub Actions for Arturo

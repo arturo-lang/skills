@@ -1,10 +1,10 @@
 ---
 metadata:
-  author: "Yanis Zafirópulos (drkameleon)"
-  license: "MIT"
-  package-version: "0.9.0"
-  arturo-version: "0.10.0"
-  source-package-version: "0.8.0"
+  author: Yanis Zafirópulos (drkameleon)
+  license: MIT
+  package-version: 0.9.0
+  arturo-version: 0.10.0
+  source-package-version: 0.8.0
   sources:
     - https://validator.pkgr.art/
     - https://github.com/drkameleon/validator.art/tree/v0.8.0

@@ -1,7 +1,7 @@
 ---
 metadata:
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
 ---
 
 # Diagnostic patterns

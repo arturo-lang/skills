@@ -1,10 +1,10 @@
 ---
 metadata:
-  author: "Komo (asumbek)"
-  license: "MIT"
-  package-version: "0.1.1"
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
+  author: Komo (asumbek)
+  license: MIT
+  package-version: 0.1.1
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
   sources:
     - https://rsv.pkgr.art/
     - https://github.com/asumbek/art-rsv/blob/v0.1.1/rsv.art

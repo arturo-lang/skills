@@ -1,11 +1,11 @@
 ---
 metadata:
-  author: "Yanis Zafirópulos (drkameleon)"
-  license: "MIT"
-  package-version: "0.1.2"
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
-  source-revision: "v0.1.2"
+  author: Yanis Zafirópulos (drkameleon)
+  license: MIT
+  package-version: 0.1.2
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
+  source-revision: v0.1.2
 ---
 
 # Peregrino benchmarking

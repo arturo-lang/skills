@@ -1,10 +1,10 @@
 ---
 metadata:
-  author: "Eloi Torrents (Eloitor)"
-  license: "Beerware-42"
-  package-version: "0.0.1"
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
+  author: Eloi Torrents (Eloitor)
+  license: Beerware-42
+  package-version: 0.0.1
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
   sources:
     - https://mermaid.pkgr.art/
     - https://codeberg.org/Eloitor/mermaid.art/src/tag/v0.0.1

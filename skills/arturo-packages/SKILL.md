@@ -2,7 +2,7 @@
 name: arturo-packages
 description: Find, install, import, create, and publish Arturo packages using the official pkgr.art registry, package metadata, and versioned releases.
 metadata:
-  arturo-version: "0.10.0"
+  arturo-version: 0.10.0
 ---
 
 # Arturo packages
