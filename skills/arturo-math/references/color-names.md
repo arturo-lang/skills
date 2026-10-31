@@ -8,22 +8,9 @@ metadata:
 
 # Named color literals
 
-Use `#name` for a native `:color`, for example `#aliceBlue` or `#rebeccaPurple`. Use `#[...]` for a dictionary. Keep these separate from function aliases: the `#` dictionary constructor does not construct a named color.
+`#aliceBlue` / `#rebeccaPurple` are native `:color` values; `#[foreground: #rebeccaPurple]` is a dictionary. The `#` dictionary-constructor alias does not construct named colors. Example: `blend #red #aliceBlue`.
 
-This catalog preserves all 578 names and their spellings from the [pinned `colorNames` table](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199).
-
-It is Arturo's catalog; do not substitute a CSS color list or normalize unusual spellings such as `clemantisViolet` or `mediumAquaMarine`. Named colors can be used directly with color transformations, such as `blend #red #aliceBlue`.
-
-```art
-ensure -> color? #aliceBlue
-ensure -> #F0F8FF = #aliceBlue
-ensure -> #663399 = #rebeccaPurple
-ensure -> dictionary? #[foreground: #rebeccaPurple]
-```
-
-## Catalog
-
-Read only the group you need or search for a name. Each entry below is a color literal.
+All 578 spellings below come from the pinned source above; preserve unusual names (`clemantisViolet`, `mediumAquaMarine`) rather than substituting CSS names. `#aliceBlue = #F0F8FF`; `#rebeccaPurple = #663399`. Search or read only the needed initial.
 
 ### A
 
@@ -120,3 +107,5 @@ Read only the group you need or search for a name. Each entry below is a color l
 ### Z
 
 `#zombieGreen`.
+
+References: [pinned `colorNames` table](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199).
