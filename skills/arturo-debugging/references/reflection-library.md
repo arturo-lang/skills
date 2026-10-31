@@ -7,13 +7,14 @@ metadata:
     - https://arturo-lang.io/llms.txt
 ---
 
-# Reflection: function selection
+### Runtime Introspection
 
-Use to discover runtime signatures, values, attributes, and execution context. Prefer `inspect info.get` for signatures. `attr`, `attr?`, and `attrs` read call attributes in the function context; benchmark only bounded work and keep diagnostic output separate from program output.
-
-Query signatures with `inspect info.get 'arity`; see [runtime inspection](runtime.md) for metadata interpretation.
-
-Examples are independent fragments; names such as `value`, `items`, `settings`, `client`, `server`, `db`, and `childPid` denote inputs or resources prepared by the surrounding program. They are not implicit globals. Attribute examples define functions; call them with suitable attributes to observe values.
+- Inspection: Use `inspect info.get` to discover runtime signatures, values, attributes, and execution context.
+- Signatures: Query specific functions with `inspect info.get 'arity`. Consult `runtime.md` to interpret metadata.
+- Attributes: `attr`, `attr?`, and `attrs` access call attributes within function contexts.
+- Benchmarking: Keep workloads bounded and diagnostic output separate from program output.
+- Examples: Treat fragments as independent. Variables such as `items`, `settings`, and `client` require explicit initialization.
+- Validation: Call attribute-enabled functions with appropriate attributes to verify behavior.
 
 | Name                                                                               | Purpose / when to use                                   | Example                                               |
 | ---------------------------------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------- |

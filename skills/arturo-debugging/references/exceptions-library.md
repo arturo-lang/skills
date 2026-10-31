@@ -7,13 +7,13 @@ metadata:
     - https://arturo-lang.io/llms.txt
 ---
 
-# Exceptions: function selection
+### Error Handling
 
-Use for explicit errors, guarded evaluation, and error detection. Error-kind constants are not exception-catching syntax. Preserve useful errors rather than swallowing them. Check the result of `try` and verify whether a block leaves additional stack values.
-
-Query signatures with `inspect info.get 'arithmeticError`; see [runtime inspection](runtime.md) for metadata interpretation.
-
-Fragments require surrounding input/resource bindings. Bound inputs; distinguish literal mutation from returned values.
+- Purpose: Use for explicit errors, guarded evaluation, and error detection.
+- Error kinds: Constants identify error types; they are not exception-catching syntax.
+- Error preservation: Propagate meaningful errors instead of silently suppressing them.
+- Guarded execution: Inspect the result of `try` to distinguish success from failure.
+- Stack safety: Verify whether evaluated blocks leave additional values on the stack.
 
 | Name                                                                                       | Purpose / when to use                                  | Example                                    |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------ |
