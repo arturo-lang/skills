@@ -9,10 +9,9 @@ metadata:
 
 ### Runtime Introspection
 
-- Inspection: Use `inspect info.get` to discover runtime signatures, values, attributes, and execution context.
-- Signatures: Query specific functions with `inspect info.get 'arity`. Consult `runtime.md` to interpret metadata.
+- Signatures: Follow [runtime guidance](runtime.md) to query and interpret builtin metadata.
 - Attributes: `attr`, `attr?`, and `attrs` access call attributes within function contexts.
-- Benchmarking: Keep workloads bounded and diagnostic output separate from program output.
+- Benchmarking: Keep workloads bounded.
 - Examples: Treat fragments as independent. Variables such as `items`, `settings`, and `client` require explicit initialization.
 - Validation: Call attribute-enabled functions with appropriate attributes to verify behavior.
 
