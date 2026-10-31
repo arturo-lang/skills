@@ -6,6 +6,7 @@ metadata:
     - https://arturo-lang.io/documentation/library/reflection/inspect
     - https://arturo-lang.io/documentation/library/reflection/info
     - https://arturo-lang.io/llms.txt
+    - https://arturo-lang.io/documentation/command-line
 ---
 
 # Ask Arturo for signatures
@@ -46,3 +47,20 @@ These are condensed readings of actual output, not a replacement for querying th
 | `when`         | One `conditions :block` argument. `.any` is a logical flag; `.has: value` accepts `:any`. Metadata lists `:logical`.                                                                                                                                |
 | `function`     | Two arguments: `arguments :literal :block`, then `body :block`. `.import:` and `.export:` take blocks; `.memoize` and `.inline` are flags. Returns `:function`; `$` is prefix.                                                                      |
 | `sort`         | One argument accepting `:literal`, `:pathliteral`, `:dictionary`, or `:block`. `.descending` is a flag; `.by:` accepts a string or literal. Results include `:block` or `:nothing`; inspect literal mutation separately from value-returning calls. |
+
+## CLI verification
+
+Use the installed runtime's `arturo --help` and `arturo --version` to check available options. Arturo executes `.art` files directly; no build step is needed for ordinary verification.
+
+| Task                               | Command                               |
+| ---------------------------------- | ------------------------------------- |
+| Execute a file                     | `arturo path.art`                     |
+| Evaluate a small expression        | `arturo -e 'ensure [14 = 2 * 3 + 4]'` |
+| Capture output without ANSI colors | `arturo --no-color path.art`          |
+| Experiment interactively           | `arturo --repl`                       |
+
+Use a file for code containing literal identifiers such as `'items`; embedding these inside shell single quotes breaks shell quoting. Check exit status and stderr as well as output. Run examples that create files in a temporary directory.
+
+Package imports can install missing packages automatically. Keep routine language checks free of remote package imports. Prefer the standard library unless dependencies serve the task.
+
+Bytecode (`--compile`, `--execute`) and bundling (`--bundle`, `--as`) are documented as experimental; consult the installed help before using them for a requested deliverable.

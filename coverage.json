@@ -1,19 +1,12 @@
 {
   "entries": [
     {
-      "id": "arturo-ci",
-      "kind": "skill",
-      "owner": "arturo-ci",
-      "evidence": ["skills/arturo-ci/SKILL.md"],
-      "status": "partial"
-    },
-    {
       "id": "arturo-collections",
       "kind": "skill",
       "owner": "arturo-collections",
       "evidence": [
         "skills/arturo-collections/SKILL.md",
-        "skills/arturo-collections/references/collections.md",
+        "skills/arturo-collections/references/iterators-library.md",
         "skills/arturo-collections/examples/collections.art"
       ],
       "status": "partial"
@@ -95,7 +88,10 @@
       "id": "arturo-testing",
       "kind": "skill",
       "owner": "arturo-testing",
-      "evidence": ["skills/arturo-testing/SKILL.md"],
+      "evidence": [
+        "skills/arturo-testing/SKILL.md",
+        "skills/arturo-testing/references/workflows.md"
+      ],
       "status": "partial"
     },
     {
@@ -359,7 +355,7 @@
       "kind": "task",
       "owner": "arturo-collections",
       "evidence": [
-        "skills/arturo-collections/references/collections.md",
+        "skills/arturo-collections/references/iterators-library.md",
         "skills/arturo-collections/examples/collections.art"
       ],
       "status": "partial"
