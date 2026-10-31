@@ -1,10 +1,10 @@
 # Arturo skills roadmap
 
-Progress follows evidence and dependencies rather than calendar dates. Existing skills are starting points, not proof of complete task coverage. See [coverage baseline](COVERAGE.md).
+Progress follows evidence and dependencies rather than calendar dates. Existing skills are starting points, not proof of complete task coverage.
 
 ## 1. Verification and inventory — done
 
-Coverage catalog, editorial templates, offline smoke CI, and attribution checks are in place. Skills link to the [official Arturo examples](https://github.com/arturo-lang/examples) for task-relevant patterns; a full upstream example inventory is not required.
+Editorial templates, offline smoke CI, and attribution checks are in place. Skills link to the [official Arturo examples](https://github.com/arturo-lang/examples) for task-relevant patterns; a full upstream example inventory is not required.
 
 Historical fragment execution remains distinct from asserted correctness.
 
@@ -22,7 +22,7 @@ Teach multi-file loading and reusable logic early. Deepen HTTP/JSON, structured 
 
 Exit: worked workflows cover success, malformed inputs, operational failure, and cleanup. Add a separate opt-in pinned-package verification lane; preserve offline default checks.
 
-Implementation evidence (2026-10-30): multi-file and integration workflows are linked in [coverage](COVERAGE.md); the [manual package lane](CONTRIBUTING.md#optional-package-verification) checks exact Unitt 3.1.1 separately from offline defaults. Coverage limits and execution evidence remain explicit in the linked references.
+Implementation evidence (2026-10-30): multi-file and integration workflows have offline examples in their owning skills; the [manual package lane](CONTRIBUTING.md#optional-package-verification) checks exact Unitt 3.1.1 separately from offline defaults. Coverage limits and execution evidence remain explicit in the linked references.
 
 ## 4. Early agent evaluation
 
@@ -32,7 +32,7 @@ Exit: reproducible baseline separates selection, guidance, agent, and infrastruc
 
 ## 5. Evidence-driven expansion and maintenance
 
-Use task failures and catalog gaps to prioritize focused functions, types, control-flow, mutation, strings, regex, filesystem, CLI, projects, refactoring, performance, and reflection skills. Require distinct activation tasks before splitting. Research unsupported capabilities rather than publishing assumed APIs.
+Use task failures and documented gaps to prioritize focused functions, types, control-flow, mutation, strings, regex, filesystem, CLI, projects, refactoring, performance, and reflection skills. Require distinct activation tasks before splitting. Research unsupported capabilities rather than publishing assumed APIs.
 
 Exit: standalone discovery and use pass, references remain navigable, metadata/context size is reviewed, and compatibility claims have recorded evidence.
 

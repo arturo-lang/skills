@@ -3,12 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "bun run scripts/validate.ts && bun run scripts/stdlib.ts && bun run scripts/coverage.ts && biome check .",
+    "check": "bun run scripts/validate.ts && biome check .",
     "format": "biome format --write .",
     "test": "bun test",
     "smoke": "bun run scripts/smoke.ts",
     "skills:list": "skills add . --list",
-    "stdlib:inspect": "bun run scripts/stdlib.ts --inspect",
     "smoke:packages": "bun run scripts/package-smoke.ts"
   },
   "devDependencies": {

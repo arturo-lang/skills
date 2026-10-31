@@ -11,7 +11,7 @@ All new skills and all modifications must be submitted through a pull request. B
 3. Keep the entry point focused. Put detailed guidance in `references/` and bounded runnable examples in `examples/` as needed. Every local reference must stay inside the skill directory. Do not depend on sibling skills, absolute workspace paths, or tools specific to one assistant.
 4. Investigate the relevant official Arturo reference and examples. Link sources and record review dates in references. Verify unfamiliar APIs against the installed runtime; explain evaluation order, scope, and mutation precisely. Do not assume conventional operator precedence or APIs from other languages.
 5. Include the skill's own `LICENSING.md`, `LICENSE-CC-BY-4.0.txt`, and `LICENSE-MIT.txt`, following the existing skills. Preserve copyright notices and upstream attribution. Include local third-party notices when needed so that the skill remains independently installable. See the licensing requirements below.
-6. Add the skill to the README. Update `SOURCES.md`, `STDLIB.md`, and the relevant validation or smoke coverage when the contribution changes their inventories or examples. Keep automated examples offline and bounded; avoid downloads, remote API calls, servers, and webviews.
+6. Add the skill to the README. Update source metadata and relevant validation or smoke checks when guidance or examples change. Keep automated examples offline and bounded; avoid downloads, remote API calls, servers, and webviews.
 7. Run the checks below, then open a pull request describing the skill's purpose, sources investigated, runtime version, and validation results. Request code owner review and address findings before merging.
 
 ## Modifying existing skills
@@ -58,6 +58,6 @@ The owners in `.github/CODEOWNERS` cover every file, including these contributio
 
 Repository administrators should configure the target branch's GitHub ruleset or branch protection to require a pull request and code owner approval before merging. CODEOWNERS requests review but does not enforce merge restrictions by itself. Keep required checks enabled and resolve review findings before merge.
 
-## Coverage maintenance
+## Maintenance
 
-Use [the roadmap](ROADMAP.md), [coverage baseline](COVERAGE.md), and [editorial templates](templates/skill.md). Update coverage evidence with content changes. Verify interpreter changes, upstream API/package revisions, and reported discrepancies against official sources and minimal reproducers. Preserve historical review dates; distinguish source review, execution, and asserted results. The recorded baseline is Arturo 0.10.0 Linux amd64; other combinations remain unverified. Hosted runtime CI results must be observed before claiming they passed.
+Use [the roadmap](ROADMAP.md) and [editorial template](templates/skill.md). Keep verification notes with the relevant references. Verify interpreter changes, upstream API/package revisions, and reported discrepancies against official sources and minimal reproducers. Preserve historical review dates; distinguish source review, execution, and asserted results. The recorded baseline is Arturo 0.10.0 Linux amd64; other combinations remain unverified. Hosted runtime CI results must be observed before claiming they passed.
