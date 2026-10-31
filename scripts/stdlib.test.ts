@@ -48,3 +48,34 @@ test("unrecorded APIs are caught instead of silently expanding the catalogue", a
   );
   expect((await validateStdlib(root)).join("\n")).toContain("invented: absent");
 });
+
+test("modules can share a reference while retaining inventory checks", async () => {
+  const root = await fixture("| `first` | First |\n| `last` | Last |\n");
+  await writeFile(
+    resolve(root, "stdlib.json"),
+    JSON.stringify({
+      modules: [
+        {
+          name: "First",
+          skill: "arturo-fixture",
+          reference: "references/module.md",
+          symbols: ["first"],
+        },
+        {
+          name: "Last",
+          skill: "arturo-fixture",
+          reference: "references/module.md",
+          symbols: ["last"],
+        },
+      ],
+    }),
+  );
+  expect(await validateStdlib(root)).toEqual([]);
+  await writeFile(
+    resolve(root, "skills/arturo-fixture/references/module.md"),
+    "| `first` | First |\n| `invented` | Fake |\n",
+  );
+  const errors = (await validateStdlib(root)).join("\n");
+  expect(errors).toContain("last: missing");
+  expect(errors).toContain("invented: absent");
+});

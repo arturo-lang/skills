@@ -7,7 +7,7 @@
     {
       "name": "Arithmetic",
       "skill": "arturo-math",
-      "reference": "references/arithmetic-library.md",
+      "reference": "references/numeric.md",
       "symbols": [
         "add",
         "dec",
@@ -25,7 +25,7 @@
     {
       "name": "Bitwise",
       "skill": "arturo-math",
-      "reference": "references/bitwise-library.md",
+      "reference": "references/numeric.md",
       "symbols": [
         "and",
         "nand",
@@ -94,7 +94,7 @@
     {
       "name": "Colors",
       "skill": "arturo-math",
-      "reference": "references/colors-library.md",
+      "reference": "references/colors.md",
       "symbols": [
         "blend",
         "darken",
@@ -313,7 +313,7 @@
     {
       "name": "Numbers",
       "skill": "arturo-math",
-      "reference": "references/numbers-library.md",
+      "reference": "references/numeric.md",
       "symbols": [
         "abs",
         "acos",
@@ -393,7 +393,7 @@
     {
       "name": "Quantities",
       "skill": "arturo-math",
-      "reference": "references/quantities-library.md",
+      "reference": "references/quantities.md",
       "symbols": [
         "acceleration?",
         "action?",
@@ -559,7 +559,7 @@
     {
       "name": "Statistics",
       "skill": "arturo-math",
-      "reference": "references/statistics-library.md",
+      "reference": "references/numeric.md",
       "symbols": [
         "average",
         "deviation",

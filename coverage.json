@@ -45,9 +45,10 @@
       "owner": "arturo-math",
       "evidence": [
         "skills/arturo-math/SKILL.md",
-        "skills/arturo-math/references/numeric-recipes.md",
+        "skills/arturo-math/references/numeric.md",
+        "skills/arturo-math/references/quantities.md",
+        "skills/arturo-math/references/colors.md",
         "skills/arturo-math/examples/checks.art",
-        "skills/arturo-math/references/color-names.md",
         "skills/arturo-math/examples/colors.art"
       ],
       "status": "partial"
@@ -115,14 +116,14 @@
       "id": "module-Arithmetic",
       "kind": "module",
       "owner": "arturo-math",
-      "evidence": ["skills/arturo-math/references/arithmetic-library.md"],
+      "evidence": ["skills/arturo-math/references/numeric.md"],
       "status": "partial"
     },
     {
       "id": "module-Bitwise",
       "kind": "module",
       "owner": "arturo-math",
-      "evidence": ["skills/arturo-math/references/bitwise-library.md"],
+      "evidence": ["skills/arturo-math/references/numeric.md"],
       "status": "partial"
     },
     {
@@ -139,8 +140,7 @@
       "kind": "module",
       "owner": "arturo-math",
       "evidence": [
-        "skills/arturo-math/references/colors-library.md",
-        "skills/arturo-math/references/color-names.md",
+        "skills/arturo-math/references/colors.md",
         "skills/arturo-math/examples/colors.art"
       ],
       "status": "partial"
@@ -243,7 +243,7 @@
       "id": "module-Numbers",
       "kind": "module",
       "owner": "arturo-math",
-      "evidence": ["skills/arturo-math/references/numbers-library.md"],
+      "evidence": ["skills/arturo-math/references/numeric.md"],
       "status": "partial"
     },
     {
@@ -257,7 +257,7 @@
       "id": "module-Quantities",
       "kind": "module",
       "owner": "arturo-math",
-      "evidence": ["skills/arturo-math/references/quantities-library.md"],
+      "evidence": ["skills/arturo-math/references/quantities.md"],
       "status": "partial"
     },
     {
@@ -285,7 +285,7 @@
       "id": "module-Statistics",
       "kind": "module",
       "owner": "arturo-math",
-      "evidence": ["skills/arturo-math/references/statistics-library.md"],
+      "evidence": ["skills/arturo-math/references/numeric.md"],
       "status": "partial"
     },
     {
