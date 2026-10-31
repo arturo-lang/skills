@@ -13,7 +13,7 @@ metadata:
 
 # MIME lookup
 
-Use [mimetypes](https://mimetypes.pkgr.art/) for extension-based MIME lookup. Importing can download a missing package and execute its entrypoint.
+Use mimetypes for extension-based MIME lookup. Importing can download a missing package and execute its entrypoint.
 
 ```art
 import "mimetypes"!

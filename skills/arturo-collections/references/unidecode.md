@@ -13,7 +13,7 @@ metadata:
 
 # Unicode transliteration
 
-Use [unidecode](https://unidecode.pkgr.art/) for approximate Unicode-to-ASCII conversion. Importing can download a missing package and execute its entrypoint.
+Use unidecode for approximate Unicode-to-ASCII conversion. Importing can download a missing package and execute its entrypoint.
 
 ```art
 import "unidecode"!

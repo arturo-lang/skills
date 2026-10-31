@@ -9,11 +9,12 @@ metadata:
     - https://github.com/drkameleon/claude.ai.art/blob/a0ea0e84a6b5e9debb1b661b000295345d482c59/README.md
     - https://github.com/drkameleon/claude.ai.art/blob/a0ea0e84a6b5e9debb1b661b000295345d482c59/src/api.art
     - https://arturo-lang.io/documentation/library/core/import/
+    - https://claude.pkgr.art/
 ---
 
 # Claude API in Arturo
 
-Use the [claude package](https://claude.pkgr.art/) for this Arturo wrapper. Check the project's installed version before adopting examples. Import with `import "claude"!`; importing may download and execute package code.
+Use the claude package for this Arturo wrapper. Check the project's installed version before adopting examples. Import with `import "claude"!`; importing may download and execute package code.
 
 ## Client and messages
 

@@ -12,7 +12,7 @@ metadata:
 
 # Identifier case conversion
 
-Use [recase](https://recase.pkgr.art/) when converting names between case conventions. Check the project's package release before depending on acronym or Unicode edge cases. Importing can download a missing package and execute its entrypoint.
+Use recase when converting names between case conventions. Check the project's package release before depending on acronym or Unicode edge cases. Importing can download a missing package and execute its entrypoint.
 
 ```art
 import "recase"!
