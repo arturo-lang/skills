@@ -2,6 +2,8 @@
 metadata:
   arturo-version: 0.10.0
   review-date: 2026-10-29
+  sources:
+    - https://arturo-lang.io/llms.txt
 ---
 
 # Diagnostic patterns

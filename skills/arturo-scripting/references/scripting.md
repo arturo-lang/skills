@@ -2,6 +2,17 @@
 metadata:
   arturo-version: 0.10.0
   review-date: 2026-10-30
+  sources:
+    - https://arturo-lang.io/documentation/language/
+    - https://arturo-lang.io/documentation/library/system/arg/
+    - https://arturo-lang.io/documentation/library/types/to/
+    - https://arturo-lang.io/documentation/library/exceptions/try/
+    - https://arturo-lang.io/documentation/library/files/read/
+    - https://arturo-lang.io/llms.txt
+    - https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Command-line%20arguments.art
+    - https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Read%20entire%20file.art
+    - https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/types/to.test.art
+    - https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/exceptions/functions.test.art
 ---
 
 # CLI and local automation

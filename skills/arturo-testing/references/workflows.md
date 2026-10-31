@@ -2,6 +2,12 @@
 metadata:
   arturo-version: 0.10.0
   review-date: 2026-10-30
+  sources:
+    - https://github.com/arturo-lang/bundler/blob/856568f0f4c5baf6ee61e9a963abacda3dd4e2d9/.github/workflows/testrelease.yml
+    - https://github.com/arturo-lang/setup-arturo/blob/59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7/README.md
+    - https://github.com/arturo-lang/bundler/blob/856568f0f4c5baf6ee61e9a963abacda3dd4e2d9/README.md
+    - https://github.com/RickBarretto/unitt/blob/v3.1.1/readme.md
+    - https://arturo-lang.io/documentation/command-line/
 ---
 
 # GitHub Actions for Arturo
