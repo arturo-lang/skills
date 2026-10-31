@@ -4,9 +4,9 @@ Use Unitt as the primary tool for project unit tests; it is used officially. Rea
 
 Prefer `describe`/`it`/`expects`. Assertions belong inside cases; `.be:` or `.to:` selects a predicate literal with evaluated arguments. Keep test inputs deterministic.
 
-Documentation-based bounded example; not executed by the library's offline smoke suite:
+Example:
 
-```arturo
+```art
 import {unitt}!
 
 describe "addition" [
@@ -24,5 +24,3 @@ if standalone? ::
 Install with `arturo -p install unitt`, then run `unitt`. Configure project-root `config.art` with `path`, `suffix`, and `binary`; use the actual Arturo executable path.
 
 `test`, `suite`, and `assert.with:` support older syntax. Conditional `.skip:` skips cases. Version 3 removed `.prop`, `.static`, and `fatal`; `.prop` never generated property tests. Uncaught exceptions stop the runner.
-
-See [third-party notices](../THIRD-PARTY-NOTICES.md#unitt) for attribution, licenses, and reviewed revisions.

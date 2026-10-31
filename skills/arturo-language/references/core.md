@@ -63,10 +63,10 @@ Loading code can introduce callable words after the enclosing code was parsed. T
 | `null`   | Absence of a value. Use when a value is missing; condition functions and `coalesce` also treat it as false.                                                  | `value: null`                                  |
 | `window` | Listed as a null constant in the official text reference and observed as `null` on this runtime. No portable window-management behavior is established here. | `inspect var 'window`                          |
 
-## Sources and verification
+## Sources
 
-Reviewed on 2026-10-29 against the [official Core reference](https://arturo-lang.io/documentation/library/core), via the [official text reference](https://arturo-lang.io/llms.txt). Original documentation is by the Arturo project, licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); this is a condensed, adapted selection guide.
+Sources: [official Core reference](https://arturo-lang.io/documentation/library/core), [official text reference](https://arturo-lang.io/llms.txt), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
-All 34 offline example fragments completed with exit status zero and no stderr on Arturo 0.10.0 Arizona Bark, amd64/Linux, with sample inputs and prerequisite functions/modules supplied independently to each fragment. This checks execution, not every result or edge case. The local-file `import` example is documentation-only; package installation and external-library calls were not exercised.
+The local-file `import` example is documentation-only; package installation and external-library calls were not exercised.
 
-The metadata inspection examples were checked on the same runtime; see [inspection results](inspection.md#observed-signatures). Do not treat metadata as proof of all runtime edge cases: the documented `case` return annotation, for example, is narrower than its own selected-value examples.
+Do not treat metadata as proof of all runtime edge cases: the documented `case` return annotation, for example, is narrower than its own selected-value examples.

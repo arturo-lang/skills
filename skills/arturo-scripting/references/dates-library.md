@@ -23,10 +23,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [tuesday?](https://arturo-lang.io/documentation/library/dates/tuesday-)     | Test whether date is a Tuesday.                      | `print tuesday? now`        |
 | [wednesday?](https://arturo-lang.io/documentation/library/dates/wednesday-) | Test whether date is a Wednesday.                    | `print wednesday? now`      |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Dates module](https://arturo-lang.io/documentation/library/dates); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 14 names resolved.
-
-Checks: 14 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Dates module](https://arturo-lang.io/documentation/library/dates); [official text reference](https://arturo-lang.io/llms.txt).

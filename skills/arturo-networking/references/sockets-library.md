@@ -16,8 +16,6 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 | [send?](https://arturo-lang.io/documentation/library/sockets/send-)     | Send message to selected socket and return true if successful. | `send? client "hello"`                |
 | [unplug](https://arturo-lang.io/documentation/library/sockets/unplug)   | Close socket.                                                  | `unplug client`                       |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Sockets module](https://arturo-lang.io/documentation/library/sockets); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 7 names resolved.
+Sources: the [official Sockets module](https://arturo-lang.io/documentation/library/sockets); [official text reference](https://arturo-lang.io/llms.txt).

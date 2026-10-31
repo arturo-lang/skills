@@ -6,9 +6,9 @@ Use [Climax documentation](https://climax.pkgr.art/) and [v0.1.0 source](https:/
 
 Option rows have ordered slots: name, optional single-character literal alias, default, type(s), description. A trailing `?` creates a boolean switch defaulting to false. Include `:null` for optional positionals.
 
-Documentation-based example; package execution is not part of this library's offline smoke suite:
+Example:
 
-```arturo
+```art
 import "climax"!
 
 climax .template: 'plain [
@@ -23,5 +23,3 @@ climax .template: 'plain [
 ```
 
 Check help, missing required arguments, unknown flags, defaults, and `--` passthrough. `default:` selects the action without a subcommand; `'plain` avoids ANSI help output. Consult the linked reference before customizing templates.
-
-See [third-party notices](../THIRD-PARTY-NOTICES.md#climax) for attribution, licenses, and reviewed revisions.

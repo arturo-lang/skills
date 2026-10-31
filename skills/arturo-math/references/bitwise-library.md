@@ -18,10 +18,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [xnor](https://arturo-lang.io/documentation/library/bitwise/xnor) | Compute the binary XNOR for the values.       | `print xnor 2 3` |
 | [xor](https://arturo-lang.io/documentation/library/bitwise/xor)   | Compute the binary XOR for the values.        | `print xor 2 3`  |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Bitwise module](https://arturo-lang.io/documentation/library/bitwise); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 9 names resolved.
-
-Checks: 9 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Bitwise module](https://arturo-lang.io/documentation/library/bitwise); [official text reference](https://arturo-lang.io/llms.txt).

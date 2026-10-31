@@ -18,14 +18,14 @@ arturo --package update
 
 [Core/import](https://arturo-lang.io/documentation/library/core/import/) supports registry names, repository URLs, local files, and package directories. A missing registry package is downloaded automatically; an existing installation is reused unless the chosen attributes request otherwise.
 
-```arturo
+```art
 import "dummy"!
 print dummyFunc 10
 ```
 
 The [registry guide](https://github.com/arturo-lang/pkgr.art#using-packages) uses `!` to make imported functions visible to parsing and execution of subsequent code at the same level. The reference also demonstrates deferring calls inside `do [...]` after importing.
 
-```arturo
+```art
 import.version:0.0.3 "dummy"!       ; exact version
 import.min.version:0.0.3 "dummy"!   ; version >= 0.0.3
 import.latest "dummy"!              ; check for latest even when installed
@@ -36,15 +36,19 @@ d: import.lean "dummy"!
 print d\dummyFunc 10
 ```
 
-These are separate usage alternatives. `.lean` returns a dictionary for namespace isolation. A branch selects repository code; it is not a version pin. Network imports are documentation examples, not offline tests.
+These are separate usage alternatives. `.lean` returns a dictionary for namespace isolation. A branch selects repository code; it is not a version pin.
 
 ## Create and publish
 
-Before distributing reusable logic, verify a local package without registry access. [The local workflow](../examples/local-package.art) resolves its package beside the script using `relative`, then uses `.lean` to retain a dictionary namespace. Its typed `doubleValue` helper accepts integers and leaves I/O to the entry script. The checks assert normal and zero results, rejection of a string, absence of an unqualified `doubleValue` binding, and a missing local file error. No files or handles are created, so cleanup is empty. Keep missing-code errors fatal before application effects begin; a failed import must not leave the application running with an incomplete interface.
+Before distributing reusable logic, verify a local package without registry access. [The local workflow](../examples/local-package.art) resolves its package beside the script using `relative`, then uses `.lean` to retain a dictionary namespace. Its typed `doubleValue` helper accepts integers and leaves I/O to the entry script.
+
+The checks assert normal and zero results, rejection of a string, absence of an unqualified `doubleValue` binding, and a missing local file error. No files or handles are created, so cleanup is empty.
+
+Keep missing-code errors fatal before application effects begin; a failed import must not leave the application running with an incomplete interface.
 
 The [official registry guide](https://github.com/arturo-lang/pkgr.art#creating-packages) defines a package as a directory whose default entry is `main.art`. Optional `info.art` configures it:
 
-```arturo
+```art
 entry: "myownmain"
 depends: [
     [someOtherPackage >= 0.0.2]
@@ -58,7 +62,7 @@ Replace these illustrative values. `entry` selects another entry file, `depends`
 2. Publish a GitHub Release with a SemVer-compatible tag, such as `0.1.0` or `v0.1.0`, for version-aware distribution.
 3. Fork the registry and add an unused name to [packages/list.art](https://github.com/arturo-lang/pkgr.art/blob/main/packages/list.art), following its current syntax:
 
-   ```arturo
+   ```art
    mypackage: gh "owner/repository"
    ```
 

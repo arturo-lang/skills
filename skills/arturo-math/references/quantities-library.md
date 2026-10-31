@@ -1,6 +1,8 @@
 # Quantities: function selection
 
-Use for dimensional quantities, units, conversion, custom units, and physical constants. A backtick introduces a unit (see the examples below). Keep the quantity until unit validation is complete; `scalar` removes units. Check dimensions and precision rather than treating unlike quantities as plain numbers. Currency examples may depend on external data and are not part of offline checks.
+Use for dimensional quantities, units, conversion, custom units, and physical constants. A backtick introduces a unit (see the examples below). Keep the quantity until unit validation is complete; `scalar` removes units. Check dimensions and precision rather than treating unlike quantities as plain numbers.
+
+Currency examples may depend on external data and are not part of offline checks.
 
 Query signatures with `inspect info.get 'acceleration?`; see [runtime inspection](runtime.md) for metadata interpretation.
 
@@ -121,12 +123,8 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [vonKlitzingConstant](https://arturo-lang.io/documentation/library/quantities/vonklitzingconstant)             | Von Klitzing constant; inspect its resistance value and units before using it in a formula. | `inspect vonKlitzingConstant`       |
 | [waveNumber?](https://arturo-lang.io/documentation/library/quantities/wavenumber-)                             | Test whether quantity describes Wave Number.                                                | ``waveNumber? 6`/m``                |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Quantities module](https://arturo-lang.io/documentation/library/quantities); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Sources: the [official Quantities module](https://arturo-lang.io/documentation/library/quantities); [official text reference](https://arturo-lang.io/llms.txt).
 
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 112 names resolved.
-
-Checks: 112 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
-
-Additional checks reviewed and asserted 2026-10-30: [quantities.art](../examples/quantities.art) verifies `convert value unit` against `in unit value`, 3 m to 300 cm, zero conversion, compatible versus incompatible dimensions, and an error converting length to time. Successful and failed conversions leave the source quantity unchanged. Check `conforms?` before conversion when inputs can have different dimensions; remove units with `scalar` only after that validation. These original bounded adaptations follow the official `convert`, `in`, and `conforms?` reference entries above. Executed on Arturo 0.10.0 amd64/Linux; stdout `quantities ok`, no stderr. Affine units, currencies, custom units, and precision boundaries remain outside these assertions.
+Use `convert value unit` or `in unit value`. Check `conforms?` before converting dimensions; extract a `scalar` only after validation. Conversions leave the source quantity unchanged.

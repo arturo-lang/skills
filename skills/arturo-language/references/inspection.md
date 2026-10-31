@@ -12,7 +12,7 @@ arturo --no-color -e "inspect info.get 'sort"
 
 The shell uses double quotes here because Arturo literal identifiers contain `'`. `info.get` retrieves the named symbol's metadata as a dictionary; `inspect` displays its structure and types. `info 'if` is a compact human-readable alternative.
 
-Do not use `inspect 'if` for a signature: it inspects the literal identifier and prints `if :literal`. `inspect var 'if` retrieves and inspects the actual function value, but this runtime only shows `:function` and `(builtin)`, without its signature. Avoid `inspect if`: a bare callable word invokes the function and requires its arguments.
+Do not use `inspect 'if` for a signature: it inspects the literal identifier and prints `if :literal`. `inspect var 'if` retrieves and inspects the actual function value, but Arturo 0.10.0 only shows `:function` and `(builtin)`, without its signature. Avoid `inspect if`: a bare callable word invokes the function and requires its arguments.
 
 ## Reading the result
 
@@ -36,7 +36,5 @@ These are condensed readings of actual output, not a replacement for querying th
 | `when`         | One `conditions :block` argument. `.any` is a logical flag; `.has: value` accepts `:any`. Metadata lists `:logical`.                                                                                                                                |
 | `function`     | Two arguments: `arguments :literal :block`, then `body :block`. `.import:` and `.export:` take blocks; `.memoize` and `.inline` are flags. Returns `:function`; `$` is prefix.                                                                      |
 | `sort`         | One argument accepting `:literal`, `:pathliteral`, `:dictionary`, or `:block`. `.descending` is a flag; `.by:` accepts a string or literal. Results include `:block` or `:nothing`; inspect literal mutation separately from value-returning calls. |
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Checks: seven metadata queries and literal/function-value contrasts (2026-10-29); example operations not fully tested.
 
 Sources: [Reflection/inspect](https://arturo-lang.io/documentation/library/reflection/inspect), [Reflection/info](https://arturo-lang.io/documentation/library/reflection/info), and the [official text reference](https://arturo-lang.io/llms.txt).

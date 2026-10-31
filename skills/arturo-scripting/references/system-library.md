@@ -1,6 +1,8 @@
 # System: function selection
 
-Use for CLI arguments, environment/process information, and local automation. `arg` preserves raw strings; `args` parses values. Do not dump environment variables while debugging. Inspect `execute` behavior and quote externally supplied arguments deliberately. `config` may use persistent global storage; process termination and exit are effects, not harmless probes.
+Use for CLI arguments, environment/process information, and local automation. `arg` preserves raw strings; `args` parses values. Do not dump environment variables while debugging. Inspect `execute` behavior and quote externally supplied arguments deliberately.
+
+`config` may use persistent global storage; process termination and exit are effects, not harmless probes.
 
 Query signatures with `inspect info.get 'arg`; see [runtime inspection](runtime.md) for metadata interpretation.
 
@@ -23,8 +25,6 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 | [sys](https://arturo-lang.io/documentation/library/system/sys)               | Obtain current system information.                                                        | `inspect sys`                    |
 | [terminate](https://arturo-lang.io/documentation/library/system/terminate)   | Kill process with id.                                                                     | `terminate childPid`             |
 
-## Sources and verification
+## Sources
 
-Sources: the [official System module](https://arturo-lang.io/documentation/library/system); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 14 names resolved.
+Sources: the [official System module](https://arturo-lang.io/documentation/library/system); [official text reference](https://arturo-lang.io/llms.txt).

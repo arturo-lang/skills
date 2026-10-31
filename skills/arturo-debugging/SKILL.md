@@ -5,7 +5,7 @@ description: Diagnose and fix Arturo runtime errors, scope or aliasing bugs, and
 
 # Arturo debugging
 
-Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+Examples: [official repository](https://github.com/arturo-lang/examples).
 
 Capture the exact failing invocation, interpreter version, error text, and expected result. Reduce it to a bounded reproduction that preserves the failure. Use [diagnostic patterns](references/debugging.md) for the failure class involved.
 
@@ -17,7 +17,7 @@ Add a check that fails for the observed bug and passes after the fix, using `ens
 
 [examples/errors.art](examples/errors.art) demonstrates offline assertions and captured errors. Avoid executing an arbitrary upstream example as a diagnostic: review its effects and cost first.
 
-## References: load only the relevant module
+## Module references
 
 - [Exceptions](references/exceptions-library.md).
 - [Reflection](references/reflection-library.md).

@@ -4,7 +4,7 @@ Use optionally for typed attribute interfaces in reusable functions and DSL comm
 
 Use [optionally](https://optionally.pkgr.art/) to generate attribute handling for Arturo functions. Version 1.0.0 requires Arturo 0.10.0 or newer. An import can download the package and execute its entrypoint.
 
-```arturo
+```art
 import {optionally}!
 
 person: $[name :string] optionally [age :integer][
@@ -15,14 +15,14 @@ person "Rick"
 person.age: 30 "Rick"
 ```
 
-This documentation-based example is not executed by the offline smoke suite. Test omitted attributes, explicit values, wrong types, and successive calls once the package is installed.
+Test omitted attributes, explicit values, wrong types, and successive calls once the package is installed.
 
 `optionally params body` returns a new block that prepends generated handling to the function body. Required parameters remain in `$[...]`; optional declarations go in the separate block. The generated body reads attributes into local bindings when the function runs; it does not add positional parameters or create a closure.
 
-Typed optionals default to `null`; a supplied value must match the declared type or be `null`, otherwise an assertion fails. Substitute a custom default inside the body with `??`. A logical name ending in `?`, such as `verbose? :logical`, defaults to `false` and also accepts the affirmation `.verbose`. `.verbose?` and attribute-labels such as `.verbose?: true` are supported too. A name without the suffix does not generate a question-mark alias.
+Typed optionals default to `null`; a supplied value must match the declared type or be `null`, otherwise an assertion fails. Substitute a custom default inside the body with `??`. A logical name ending in `?`, such as `verbose? :logical`, defaults to `false` and also accepts the affirmation `.verbose`.
+
+`.verbose?` and attribute-labels such as `.verbose?: true` are supported too. A name without the suffix does not generate a question-mark alias.
 
 Keep generated optional names distinct from required parameters and body locals so the generated `let` bindings do not hide useful values. Pass optionals as attributes, for example `.age: 30`, rather than inserting them into the required argument sequence.
 
 Sources: [package documentation](https://optionally.pkgr.art/), [1.0.0 implementation](https://github.com/RickBarretto/optionally.art/blob/v1.0.0/src/lib.art), [upstream examples](https://github.com/RickBarretto/optionally.art/tree/v1.0.0/examples), [official function reference](https://arturo-lang.io/documentation/library/core/function/).
-
-See [third-party notices](../THIRD-PARTY-NOTICES.md#optionally) for attribution, licenses, and reviewed revisions.

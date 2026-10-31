@@ -17,10 +17,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [superset?](https://arturo-lang.io/documentation/library/sets/superset-)       | Test whether set is a superset of second set.                        | `superset? [1 2 3 4] [1 3]`              |
 | [union](https://arturo-lang.io/documentation/library/sets/union)               | Return the union of sets.                                            | `print union [1 2 3 4] [3 4 5 6]`        |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Sets module](https://arturo-lang.io/documentation/library/sets); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 8 names resolved.
-
-Checks: 8 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Sets module](https://arturo-lang.io/documentation/library/sets); [official text reference](https://arturo-lang.io/llms.txt).

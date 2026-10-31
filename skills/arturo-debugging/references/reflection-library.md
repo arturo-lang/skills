@@ -20,10 +20,6 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 | [standalone?](https://arturo-lang.io/documentation/library/reflection/standalone-) | Test whether current script runs from the command-line. | `standalone?`                                         |
 | [symbols](https://arturo-lang.io/documentation/library/reflection/symbols)         | Obtain currently defined symbols.                       | `inspect symbols`                                     |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Reflection module](https://arturo-lang.io/documentation/library/reflection); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 11 names resolved.
-
-Checks: 11 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Reflection module](https://arturo-lang.io/documentation/library/reflection); [official text reference](https://arturo-lang.io/llms.txt).

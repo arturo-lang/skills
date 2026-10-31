@@ -18,10 +18,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [notEqual?](https://arturo-lang.io/documentation/library/comparison/notequal-)             | Test whether valueA <> valueB (not equal).                 | `notEqual? 5 2`       |
 | [same?](https://arturo-lang.io/documentation/library/comparison/same-)                     | Test whether values are exactly the same (identity).       | `same? 1 2`           |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Comparison module](https://arturo-lang.io/documentation/library/comparison); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 9 names resolved.
-
-Checks: 9 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Comparison module](https://arturo-lang.io/documentation/library/comparison); [official text reference](https://arturo-lang.io/llms.txt).

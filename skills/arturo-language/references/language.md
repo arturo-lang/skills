@@ -18,7 +18,7 @@ Define `double: $[x :integer] -> x * 2`, then call `double 4`. Prefer `$`, the a
 
 A final `return` does not erase earlier unconsumed results. For example:
 
-```arturo
+```art
 extraResult: function [x][
     x + 1
     return x * 2
@@ -44,11 +44,17 @@ Control-flow words are actual [Core functions](https://arturo-lang.io/documentat
 | `when [condition [action] ...]`       | Runs the first matching action; `.any` checks all conditions.                                        |
 | `while [condition] [body]`            | Reevaluates the condition block for each iteration.                                                  |
 
-`if` and `unless` return nothing; do not use them as two-way value selectors. `?` (`switch`) can supply a selected result. The outer blocks passed to `case` and `when` are evaluated; use blocks for action bodies and deferred conditions rather than assuming every expression is lazy. In `when`, `[condition]` defers that condition until needed; a final `true [body]` supplies a fallback.
+`if` and `unless` return nothing; do not use them as two-way value selectors. `?` (`switch`) can supply a selected result. The outer blocks passed to `case` and `when` are evaluated; use blocks for action bodies and deferred conditions rather than assuming every expression is lazy.
 
-Prefer `->` for a single-expression action or assertion: `ensure -> count >= 0`. It wraps one following terminal expression into a block, not an arbitrary sequence of statements. Keep explicit blocks for multi-step bodies. Use parameter annotations such as `[count :integer]` for a concrete function contract, then `ensure` for range and state invariants before effects.
+In `when`, `[condition]` defers that condition until needed; a final `true [body]` supplies a fallback.
 
-Prefer `value ?? fallback` for `coalesce`; it substitutes for both `null` and `false`. Both arguments are evaluated, so use `condition ? [action] [alternative]` when only the selected branch should run. `@[...]` evaluates its contents; `[...]` preserves data/code. `#[...]` constructs a dictionary, while `#red` and hexadecimal color literals denote colors. These aliases do not change evaluation, scope, or mutation rules.
+Prefer `->` for a single-expression action or assertion: `ensure -> count >= 0`. It wraps one following terminal expression into a block, not an arbitrary sequence of statements. Keep explicit blocks for multi-step bodies.
+
+Use parameter annotations such as `[count :integer]` for a concrete function contract, then `ensure` for range and state invariants before effects.
+
+Prefer `value ?? fallback` for `coalesce`; it substitutes for both `null` and `false`. Both arguments are evaluated, so use `condition ? [action] [alternative]` when only the selected branch should run. `@[...]` evaluates its contents; `[...]` preserves data/code.
+
+`#[...]` constructs a dictionary, while `#red` and hexadecimal color literals denote colors. These aliases do not change evaluation, scope, or mutation rules.
 
 `map collection 'item [expression]` and `loop collection 'item [body]` bind iterator variables temporarily. `=>` offers anonymous-parameter shorthand; consult the reference before changing a named-parameter form into shorthand. A pipe passes an expression's result into a subsequent call; it is not a shell pipe.
 
@@ -66,7 +72,7 @@ The executable checks accumulate `total` in a loop while restoring an existing `
 
 Function isolation does not protect a shared collection from `set`:
 
-```arturo
+```art
 nested: [[1 2] [3]]
 shared: nested
 set shared\0 0 9
@@ -80,17 +86,17 @@ ensure [nested = [[42 2] [3]]]
 ensure [independent = [[7 2] [3]]]
 ```
 
-The runnable example also adapts this helper into `changedFirst items value`: clone with `new`, reject an empty outer or first inner block, set the cloned element, and return the clone. Its assertions check the returned nested value, unchanged caller input, and rejected `[]`/`[[]]` inputs. Bind the clone before updating it so a helper intended to return data does not accidentally mutate its caller.
+To implement `changedFirst items value`, clone with `new`, reject an empty outer or first inner block, set the cloned element, and return the clone.
 
-These checks establish independent copying for nested blocks; they do not establish cloning behavior for resources such as databases or sockets, or every custom object.
+Bind the clone before updating it so a helper intended to return data does not accidentally mutate its caller.
+
+Do not assume nested-block copying rules apply to databases, sockets, or custom objects.
 
 Logical values include `true`, `false`, and `maybe`. Equality is `=`; `==` is not its standard alias. Use `to :integer text` for conversion and check invalid input instead of assuming parsing succeeds.
 
 ## Sources
 
-Reviewed 2026-10-30 against the [official language guide](https://arturo-lang.io/documentation/language#important-concepts), [Core/function](https://arturo-lang.io/documentation/library/core/function/), and [Core/return](https://arturo-lang.io/documentation/library/core/return/). Guidance condenses and adapts documentation by Yanis Zafirópulos and the Arturo project under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); changes include contrasting examples and explanations of observed stack and mutation behavior.
-
-Verification: `arturo --no-color examples/basics.art` from this skill directory passes on Arturo 0.10.0 Arizona Bark, amd64/Linux, printing `language ok`. It asserts results, rejected calls, iterator restoration including empty input, function assignment isolation and local-name visibility, and shared versus independent nested block mutation including empty-input rejection. Export/inline/import variants and exceptional iterator unwinding are not covered by these checks.
+Sources: [official language guide](https://arturo-lang.io/documentation/language#important-concepts), [Core/function](https://arturo-lang.io/documentation/library/core/function/), [Core/return](https://arturo-lang.io/documentation/library/core/return/).
 
 - [Official Core reference](https://arturo-lang.io/documentation/library/core): case, when, if, unless, switch, while, and function; also available in the official text reference below.
 - [Official reference](https://arturo-lang.io/llms.txt): Precedence and Evaluation; Scope and rules; In-place variable modification; Core/function; Core/new; Types/to.
@@ -98,5 +104,3 @@ Verification: `arturo --no-color examples/basics.art` from this skill directory 
 - [Function composition example](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Function%20composition.art).
 
 Upstream tests: [copying](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/core/new.test.art); [nested mutation](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/set.test.art); [iteration](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/iterators/loop.test.art).
-
-Symbol forms and fail-fast contracts reviewed and asserted on Arturo 0.10.0 Linux amd64, 2026-10-30, in [basics.art](../examples/basics.art). Source: official text reference entries for function, relative, coalesce, switch, array, dictionary, and ensure; `->` is terminal-expression block syntax.

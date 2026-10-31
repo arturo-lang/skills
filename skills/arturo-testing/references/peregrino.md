@@ -4,7 +4,7 @@ Use [Peregrino documentation](https://peregrino.pkgr.art/) and [v0.1.2 source](h
 
 The CLI runs command strings repeatedly. Use safe, bounded commands and account for their side effects on every run. Keep inputs, working directory, runtime, and cache conditions comparable; report run count with results. Benchmarks measure performance, not correctness.
 
-Documentation-based bounded CLI example, not run by the library's offline smoke suite:
+Example:
 
 ```sh
 peregrino --run:3 "arturo -e 'print 1'" "arturo -e 'print 2'"
@@ -14,7 +14,7 @@ Value options use the documented colon form, such as `--run:3`. `--file` reads o
 
 Library construction uses a block of command strings:
 
-```arturo
+```art
 import {peregrino}!
 
 measurement: to :peregrino @["arturo -e 'print 1'"]!
@@ -22,5 +22,3 @@ measurement\benchmark
 ```
 
 This includes process startup and command output costs. Use `--minimal`, `--ascii`, or `--colorless` for simpler terminal presentation.
-
-See [third-party notices](../THIRD-PARTY-NOTICES.md#peregrino) for attribution, licenses, and reviewed revisions.

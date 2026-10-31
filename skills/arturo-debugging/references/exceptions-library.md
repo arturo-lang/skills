@@ -26,10 +26,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [valueError](https://arturo-lang.io/documentation/library/exceptions/valueerror)           | A value error.                                         | `inspect valueError`                       |
 | [vmError](https://arturo-lang.io/documentation/library/exceptions/vmerror)                 | A VM error.                                            | `inspect vmError`                          |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Exceptions module](https://arturo-lang.io/documentation/library/exceptions); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 17 names resolved.
-
-Checks: 16 fragments passed (exit 0, no stderr); intentionally raising throw excluded. Outputs and edge cases unasserted; null supplied for unbound predicate inputs.
+Sources: the [official Exceptions module](https://arturo-lang.io/documentation/library/exceptions); [official text reference](https://arturo-lang.io/llms.txt).

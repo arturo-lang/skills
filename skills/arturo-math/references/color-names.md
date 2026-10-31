@@ -2,9 +2,11 @@
 
 Use `#name` for a native `:color`, for example `#aliceBlue` or `#rebeccaPurple`. Use `#[...]` for a dictionary. Keep these separate from function aliases: the `#` dictionary constructor does not construct a named color.
 
-This catalog preserves all 578 names and their spellings from the [pinned `colorNames` table](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199). It is Arturo's catalog; do not substitute a CSS color list or normalize unusual spellings such as `clemantisViolet` or `mediumAquaMarine`. Named colors can be used directly with color transformations, such as `blend #red #aliceBlue`.
+This catalog preserves all 578 names and their spellings from the [pinned `colorNames` table](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199).
 
-```arturo
+It is Arturo's catalog; do not substitute a CSS color list or normalize unusual spellings such as `clemantisViolet` or `mediumAquaMarine`. Named colors can be used directly with color transformations, such as `blend #red #aliceBlue`.
+
+```art
 ensure -> color? #aliceBlue
 ensure -> #F0F8FF = #aliceBlue
 ensure -> #663399 = #rebeccaPurple
@@ -111,8 +113,6 @@ Read only the group you need or search for a name. Each entry below is a color l
 
 `#zombieGreen`.
 
-## Source and verification
+## Source
 
-Reviewed 2026-10-30 at commit `4e549e105c54af2e250381d578474b9064d9d4d2`. The catalog is adapted from Arturo's MIT-licensed source: names extracted from `colorNames`, grouped by initial, and written as Arturo literals. Retained [MIT notice](../THIRD-PARTY-NOTICES.md#arturo-color-names).
-
-On Arturo 0.10.0 Arizona Bark, amd64/Linux, all 578 literals parsed as colors and equaled their pinned source `VColor` RGBA constants. The comparison was executed offline in a temporary program. [colors.art](../examples/colors.art) retains representative named-color and dictionary/color assertions in the smoke suite; it does not repeat the entire catalog check. Other runtime versions remain unverified.
+[Arturo color definitions](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199).

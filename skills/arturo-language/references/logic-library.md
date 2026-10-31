@@ -23,10 +23,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [xnor?](https://arturo-lang.io/documentation/library/logic/xnor-)   | Return the logical XNOR for the values.                      | `xnor? true true`     |
 | [xor?](https://arturo-lang.io/documentation/library/logic/xor-)     | Return the logical XOR for the values.                       | `xor? true false`     |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Logic module](https://arturo-lang.io/documentation/library/logic); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 14 names resolved.
-
-Checks: 14 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Logic module](https://arturo-lang.io/documentation/library/logic); [official text reference](https://arturo-lang.io/llms.txt).

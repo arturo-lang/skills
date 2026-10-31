@@ -15,8 +15,6 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 | [unclip](https://arturo-lang.io/documentation/library/ui/unclip)   | Obtain clipboard content.                          | `unclip`                                    |
 | [webview](https://arturo-lang.io/documentation/library/ui/webview) | Show webview window with url or html source.       | `webview "<html><body>Hello</body></html>"` |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Ui module](https://arturo-lang.io/documentation/library/ui); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 6 names resolved.
+Sources: the [official Ui module](https://arturo-lang.io/documentation/library/ui); [official text reference](https://arturo-lang.io/llms.txt).

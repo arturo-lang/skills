@@ -55,10 +55,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [values](https://arturo-lang.io/documentation/library/collections/values)         | Obtain list of values for collection.                                                   | `values #[name: "Ada"]`                           |
 | [zero?](https://arturo-lang.io/documentation/library/collections/zero-)           | Test whether number or collection size is zero.                                         | `zero? 5-5`                                       |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Collections module](https://arturo-lang.io/documentation/library/collections); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 46 names resolved.
-
-Checks: 46 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Collections module](https://arturo-lang.io/documentation/library/collections); [official text reference](https://arturo-lang.io/llms.txt).
