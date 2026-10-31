@@ -1,5 +1,3 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
-
 ensure [#800080 = blend #red #blue]
 ensure [#red = blend.balance: 0.0 #red #blue]
 ensure [#blue = blend.balance: 1.0 #red #blue]

@@ -1,4 +1,3 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
 runDatabaseWorkflow: $[forceFailure? :logical lifecycle :dictionary][
     db: open.sqlite ":memory:"
     failure: try [

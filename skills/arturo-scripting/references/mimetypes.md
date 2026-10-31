@@ -21,4 +21,4 @@ These documentation-based examples are excluded from offline smoke checks. Once 
 
 Sources: [package reference](https://mimetypes.pkgr.art/), [0.0.4 implementation](https://github.com/drkameleon/mimetypes.art/blob/v0.0.4/src/mimetypes.art), [official import reference](https://arturo-lang.io/documentation/library/core/import/).
 
-Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2024 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#mimetypes) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#mimetypes) for attribution, licenses, and reviewed revisions.

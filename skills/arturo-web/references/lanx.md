@@ -26,4 +26,4 @@ For a bounded manual integration check, use a disposable folder containing one H
 
 Sources: [server implementation](https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/src/lanx.art), [CLI implementation](https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/src/cli.art), and [Arturo import reference](https://arturo-lang.io/documentation/library/core/import/).
 
-Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2026 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#lanx) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#lanx) for attribution, licenses, and reviewed revisions.

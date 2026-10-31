@@ -25,4 +25,4 @@ Read the current state through `machine\state`. Calling an event method or `mach
 
 Enumerate transitions for every supported event/source pair, including intentional self-transitions. Test event sequences and expected states. The overview does not specify handling of missing transitions, duplicate definitions, callbacks, or persistence: inspect source before relying on those behaviors or adding such capabilities.
 
-Attribution: RickBarretto (repository maintainer). Upstream license: MIT. Copyright 2024 RickBarretto. See [third-party notices](../THIRD-PARTY-NOTICES.md#states) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#states) for attribution, licenses, and reviewed revisions.

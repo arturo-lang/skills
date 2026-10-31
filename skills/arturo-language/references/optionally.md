@@ -25,4 +25,4 @@ Keep generated optional names distinct from required parameters and body locals 
 
 Sources: [package documentation](https://optionally.pkgr.art/), [1.0.0 implementation](https://github.com/RickBarretto/optionally.art/blob/v1.0.0/src/lib.art), [upstream examples](https://github.com/RickBarretto/optionally.art/tree/v1.0.0/examples), [official function reference](https://arturo-lang.io/documentation/library/core/function/).
 
-Attribution: RickBarretto (repository maintainer). Upstream license: MIT. Copyright (c) 2026 RickBarretto. See [third-party notices](../THIRD-PARTY-NOTICES.md#optionally) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#optionally) for attribution, licenses, and reviewed revisions.

@@ -32,4 +32,4 @@ Filters are nested property criteria, for example `fetch 'person [age: [over: 30
 
 Sources: [upstream README and examples](https://github.com/drkameleon/grafito), [implementation](https://github.com/drkameleon/grafito/blob/v0.2.12/grafito.art), [registry command reference](https://grafito.pkgr.art/#command-reference), and [Arturo import reference](https://arturo-lang.io/documentation/library/core/import/).
 
-Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2024 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#grafito) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#grafito) for attribution, licenses, and reviewed revisions.

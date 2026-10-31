@@ -10,4 +10,4 @@ See the [upstream task examples](https://github.com/RickBarretto/tasks/blob/v1.0
 
 `exec` (alias `|>`) runs shell commands and is available only within routine/task actions. Treat those commands and cleanup actions as real filesystem/process effects; do not copy upstream destructive cleanup examples into smoke checks.
 
-Attribution: RickBarretto (repository maintainer). Upstream license: MIT, added after v1.0.0 at [`6cd03b031c2f`](https://github.com/RickBarretto/tasks/commit/6cd03b031c2f037ed39df675064b897960addbe2). Copyright (c) 2026 RickBarretto. See [third-party notices](../THIRD-PARTY-NOTICES.md#tasks) for the upstream revision and licensing status.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#tasks) for attribution, licenses, and reviewed revisions.

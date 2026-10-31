@@ -1,4 +1,3 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
 ; arturo cli-count.art 003 prints 3; missing/invalid/negative inputs fail.
 parseCount: $[inputs :block][
     ensure -> 1 = size inputs

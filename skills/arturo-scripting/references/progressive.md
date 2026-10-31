@@ -20,4 +20,4 @@ Options apply to wrappers and constructors: `.plain` selects ASCII, `.static` di
 
 Progress rendering is terminal output. Keep machine-readable output separate and avoid timing assertions against animation or terminal formatting.
 
-Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2024 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#progressive) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#progressive) for attribution, licenses, and reviewed revisions.

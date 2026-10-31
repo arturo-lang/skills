@@ -1,4 +1,3 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
 items: [1 2 3 4]
 ensure [[2 4] = select items 'x [even? x]]
 ensure [[1 3] = filter items 'x [even? x]]

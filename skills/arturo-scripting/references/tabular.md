@@ -24,4 +24,4 @@ rows
 
 Validate empty data and long cell contents against the installed version when needed. Table rendering is presentation, so preserve the underlying data for sorting, numeric operations, or machine-readable export.
 
-Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2024 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#tabular) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#tabular) for attribution, licenses, and reviewed revisions.

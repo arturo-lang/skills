@@ -20,4 +20,4 @@ A successful format check does not prove that a mailbox exists, a URL is reachab
 
 Sources: [package reference](https://validator.pkgr.art/), [0.8.0 source](https://github.com/drkameleon/validator.art/tree/v0.8.0), [official import reference](https://arturo-lang.io/documentation/library/core/import/).
 
-Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2026 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#validator) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#validator) for attribution, licenses, and reviewed revisions.

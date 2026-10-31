@@ -1,5 +1,3 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
-
 ; Parse one nonnegative count. Keep identifiers as raw strings instead.
 countFrom: function [inputs][
     ensure [1 = size inputs]

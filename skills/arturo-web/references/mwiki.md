@@ -27,4 +27,4 @@ Do not use login or edits as smoke tests. The reviewed implementation reports an
 
 Sources: [upstream README](https://github.com/drkameleon/mwiki.art/blob/bace1e015ae93876b5669b52351ce4a1ad5fa1d8/README.md), [implementation](https://github.com/drkameleon/mwiki.art/blob/bace1e015ae93876b5669b52351ce4a1ad5fa1d8/src/mwiki.art), and [Arturo import reference](https://arturo-lang.io/documentation/library/core/import/).
 
-Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2026 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#mwiki) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#mwiki) for attribution, licenses, and reviewed revisions.
