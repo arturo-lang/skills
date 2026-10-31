@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/colors
+    - https://arturo-lang.io/llms.txt
+---
+
 # Colors: function selection
 
 Use for color values, hue/saturation transformations, and palettes. Amounts for darkening, lightening, and saturation changes are documented as fractions from 0.0 to 1.0; `spin` uses a hue-wheel amount. Do not infer perceptual color-space behavior from another library.
@@ -19,9 +28,5 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [palette](https://arturo-lang.io/documentation/library/colors/palette)       | Create palette using base color.           | `palette.triad #red`      |
 | [saturate](https://arturo-lang.io/documentation/library/colors/saturate)     | Saturate color by percentage (0.0-1.0).    | `saturate #lightblue 0.2` |
 | [spin](https://arturo-lang.io/documentation/library/colors/spin)             | Spin color around the hue wheel by amount. | `spin #red 90`            |
-
-## Sources
-
-Sources: the [official Colors module](https://arturo-lang.io/documentation/library/colors); [official text reference](https://arturo-lang.io/llms.txt).
 
 Darkening by 0.0 preserves the color; 1.0 produces black. A value argument returns a result; a literal argument changes the binding. Keep fractional adjustments within the documented range.

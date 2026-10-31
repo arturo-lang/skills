@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/iterators
+    - https://arturo-lang.io/llms.txt
+---
+
 # Iterators: function selection
 
 Use for transformations, grouping, search, and effects over collections. `select` keeps matching items; `filter` removes them, despite the misleading summary in some upstream documentation. Iterator-injected names are temporary. Use explicit parameter blocks; check accumulator order and `.seed:` with `fold`.
@@ -23,7 +32,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [minimum](https://arturo-lang.io/documentation/library/iterators/minimum)     | Obtain item in collection with minimum value returned from action.               | `minimum ["a" "bbb" "cc"] 'item [size item]`   |
 | [select](https://arturo-lang.io/documentation/library/iterators/select)       | Obtain items in collection that satisfy condition.                               | `select 1..6 'item [even? item]`               |
 | [some?](https://arturo-lang.io/documentation/library/iterators/some-)         | Test whether any of collection's items satisfy condition.                        | `some? [1 2 3] 'item [even? item]`             |
-
-## Sources
-
-Sources: the [official Iterators module](https://arturo-lang.io/documentation/library/iterators); [official text reference](https://arturo-lang.io/llms.txt).

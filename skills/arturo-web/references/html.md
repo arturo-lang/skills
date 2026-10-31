@@ -1,3 +1,17 @@
+---
+metadata:
+  author: "RickBarretto"
+  license: "MIT"
+  package-version: "0.0.4"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://html.pkgr.art/
+    - https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/src/html.art
+    - https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/test/element.test.art
+    - https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/exp.art
+---
+
 # HTML DSL
 
 Use `html` for the experimental Arturo HTML generator. This guidance follows release 0.0.4 source and tests; the registry README contains little API documentation. Verify behavior against the chosen release before expanding the DSL.
@@ -23,5 +37,3 @@ Import can download and evaluate package code.
 The `html` object provides tag methods and an `html` method for a document with a doctype; `fragment` joins evaluated content without that wrapper. Prefer explicit element calls while diagnosing evaluation or scope problems.
 
 The implementation interpolates content and attribute values without HTML escaping. Escape untrusted text and attribute values for their specific contexts before rendering; generating markup does not sanitize it. Keep script/style insertion deliberate.
-
-Sources: [registry](https://html.pkgr.art/), [0.0.4 implementation](https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/src/html.art), [element tests](https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/test/element.test.art), [document example](https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/exp.art).

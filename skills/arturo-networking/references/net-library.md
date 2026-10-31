@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/net
+    - https://arturo-lang.io/llms.txt
+---
+
 # Net: function selection
 
 Use for HTTP, downloading, web serving, mail, or opening a browser. Examples here are effectful and documentation-only. Keep destinations and credentials configurable. `request` requires a data argument even for GET (`null` is suitable). Check transport errors, HTTP status, and response shape independently.
@@ -15,7 +24,3 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 | [mail](https://arturo-lang.io/documentation/library/net/mail)         | Send mail using subject and message to selected recipient. | `mail.using: settings "recipient@example.com" "Subject" "Message"` |
 | [request](https://arturo-lang.io/documentation/library/net/request)   | Perform HTTP request to url with data and get response.    | `request "https://example.com" null`                               |
 | [serve](https://arturo-lang.io/documentation/library/net/serve)       | Start web server using routes.                             | `serve.port: 18966 [GET "/" ["hello"]]`                            |
-
-## Sources
-
-Sources: the [official Net module](https://arturo-lang.io/documentation/library/net); [official text reference](https://arturo-lang.io/llms.txt).

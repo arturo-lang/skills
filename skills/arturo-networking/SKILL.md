@@ -1,11 +1,11 @@
 ---
 name: arturo-networking
 description: Implement Arturo HTTP clients and services, JSON interchange, downloads, mail, TCP, UDP, and Claude API integrations.
+metadata:
+  arturo-version: "0.10.0"
 ---
 
 # Arturo HTTP, JSON, and networking
-
-Examples: [official repository](https://github.com/arturo-lang/examples).
 
 Read the relevant module:
 

@@ -1,6 +1,19 @@
+---
+metadata:
+  author: "Yanis Zafirópulos (drkameleon)"
+  license: "MIT"
+  package-version: "0.2.0"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/src/lanx.art
+    - https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/src/cli.art
+    - https://arturo-lang.io/documentation/library/core/import/
+---
+
 # Lanx static file server
 
-Use [Lanx](https://lanx.pkgr.art/) to serve a static directory. This guide covers version 0.2.0. The upstream [README](https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/README.md) documents CLI usage: `lanx` serves the current directory; `lanx ./public` serves a selected folder.
+Use [Lanx](https://lanx.pkgr.art/) to serve a static directory. The upstream [README](https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/README.md) documents CLI usage: `lanx` serves the current directory; `lanx ./public` serves a selected folder.
 
 Verify package installation and executable discovery before relying on the command. Do not infer flags from another static server.
 
@@ -29,5 +42,3 @@ Binary handling differs across Arturo versions in the source; include an image o
 Choose a document root containing only the intended public assets. Directory listings hide hidden entries, but this is not an access-control guarantee for direct file requests. The public interface configures root and port, with no documented host-binding, authentication, or TLS option. Do not claim it binds exclusively to loopback.
 
 For a bounded manual integration check, use a disposable folder containing one HTML and one binary fixture, request those paths plus a missing path, then stop the server. Keep ordinary checks offline by inspecting configuration without calling `start`.
-
-Sources: [server implementation](https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/src/lanx.art), [CLI implementation](https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/src/cli.art), and [Arturo import reference](https://arturo-lang.io/documentation/library/core/import/).

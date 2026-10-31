@@ -7,7 +7,7 @@ Copyright © RickBarretto, Arturo programming language.
 - Required evaluation, scope, and mutation semantics:
 - Worked program and expected results:
 - Failure cases, boundary cases, and adaptations:
-- Official sources, revisions, licenses, attribution, and review date:
+- Relevant YAML metadata only: package author/license/version, Arturo baseline, source links, historical review date:
 - Verification: documented / metadata inspected / executed / results asserted / edge cases tested:
 - Runtime, platform, commands, and limitations:
 

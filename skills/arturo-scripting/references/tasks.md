@@ -1,3 +1,13 @@
+---
+metadata:
+  author: "RickBarretto"
+  license: "MIT"
+  package-version: "1.0.0"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  source-revision: "6cd03b031c2f037ed39df675064b897960addbe2"
+---
+
 # Tasks automation
 
 Use [Tasks documentation](https://tasks.pkgr.art/) and [v1.0.0 source](https://github.com/RickBarretto/tasks/tree/v1.0.0). Import normally with `import {tasks}!`; upstream explicitly warns against `.lean`. Imports can download and execute packages.

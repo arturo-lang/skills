@@ -1,3 +1,13 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/reflection/inspect
+    - https://arturo-lang.io/documentation/library/reflection/info
+    - https://arturo-lang.io/llms.txt
+---
+
 # Ask Arturo for signatures
 
 Inspect runtime metadata before guessing a function's arguments or attributes:
@@ -36,5 +46,3 @@ These are condensed readings of actual output, not a replacement for querying th
 | `when`         | One `conditions :block` argument. `.any` is a logical flag; `.has: value` accepts `:any`. Metadata lists `:logical`.                                                                                                                                |
 | `function`     | Two arguments: `arguments :literal :block`, then `body :block`. `.import:` and `.export:` take blocks; `.memoize` and `.inline` are flags. Returns `:function`; `$` is prefix.                                                                      |
 | `sort`         | One argument accepting `:literal`, `:pathliteral`, `:dictionary`, or `:block`. `.descending` is a flag; `.by:` accepts a string or literal. Results include `:block` or `:nothing`; inspect literal mutation separately from value-returning calls. |
-
-Sources: [Reflection/inspect](https://arturo-lang.io/documentation/library/reflection/inspect), [Reflection/info](https://arturo-lang.io/documentation/library/reflection/info), and the [official text reference](https://arturo-lang.io/llms.txt).

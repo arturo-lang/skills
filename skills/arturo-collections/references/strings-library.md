@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/strings
+    - https://arturo-lang.io/llms.txt
+---
+
 # Strings: function selection
 
 Use for text transformations, matching, interpolation, and similarity. Do not equate character count with encoded byte length. Inspect locale and regex attributes for the request; test Unicode, escaping, and empty input. `render` evaluates interpolation expressions, so a template is not merely inert data.
@@ -34,7 +43,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [upper?](https://arturo-lang.io/documentation/library/strings/upper-)           | Test whether string is uppercase.                                           | `upper? "Ñ"`                                      |
 | [whitespace?](https://arturo-lang.io/documentation/library/strings/whitespace-) | Test whether string consists only of whitespace.                            | `whitespace? "hello"`                             |
 | [wordwrap](https://arturo-lang.io/documentation/library/strings/wordwrap)       | Word wrap a string.                                                         | `wordwrap "one two three four"`                   |
-
-## Sources
-
-Sources: the [official Strings module](https://arturo-lang.io/documentation/library/strings); [official text reference](https://arturo-lang.io/llms.txt).

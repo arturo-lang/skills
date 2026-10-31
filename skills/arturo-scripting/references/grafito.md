@@ -1,6 +1,20 @@
+---
+metadata:
+  author: "Yanis Zafirópulos (drkameleon)"
+  license: "MIT"
+  package-version: "0.2.12"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://github.com/drkameleon/grafito
+    - https://github.com/drkameleon/grafito/blob/v0.2.12/grafito.art
+    - https://grafito.pkgr.art/#command-reference
+    - https://arturo-lang.io/documentation/library/core/import/
+---
+
 # Grafito graph databases
 
-Use [Grafito](https://grafito.pkgr.art/) when the task needs its graph DSL or SQLite-backed graph storage. This guide covers version 0.2.12. Import with `import 'grafito!`; package import may download and execute code.
+Use [Grafito](https://grafito.pkgr.art/) when the task needs its graph DSL or SQLite-backed graph storage. Import with `import 'grafito!`; package import may download and execute code.
 
 The upstream repository also demonstrates `do.import {grafito.art}` for a local checkout; that path is relative to the checkout, not a registry import name.
 
@@ -37,5 +51,3 @@ The infix `~>` aliases directed linking; use explicit `link` when direction woul
 Filters are nested property criteria, for example `fetch 'person [age: [over: 30]]`. Documented filters include `contains`, `prefix`, `suffix`, `under`, `overOrEqual`, `underOrEqual`, `in`, and `not`.
 
 `.helpers: [person book]` creates tag-specific DSL helpers inside the graph environment; use explicit commands for a small integration before introducing sugar. `preview` opens the interactive visualization, so exclude it from headless checks.
-
-Sources: [upstream README and examples](https://github.com/drkameleon/grafito), [implementation](https://github.com/drkameleon/grafito/blob/v0.2.12/grafito.art), [registry command reference](https://grafito.pkgr.art/#command-reference), and [Arturo import reference](https://arturo-lang.io/documentation/library/core/import/).

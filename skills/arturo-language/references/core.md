@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/core
+    - https://arturo-lang.io/llms.txt
+---
+
 # Core functions: purpose and examples
 
 Use this as a selection guide, then ask Arturo for the installed signature using [runtime inspection](inspection.md). These are actual callable functions, not reserved control-flow or declaration syntax. `any`, `null`, and `window` are constants, listed separately below.
@@ -62,10 +71,6 @@ Loading code can introduce callable words after the enclosing code was parsed. T
 | `any`    | Wildcard constant used by `case` for a default match. It is distinct from the `:any` argument type.                                                          | `case 9 [1 [print "one"] any [print "other"]]` |
 | `null`   | Absence of a value. Use when a value is missing; condition functions and `coalesce` also treat it as false.                                                  | `value: null`                                  |
 | `window` | Listed as a null constant in the official text reference and observed as `null` on this runtime. No portable window-management behavior is established here. | `inspect var 'window`                          |
-
-## Sources
-
-Sources: [official Core reference](https://arturo-lang.io/documentation/library/core), [official text reference](https://arturo-lang.io/llms.txt), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 The local-file `import` example is documentation-only; package installation and external-library calls were not exercised.
 

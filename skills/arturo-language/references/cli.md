@@ -1,3 +1,11 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/command-line
+---
+
 # CLI verification
 
 Use the installed runtime's `arturo --help` and `arturo --version` to check available options. Arturo executes `.art` files directly; no build step is needed for ordinary verification.
@@ -14,7 +22,3 @@ Use a file for code containing literal identifiers such as `'items`; embedding t
 Package imports can install missing packages automatically. Keep routine language checks free of remote package imports. Prefer the standard library unless dependencies serve the task.
 
 Bytecode (`--compile`, `--execute`) and bundling (`--bundle`, `--as`) are documented as experimental; consult the installed help before using them for a requested deliverable.
-
-## Sources
-
-Sources: [official CLI guide](https://arturo-lang.io/documentation/command-line).

@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/dates
+    - https://arturo-lang.io/llms.txt
+---
+
 # Dates: function selection
 
 Use for date values, calendar predicates, and interval arithmetic. Capture `now` once when comparing related values. Calendar months, daylight-saving transitions, and elapsed seconds are different concerns; establish timezone and boundary behavior. Current-time examples have variable output.
@@ -22,7 +31,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [today?](https://arturo-lang.io/documentation/library/dates/today-)         | Test whether date is today.                          | `print today? now`          |
 | [tuesday?](https://arturo-lang.io/documentation/library/dates/tuesday-)     | Test whether date is a Tuesday.                      | `print tuesday? now`        |
 | [wednesday?](https://arturo-lang.io/documentation/library/dates/wednesday-) | Test whether date is a Wednesday.                    | `print wednesday? now`      |
-
-## Sources
-
-Sources: the [official Dates module](https://arturo-lang.io/documentation/library/dates); [official text reference](https://arturo-lang.io/llms.txt).

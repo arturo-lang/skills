@@ -1,3 +1,13 @@
+---
+metadata:
+  author: "Yanis Zafirópulos (drkameleon)"
+  license: "MIT"
+  package-version: "0.1.0"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  source-revision: "v0.1.0"
+---
+
 # Climax CLI building
 
 Use [Climax documentation](https://climax.pkgr.art/) and [v0.1.0 source](https://github.com/drkameleon/climax.art/tree/v0.1.0). This release requires Arturo >= 0.10.0; check compatibility before adopting it. Imports can download and execute packages.

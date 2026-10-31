@@ -1,6 +1,19 @@
+---
+metadata:
+  author: "Yanis Zafirópulos (drkameleon)"
+  license: "MIT"
+  package-version: "0.2.0"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://github.com/drkameleon/claude.ai.art/blob/a0ea0e84a6b5e9debb1b661b000295345d482c59/README.md
+    - https://github.com/drkameleon/claude.ai.art/blob/a0ea0e84a6b5e9debb1b661b000295345d482c59/src/api.art
+    - https://arturo-lang.io/documentation/library/core/import/
+---
+
 # Claude API in Arturo
 
-Use the [claude package](https://claude.pkgr.art/) for this Arturo wrapper. Check the project's installed version before adopting examples: this guide covers version 0.2.0. Import with `import "claude"!`; importing may download and execute package code.
+Use the [claude package](https://claude.pkgr.art/) for this Arturo wrapper. Check the project's installed version before adopting examples. Import with `import "claude"!`; importing may download and execute package code.
 
 ## Client and messages
 
@@ -27,5 +40,3 @@ Use `.maxTokens: 32` for a bounded integration check; `.model`, `.system`, `.tem
 ## Verification
 
 Test message construction and response consumers with local fixtures first. Live `chat`/`ask` calls transmit prompt data and consume API credits; keep them explicit integration checks. Non-200 responses throw a runtime error. The source has no retry loop or streaming implementation; do not promise either.
-
-Sources: [upstream README](https://github.com/drkameleon/claude.ai.art/blob/a0ea0e84a6b5e9debb1b661b000295345d482c59/README.md), [implementation](https://github.com/drkameleon/claude.ai.art/blob/a0ea0e84a6b5e9debb1b661b000295345d482c59/src/api.art), and [Arturo import reference](https://arturo-lang.io/documentation/library/core/import/).

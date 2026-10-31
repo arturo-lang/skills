@@ -1,3 +1,11 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-30"
+  sources:
+    - https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199
+---
+
 # Named color literals
 
 Use `#name` for a native `:color`, for example `#aliceBlue` or `#rebeccaPurple`. Use `#[...]` for a dictionary. Keep these separate from function aliases: the `#` dictionary constructor does not construct a named color.
@@ -112,7 +120,3 @@ Read only the group you need or search for a name. Each entry below is a color l
 ### Z
 
 `#zombieGreen`.
-
-## Source
-
-[Arturo color definitions](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199).

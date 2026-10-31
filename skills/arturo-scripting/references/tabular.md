@@ -1,3 +1,13 @@
+---
+metadata:
+  author: "Yanis Zafirópulos (drkameleon)"
+  license: "MIT"
+  package-version: "0.2.0"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  source-revision: "v0.2.0"
+---
+
 # Tabular terminal tables
 
 Use [Tabular documentation](https://tabular.pkgr.art/) and [v0.2.0 source](https://github.com/drkameleon/tabular.art/tree/v0.2.0). Import may download a missing package and execute its entry file.

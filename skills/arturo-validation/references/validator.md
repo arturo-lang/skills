@@ -1,7 +1,19 @@
+---
+metadata:
+  author: "Yanis Zafirópulos (drkameleon)"
+  license: "MIT"
+  package-version: "0.9.0"
+  arturo-version: "0.10.0"
+  source-package-version: "0.8.0"
+  sources:
+    - https://validator.pkgr.art/
+    - https://github.com/drkameleon/validator.art/tree/v0.8.0
+    - https://arturo-lang.io/documentation/library/core/import/
+---
+
 # String validation
 
 Use [validator](https://validator.pkgr.art/) for string-format checks.
-This skill currently supports validator's `0.9.0` and may not work for future versions.
 
 ```art
 import "validator"!
@@ -20,5 +32,3 @@ Modes include `.email`, `.url`, `.ip` (with `.v4` or `.v6`), `.integer`, `.float
 Confirm their defaults in the installed release before encoding a policy.
 
 A successful format check does not prove that a mailbox exists, a URL is reachable, or an account belongs to someone. Preserve the original string unless the application separately asks for normalization.
-
-Sources: [package reference](https://validator.pkgr.art/), [0.8.0 source](https://github.com/drkameleon/validator.art/tree/v0.8.0), [official import reference](https://arturo-lang.io/documentation/library/core/import/).

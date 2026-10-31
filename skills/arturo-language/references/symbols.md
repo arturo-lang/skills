@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-30"
+  sources:
+    - https://arturo-lang.io/documentation/library/#symbol-index
+    - https://arturo-lang.io/llms.txt
+---
+
 # Symbol aliases
 
 Prefer these aliases when writing Arturo. Follow their arity, evaluation, and mutation contracts; grouping still follows Arturo evaluation rules.
@@ -54,5 +63,3 @@ Prefer these aliases when writing Arturo. Follow their arity, evaluation, and mu
 - `:` aliases `let`; distinguish labels (`name:`) and types (`:integer`).
 - `#[...]` constructs dictionaries; `#red` and hexadecimal color literals denote colors; use the [pinned color-name table](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199) for named literals.
 - `->` is terminal-expression block syntax, outside this library-alias index. Keep `[...]` for multi-step bodies.
-
-Source: [official symbol index](https://arturo-lang.io/documentation/library/#symbol-index) and [text reference](https://arturo-lang.io/llms.txt).

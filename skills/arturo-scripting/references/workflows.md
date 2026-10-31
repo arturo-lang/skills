@@ -1,3 +1,15 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-30"
+  sources:
+    - https://arturo-lang.io/llms.txt
+    - https://arturo-lang.io/documentation/library/files/delete
+    - https://arturo-lang.io/documentation/library/files/write
+    - https://arturo-lang.io/documentation/library/exceptions/try/
+    - https://arturo-lang.io/documentation/library/exceptions/throw/
+---
+
 # Bounded scripting workflows
 
 Run these built-in examples with Arturo 0.10.0 in a disposable working directory. No package downloads are needed. Failed `ensure` assertions raise errors.
@@ -55,9 +67,3 @@ Conversion uses the local timezone. Verify offsets, daylight-saving transitions,
 Handle open failures separately when translating errors for a CLI or service. After a successful open, close on success and failure. Bound parameters protect values, not dynamic SQL identifiers.
 
 Check transaction, rollback, flushing, and concurrency behavior for the chosen driver.
-
-## Sources
-
-Sources: the official [text reference](https://arturo-lang.io/llms.txt), specifically System/arg and panic, Types/to, Exceptions/try, Files/read, write and delete, Dates/after and before, and Databases/open, query and close.
-
-Sources: [Files/delete](https://arturo-lang.io/documentation/library/files/delete), [Files/write](https://arturo-lang.io/documentation/library/files/write), [Exceptions/try](https://arturo-lang.io/documentation/library/exceptions/try/), [Exceptions/throw](https://arturo-lang.io/documentation/library/exceptions/throw/).

@@ -1,11 +1,11 @@
 ---
 name: arturo-debugging
 description: Diagnose and fix Arturo runtime errors, scope or aliasing bugs, and regressions using Exceptions and Reflection. Use for .art failures, error handling, runtime inspection, and call-attribute introspection.
+metadata:
+  arturo-version: "0.10.0"
 ---
 
 # Arturo debugging
-
-Examples: [official repository](https://github.com/arturo-lang/examples).
 
 Capture the exact failing invocation, interpreter version, error text, and expected result. Reduce it to a bounded reproduction that preserves the failure. Use [diagnostic patterns](references/debugging.md) for the failure class involved.
 

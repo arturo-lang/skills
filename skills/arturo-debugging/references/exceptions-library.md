@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/exceptions
+    - https://arturo-lang.io/llms.txt
+---
+
 # Exceptions: function selection
 
 Use for explicit errors, guarded evaluation, and error detection. Error-kind constants are not exception-catching syntax. Preserve useful errors rather than swallowing them. Check the result of `try` and verify whether a block leaves additional stack values.
@@ -25,7 +34,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [uiError](https://arturo-lang.io/documentation/library/exceptions/uierror)                 | A UI error.                                            | `inspect uiError`                          |
 | [valueError](https://arturo-lang.io/documentation/library/exceptions/valueerror)           | A value error.                                         | `inspect valueError`                       |
 | [vmError](https://arturo-lang.io/documentation/library/exceptions/vmerror)                 | A VM error.                                            | `inspect vmError`                          |
-
-## Sources
-
-Sources: the [official Exceptions module](https://arturo-lang.io/documentation/library/exceptions); [official text reference](https://arturo-lang.io/llms.txt).

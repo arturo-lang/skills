@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-30"
+  sources:
+    - https://arturo-lang.io/documentation/library/core/import/
+    - https://github.com/arturo-lang/pkgr.art#using-packages
+---
+
 # Split a small program into files
 
 Keep reusable computations in a helper file and execution, I/O, and reporting in the entry script. A helper that only defines functions can be loaded by checks without starting the application.
@@ -17,5 +26,3 @@ Loading arbitrary helper source can have effects, so inspect it before evaluatio
 When namespace isolation is needed, use a local package directory and `import.lean`, retaining the returned dictionary and calling qualified members. Resolve a filename or explicit local path before importing; a bare name can trigger registry installation.
 
 Importing does not supply dependency locking, a sandbox, or automatic resource cleanup. Resources belong in the entry workflow and must be closed on success and failure.
-
-Sources: [Core/import](https://arturo-lang.io/documentation/library/core/import/), [registry import guide](https://github.com/arturo-lang/pkgr.art#using-packages).

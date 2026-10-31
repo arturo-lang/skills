@@ -1,3 +1,16 @@
+---
+metadata:
+  author: "Yanis Zafirópulos (drkameleon)"
+  license: "MIT"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  source-revision: "b6691478050834d32092f8efbd3eddf013918ca3"
+  sources:
+    - https://recase.pkgr.art/
+    - https://github.com/drkameleon/recase.art
+    - https://arturo-lang.io/documentation/library/core/import/
+---
+
 # Identifier case conversion
 
 Use [recase](https://recase.pkgr.art/) when converting names between case conventions. Check the project's package release before depending on acronym or Unicode edge cases. Importing can download a missing package and execute its entrypoint.
@@ -16,5 +29,3 @@ The documented API is `recase str :string`, returning a string. Choose one targe
 Whitespace is stripped during word separation. This transformation is useful for identifiers and labels but does not preserve prose layout. It supports Unicode; converting to ASCII is a separate operation. Keep the source value when reversibility matters, and account for different inputs producing the same converted identifier.
 
 With the package installed, exercise acronyms, existing separators, whitespace, non-ASCII names, and collisions relevant to the application.
-
-Sources: [package API and examples](https://recase.pkgr.art/), [upstream repository](https://github.com/drkameleon/recase.art), [official import reference](https://arturo-lang.io/documentation/library/core/import/).

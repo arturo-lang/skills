@@ -1,3 +1,13 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-30"
+  sources:
+    - https://arturo-lang.io/documentation/language/#scope-and-rules
+    - https://arturo-lang.io/documentation/library/strings/match/
+    - https://arturo-lang.io/documentation/library/strings/escape/
+---
+
 # Collection patterns
 
 ## Choosing an iterator
@@ -48,13 +58,9 @@ When a pattern must treat supplied text literally, construct it with `to :regex 
 
 ## Verification
 
-## Sources
-
 - [Official reference](https://arturo-lang.io/llms.txt): Collections; Iterators/select, filter, map, fold, loop; Strings.
 - [Filter task implemented with select](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Filter.art).
 - [Dictionary iteration](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Associative%20array%252FIteration.art).
-
-Sources: [language scope rules](https://arturo-lang.io/documentation/language/#scope-and-rules), [match](https://arturo-lang.io/documentation/library/strings/match/), and [escape](https://arturo-lang.io/documentation/library/strings/escape/).
 
 Upstream tests by topic:
 

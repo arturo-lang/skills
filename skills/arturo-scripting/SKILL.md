@@ -1,11 +1,11 @@
 ---
 name: arturo-scripting
 description: Use climax (Climax) to build Arturo CLI tools with typed options, subcommands, help, and dispatch. Automate terminal output, Tasks routines, files, processes, dates, databases, and desktop integration.
+metadata:
+  arturo-version: "0.10.0"
 ---
 
 # Arturo scripting
-
-Examples: [official repository](https://github.com/arturo-lang/examples).
 
 Use [Climax](references/climax.md) for typed CLI options, subcommands, help, and dispatch; built-in argument handling suffices for small scripts.
 

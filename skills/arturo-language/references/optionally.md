@@ -1,8 +1,22 @@
+---
+metadata:
+  author: "RickBarretto"
+  license: "MIT"
+  package-version: "1.0.0"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://optionally.pkgr.art/
+    - https://github.com/RickBarretto/optionally.art/blob/v1.0.0/src/lib.art
+    - https://github.com/RickBarretto/optionally.art/tree/v1.0.0/examples
+    - https://arturo-lang.io/documentation/library/core/function/
+---
+
 # Optional function attributes and DSLs
 
 Use optionally for typed attribute interfaces in reusable functions and DSL commands. Keep DSL required operands positional and optional configuration in attributes; this preserves the generated bindings and evaluation behavior described below.
 
-Use [optionally](https://optionally.pkgr.art/) to generate attribute handling for Arturo functions. Version 1.0.0 requires Arturo 0.10.0 or newer. An import can download the package and execute its entrypoint.
+Use [optionally](https://optionally.pkgr.art/) to generate attribute handling for Arturo functions. Requires Arturo 0.10.0 or newer. An import can download the package and execute its entrypoint.
 
 ```art
 import {optionally}!
@@ -24,5 +38,3 @@ Typed optionals default to `null`; a supplied value must match the declared type
 `.verbose?` and attribute-labels such as `.verbose?: true` are supported too. A name without the suffix does not generate a question-mark alias.
 
 Keep generated optional names distinct from required parameters and body locals so the generated `let` bindings do not hide useful values. Pass optionals as attributes, for example `.age: 30`, rather than inserting them into the required argument sequence.
-
-Sources: [package documentation](https://optionally.pkgr.art/), [1.0.0 implementation](https://github.com/RickBarretto/optionally.art/blob/v1.0.0/src/lib.art), [upstream examples](https://github.com/RickBarretto/optionally.art/tree/v1.0.0/examples), [official function reference](https://arturo-lang.io/documentation/library/core/function/).

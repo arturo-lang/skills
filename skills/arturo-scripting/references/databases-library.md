@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/databases
+    - https://arturo-lang.io/llms.txt
+---
+
 # Databases: function selection
 
 Use for database connections, parameterized SQL, and persistent stores. Inspect the enabled backend and return shapes. Bind SQL data with `.with:` instead of interpolating it. Close connections on success and failure. Stores write to disk; `.global` changes the destination and `.deferred` changes when persistence occurs.
@@ -12,7 +21,3 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 | [open](https://arturo-lang.io/documentation/library/databases/open)   | Opens a new database connection and returns database.                      | `db: open.sqlite ":memory:"`                |
 | [query](https://arturo-lang.io/documentation/library/databases/query) | Execute command or block of commands in database and get returned rows.    | `query.with: ["Ada"] db "SELECT ? AS name"` |
 | [store](https://arturo-lang.io/documentation/library/databases/store) | Open a persistent key/value store; use for automatically saved local data. | `data: store "example-store"`               |
-
-## Sources
-
-Sources: the [official Databases module](https://arturo-lang.io/documentation/library/databases); [official text reference](https://arturo-lang.io/llms.txt).

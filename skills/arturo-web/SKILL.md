@@ -1,11 +1,11 @@
 ---
 name: arturo-web
 description: Use lanx (Lanx) to serve static files or preview a local site with Arturo. Build web content with HTML, integrate MediaWiki through mwiki, and render MathJax equations or Mermaid diagrams in webviews.
+metadata:
+  arturo-version: "0.10.0"
 ---
 
 # Arturo web packages
-
-Examples: [official repository](https://github.com/arturo-lang/examples).
 
 Read the reference for the task:
 

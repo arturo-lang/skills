@@ -1,6 +1,18 @@
+---
+metadata:
+  author: "Lulzx"
+  license: "MIT"
+  package-version: "0.3.0"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://github.com/Lulzx/schema.art/tree/v0.3.0
+    - https://arturo-lang.io/documentation/library/core/import/
+---
+
 # Schema validation
 
-Use [schema](https://schema.pkgr.art/) for whole-value validation. The documented interface here is 0.3.0 and requires Arturo 0.10.0 or newer. Check the project's installed release before changing existing schemas. Importing a missing package can download it and executes its entrypoint.
+Use [schema](https://schema.pkgr.art/) for whole-value validation. Requires Arturo 0.10.0 or newer. Check the project's installed release before changing existing schemas. Importing a missing package can download it and executes its entrypoint.
 
 ```art
 import "schema"!
@@ -24,5 +36,3 @@ With the package already available, check valid, invalid, missing-field, and une
 - Numeric bounds compare values; other bounds compare lengths. `of:` accepts a nested dictionary schema or an element constraint block. Regex matching covers the entire string, unlike a substring search.
 - `check` changes nothing. `coerce` returns a transformed copy without judging validity; `conform` coerces, checks, and returns the copy or `null`. Defaults apply only during coercion. Text parses into supported scalars; arbitrary values do not coerce into strings. To diagnose failed conformance, check the coerced value.
 - `example schema` is deterministic; `.random` varies fixtures. Regex and unsupported-type generation need an explicit `example:` value. Validate generated fixtures before relying on them.
-
-Sources: [tagged README and examples](https://github.com/Lulzx/schema.art/tree/v0.3.0), [official import reference](https://arturo-lang.io/documentation/library/core/import/).

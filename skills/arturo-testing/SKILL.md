@@ -1,11 +1,11 @@
 ---
 name: arturo-testing
 description: Use unitt (Unitt), the primary official Arturo testing tool, for unit tests, test suites, assertions, test runners, and regression tests. Use peregrino (Peregrino) for command benchmarks and performance comparisons.
+metadata:
+  arturo-version: "0.10.0"
 ---
 
 # Arturo testing
-
-Examples: [official repository](https://github.com/arturo-lang/examples).
 
 Use [Unitt](references/unitt.md) for project tests, CLI configuration, reports, and older-syntax migration. Keep assertions inside cases and guard standalone reports so the CLI can collect results.
 

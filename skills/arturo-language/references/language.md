@@ -1,3 +1,13 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-30"
+  sources:
+    - https://arturo-lang.io/documentation/language#important-concepts
+    - https://arturo-lang.io/documentation/library/core/function/
+    - https://arturo-lang.io/documentation/library/core/return/
+---
+
 # Evaluation, values, and scope
 
 ## Expressions
@@ -93,10 +103,6 @@ Bind the clone before updating it so a helper intended to return data does not a
 Do not assume nested-block copying rules apply to databases, sockets, or custom objects.
 
 Logical values include `true`, `false`, and `maybe`. Equality is `=`; `==` is not its standard alias. Use `to :integer text` for conversion and check invalid input instead of assuming parsing succeeds.
-
-## Sources
-
-Sources: [official language guide](https://arturo-lang.io/documentation/language#important-concepts), [Core/function](https://arturo-lang.io/documentation/library/core/function/), [Core/return](https://arturo-lang.io/documentation/library/core/return/).
 
 - [Official Core reference](https://arturo-lang.io/documentation/library/core): case, when, if, unless, switch, while, and function; also available in the official text reference below.
 - [Official reference](https://arturo-lang.io/llms.txt): Precedence and Evaluation; Scope and rules; In-place variable modification; Core/function; Core/new; Types/to.

@@ -1,6 +1,8 @@
 ---
 name: arturo-validation
 description: Use schema for Arturo structured data validation, nested schemas, coercion, defaults, and fault diagnostics. Use validator for string validation, email, URL, IP, dates, and password rules.
+metadata:
+  arturo-version: "0.10.0"
 ---
 
 # Arturo validation and schemas
