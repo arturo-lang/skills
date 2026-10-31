@@ -14,7 +14,7 @@ Reviewed 2026-10-30 against the [official language guide](https://arturo-lang.io
 
 ## CI guidance
 
-Reviewed 2026-10-30 using the GitHub CLI against [setup-arturo v2](https://github.com/arturo-lang/setup-arturo/tree/59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7), [bundler v2](https://github.com/arturo-lang/bundler/tree/856568f0f4c5baf6ee61e9a963abacda3dd4e2d9), and [Unitt v3.1.1](https://github.com/RickBarretto/unitt/tree/v3.1.1). The independently installable arturo-ci skill includes workflow and testing references plus retained MIT notices. Action source was checked alongside README examples, especially archive upload versus release publication and version inputs. Workflow examples are source-derived; local validation does not execute GitHub Actions, download Unitt, or build application binaries.
+Reviewed 2026-10-30 using the GitHub CLI against [setup-arturo v2](https://github.com/arturo-lang/setup-arturo/tree/59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7), [bundler v2](https://github.com/arturo-lang/bundler/tree/856568f0f4c5baf6ee61e9a963abacda3dd4e2d9), and [Unitt v3.1.1](https://github.com/RickBarretto/unitt/tree/v3.1.1). The independently installable arturo-testing skill includes workflow and testing references plus retained MIT notices. Action source was checked alongside README examples, especially archive upload versus release publication and version inputs. Workflow examples are source-derived; local validation does not execute GitHub Actions, download Unitt, or build application binaries.
 
 ## External package skills
 

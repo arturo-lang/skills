@@ -7,7 +7,7 @@ metadata:
 
 ### Arturo Collection
 
-- Operations: 
+- Operations:
   - Use `map` to transform
   - `select` to retain matches
   - `filter` to remove matches

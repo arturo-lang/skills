@@ -7,55 +7,32 @@ metadata:
 
 # Arturo language
 
-## Task defaults
+## Essential rules
 
-- Check `arturo --version` and `arturo --help` before relying on version-sensitive behavior. Read [language rules](references/language.md) for the constructs involved and [CLI verification](references/cli.md) for execution commands and their limits.
-- Use the [official language guide](https://arturo-lang.io/documentation/language) for evaluation and syntax, and the [official reference](https://arturo-lang.io/llms.txt) for unfamiliar function arity, accepted types, attributes, and literal support. Do not translate another language's APIs by name.
-- Query runtime signatures with `inspect info.get 'functionName`. Read [runtime inspection](references/inspection.md) to interpret the output. Use [Core functions](references/core.md) for Core APIs and examples.
-- Prefer built-ins and bounded offline examples. For multi-file programs, read [project organization](references/projects.md) and separate reusable functions from entry-point effects; verify loading and scope before splitting files.
-- Prefer symbolic aliases: `$` (`function`), `./` (`relative`), `??` (`coalesce`), `?` (`switch`), `->` (single-expression block), `@` (`array`), `#` (`dictionary`). Check position and lookalikes in the [symbol reference](references/symbols.md).
-- Use `#[...]` for dictionaries and `[...]` for bodies or unevaluated data. `#red` and hexadecimal color literals are colors.
-- Annotate parameters when their types define the function contract. Use `ensure`, optionally with `.that:` for a message, to reject invalid state before dependent operations or effects. Type annotations do not replace field, range, or resource checks.
-- Write readable `.art` manually: separate statements onto lines, indent nested blocks consistently, and use `;` comments to explain surprising grouping or mutation. Use explicit function and iterator parameters before introducing shorthand.
+Arturo has values and callable words, not reserved keywords. `name:` assigns, `'name` is a literal identifier, `:integer` is a type, `.flag` is an attribute, and `.option: value` passes an attribute value. `[...]` holds unevaluated data or code; `#[...]` creates a dictionary. `#red` and hexadecimal color literals are colors.
 
-## Naming defaults
+Expressions evaluate right to left; statements execute in source order. Arity determines argument boundaries. Use parentheses or intermediate bindings instead of assuming arithmetic precedence. Equality is `=`.
 
-Default to lower camelCase for variables, labels, functions, and object/type names (`:someObject`). Prefix private helpers with `_` (`_parseItem`); this does not enforce access control.
+Supported literal arguments enable mutation: `sort 'items` changes the binding; `sort items` returns a result. Use `new` for independent copies. Functions have scope; ordinary evaluated blocks do not. Check function bodies for unintended extra stack results.
 
-Preserve external field names and project/user conventions; `snake_case` is supported, especially for interoperability.
+Read [evaluation, functions, control flow, scope, and copying](references/language.md) for the constructs involved. Use `if`/`unless` for conditional actions, `switch` for two alternatives, `case` for value matching, and `when` for condition chains; these are callable words with defined arity.
 
-## Language essentials
+Annotate parameters when types define the contract. Use `ensure`, optionally `.that:` for a message, before dependent operations; types do not replace field, range, or resource checks.
 
-Arturo code consists of values and callable words; there are no reserved keywords. `name:` assigns a value, `'name` denotes a literal identifier, `:integer` is a type, `.flag` is an attribute, and `.option: value` uses an attribute-label (`.option:`) to pass a value. Blocks are data until evaluated.
+## Find the relevant detail
 
-Expressions evaluate right to left; successive statements still execute in source order. Function arity determines argument boundaries. Use parentheses or intermediate bindings to make intended grouping explicit. Do not apply conventional arithmetic precedence.
+- [Runtime inspection and CLI verification](references/inspection.md): check installed version/options and interpret `inspect info.get 'functionName` without invoking the target.
+- [Core APIs](references/core.md), [Comparison](references/comparison-library.md), [Logic](references/logic-library.md), [Types](references/types-library.md): function selection and examples.
+- [Symbols](references/symbols.md): preferred aliases `$`, `./`, `??`, `?`, `->`, `@`, `#`; positions and lookalikes.
+- [Project organization](references/projects.md): multi-file loading, scope, reusable functions, and entry-point effects.
+- [optionally](references/optionally.md): typed function attributes and DSL interfaces; operands remain positional; returns a body block, not a parser or closure mechanism.
+- [States](references/states.md): initial states, event transitions, and mutable state inspection.
+- [ArtSembly](references/artsembly.md): experimental bytecode, labels, jumps, and VM compatibility.
 
-Distinguish returned values from in-place operations. A supported literal argument such as `sort 'items` changes the binding; `sort items` returns a result. Use `new` when an independent copy is required. Functions have scope; ordinary evaluated blocks do not.
+For unfamiliar APIs, consult the [official reference](https://arturo-lang.io/llms.txt) and [language guide](https://arturo-lang.io/documentation/language); do not infer APIs from other languages. Package imports may download and evaluate code.
 
-Control flow (`if`, `unless`, `switch`, `case`, `when`, `while`) and `function` are callable Core words with defined arity and types. Use `if` or `unless` for a conditional action, `switch` for two alternatives, `case` for value matching, and `when` for condition chains.
+## Conventions and verification
 
-Read the [control-flow forms](references/language.md#functions-and-control-flow) before choosing or combining them.
+Default to lowerCamelCase, including object/type names (`:someObject`); `_` marks private helpers without enforcing access control. Preserve project conventions and external field names. Format Arturo manually with consistent indentation, separate statements, and `;` comments for surprising semantics. Start with explicit function/iterator parameters.
 
-Use `=` for equality; do not assume `==` or another language's `if/else` syntax. Review function bodies for unintended extra stack results. When porting code, verify grouping, scope, copying, and mutation independently of surface syntax.
-
-## Function attributes, DSLs, and VM packages
-
-- [optionally](references/optionally.md): build typed function attributes and DSL command interfaces using generated attribute bindings. Required operands remain positional; the package returns a function body block and is not a standalone DSL parser or closure mechanism.
-- [States](references/states.md): model finite state machines with explicit initial states, event transitions, and mutable current-state inspection.
-- [ArtSembly](references/artsembly.md): explore experimental VM bytecode assembly, stack operations, labels, and jumps. Check compatibility with the installed VM before execution.
-
-Read the relevant package guide for evaluation rules and documented releases. Package imports may download and evaluate code.
-
-## Verification defaults
-
-Run the smallest relevant program, checking expected results and relevant empty or invalid inputs. For scope or mutation changes, assert both the returned value and the affected outer bindings or collections. Prefer `ensure [condition]` checks that fail on incorrect behavior over printed output alone.
-
-Run `arturo --no-color examples/basics.art` from this skill directory for offline assertions of evaluation, scope, copying, and mutation.
-
-Report checks and relevant limitations. If Arturo is unavailable, mark behavior unverified. If local behavior differs from the reference, isolate a minimal reproduction before recommending a form.
-
-## Module references
-
-- [Comparison](references/comparison-library.md).
-- [Logic](references/logic-library.md).
-- [Types](references/types-library.md).
+Prefer built-ins and bounded offline checks using `ensure`. Assert returned values and affected bindings for scope/mutation changes, including relevant empty/invalid inputs. Run `arturo --no-color examples/basics.art` from this skill directory. Report results and limitations; mark behavior unverified without Arturo and isolate reference/runtime discrepancies with a minimal reproducer.

@@ -3,18 +3,20 @@ metadata:
   arturo-version: 0.10.0
   review-date: 2026-10-29
   sources:
+    - https://arturo-lang.io/documentation/language/#scope-and-rules
     - https://arturo-lang.io/documentation/library/iterators
     - https://arturo-lang.io/llms.txt
 ---
 
-### Iterator Guidelines
+# Iterators
 
-- Use cases: Transformations, grouping, searching, and side effects over collections.
-- Filtering: `select` retains matching elements; `filter` removes them, regardless of misleading upstream documentation.
-- Scope: Iterator-injected variables are temporary and restored afterward.
-- Parameters: Use explicit parameter blocks and verify iterator signatures.
-- Folding: Confirm accumulator argument order and use `.seed:` when an initial value is needed.
+## Scope and empty inputs
 
+Iterator arguments and injected indices temporarily shadow bindings, which are restored afterward; other assignments persist. Index injection uses `.with: 'i`; verify each iterator's parameters and attributes.
+
+Empty `map`, `select`, and `filter` return `[]`; seeded `fold` returns its seed without running the body. Use `map` for transformations, `select` to retain matches, `filter` to remove matches, `fold` to accumulate, and `loop` for effects. Examples below cover each form.
+
+Scope and empty-input patterns reviewed 2026-10-30.
 
 | Name                                                                          | Purpose / when to use                                                            | Example                                        |
 | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------- |

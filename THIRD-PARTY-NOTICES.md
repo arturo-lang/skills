@@ -32,7 +32,7 @@ License texts are reproduced verbatim in the linked skill notices. Package autho
 
 ## Development dependencies
 
-The [arturo-ci notices](skills/arturo-ci/THIRD-PARTY-NOTICES.md) additionally retain MIT licenses for setup-arturo (`59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7`), bundler (`856568f0f4c5baf6ee61e9a963abacda3dd4e2d9`), and the CI skill's Unitt v3.1.1 guidance. Action documentation and implementations were reviewed on 2026-10-30; no action code is bundled.
+The [testing and CI notices](skills/arturo-testing/THIRD-PARTY-NOTICES.md) additionally retain MIT licenses for setup-arturo (`59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7`), bundler (`856568f0f4c5baf6ee61e9a963abacda3dd4e2d9`), and the CI skill's Unitt v3.1.1 guidance. Action documentation and implementations were reviewed on 2026-10-30; no action code is bundled.
 
 Checked against the installed packages and locked versions on 2026-10-30. These are development tools and their dependencies, not content included in independently installed Arturo skills. Their distributions retain their own license files; the Skills CLI also ships `ThirdPartyNoticeText.txt` for bundled components. No dependency code is copied into this repository. Biome’s optional binaries for other platforms are declared in `bun.lock`; only the installed Linux x64 variants were inspected here.
 

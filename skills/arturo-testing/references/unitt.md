@@ -16,8 +16,6 @@ Use Unitt as the primary tool for project unit tests; it is used officially. Imp
 
 Prefer `describe`/`it`/`expects`. Assertions belong inside cases; `.be:` or `.to:` selects a predicate literal with evaluated arguments. Keep test inputs deterministic.
 
-Example:
-
 ```art
 import {unitt}!
 
@@ -33,6 +31,14 @@ if standalone? ::
 
 `report` exits with the result status; `.keep` continues execution. `'minimal` reports failures and summary. Guard standalone reporting so the CLI can collect results.
 
-Install with `arturo -p install unitt`, then run `unitt`. Configure project-root `config.art` with `path`, `suffix`, and `binary`; use the actual Arturo executable path.
+Install with `arturo -p install unitt`, then run `unitt`. Configure project-root `config.art` (adapt paths to the project):
 
-`test`, `suite`, and `assert.with:` support older syntax. Conditional `.skip:` skips cases. Version 3 removed `.prop`, `.static`, and `fatal`; `.prop` never generated property tests. Uncaught exceptions stop the runner.
+```art
+path: "specs"
+suffix: ".spec.art"
+binary: "arturo"
+```
+
+Place matching test files under `path`; `binary` selects the Arturo executable. Run a guarded file directly with `arturo specs/example.spec.art`.
+
+`test`, `suite`, and `assert.with:` support older syntax. Conditional `.skip: logicalValue` skips `it` or standalone `test` cases when true. Version 3 removed `.prop`, `.static`, and `fatal`; `.prop` never generated property tests. Uncaught exceptions stop the runner.

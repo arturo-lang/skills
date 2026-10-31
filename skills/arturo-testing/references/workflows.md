@@ -8,7 +8,7 @@ metadata:
 
 ## Install and test
 
- Use [Unitt test files](unitt.md) with assertions inside cases and a guarded standalone report.
+Use [Unitt test files](unitt.md) with assertions inside cases and a guarded standalone report.
 
 ```yaml
 name: Arturo CI

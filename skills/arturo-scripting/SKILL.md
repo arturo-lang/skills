@@ -7,29 +7,19 @@ metadata:
 
 # Arturo scripting
 
-Use [Climax](references/climax.md) for typed CLI options, subcommands, help, and dispatch; built-in argument handling suffices for small scripts.
+Use `arturo script.art`; check the installed CLI with `arturo --help` and `arturo --version`. Read [runtime guidance](references/runtime.md) for signatures and evaluation.
 
-For argument parsing or file operations, read [CLI and file patterns](references/scripting.md). Establish inputs, output destinations, current-directory assumptions, and exit behavior before implementing the script.
+- [CLI and file patterns](references/scripting.md): raw `arg` versus parsed `args`, identifiers versus counts, paths, and errors. `write` takes content before destination.
+- [Bounded workflows](references/workflows.md): validated CLI input, owned files, fixed dates, and SQLite success/failure cleanup. Check deletion postconditions and preserve [action and cleanup failures](references/workflows.md#preserve-action-and-cleanup-failures) separately.
+- Offline assertions: [arguments](examples/arguments.art), [count parsing](examples/input-count.art). Check ordinary, invalid, and empty inputs, file contents, and exit status in temporary directories.
 
-For complete input-validation and resource-lifecycle examples, read [bounded scripting workflows](references/workflows.md): raw CLI inputs, files, fixed dates, and SQLite success/failure/cleanup.
-
-When cleanup can fail too, use [separate action and cleanup diagnostics](references/workflows.md#preserve-action-and-cleanup-failures). A normal return from `delete` does not prove removal succeeded; verify the postcondition and attempt the remaining owned files.
-
-Use `arturo script.art` to execute Arturo. Check `arturo --help` and `arturo --version` for the installed CLI. Use `arg` for raw arguments and `args` for parsed options, preserving strings when automatic conversion would lose information.
-
-Prefer built-in file and path operations to shell commands. `write` takes content first and destination second. Resolve paths deliberately; use a temporary directory for verification and do not overwrite user files as a test. Check existence and handle conversion/read errors according to the requested behavior.
-
-Keep reusable logic in functions and CLI effects at the entry point. Consult the official Core/do and Core/function entries before splitting programs across files or exporting names; do not invent JavaScript-style imports.
-
-Check ordinary, invalid, and empty inputs; assert file contents and exit status. [examples/arguments.art](examples/arguments.art) demonstrates raw argument iteration.
-
-[Count parsing](references/scripting.md#a-count-is-different-from-an-identifier) contrasts raw identifiers with numeric counts, missing/invalid inputs, function-local bindings, and successful versus failed `try` results; [offline assertions](examples/input-count.art) verify the routine.
+Keep reusable functions separate from entry-point effects. Verify Core/do and Core/function loading and scope before splitting files; do not invent JavaScript imports.
 
 ## CLI tools and automation packages
 
 Package imports may download and evaluate code. Read only the package guide needed for the task and check its documented release against the installed version.
 
-- [Climax](references/climax.md): CLI commands, groups, typed options, help, and passthrough arguments.
+- [Climax](references/climax.md): typed CLI options, subcommands, help, dispatch, and passthrough; built-in arguments suffice for small scripts.
 - [Progressive](references/progressive.md): bounded progress displays for supported iterators or manually tracked work.
 - [Tabular](references/tabular.md): terminal table strings with headers, alignment, and padding.
 - [MIMEtypes](references/mimetypes.md): look up MIME types by filename or extension.
@@ -41,8 +31,6 @@ Package imports may download and evaluate code. Read only the package guide need
 - [Io](references/io-library.md).
 - [Paths](references/paths-library.md).
 - [System](references/system-library.md).
-
-Query signatures with `inspect info.get 'functionName`; see [runtime guidance](references/runtime.md) when interpreting metadata.
 
 ## encodings, checksums, and hashes
 
