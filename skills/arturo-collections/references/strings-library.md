@@ -11,10 +11,6 @@ metadata:
 
 Use for text transformations, matching, interpolation, and similarity. Do not equate character count with encoded byte length. Inspect locale and regex attributes for the request; test Unicode, escaping, and empty input. `render` evaluates interpolation expressions, so a template is not merely inert data.
 
-Query signatures with `inspect info.get 'alphabet`; see [runtime inspection](runtime.md) for metadata interpretation.
-
-Fragments require surrounding input/resource bindings. Bound inputs; distinguish literal mutation from returned values.
-
 | Name                                                                            | Purpose / when to use                                                       | Example                                           |
 | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------- |
 | [alphabet](https://arturo-lang.io/documentation/library/strings/alphabet)       | Obtain dictionary-index charset for locale.                                 | `alphabet 'es`                                    |

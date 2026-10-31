@@ -8,11 +8,11 @@ metadata:
 
 # Collections: function selection
 
-Use for blocks, dictionaries, ranges, and collection-like strings. Choose an operation by its result and accepted collection type. `contains? collection value` and `in? value collection` reverse argument order. Decide whether literal mutation is intended; direct `set` can affect shared storage. Bound combinations, permutations, and ranges.
-
-Query signatures with `inspect info.get 'append`; see [runtime inspection](runtime.md) for metadata interpretation.
-
-Fragments require surrounding input/resource bindings. Bound inputs; distinguish literal mutation from returned values.
+- Supported types: `:block`, `:dictionary`, `:range`, and collection-like `:string`s.
+- Operation selection: Choose functions based on the desired result and supported collection type.
+- Membership: `contains? collection value` and `in? value collection` use reversed argument order.
+- Mutation: Prefer non-mutating operations unless intentional. Direct `set` may modify shared storage.
+- Performance: Bound ranges, combinations, and permutations to avoid excessive computation.
 
 | Name                                                                              | Purpose / when to use                                                                   | Example                                           |
 | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------- |
