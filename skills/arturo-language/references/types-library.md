@@ -1,6 +1,8 @@
 # Types: function selection
 
-Use for conversion, type predicates, and custom object definitions. Type names use lower camelCase, for example `:someObject`. A syntactic value inside a block can be inspected without resolving its words. `to` takes the type first; handle conversion failures explicitly. Define inheritance and constructors using the actual `define`, `is`, and `constructor` signatures.
+Use for conversion, type predicates, and custom object definitions. Type names use lower camelCase, for example `:someObject`. A syntactic value inside a block can be inspected without resolving its words. `to` takes the type first; handle conversion failures explicitly.
+
+Define inheritance and constructors using the actual `define`, `is`, and `constructor` signatures.
 
 Query signatures with `inspect info.get 'attribute?`; see [inspection guidance](inspection.md) for metadata interpretation.
 
@@ -56,10 +58,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [version?](https://arturo-lang.io/documentation/library/types/version-)               | Test whether value is of type :version.                         | `print version? 1.0.2`                                                     |
 | [word?](https://arturo-lang.io/documentation/library/types/word-)                     | Test whether value is of type :word.                            | `word? first [something x]`                                                |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Types module](https://arturo-lang.io/documentation/library/types); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 47 names resolved.
-
-Checks: 47 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Types module](https://arturo-lang.io/documentation/library/types); [official text reference](https://arturo-lang.io/llms.txt).

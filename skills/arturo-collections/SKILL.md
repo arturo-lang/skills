@@ -5,11 +5,11 @@ description: Implement Arturo collection and text transformations using Collecti
 
 # Arturo collections
 
-Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+Examples: [official repository](https://github.com/arturo-lang/examples).
 
 For iterator, dictionary, or text recipes, read [collection patterns](references/collections.md). Confirm signatures in the [official reference](https://arturo-lang.io/llms.txt) for the collection type being processed.
 
-Choose the operation by its result: `map` transforms, `select` retains matches, `filter` removes matches, `fold` accumulates, and `loop` performs effects. Arturo's `filter` is easy to confuse with other languages' keep-matching operation.
+Choose the operation by its result: `map` transforms, `select` retains matches, `filter` removes matches, `fold` accumulates, and `loop` performs effects.
 
 Decide whether the input may change. Return a transformed value for ordinary pipelines; use supported literal-argument forms only for intentional mutation. Use `new` when preserving an independent copy matters. Parenthesize conversions or intermediate calculations where right-to-left evaluation would change the transformation.
 
@@ -17,7 +17,7 @@ Check empty input, a single element, duplicates, absent dictionary keys, and ele
 
 [examples/collections.art](examples/collections.art) demonstrates bounded offline checks. For specialized operations, consult Collections, Iterators, Strings, Sets, Numbers, or Statistics in the official reference instead of implementing an assumed API.
 
-## References: load only the relevant module
+## Module references
 
 - [Collections](references/collections-library.md).
 - [Iterators](references/iterators-library.md).
@@ -32,4 +32,4 @@ Query signatures with `inspect info.get 'functionName`; see [runtime guidance](r
 - [Unidecode](references/unidecode.md): ASCII transliteration.
 - [RSV](references/rsv.md): binary row data encoding and decoding.
 
-Read only the package needed; imports can download and evaluate code. Package examples are documentation-derived and excluded from offline smoke checks.
+Read only the package needed; imports can download and evaluate code.

@@ -2,7 +2,7 @@
 
 Use [schema](https://schema.pkgr.art/) for whole-value validation. The documented interface here is 0.3.0 and requires Arturo 0.10.0 or newer. Check the project's installed release before changing existing schemas. Importing a missing package can download it and executes its entrypoint.
 
-```arturo
+```art
 import "schema"!
 
 settings: #[
@@ -16,7 +16,7 @@ conform settings #[port: "80"]
 ; => null
 ```
 
-This is a documentation-based example, not part of the offline smoke suite. With the package already available, check valid, invalid, missing-field, and unexpected-field cases locally.
+With the package already available, check valid, invalid, missing-field, and unexpected-field cases locally.
 
 - `check schema value` returns a block of fault dictionaries; an empty block means valid. `check?` returns a logical. `explain faults` renders those faults for people. Preserve `path` and `code` for programmatic error handling.
 - Fields are required and unknown keys are rejected by default. `opt` or `optional` permits omission. `.open` on `check`, `check?`, or `conform` permits unknown keys recursively.
@@ -26,5 +26,3 @@ This is a documentation-based example, not part of the offline smoke suite. With
 - `example schema` is deterministic; `.random` varies fixtures. Regex and unsupported-type generation need an explicit `example:` value. Validate generated fixtures before relying on them.
 
 Sources: [tagged README and examples](https://github.com/Lulzx/schema.art/tree/v0.3.0), [official import reference](https://arturo-lang.io/documentation/library/core/import/).
-
-See [third-party notices](../THIRD-PARTY-NOTICES.md#schema) for attribution, licenses, and reviewed revisions.

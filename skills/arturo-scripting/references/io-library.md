@@ -17,8 +17,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [prints](https://arturo-lang.io/documentation/library/io/prints)     | Print value to screen.                                                       | `prints "hello"`       |
 | [terminal](https://arturo-lang.io/documentation/library/io/terminal) | Obtain info about terminal.                                                  | `inspect terminal`     |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Io module](https://arturo-lang.io/documentation/library/io); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 8 names resolved.
+Sources: the [official Io module](https://arturo-lang.io/documentation/library/io); [official text reference](https://arturo-lang.io/llms.txt).

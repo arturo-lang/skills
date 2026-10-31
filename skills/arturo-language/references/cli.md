@@ -15,6 +15,6 @@ Package imports can install missing packages automatically. Keep routine languag
 
 Bytecode (`--compile`, `--execute`) and bundling (`--bundle`, `--as`) are documented as experimental; consult the installed help before using them for a requested deliverable.
 
-## Verification record and sources
+## Sources
 
-Reviewed on 2026-10-29 against the [official CLI guide](https://arturo-lang.io/documentation/command-line). Version/help, file execution with `--no-color`, and the expression above were locally checked with Arturo 0.10.0 Arizona Bark on amd64/Linux. Package operations, REPL interaction, bytecode, and bundling are documentation-only here.
+Sources: [official CLI guide](https://arturo-lang.io/documentation/command-line).

@@ -20,10 +20,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [pow](https://arturo-lang.io/documentation/library/arithmetic/pow)       | Compute the power of values.                                                          | `print pow 2 3`     |
 | [sub](https://arturo-lang.io/documentation/library/arithmetic/sub)       | Subtract values.                                                                      | `print sub 2 1`     |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Arithmetic module](https://arturo-lang.io/documentation/library/arithmetic); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 11 names resolved.
-
-Checks: 11 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Arithmetic module](https://arturo-lang.io/documentation/library/arithmetic); [official text reference](https://arturo-lang.io/llms.txt).

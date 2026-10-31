@@ -5,16 +5,16 @@ description: Write, explain, or port Arturo (.art) code using its evaluation rul
 
 # Arturo language
 
-Additional relevant examples are available in the [official Arturo examples repository](https://github.com/arturo-lang/examples).
+Examples: [official repository](https://github.com/arturo-lang/examples).
 
 ## Task defaults
 
-- Follow existing `.art` style and project instructions; these defaults fill gaps.
 - Check `arturo --version` and `arturo --help` before relying on version-sensitive behavior. Read [language rules](references/language.md) for the constructs involved and [CLI verification](references/cli.md) for execution commands and their limits.
 - Use the [official language guide](https://arturo-lang.io/documentation/language) for evaluation and syntax, and the [official reference](https://arturo-lang.io/llms.txt) for unfamiliar function arity, accepted types, attributes, and literal support. Do not translate another language's APIs by name.
-- Ask the installed Arturo runtime for function signatures with `inspect info.get 'functionName`. Read [runtime inspection](references/inspection.md) to interpret the output. For Core function purposes, when to use them, and short examples, consult [Core functions](references/core.md).
+- Query runtime signatures with `inspect info.get 'functionName`. Read [runtime inspection](references/inspection.md) to interpret the output. Use [Core functions](references/core.md) for Core APIs and examples.
 - Prefer built-ins and bounded offline examples. For multi-file programs, read [project organization](references/projects.md) and separate reusable functions from entry-point effects; verify loading and scope before splitting files.
-- Read the [symbol reference](references/symbols.md) for all 43 official library aliases, their prefix/infix position, and lookalike pitfalls. Prefer symbolic aliases when available: `$` for `function`, `./` for `relative`, `??` for `coalesce`, `?` for `switch`, `->` for a single-expression block, `@` for `array`, and `#` for `dictionary`. Use `#[...]` for dictionaries; `#red` and hexadecimal color literals are colors. Keep `[...]` for multi-statement bodies and unevaluated data.
+- Prefer symbolic aliases: `$` (`function`), `./` (`relative`), `??` (`coalesce`), `?` (`switch`), `->` (single-expression block), `@` (`array`), `#` (`dictionary`). Check position and lookalikes in the [symbol reference](references/symbols.md).
+- Use `#[...]` for dictionaries and `[...]` for bodies or unevaluated data. `#red` and hexadecimal color literals are colors.
 - Annotate parameters when their types define the function contract. Use `ensure`, optionally with `.that:` for a message, to reject invalid state before dependent operations or effects. Type annotations do not replace field, range, or resource checks.
 - Write readable `.art` manually: separate statements onto lines, indent nested blocks consistently, and use `;` comments to explain surprising grouping or mutation. Use explicit function and iterator parameters before introducing shorthand.
 
@@ -32,7 +32,9 @@ Expressions evaluate right to left; successive statements still execute in sourc
 
 Distinguish returned values from in-place operations. A supported literal argument such as `sort 'items` changes the binding; `sort items` returns a result. Use `new` when an independent copy is required. Functions have scope; ordinary evaluated blocks do not.
 
-Control flow uses actual Core functions: `if`, `unless`, `switch`, `case`, `when`, and loops such as `while`. They are ordinary callable words with defined arity and argument types, not reserved language syntax; even `function` is a function. Use `if` or `unless` for a conditional action, `switch` for two alternatives, `case` for value matching, and `when` for condition chains. Read the [control-flow forms](references/language.md#functions-and-control-flow) before choosing or combining them.
+Control flow (`if`, `unless`, `switch`, `case`, `when`, `while`) and `function` are callable Core words with defined arity and types. Use `if` or `unless` for a conditional action, `switch` for two alternatives, `case` for value matching, and `when` for condition chains.
+
+Read the [control-flow forms](references/language.md#functions-and-control-flow) before choosing or combining them.
 
 Use `=` for equality; do not assume `==` or another language's `if/else` syntax. Review function bodies for unintended extra stack results. When porting code, verify grouping, scope, copying, and mutation independently of surface syntax.
 
@@ -42,18 +44,18 @@ Use `=` for equality; do not assume `==` or another language's `if/else` syntax.
 - [States](references/states.md): model finite state machines with explicit initial states, event transitions, and mutable current-state inspection.
 - [ArtSembly](references/artsembly.md): explore experimental VM bytecode assembly, stack operations, labels, and jumps. Check compatibility with the installed VM before execution.
 
-Read the relevant package guide for evaluation rules and documented releases. Package imports may download and evaluate code; their documentation-derived examples are not executed by the offline smoke suite.
+Read the relevant package guide for evaluation rules and documented releases. Package imports may download and evaluate code.
 
 ## Verification defaults
 
 Run the smallest relevant program, checking expected results and relevant empty or invalid inputs. For scope or mutation changes, assert both the returned value and the affected outer bindings or collections. Prefer `ensure [condition]` checks that fail on incorrect behavior over printed output alone.
 
-[examples/basics.art](examples/basics.art) is an offline executable example covering grouping and rejected calls, extra function results, block/function/iterator scope, empty iteration, sorting, and shared versus independent nested mutation. Run it with `arturo --no-color examples/basics.art` from this skill directory. Report checks and relevant limitations. If Arturo is unavailable, mark behavior unverified. If local behavior differs from the reference, isolate a minimal reproduction before recommending a form.
+Run `arturo --no-color examples/basics.art` from this skill directory for offline assertions of evaluation, scope, copying, and mutation.
 
-## References: load only the relevant module
+Report checks and relevant limitations. If Arturo is unavailable, mark behavior unverified. If local behavior differs from the reference, isolate a minimal reproduction before recommending a form.
+
+## Module references
 
 - [Comparison](references/comparison-library.md).
 - [Logic](references/logic-library.md).
 - [Types](references/types-library.md).
-
-Query the runtime as described in [inspection guidance](references/inspection.md).

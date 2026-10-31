@@ -4,9 +4,9 @@ Use [States documentation](https://states.pkgr.art/) and [v0.1.0 source](https:/
 
 Construct `:states` from an initial-state literal and a transition block. Each transition is ordered **event, source, destination**. Separators such as `/` and `~>` are DSL decoration; do not interpret them as ordinary division or language operators here.
 
-Documentation-based bounded example; not run in the library's offline smoke suite:
+Example:
 
-```arturo
+```art
 import {states}!
 
 door: to :states ['closed [
@@ -24,5 +24,3 @@ print door\state
 Read the current state through `machine\state`. Calling an event method or `machine\changeFrom 'event` transitions that existing machine; subsequent reads observe its changed state.
 
 Enumerate transitions for every supported event/source pair, including intentional self-transitions. Test event sequences and expected states. The overview does not specify handling of missing transitions, duplicate definitions, callbacks, or persistence: inspect source before relying on those behaviors or adding such capabilities.
-
-See [third-party notices](../THIRD-PARTY-NOTICES.md#states) for attribution, licenses, and reviewed revisions.

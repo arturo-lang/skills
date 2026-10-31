@@ -4,7 +4,7 @@ Use `artsembly` for deliberate VM experiments. It is an incomplete experimental 
 
 `assemble` accepts a block or string and returns a Bytecode object. Assembly commands belong inside that input. Constructing bytecode and executing it with `do` are separate operations:
 
-```arturo
+```art
 import "artsembly"!
 
 program: assemble {
@@ -15,10 +15,10 @@ program: assemble {
 do program
 ```
 
-This bounded example is documentation-derived, not part of the offline smoke suite. Import can download and evaluate the package.
+Import can download and evaluate the package.
 
-Track stack contents explicitly: `push` adds a value, `store` assigns its top value to a symbol, `load` retrieves a symbol, and `call` invokes a named function. `goto` targets a label; `jmpIf` and `jmpIfNot` are documented as forward conditional jumps. Do not infer conventional assembly operand order, unrestricted backward conditional jumps, or complete opcode coverage. Bound loops before executing them and inspect the implementation for VM-sensitive behavior.
+Track stack contents explicitly: `push` adds a value, `store` assigns its top value to a symbol, `load` retrieves a symbol, and `call` invokes a named function. `goto` targets a label; `jmpIf` and `jmpIfNot` are documented as forward conditional jumps.
+
+Do not infer conventional assembly operand order, unrestricted backward conditional jumps, or complete opcode coverage. Bound loops before executing them and inspect the implementation for VM-sensitive behavior.
 
 Sources: [package documentation and command list](https://artsembly.pkgr.art/), [release 0.3.0](https://github.com/drkameleon/artsembly/tree/v0.3.0), [Core/do](https://arturo-lang.io/documentation/library/core/do/).
-
-See [third-party notices](../THIRD-PARTY-NOTICES.md#artsembly) for attribution, licenses, and reviewed revisions.

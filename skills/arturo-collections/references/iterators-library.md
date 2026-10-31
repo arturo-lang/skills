@@ -24,10 +24,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [select](https://arturo-lang.io/documentation/library/iterators/select)       | Obtain items in collection that satisfy condition.                               | `select 1..6 'item [even? item]`               |
 | [some?](https://arturo-lang.io/documentation/library/iterators/some-)         | Test whether any of collection's items satisfy condition.                        | `some? [1 2 3] 'item [even? item]`             |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Iterators module](https://arturo-lang.io/documentation/library/iterators); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 15 names resolved.
-
-Checks: 15 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Iterators module](https://arturo-lang.io/documentation/library/iterators); [official text reference](https://arturo-lang.io/llms.txt).

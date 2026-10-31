@@ -15,8 +15,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [normalize](https://arturo-lang.io/documentation/library/paths/normalize) | Obtain normalized version of path.                                 | `normalize "one/../two"`              |
 | [relative](https://arturo-lang.io/documentation/library/paths/relative)   | Obtain relative path for path, based on current script's location. | `relative "helpers.art"`              |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Paths module](https://arturo-lang.io/documentation/library/paths); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 6 names resolved.
+Sources: the [official Paths module](https://arturo-lang.io/documentation/library/paths); [official text reference](https://arturo-lang.io/llms.txt).

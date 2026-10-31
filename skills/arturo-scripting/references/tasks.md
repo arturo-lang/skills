@@ -8,6 +8,4 @@ See the [upstream task examples](https://github.com/RickBarretto/tasks/blob/v1.0
 
 `directory` creates a directory. `file filename action` supports file requirements; `.as:` binds a dictionary containing `file` and `requires` inside its action. Confirm timestamp and rebuild rules in source before designing incremental builds.
 
-`exec` (alias `|>`) runs shell commands and is available only within routine/task actions. Treat those commands and cleanup actions as real filesystem/process effects; do not copy upstream destructive cleanup examples into smoke checks.
-
-See [third-party notices](../THIRD-PARTY-NOTICES.md#tasks) for attribution, licenses, and reviewed revisions.
+`exec` (alias `|>`) runs shell commands and is available only within routine/task actions. Treat those commands and cleanup actions as real filesystem/process effects.

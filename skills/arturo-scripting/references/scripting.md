@@ -8,11 +8,13 @@ Validate the number of positional arguments before indexing. Use `to :integer` o
 
 ### A count is different from an identifier
 
-[input-count.art](../examples/input-count.art) defines `countFrom inputs`: require one argument, convert it with `to :integer`, reject negative counts, and return the result explicitly. `"001"` becomes `1` for a count; keep the raw string for an identifier. The assertions contrast valid counts with zero, missing/extra arguments, an empty string, malformed text, and a negative value. They also check that the input block and an outer `count` binding remain unchanged by function-local assignments.
+[input-count.art](../examples/input-count.art) defines `countFrom inputs`: require one argument, convert it with `to :integer`, reject negative counts, and return the result explicitly. `"001"` becomes `1` for a count; keep the raw string for an identifier.
+
+Reject missing/extra arguments, empty strings, malformed text, and negative counts. Keep parser assignments local.
 
 To adapt the routine to a CLI, pass `arg` instead of the example blocks. Assign the result inside `try`, then branch on `error?` before using it:
 
-```arturo
+```art
 parsed: null
 err: try [parsed: countFrom arg]
 switch error? err [
@@ -22,7 +24,9 @@ switch error? err [
 ]
 ```
 
-This fragment assumes `countFrom` from the worked example is already defined. Add the application's chosen exit status at its entry point. `try` returns null on success, not the parsed count. If the right-hand side fails, an earlier `parsed` value remains; never treat it as the current result without checking `err`. This routine delegates accepted numeric text to the installed converter; it does not enforce a digits-only grammar or a workload limit. Add those constraints when the count will control expensive work.
+This fragment assumes `countFrom` from the worked example is already defined. Add the application's chosen exit status at its entry point. `try` returns null on success, not the parsed count. If the right-hand side fails, an earlier `parsed` value remains; never treat it as the current result without checking `err`.
+
+This routine delegates accepted numeric text to the installed converter; it does not enforce a digits-only grammar or a workload limit. Add those constraints when the count will control expensive work.
 
 `arturo -e 'print 2 + 3'` is convenient for a small reproduction. Prefer a file for multi-line programs and shell-sensitive strings. Do not assume every experimental compile/bundle option is present across interpreter versions.
 
@@ -39,7 +43,9 @@ This fragment assumes `countFrom` from the worked example is already defined. Ad
 
 For ambiguous text/path inputs, check the `read.file` attribute. `read` can also accept URLs or format content; do not assume every string is treated as a local filename.
 
-[files.art](../examples/files.art) contrasts a normal read/append with an empty file and a missing-file failure. It asserts the resulting contents, that a failed read leaves the previous result binding unchanged, and that it does not create the missing file. Run it in a disposable working directory: the example overwrites its named fixtures. Use `read.file` when a missing local file must raise an error rather than allowing another interpretation of the input.
+[files.art](../examples/files.art) contrasts a normal read/append with an empty file and a missing-file failure. It asserts the resulting contents, that a failed read leaves the previous result binding unchanged, and that it does not create the missing file.
+
+Run it in a disposable working directory: the example overwrites its named fixtures. Use `read.file` when a missing local file must raise an error rather than allowing another interpretation of the input.
 
 Paths/absolute, relative, normalize, extract, and list provide path operations. Their attributes affect output and resolution; check the current signature before using them. A script's location and the process working directory are distinct concepts. Confirm how System/script and System/path behave when the task depends on that distinction.
 
@@ -53,11 +59,7 @@ For cleanup that must continue after a failed removal, use [separate action and 
 
 ## Sources
 
-Count recipe reviewed and asserted on 2026-10-30 using Arturo 0.10.0 Arizona Bark, amd64/Linux: `arturo --no-color examples/input-count.art` prints `input count ok`. It is offline and does not read or write files. The CLI adaptation uses the same routine; shell invocation and process exit handling are application-specific.
-
-The same runtime verifies `examples/files.art` in a temporary working directory, printing `files ok`, and checks that count-parser failures restore the outer `count` binding. File permission failures, concurrent modification, and atomic writes belong to later filesystem workflow coverage.
-
-The recipe summarizes the Arturo project/Yanis Zafirópulos documentation ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)), reorganized with original contrasting examples and assertions:
+Sources:
 
 - [Language evaluation and scope](https://arturo-lang.io/documentation/language/).
 - [System/arg](https://arturo-lang.io/documentation/library/system/arg/), [Types/to](https://arturo-lang.io/documentation/library/types/to/), and [Exceptions/try](https://arturo-lang.io/documentation/library/exceptions/try/).

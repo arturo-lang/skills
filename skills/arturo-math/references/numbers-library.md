@@ -69,10 +69,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [tanh](https://arturo-lang.io/documentation/library/numbers/tanh)               | Compute the hyperbolic tangent of angle.                                                  | `print tanh 0`            |
 | [tau](https://arturo-lang.io/documentation/library/numbers/tau)                 | The number tau, mathematical constant.                                                    | `inspect tau`             |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Numbers module](https://arturo-lang.io/documentation/library/numbers); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 60 names resolved.
-
-Checks: 60 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Numbers module](https://arturo-lang.io/documentation/library/numbers); [official text reference](https://arturo-lang.io/llms.txt).

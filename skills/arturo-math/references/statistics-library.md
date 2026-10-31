@@ -15,10 +15,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [skewness](https://arturo-lang.io/documentation/library/statistics/skewness)   | Obtain population skewness of collection of numbers.              | `skewness [1 2 3 4]`            |
 | [variance](https://arturo-lang.io/documentation/library/statistics/variance)   | Obtain population variance of collection of numbers.              | `variance [1 2 3 4]`            |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Statistics module](https://arturo-lang.io/documentation/library/statistics); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 6 names resolved.
-
-Checks: 6 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Statistics module](https://arturo-lang.io/documentation/library/statistics); [official text reference](https://arturo-lang.io/llms.txt).

@@ -35,10 +35,6 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [whitespace?](https://arturo-lang.io/documentation/library/strings/whitespace-) | Test whether string consists only of whitespace.                            | `whitespace? "hello"`                             |
 | [wordwrap](https://arturo-lang.io/documentation/library/strings/wordwrap)       | Word wrap a string.                                                         | `wordwrap "one two three four"`                   |
 
-## Sources and verification
+## Sources
 
-Sources: the [official Strings module](https://arturo-lang.io/documentation/library/strings); [official text reference](https://arturo-lang.io/llms.txt). Reviewed: 2026-10-29. License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-Reference version: Arturo 0.10.0 Arizona Bark (amd64/Linux). Metadata: 26 names resolved.
-
-Checks: 26 fragments passed (exit 0, no stderr); outputs and edge cases unasserted. Null supplied for unbound predicate inputs.
+Sources: the [official Strings module](https://arturo-lang.io/documentation/library/strings); [official text reference](https://arturo-lang.io/llms.txt).
