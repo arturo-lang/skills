@@ -70,8 +70,6 @@ Prefer to explore on your own? Start with the [language skill](skills/arturo-lan
 | [arturo-web](skills/arturo-web/SKILL.md)                 | Serve static files and work with HTML, MediaWiki, equations, or diagrams                |
 | [arturo-packages](skills/arturo-packages/SKILL.md)       | Find, install, import, and publish packages through pkgr.art                            |
 
-`arturo-ci` has been consolidated into `arturo-testing`; install the latter for CI and bundling guidance.
-
 ### Package guidance included
 
 Skills also cover external packages alongside the tasks they help with:
@@ -92,7 +90,6 @@ Each skill keeps its package references, examples, and source links together. Im
 
 The library draws on the [official Arturo reference](https://arturo-lang.io/llms.txt) and [Arturo examples](https://github.com/arturo-lang/examples). References explain what functions do, when to use them, and how to try them, with links back to the source documentation.
 
-For the full inventory, the [standard-library coverage map](STDLIB.md) maps 26 modules and 521 entries to their skills. Function signatures are checked against the installed runtime using `inspect info.get 'functionName`. See [SOURCES.md](SOURCES.md) for provenance and how to refresh the guidance.
 
 These are curated working notes and examples. Keep the [Arturo documentation](https://arturo-lang.io/documentation/) handy as you explore, and run the code your assistant suggests.
 
@@ -121,7 +118,7 @@ bun run smoke
 
 `skills:list` previews this checkout’s skills without installing them into an assistant. CI runs validation, tests, and discovery with the locked CLI dependency. Smoke checks require `arturo` on PATH and fail if it is missing. They stay offline: no package downloads, remote API calls, servers, or webviews. The SQL example uses an in-memory database.
 
-Use `bun run format` for Biome-supported code, configuration, and Markdown; format `.art` files manually. Use `bun run stdlib:inspect` to inspect standard-library coverage against your runtime. See [AGENTS.md](AGENTS.md) for contribution guidelines.
+Use `bun run format` for Biome-supported code, configuration, and Markdown; format `.art` files manually. See [AGENTS.md](AGENTS.md) for contribution guidelines.
 
 To try your local changes in an assistant, run `bunx skills add .` from this checkout, or run the following from the project that should receive them, replacing the example path:
 
@@ -135,6 +132,6 @@ The CLI discovers `skills/<name>/SKILL.md` directly; no custom manifest or npm p
 
 Documentation is licensed under [CC BY 4.0](LICENSE-CC-BY-4.0.txt). Original standalone code examples, scripts, tests, and configuration are licensed under [MIT](LICENSE-MIT.txt). Upstream material retains its own notices; see [third-party notices](THIRD-PARTY-NOTICES.md) for external package credits and licenses. See [LICENSING.md](LICENSING.md) for scope and attribution; each skill includes its own license texts and notice for independent installation.
 
-## Coverage maintenance
+## Maintenance
 
-Use [the roadmap](ROADMAP.md), [coverage baseline](COVERAGE.md), and [editorial templates](templates/skill.md). Update coverage evidence with content changes. Verify interpreter changes, upstream API/package revisions, and reported discrepancies against official sources and minimal reproducers. Preserve historical review dates; distinguish source review, execution, and asserted results. The recorded baseline is Arturo 0.10.0 Linux amd64; other combinations remain unverified. Hosted runtime CI results must be observed before claiming they passed.
+See [contribution requirements](CONTRIBUTING.md#maintenance) and the [roadmap](ROADMAP.md).

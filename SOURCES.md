@@ -37,13 +37,10 @@ The library's prose and smoke examples are original summaries and adaptations. U
 
 ## Standard-library catalogue
 
-Reviewed 2026-10-29 against the [official library index](https://arturo-lang.io/documentation/library) and text reference. The [coverage map](STDLIB.md) and [source inventory](stdlib.json) record all 26 modules, 521 entries, ownership, source digest, and runtime. Names include functions, predicates, and constants. Per-function URLs were taken from the live index, including its lowercase and question-mark-to-hyphen slugs.
-
 Selection guides condense and adapt upstream descriptions and examples, with attribution to the Arturo project and its [CC BY 4.0 documentation license](https://creativecommons.org/licenses/by/4.0/). They intentionally defer signatures to `inspect info.get` on the installed runtime. Existing language and workflow references remain the place for deeper semantics.
 
 All 521 names passed metadata inspection on Arturo 0.10.0 Arizona Bark, amd64/Linux. Separately, 418 bounded table fragments across 17 modules completed with exit status zero and no stderr; this checks execution, not every output or edge case. Smoke programs assert representative results, including in-memory SQL. GUI, network, shell execution, termination, persistent stores, and archive operations were not run as catalogue probes. References distinguish these documentation-only effects from executed checks.
 
-`bun run check` verifies that the recorded inventory and module tables agree. `bun run stdlib:inspect` checks metadata availability without invoking target APIs. When refreshing, compare the live module/symbol inventory as well as updating the source digest; a passing local coverage check only proves agreement with the checked-in snapshot, not freshness against upstream.
 
 To refresh, read the live reference sections used by the affected skill, inspect relevant examples at a recorded commit, update that skill's guidance and source links, and run repository validation and smoke checks. Record the interpreter version used for verification. Do not execute the whole upstream collection: some examples use network access, files, interactive input, or expensive computations.
 
@@ -51,9 +48,9 @@ To refresh, read the live reference sections used by the affected skill, inspect
 
 Authors, upstream copyright statements, and license texts were checked on 2026-10-30 at the revisions listed in [third-party notices](THIRD-PARTY-NOTICES.md). Each affected skill includes its own notices so installations remain self-contained. Upstream-derived snippets retain upstream terms; original contributions use this repository’s documented license split. Tasks API guidance remains reviewed against v1.0.0; its MIT license is recorded at upstream commit `6cd03b031c2f037ed39df675064b897960addbe2`, which added the license after that tag. Refresh license notices alongside API guidance when changing reviewed revisions.
 
-## Coverage maintenance
+## Maintenance
 
-Use [the roadmap](ROADMAP.md), [coverage baseline](COVERAGE.md), and [editorial templates](templates/skill.md). Update coverage evidence with content changes. Verify interpreter changes, upstream API/package revisions, and reported discrepancies against official sources and minimal reproducers. Preserve historical review dates; distinguish source review, execution, and asserted results. The recorded baseline is Arturo 0.10.0 Linux amd64; other combinations remain unverified. Hosted runtime CI results must be observed before claiming they passed.
+See [contribution requirements](CONTRIBUTING.md#maintenance) and the [roadmap](ROADMAP.md).
 
 ## Runtime CI installation
 
