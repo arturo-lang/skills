@@ -2,6 +2,12 @@
 metadata:
   arturo-version: 0.10.0
   review-date: 2026-10-29
+  sources:
+    - https://arturo-lang.io/documentation/command-line/
+    - https://arturo-lang.io/documentation/library/core/import/
+    - https://github.com/arturo-lang/pkgr.art#using-packages
+    - https://github.com/arturo-lang/pkgr.art#creating-packages
+    - https://github.com/arturo-lang/pkgr.art/blob/main/packages/list.art
 ---
 
 # Package installation and publishing
