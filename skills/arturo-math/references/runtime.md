@@ -8,24 +8,18 @@ metadata:
     - https://arturo-lang.io/documentation/language
 ---
 
-# Runtime signatures and Arturo defaults
+# Runtime signatures and evaluation
 
-Check `arturo --version` and `arturo --help`. Query a signature without invoking the target:
+Check `arturo --version` / `--help`. Inspect metadata without invoking the target:
 
 ```sh
 arturo --no-color -e "inspect info.get 'sort"
 ```
 
-`info.get` returns symbol metadata; `inspect` shows its structure and types. `inspect 'sort` inspects a literal identifier, not the function. `inspect var 'sort` retrieves the function value but only shows a built-in marker on Arturo 0.10.0. `info 'sort` offers a compact display.
-
-Read `args` in positional order. One named argument consumes one value; multiple types listed for it are alternatives. `attrs` contains optional flags and attribute-labels: `.descending` is a logical flag; `.by: 'name` passes a value. Attributes do not add positional arguments.
-
-`returns` lists possible result types; `:nothing` means no result. An infix alias does not imply conventional mathematical precedence. Descriptions, examples, and source locations are documentation, not proof of every runtime behavior; reduce and run the relevant case if they conflict.
-
-For example, `sort` has one collection argument. A literal or path-literal argument permits mutation; a block value requests a result. `if` has a condition and an action block, whereas `switch` has a condition and two blocks. Neither is reserved syntax: control flow uses callable functions.
-
-Use lower camelCase for variables, labels, functions, and object/type names (`:someObject`); prefix private helpers with `_`. Underscore-separated names mainly support external-format compatibility. Preserve the user's choices and existing project conventions.
-
-Expressions group right to left; function arity determines argument boundaries. Blocks remain data until evaluated. A supported literal argument enables mutation; use `new` for an independent copy and do not assume ordinary evaluated blocks create scope.
-
-Run bounded offline `.art` examples with `ensure [condition]` where possible. Report checks and relevant limitations. Use temporary directories for disk effects. Follow project tooling.
+- `info.get` returns metadata; `inspect 'sort` shows a literal, while `inspect var 'sort` only shows a built-in marker on 0.10.0. `info 'sort` gives a compact display.
+- `args`: positional order; each argument consumes one value, listed types are alternatives. `attrs`: flags (`.descending`) or labeled values (`.by: 'name`), not positional arguments. `returns`: possible types; `:nothing` means no result.
+- Expressions group right to left; arity determines boundaries, including infix aliases. Blocks are data until evaluated; ordinary evaluated blocks do not imply scope.
+- Supported literal/path-literal arguments permit mutation; value arguments return results. `sort` takes one collection; `sort samples` returns a sorted value. Use `new` for independent copies.
+- Control flow is callable: `if` takes condition/action; `switch` takes condition/two blocks.
+- Prefer lower camelCase (`:someObject`), `_` for private helpers; preserve existing/user conventions. Underscores mainly serve external formats.
+- Resolve documentation/runtime conflicts with minimal reproducers. Use bounded offline `ensure [condition]` checks, temporary directories for disk effects, and project tooling; report limitations.

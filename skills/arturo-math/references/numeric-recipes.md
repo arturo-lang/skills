@@ -7,38 +7,17 @@ metadata:
     - https://arturo-lang.io/llms.txt
 ---
 
-# Numeric grouping, conversion, and boundaries
+# Numeric recipes
 
-Use these patterns when porting arithmetic or accepting numeric input. [checks.art](../examples/checks.art) asserts the contrasts below without network or filesystem effects.
+Offline assertions: [checks.art](../examples/checks.art).
 
-## Group before calculating
+- **Grouping:** `2 * 3 + 4` and `mul 2 add 3 4` yield 14; `(2 * 3) + 4` yields 10. Use parentheses or intermediates.
+- **Division:** `div 5 2` → integer 2; `fdiv 5 2` → floating 2.5; `/` aliases `div`. Guard divisors or catch errors; integer division by zero raises.
+- **Mutation:** `increased: add amount 2` preserves `amount`; `add 'amount 2` mutates it. Mutation need not return the value form's result.
+- **Conversion:** `to :integer "42"`, `to :floating 4`. Integer conversion truncates toward zero: 4.9 → 4, -4.9 → -4 on 0.10.0. Malformed strings raise; inspect `try` errors, never silently substitute zero. Failed conversion preserves input and previous destination; that destination is not a successful parse.
+- **Mixed types:** `(to :string 4) ++ " units"` converts before concatenation; omitting parentheses attempts concatenation first. `convert` handles units, not general types.
+- **Empty input:** `sum []` → 0; `product []` → 1; `average []` raises without mutation. Choose an explicit empty-data policy; do not invent a zero mean.
+- **Statistics:** `average`, `variance`, and `median sort samples` preserve the original unsorted input. Singleton average equals its element; population variance is zero. `variance` defaults to population; `variance.sample [1 3]` → 2.0. Require ≥2 sample values: 0.10.0 returns 0.0 for singleton sample variance, although mathematically undefined.
+- Check overflow, non-finite results, mixed types, and floating tolerances for intended inputs.
 
-`2 * 3 + 4` yields 14: the addition supplies the second operand of multiplication. `(2 * 3) + 4` yields 10. Prefix form `mul 2 add 3 4` also yields 14. Choose parentheses or named intermediate results to express the intended calculation.
-
-`div 5 2` returns integer 2; `fdiv 5 2` returns floating 2.5. Neither choice is implicit in `/`, which aliases `div`. Check a divisor before division or catch the operation's error; integer division by zero raises an error.
-
-`increased: add amount 2` leaves `amount` unchanged. `add 'amount 2` mutates that binding. Do not expect the mutation form to provide the same returned value as the value form.
-
-## Convert inputs explicitly
-
-Use `to :integer "42"` for a numeric string and `to :floating 4` for floating representation. `to :integer 4.9` yields 4 and `to :integer neg 4.9` yields -4 on Arturo 0.10.0: this truncates toward zero rather than rounding to the nearest integer.
-
-Malformed input such as `"not-a-number"` raises an error; use `try` and inspect its error result before continuing. Do not silently replace invalid input with zero.
-
-The checks assert that a failed conversion leaves both its input string and the previous destination binding unchanged; the preserved destination is not a successful parse result.
-
-Convert before combining unlike types: `(to :string 4) ++ " units"`. Without parentheses, the concatenation is attempted before conversion. Native `convert` instead converts quantities to units; it is not the general type converter.
-
-## Decide what an empty dataset means
-
-`sum []` returns 0 and `product []` returns 1. These are useful identities, not evidence that every statistical function accepts an empty dataset. `average []` raises an error on Arturo 0.10.0 without changing the empty input.
-
-Guard emptiness and choose an application policy (for example, no result) rather than assigning an invented mean of zero.
-
-The normal-case checks also assert that `average`, `variance`, and `median sort samples` leave the original unsorted input unchanged; `sort samples` supplies a sorted result rather than sorting the input binding in place.
-
-A singleton has an average equal to its element and population variance zero. `variance` uses population variance by default; `.sample` changes the estimator: `[1 3]` has sample variance 2.0. Require at least two elements when your task calls for sample variance.
-
-Arturo 0.10.0 returns 0.0 for a singleton sample; the sample estimator is still mathematically undefined. Check overflow, non-finite values, and mixed numeric types for the intended inputs.
-
-Upstream [type-conversion tests](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/types/to.test.art) provide additional conversion examples.
+More conversion examples: [upstream tests](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/types/to.test.art).

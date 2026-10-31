@@ -5,36 +5,12 @@ metadata:
   arturo-version: 0.10.0
 ---
 
-# Arturo math, quantities, and colors
+# Arturo math
 
-Read the relevant module:
+Read relevant references: [arithmetic](references/arithmetic-library.md), [bitwise](references/bitwise-library.md), [numbers](references/numbers-library.md), [statistics](references/statistics-library.md), [quantities](references/quantities-library.md), [colors](references/colors-library.md), [578 named colors](references/color-names.md).
 
-- [Arithmetic](references/arithmetic-library.md).
-- [Bitwise](references/bitwise-library.md).
-- [Numbers](references/numbers-library.md).
-- [Statistics](references/statistics-library.md).
-
-Choose integer division, floating division, or rational arithmetic deliberately. Parenthesize mixed operations: Arturo has no conventional arithmetic precedence. Inspect accepted types, numeric domains, mutation forms, angle units, and population versus sample estimators.
-
-Keep factorization, combinatorics, and random checks bounded; test invariants and tolerances instead of exact floating strings.
-
-Query runtime signatures with `inspect info.get 'functionName`; see [runtime guidance](references/runtime.md) for metadata and evaluation rules.
-
-[Numeric recipes](references/numeric-recipes.md) contrast grouping, explicit conversions, mutation, empty reducers, and failed numeric operations. [examples/checks.art](examples/checks.art) supplies bounded offline assertions for these cases.
-
-## units and dimensional quantities
-
-Preserve units through computation and validate dimensions before extracting scalar values. Inspect convert versus in argument order. Keep custom type/unit names lower camelCase. Check precision and unit compatibility with bounded examples; currency conversions may require external data.
-
-- [Quantities](references/quantities-library.md).
-
-[Offline checks](examples/quantities.art).
-
-## color transformations
-
-Use native color values and documented fractional adjustments. Inspect hue rotation and palette attributes rather than importing color-space assumptions. Check actual values and accepted ranges; prefer deterministic offline transforms to GUI-based checks.
-
-- [Colors](references/colors-library.md).
-- [Named colors](references/color-names.md): the 578 native `#name` literals in the source catalog.
-
-[Offline checks](examples/colors.art).
+- Parenthesize mixed operations; Arturo has no conventional arithmetic precedence. Choose integer/floating division or rational arithmetic explicitly. Check accepted types, domains, mutation forms, angle units, and population/sample estimators.
+- Inspect signatures with `inspect info.get 'functionName`; follow [runtime evaluation rules](references/runtime.md). Use [numeric recipes](references/numeric-recipes.md) for grouping, conversions, mutation, empty reducers, and failures.
+- Preserve units; validate dimensions before extracting scalars. Check `convert`/`in` argument order, precision, and compatibility. Use lower camelCase custom type/unit names. Currency conversion may need external data.
+- Use native colors and documented fractional adjustments; verify ranges, hue rotation, and palette attributes without assuming color-space conventions.
+- Keep factorization, combinatorics, and random checks bounded. Prefer deterministic offline checks and invariants/tolerances over exact floating strings or GUI checks: [numeric](examples/checks.art), [quantities](examples/quantities.art), [colors](examples/colors.art).
