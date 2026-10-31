@@ -234,7 +234,7 @@
       "kind": "module",
       "owner": "arturo-networking",
       "evidence": [
-        "skills/arturo-networking/references/net-library.md",
+        "skills/arturo-networking/references/http-json.md",
         "skills/arturo-networking/examples/response.art"
       ],
       "status": "partial"

@@ -307,7 +307,7 @@
     {
       "name": "Net",
       "skill": "arturo-networking",
-      "reference": "references/net-library.md",
+      "reference": "references/http-json.md",
       "symbols": ["browse", "download", "mail", "request", "serve"]
     },
     {

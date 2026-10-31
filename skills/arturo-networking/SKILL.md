@@ -5,31 +5,28 @@ metadata:
   arturo-version: 0.10.0
 ---
 
-# Arturo HTTP, JSON, and networking
+# Arturo networking
 
-Read the relevant module:
+Read the reference for the task:
 
-- [Net](references/net-library.md).
-- [Sockets](references/sockets-library.md).
+- [HTTP, JSON, and Net helpers](references/http-json.md): requests, response validation, serialization, downloads, mail, browser launch, and serving.
+- [Sockets](references/sockets-library.md): TCP/UDP connections, framing, timeouts, and cleanup.
+- [Claude](references/claude.md): the Anthropic wrapper, messages, responses, and mutable client defaults.
 
-Establish protocol, addresses, payloads, framing, timeout units, and shutdown behavior. Inspect the runtime before choosing attributes. Socket receive/accept may block; close listeners and accepted peers. HTTP status and JSON parsing are separate from transport success.
+Establish protocol, addresses, payloads, timeout units, and shutdown behavior. Keep credentials configurable. Distinguish transport failure, HTTP status, and application data. For untrusted JSON bodies, stage text in a private scratch file and parse with `read.file.json`; `read.json` can load a path or URL. The HTTP guide covers validation and cleanup.
 
-Use offline metadata checks by default, then bounded local peers or services when the task warrants network execution. Send mail or mutate external data only when the task requires it.
+Start with offline fixtures and metadata checks. Use bounded peers or services when network execution is needed; send mail, mutate external data, or make paid API calls only as required by the task.
 
-Query runtime signatures with `inspect info.get 'functionName`; see [runtime guidance](references/runtime.md) for metadata and evaluation rules.
+## Runtime and evaluation
 
-[examples/checks.art](examples/checks.art) supplies bounded offline checks.
+Check `arturo --version` and inspect signatures without invoking network operations: `inspect info.get 'request`. `info.get` returns metadata; inspecting a literal identifier alone does not retrieve a function signature. Read positional `args` in order, alternative types per argument, optional `attrs`, and possible `returns` (`:nothing` means no result). Attributes do not add positional arguments. Verify uncertain behavior on the target runtime.
 
-## HTTP and JSON
+Expressions group right to left and function arity determines argument boundaries; an infix alias does not establish conventional precedence. Blocks remain data until evaluated, and evaluated blocks do not necessarily create scope. Supported literal arguments enable mutation; use `new` for an independent copy.
 
-Read [HTTP and JSON patterns](references/http-json.md) for client requests and serialization. Confirm method, payload, headers, and response shape. Keep credentials configurable; distinguish transport errors, HTTP status, and application data. Preserve missing keys, null, false, and empty collections.
+Runtime guidance reviewed 2026-10-29: [inspect](https://arturo-lang.io/documentation/library/reflection/inspect), [info](https://arturo-lang.io/documentation/library/reflection/info), and the [language guide](https://arturo-lang.io/documentation/language).
 
-Use offline fixtures before live calls; avoid live mutations just to test serialization.
+## Offline examples
 
-[Offline serialization checks](examples/json.art). For a complete response-processing workflow with malformed inputs, failed staging, and scratch-file cleanup, use [response.art](examples/response.art) with the [HTTP and JSON guide](references/http-json.md).
-
-Treat `read.json` as a resource loader: stage untrusted body text and parse the known file with `read.file.json` rather than allowing body text to select a resource.
-
-## External API clients
-
-Read [Claude](references/claude.md) for the Arturo Anthropic API wrapper, message construction, responses, and mutable client defaults. Verify response handling with fixtures before live requests.
+- [checks.art](examples/checks.art): bounded signature checks.
+- [json.art](examples/json.art): serialization assertions.
+- [response.art](examples/response.art): response validation, malformed inputs, failed staging, and scratch-file cleanup; run in a fresh temporary working directory.
