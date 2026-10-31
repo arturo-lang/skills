@@ -5,7 +5,6 @@ metadata:
   package-version: 0.1.0
   arturo-version: 0.10.0
   review-date: 2026-10-29
-  source-revision: v0.1.0
 ---
 
 # States finite state machines

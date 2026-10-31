@@ -5,7 +5,6 @@ metadata:
   package-version: 0.2.0
   arturo-version: 0.10.0
   review-date: 2026-10-29
-  source-revision: v0.2.0
 ---
 
 # Tabular terminal tables

@@ -5,7 +5,6 @@ metadata:
   package-version: 3.1.1
   arturo-version: 0.10.0
   review-date: 2026-10-29
-  source-revision: v3.1.1
 ---
 
 # Unitt unit testing

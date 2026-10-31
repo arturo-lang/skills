@@ -4,7 +4,6 @@ metadata:
   license: MIT
   arturo-version: 0.10.0
   review-date: 2026-10-29
-  source-revision: b6691478050834d32092f8efbd3eddf013918ca3
   sources:
     - https://recase.pkgr.art/
     - https://github.com/drkameleon/recase.art
