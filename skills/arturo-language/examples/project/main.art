@@ -1,4 +1,3 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
 ; Resolve beside this script, independently of the shell's working directory.
 import ./{helpers}!
 

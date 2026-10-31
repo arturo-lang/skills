@@ -20,4 +20,4 @@ Preserve the `mermaid` class on the container. Check diagram syntax, resulting H
 
 Sources: [package documentation](https://mermaid.pkgr.art/), [release 0.0.1](https://codeberg.org/Eloitor/mermaid.art/src/tag/v0.0.1), [Arturo webview](https://arturo-lang.io/documentation/library/ui/webview/).
 
-Attribution: Eloi Torrents (Eloitor). Upstream license: Beerware (Revision 42). See [third-party notices](../THIRD-PARTY-NOTICES.md#mermaid) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#mermaid) for attribution, licenses, and reviewed revisions.

@@ -1,6 +1,3 @@
-; Copyright © RickBarretto, Arturo programming language.
-; Original example; MIT licensed (see ../LICENSE-MIT.txt).
-
 ; scratchPath must be an unused file inside a private, caller-owned directory.
 ; Staging avoids read interpreting untrusted body text as a URL or local path.
 decodeProfile: $[response :dictionary scratchPath :string][

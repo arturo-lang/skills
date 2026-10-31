@@ -25,4 +25,4 @@ Install with `arturo -p install unitt`, then run `unitt`. Configure project-root
 
 `test`, `suite`, and `assert.with:` support older syntax. Conditional `.skip:` skips cases. Version 3 removed `.prop`, `.static`, and `fatal`; `.prop` never generated property tests. Uncaught exceptions stop the runner.
 
-Attribution: RickBarretto (repository maintainer). Upstream license: MIT. Copyright 2024 RickBarretto. See [third-party notices](../THIRD-PARTY-NOTICES.md#unitt) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#unitt) for attribution, licenses, and reviewed revisions.

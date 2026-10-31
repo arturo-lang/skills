@@ -1,2 +1,1 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
 projectDouble: $[value :integer] -> value * 2

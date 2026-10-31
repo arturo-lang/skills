@@ -19,4 +19,4 @@ The examples are documentation-based and excluded from offline smoke checks. Wit
 
 Sources: [package API and examples](https://recase.pkgr.art/), [upstream repository](https://github.com/drkameleon/recase.art), [official import reference](https://arturo-lang.io/documentation/library/core/import/).
 
-Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2026 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#recase) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#recase) for attribution, licenses, and reviewed revisions.

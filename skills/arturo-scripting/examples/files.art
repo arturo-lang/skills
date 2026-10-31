@@ -1,4 +1,3 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
 ; Run in a disposable working directory; refuse existing fixtures.
 runFileWorkflow: $[forceFailure? :logical][
     fixture: "scripting-files-fixture.txt"

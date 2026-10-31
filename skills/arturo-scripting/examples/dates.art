@@ -1,4 +1,3 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
 ensure [leap? 2024]
 ensure [not? leap? 2023]
 fixed: to.format:"yyyy-MM-dd" :date "2024-02-28"

@@ -1,4 +1,3 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
 package: import.lean ./{package}!
 ensure -> 12 = package\doubleValue 6
 ensure -> 0 = package\doubleValue 0

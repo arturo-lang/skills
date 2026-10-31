@@ -27,4 +27,4 @@ This is a documentation-based example, not part of the offline smoke suite. With
 
 Sources: [tagged README and examples](https://github.com/Lulzx/schema.art/tree/v0.3.0), [official import reference](https://arturo-lang.io/documentation/library/core/import/).
 
-Attribution: Lulzx. Upstream license: MIT. Copyright (c) 2026 Lulzx. See [third-party notices](../THIRD-PARTY-NOTICES.md#schema) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#schema) for attribution, licenses, and reviewed revisions.

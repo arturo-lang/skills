@@ -1,7 +1,5 @@
 # Bounded scripting workflows
 
-Copyright © RickBarretto, Arturo programming language.
-
 Run these examples with Arturo 0.10.0 in a disposable working directory. They use built-ins and need no package downloads. Their checks use `ensure`; a failed assertion is an error, not a successful test result. `try` returns null/error, so assign application results inside its action. Ordinary action blocks do not create a separate variable scope.
 
 ## Validate CLI input before effects

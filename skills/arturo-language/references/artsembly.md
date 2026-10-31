@@ -21,4 +21,4 @@ Track stack contents explicitly: `push` adds a value, `store` assigns its top va
 
 Sources: [package documentation and command list](https://artsembly.pkgr.art/), [release 0.3.0](https://github.com/drkameleon/artsembly/tree/v0.3.0), [Core/do](https://arturo-lang.io/documentation/library/core/do/).
 
-Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2021 Arturo Programming Language. See [third-party notices](../THIRD-PARTY-NOTICES.md#artsembly) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#artsembly) for attribution, licenses, and reviewed revisions.

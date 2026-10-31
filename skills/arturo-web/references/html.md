@@ -26,4 +26,4 @@ The implementation interpolates content and attribute values without HTML escapi
 
 Sources: [registry](https://html.pkgr.art/), [0.0.4 implementation](https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/src/html.art), [element tests](https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/test/element.test.art), [document example](https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/exp.art).
 
-Attribution: RickBarretto (repository maintainer). Upstream license: MIT. Copyright (c) 2019-2020 Yanis Zafirópulos (aka Dr.Kameleon). See [third-party notices](../THIRD-PARTY-NOTICES.md#html) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#html) for attribution, licenses, and reviewed revisions.

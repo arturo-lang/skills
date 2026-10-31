@@ -23,4 +23,4 @@ measurement\benchmark
 
 This includes process startup and command output costs. Use `--minimal`, `--ascii`, or `--colorless` for simpler terminal presentation.
 
-Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2024 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#peregrino) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#peregrino) for attribution, licenses, and reviewed revisions.

@@ -24,4 +24,4 @@ climax .template: 'plain [
 
 Check help, missing required arguments, unknown flags, defaults, and `--` passthrough. `default:` selects the action without a subcommand; `'plain` avoids ANSI help output. Consult the linked reference before customizing templates.
 
-Attribution: Yanis Zafirópulos (drkameleon). Upstream license: MIT. Copyright (c) 2026 Yanis Zafirópulos. See [third-party notices](../THIRD-PARTY-NOTICES.md#climax) for the upstream revision and full license text.
+See [third-party notices](../THIRD-PARTY-NOTICES.md#climax) for attribution, licenses, and reviewed revisions.
