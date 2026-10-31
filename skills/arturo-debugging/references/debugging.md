@@ -18,19 +18,18 @@ metadata:
 | Extra values remain                  | A function/action left unintended values on the stack                           |
 | JSON or HTTP member access fails     | Null/error response, HTTP status, body encoding, and missing keys               |
 
-## Errors and assertions
+### Errors and Assertions
 
-Use `ensure [actual = expected]`; `ensure` expects a block, not an already evaluated boolean. Its `.that:` option supplies a message. Place assertions around observable behavior rather than copies of implementation logic.
-
-`throws? [action]` asks whether an action throws. `err: try [action]` captures null/error. It does not return the action's ordinary result; bind that result inside the action if needed. `throw "message"` raises an error; `.as:` selects an error kind such as `valueError`.
-
-When expected failure is part of the test, assert `error? err` or `throws? [...]` explicitly. A successful process that prints an error message does not prove the error path is correct. Verify exit status and output where a CLI contract depends on them.
+- Assertions: Use `ensure [actual = expected]`, passing a block rather than a boolean. Add custom messages with `.that:`.
+- Error detection: `throws? [action]` checks whether an action throws.
+- Error capture: `err: try [action]` captures `null` or an error, not the action's return value.
+- Explicit errors: Use `throw "message"` to raise errors, with `.as:` to specify an error kind.
+- Expected failures: Assert `error? err` or `throws? [...]` explicitly.
+- CLI validation: Verify exit codes and output. Printing an error message alone does not prove failure handling works.
+- Testing: Assert observable behavior rather than duplicating implementation logic.
 
 ## Version-sensitive work
 
 Run `arturo --version` and consult `arturo --help`. Check Reflection/info and arity for builtin details before relying on a remembered signature. Preserve a minimal reproduction when documentation and the installed interpreter disagree, and describe the observed version-specific behavior.
 
-For performance issues, establish correct output first. Reflection/benchmark can time a bounded action. Memoization and in-place updates change resource use or aliasing; verify semantics before adopting them as fixes.
-
 - [Official reference](https://arturo-lang.io/llms.txt): Exceptions; Core/ensure; Reflection; Precedence and Evaluation; Scope and rules; In-place variable modification.
-- [Function definition](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Function%20definition.art) provides a small comparison of explicit return and expression result.

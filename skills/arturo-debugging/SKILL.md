@@ -5,15 +5,15 @@ metadata:
   arturo-version: 0.10.0
 ---
 
-# Arturo debugging
+# Debugging Guidelines
 
-Capture the exact failing invocation, interpreter version, error text, and expected result. Reduce it to a bounded reproduction that preserves the failure. Use [diagnostic patterns](references/debugging.md) for the failure class involved.
-
-Check function arity and types before changing syntax. Trace expressions from right to left, then inspect evaluation of blocks, stack results, scope boundaries, and shared values. Compare the installed runtime with the [official reference](https://arturo-lang.io/llms.txt); examples can reflect another version.
-
-Use `inspect`, `type`, `info`, and `arity` as appropriate after confirming their signatures. Keep diagnostic output out of final machine-readable output. Do not catch and discard errors merely to make a reproduction appear successful.
-
-Add a check that fails for the observed bug and passes after the fix, using `ensure [condition]` for small standalone scripts. Verify the original invocation plus relevant edge cases. Report the cause, change, validation, and any behavior that could not be tested.
+- Reproduction: Capture the failing command, runtime version, error message, and expected behavior. Reduce the issue to a minimal, bounded example.
+- Diagnosis: Consult `references/debugging.md`. Verify function arity, types, right-to-left evaluation, block execution, stack values, scope, and mutation.
+- Runtime compatibility: Compare installed behavior with the [official reference](https://arturo-lang.io/llms.txt), accounting for version differences.
+- Inspection: Use `inspect`, `type`, `info`, and `arity` with verified signatures. Keep diagnostics separate from program output.
+- Error handling: Preserve actual failures rather than suppressing them.
+- Regression testing: Add an `ensure [condition]` assertion that reproduces the bug and passes after the fix.
+- Validation: Retest the original invocation and relevant edge cases. Report the root cause, changes, test results, and limitations.
 
 [examples/errors.art](examples/errors.art) demonstrates offline assertions and captured errors. Avoid executing an arbitrary upstream example as a diagnostic: review its effects and cost first.
 
