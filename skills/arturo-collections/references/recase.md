@@ -12,7 +12,7 @@ metadata:
 
 # Identifier case conversion
 
-Use recase when converting names between case conventions. Check the project's package release before depending on acronym or Unicode edge cases. Importing can download a missing package and execute its entrypoint.
+Use recase when converting names between case conventions.
 
 ```art
 import "recase"!
@@ -23,8 +23,12 @@ recase.camel "Print SQL"
 ; => "printSQL"
 ```
 
-The documented API is `recase str :string`, returning a string. Choose one target attribute: `.title`, `.camel`, `.snake`, `.kebab`, `.dot`, `.train`, or `.plain`. `.custom:` accepts a character or string separator. Do not assume `.title` means natural-language title capitalization; the package documents it as `TitleCase`.
+### API
 
-Whitespace is stripped during word separation. This transformation is useful for identifiers and labels but does not preserve prose layout. It supports Unicode; converting to ASCII is a separate operation. Keep the source value when reversibility matters, and account for different inputs producing the same converted identifier.
-
-With the package installed, exercise acronyms, existing separators, whitespace, non-ASCII names, and collisions relevant to the application.
+- Usage: `recase str :string` converts text into a specified naming convention.
+- Formats: `.title`, `.camel`, `.snake`, `.kebab`, `.dot`, `.train`, `.plain`, or `.custom:` for custom separators.
+- Title case: `.title` produces `TitleCase`, not natural-language capitalization.
+- Whitespace: Word separation removes whitespace, making recase suitable for identifiers rather than preserving prose.
+- Unicode: Supports Unicode; ASCII conversion requires a separate operation.
+- Reversibility: Preserve the original string when needed. Different inputs may produce identical identifiers.
+- Validation: Test acronyms, separators, whitespace, Unicode names, and naming collisions with the package installed.

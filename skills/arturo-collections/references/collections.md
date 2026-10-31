@@ -20,50 +20,44 @@ metadata:
 | Sum with an initial value | `fold.seed: 0 [1 2 3] [acc x] [acc + x]` |
 | Print values              | `loop [1 2 3] 'x [print x]`              |
 
-Some iterators support multiple parameters, index injection with `.with: 'i`, and specialized attributes. Verify those signatures rather than assuming the parameter order used by JavaScript or Python.
+### Arturo Iterators and Ranges
 
-Ranges use `1..10` and include endpoints. Many iterators accept ranges directly; materialize them with `array` / `@` only when a block is needed. `[]` stores values/code; `@[...]` evaluates contained expressions. Use explicit string values instead of bare words when representing textual data.
+- Iterators: Support multiple parameters, index injection (`.with: 'i`), and specialized attributes. Verify signatures rather than assuming Python or JavaScript conventions.
+- Ranges: `1..10` includes both endpoints. Many iterators accept ranges directly; use `array` or `@` when materialization is necessary.
+- Blocks: `[]` stores values or code, while `@[...]` evaluates contained expressions.
+- Strings: Use quoted strings instead of bare words for textual data.
 
-## Iterator scope and empty inputs
+### Iterator Scope and Empty Inputs
 
-Iterator arguments and injected indices temporarily shadow existing bindings, then restore them. Other assignments in the body persist. For example, `loop [2 3] 'item [total: total + item]` can accumulate into an existing `total`, while an outer `item` retains its previous value. Use distinct names when that distinction would obscure intent.
+- Scope: Iterator arguments and indices temporarily shadow existing bindings, which are restored afterward. Other assignments persist.
+- Empty collections: `map`, `select`, and `filter` return `[]`. Seeded `fold` returns its seed without executing the body.
+- Immutability: Numeric transformations preserve the source collection. Mixed-type numeric operations fail rather than automatically parsing strings.
+- Missing values: In Arturo 0.10.0, `first []` returns `null`, while `get` on a missing dictionary key raises an error.
+- Safe access: Use `empty?` and `key?` to handle absent elements or keys.
+- Filtering: `select` retains matching elements; `filter` removes them. Their predicate behavior is opposite.
 
-`map`, `select`, and `filter` return `[]` for empty blocks. A seeded fold returns its seed without calling the body; the executable check uses seed `17` and a body that would throw if evaluated.
+### Dictionaries
 
-Numeric transforms leave the source block unchanged; a mixed-type numeric map fails rather than parsing its string element. On Arturo 0.10.0, `first []` returns `null`; an absent dictionary key accessed with `get` raises an error.
+- Dictionaries: Create with `#[key: value]`, access via paths or `get`, and use `key?` to distinguish missing keys from `null` values.
+- Iteration: Use `loop` for key-value pairs, or `keys` and `values` separately. Do not assume dictionary ordering.
+- Collections: `sort` returns a new result; `sort 'values` mutates. Use `unique`, `tally`, `size`, `first`, `last`, and `slice` with appropriate bounds checks.
+- Correctness: Preserve indexing and grouping when porting algorithms. Parenthesize ambiguous calculations and verify results before simplifying expressions.
 
-Check `empty?` or `key?` before access when absence needs a separate outcome. Do not substitute `filter` for `select`: their predicates have opposite retention behavior.
+### Strings
 
-## Dictionaries and strings
+- Splitting: Use `split` for characters, `.words` for words, and `.lines` for lines. Empty strings produce empty collections.
+- Joining: Use `join` to combine strings and `.with:` for separators. Joining an empty collection returns `""`.
+- Text operations: Use `strip`, `replace`, `match?`, and `match` according to the intended transformation or matching behavior.
 
-Construct a dictionary with `#[name: "Ada" count: 2]`. Access members with paths such as `record\name` or `get record 'name`. Check `key? record 'name` when absence is meaningful. `loop record [key value] [body]` iterates pairs; `keys record` and `values record` expose each side.
+### Unicode and Regex
 
-Avoid depending on an ordering unless the operation establishes one. The worked dictionary loop sums counts without changing the source dictionary; an empty dictionary runs no body. A present key holding `null` still satisfies `key?`, unlike an absent key.
+- Unicode: `size` counts code points, not UTF-8 bytes or grapheme clusters. Precomposed and decomposed characters may differ in size and equality.
+- Normalization: Splitting strings does not normalize Unicode. Grapheme-aware slicing and normalization require separate handling.
+- Regex escaping: Literals like `{/\\d+/}` preserve backslashes. Quoted strings require an additional escaping layer, such as `to :regex "\\\\d+"`.
+- Literal matching: Use `to :regex escape.regex needle` to prevent supplied text from being interpreted as regex syntax.
+- Error handling: `match` returns `[]` for no matches. Invalid dynamic regex patterns raise errors and should be validated or caught.
 
-`split "abc"` splits into character strings; `split.words "a b"` splits words. `split.lines text` is useful for line processing. Both `split ""` and `split.words ""` return `[]`; `join.with: "," []` returns `""`. Confirm delimiter-specific attributes in Collections/split.
 
-`join parts` combines strings; verify `.with:` for separators. `strip`, `replace`, `match?`, and `match` address different text operations; regex syntax is not interchangeable with ordinary string syntax.
+## Reference
 
-`sort values` returns a sorted result; `sort 'values` intentionally changes the variable. `unique`, `tally`, `size`, `first`, `last`, and `slice` cover common operations. Check bounds and empty input before assuming an element exists.
-
-When porting an algorithm, preserve its indexing and grouping explicitly. Parentheses are especially useful in calculations embedded in iterator bodies. Do not optimize into compact anonymous syntax until output matches a small worked example.
-
-## Unicode and regex patterns
-
-Text size counts Unicode code points, not UTF-8 bytes or user-perceived characters: `size "é猫"` is `2`, while `size to :binary "é猫"` is `5`. Precomposed `"é"` and decomposed `"é"` have sizes `1` and `2` and compare unequal. Splitting text into characters does not normalize it. Grapheme-aware slicing and normalization remain outside these recipes.
-
-A regex literal preserves its backslashes: `{/\d+/}` matches digits. Constructing the same regex from a quoted string requires `to :regex "\\d+"`, because the string parser consumes one escaping layer. Do not add that extra layer inside the regex literal.
-
-When a pattern must treat supplied text literally, construct it with `to :regex escape.regex needle`. For `needle: "a.b"`, this matches `"a.b"` but not `"axb"`; the unescaped `{/a.b/}` matches both. `match` returns `[]` when nothing matches. Invalid dynamic patterns such as `to :regex "["` raise an error; catch or reject them at the input boundary.
-
-## Verification
-
-- [Official reference](https://arturo-lang.io/llms.txt): Collections; Iterators/select, filter, map, fold, loop; Strings.
-- [Filter task implemented with select](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Filter.art).
-- [Dictionary iteration](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Associative%20array%252FIteration.art).
-
-Upstream tests by topic:
-
-- Dictionaries: [lookup](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/get.test.art), [keys](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/keys.test.art), [values](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/values.test.art).
-- Collections: [empty inputs](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/empty.test.art), [indexing](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/get.test.art), [mutation](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections/set.test.art).
-- Iterators: [map](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/iterators/map.test.art), [fold](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/iterators/fold.test.art), [loop](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/iterators/loop.test.art).
+Testing reference that covers behavior and edge cases: https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/collections

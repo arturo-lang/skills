@@ -16,16 +16,14 @@ Check `arturo --version` and `arturo --help`. Query a signature without invoking
 arturo --no-color -e "inspect info.get 'sort"
 ```
 
-`info.get` returns symbol metadata; `inspect` shows its structure and types. `inspect 'sort` inspects a literal identifier, not the function. `inspect var 'sort` retrieves the function value but only shows a built-in marker on Arturo 0.10.0. `info 'sort` offers a compact display.
+### Arturo Introspection and Coding Conventions
 
-Read `args` in positional order. One named argument consumes one value; multiple types listed for it are alternatives. `attrs` contains optional flags and attribute-labels: `.descending` is a logical flag; `.by: 'name` passes a value. Attributes do not add positional arguments.
-
-`returns` lists possible result types; `:nothing` means no result. An infix alias does not imply conventional mathematical precedence. Descriptions, examples, and source locations are documentation, not proof of every runtime behavior; reduce and run the relevant case if they conflict.
-
-For example, `sort` has one collection argument. A literal or path-literal argument permits mutation; a block value requests a result. `if` has a condition and an action block, whereas `switch` has a condition and two blocks. Neither is reserved syntax: control flow uses callable functions.
-
-Use lower camelCase for variables, labels, functions, and object/type names (`:someObject`); prefix private helpers with `_`. Underscore-separated names mainly support external-format compatibility. Preserve the user's choices and existing project conventions.
-
-Expressions group right to left; function arity determines argument boundaries. Blocks remain data until evaluated. A supported literal argument enables mutation; use `new` for an independent copy and do not assume ordinary evaluated blocks create scope.
-
-Run bounded offline `.art` examples with `ensure [condition]` where possible. Report checks and relevant limitations. Use temporary directories for disk effects. Follow project tooling.
+- Introspection: Use `info.get` for symbol metadata, `inspect` for structure and types, and `info 'sort` for compact documentation. Built-in functions may expose limited details.
+- Arguments: Read `args` positionally. Multiple types represent alternatives, while `attrs` defines optional flags or valued attributes.
+- Return types: `returns` lists possible types; `:nothing` indicates no result.
+- Semantics: Function arity determines argument boundaries. Expressions evaluate right to left, and infix operators do not guarantee conventional precedence.
+- Control flow: `if` and `switch` are callable functions, not reserved syntax.
+- Mutation: Literal arguments may enable in-place changes. Use `new` for independent copies; blocks do not automatically create scopes.
+- Naming: Prefer `lowerCamelCase` and `_` prefixes for private helpers. Respect existing project conventions.
+- Verification: Treat documentation as guidance, not definitive runtime proof. Test conflicting behavior with minimal examples.
+- Testing: Run bounded offline `.art` examples using `ensure`, isolate filesystem changes in temporary directories, and report results and limitations.

@@ -82,7 +82,7 @@ Skills also cover external packages alongside the tasks they help with:
 | arturo-validation  | schema, validator                                       |
 | arturo-scripting   | Climax, Progressive, Tabular, Tasks, MIMEtypes, Grafito |
 | arturo-language    | optionally, States, ArtSembly                           |
-| arturo-collections | Recase, Unidecode, RSV                                  |
+| arturo-collections | Recase, Unidecode                                       |
 | arturo-networking  | Claude API client                                       |
 | arturo-web         | Lanx, HTML, mwiki (MediaWiki), MathJax, Mermaid         |
 

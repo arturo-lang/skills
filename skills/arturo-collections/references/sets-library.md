@@ -11,10 +11,6 @@ metadata:
 
 Use for mathematical membership and set relationships over blocks. Check duplicate handling and result order instead of relying on sequence semantics. Bound `powerset`: its output grows exponentially.
 
-Query signatures with `inspect info.get 'difference`; see [runtime inspection](runtime.md) for metadata interpretation.
-
-Fragments require surrounding input/resource bindings. Bound inputs; distinguish literal mutation from returned values.
-
 | Name                                                                           | Purpose / when to use                                                | Example                                  |
 | ------------------------------------------------------------------------------ | -------------------------------------------------------------------- | ---------------------------------------- |
 | [difference](https://arturo-lang.io/documentation/library/sets/difference)     | Return the difference of sets.                                       | `print difference [1 2 3 4] [3 4 5 6]`   |

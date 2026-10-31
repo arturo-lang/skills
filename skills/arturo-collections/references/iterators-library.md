@@ -7,13 +7,14 @@ metadata:
     - https://arturo-lang.io/llms.txt
 ---
 
-# Iterators: function selection
+### Iterator Guidelines
 
-Use for transformations, grouping, search, and effects over collections. `select` keeps matching items; `filter` removes them, despite the misleading summary in some upstream documentation. Iterator-injected names are temporary. Use explicit parameter blocks; check accumulator order and `.seed:` with `fold`.
+- Use cases: Transformations, grouping, searching, and side effects over collections.
+- Filtering: `select` retains matching elements; `filter` removes them, regardless of misleading upstream documentation.
+- Scope: Iterator-injected variables are temporary and restored afterward.
+- Parameters: Use explicit parameter blocks and verify iterator signatures.
+- Folding: Confirm accumulator argument order and use `.seed:` when an initial value is needed.
 
-Query signatures with `inspect info.get 'arrange`; see [runtime inspection](runtime.md) for metadata interpretation.
-
-Fragments require surrounding input/resource bindings. Bound inputs; distinguish literal mutation from returned values.
 
 | Name                                                                          | Purpose / when to use                                                            | Example                                        |
 | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------- |
