@@ -1,10 +1,10 @@
 ---
 metadata:
-  author: "Yanis Zafirópulos (drkameleon)"
-  license: "MIT"
-  package-version: "0.3.0"
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
+  author: Yanis Zafirópulos (drkameleon)
+  license: MIT
+  package-version: 0.3.0
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
   sources:
     - https://artsembly.pkgr.art/
     - https://github.com/drkameleon/artsembly/tree/v0.3.0

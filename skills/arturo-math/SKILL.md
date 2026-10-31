@@ -2,7 +2,7 @@
 name: arturo-math
 description: Implement Arturo arithmetic, statistics, bit operations, unit-aware measurements, conversions, and color transformations.
 metadata:
-  arturo-version: "0.10.0"
+  arturo-version: 0.10.0
 ---
 
 # Arturo math, quantities, and colors

@@ -1,10 +1,10 @@
 ---
 metadata:
-  author: "RickBarretto"
-  license: "MIT"
-  package-version: "1.0.0"
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
+  author: RickBarretto
+  license: MIT
+  package-version: 1.0.0
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
   sources:
     - https://optionally.pkgr.art/
     - https://github.com/RickBarretto/optionally.art/blob/v1.0.0/src/lib.art

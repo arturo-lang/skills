@@ -1,10 +1,10 @@
 ---
 metadata:
-  author: "Yanis Zafirópulos (drkameleon)"
-  license: "MIT"
-  package-version: "0.2.0"
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
+  author: Yanis Zafirópulos (drkameleon)
+  license: MIT
+  package-version: 0.2.0
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
   sources:
     - https://github.com/drkameleon/claude.ai.art/blob/a0ea0e84a6b5e9debb1b661b000295345d482c59/README.md
     - https://github.com/drkameleon/claude.ai.art/blob/a0ea0e84a6b5e9debb1b661b000295345d482c59/src/api.art

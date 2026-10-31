@@ -2,7 +2,7 @@
 name: arturo-language
 description: Write, explain, or port Arturo (.art) code using its evaluation rules, values, functions, scope, and mutation semantics. Use for language-level implementation, syntax questions, typed attribute DSLs with optionally, States machines, and experimental ArtSembly bytecode.
 metadata:
-  arturo-version: "0.10.0"
+  arturo-version: 0.10.0
 ---
 
 # Arturo language

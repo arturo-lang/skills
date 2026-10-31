@@ -1,10 +1,10 @@
 ---
 metadata:
-  author: "Yanis Zafirópulos (drkameleon)"
-  license: "MIT"
-  package-version: "0.2.12"
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
+  author: Yanis Zafirópulos (drkameleon)
+  license: MIT
+  package-version: 0.2.12
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
   sources:
     - https://github.com/drkameleon/grafito
     - https://github.com/drkameleon/grafito/blob/v0.2.12/grafito.art

@@ -1,10 +1,10 @@
 ---
 metadata:
-  author: "Yanis Zafirópulos (drkameleon)"
-  license: "MIT"
-  package-version: "0.0.3"
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
+  author: Yanis Zafirópulos (drkameleon)
+  license: MIT
+  package-version: 0.0.3
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
   sources:
     - https://unidecode.pkgr.art/
     - https://github.com/drkameleon/unidecode.art/tree/v0.0.3

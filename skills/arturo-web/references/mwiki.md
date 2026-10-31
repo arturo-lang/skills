@@ -1,10 +1,10 @@
 ---
 metadata:
-  author: "Yanis Zafirópulos (drkameleon)"
-  license: "MIT"
-  package-version: "0.3.0"
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
+  author: Yanis Zafirópulos (drkameleon)
+  license: MIT
+  package-version: 0.3.0
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
   sources:
     - https://github.com/drkameleon/mwiki.art/blob/bace1e015ae93876b5669b52351ce4a1ad5fa1d8/README.md
     - https://github.com/drkameleon/mwiki.art/blob/bace1e015ae93876b5669b52351ce4a1ad5fa1d8/src/mwiki.art

@@ -1,10 +1,10 @@
 ---
 metadata:
-  author: "Lulzx"
-  license: "MIT"
-  package-version: "0.3.0"
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
+  author: Lulzx
+  license: MIT
+  package-version: 0.3.0
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
   sources:
     - https://github.com/Lulzx/schema.art/tree/v0.3.0
     - https://arturo-lang.io/documentation/library/core/import/

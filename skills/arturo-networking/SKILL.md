@@ -2,7 +2,7 @@
 name: arturo-networking
 description: Implement Arturo HTTP clients and services, JSON interchange, downloads, mail, TCP, UDP, and Claude API integrations.
 metadata:
-  arturo-version: "0.10.0"
+  arturo-version: 0.10.0
 ---
 
 # Arturo HTTP, JSON, and networking

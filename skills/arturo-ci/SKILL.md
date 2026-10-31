@@ -2,7 +2,7 @@
 name: arturo-ci
 description: Create, review, and troubleshoot Arturo GitHub Actions CI workflows using setup-arturo, Unitt tests, and bundler executable builds and release artifacts.
 metadata:
-  arturo-version: "0.10.0"
+  arturo-version: 0.10.0
 ---
 
 # Arturo CI

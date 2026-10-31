@@ -1,7 +1,7 @@
 ---
 metadata:
-  arturo-version: "0.10.0"
-  review-date: "2026-10-30"
+  arturo-version: 0.10.0
+  review-date: 2026-10-30
   sources:
     - https://arturo-lang.io/documentation/library/core/import/
     - https://github.com/arturo-lang/pkgr.art#using-packages

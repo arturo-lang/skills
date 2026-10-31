@@ -1,7 +1,7 @@
 ---
 metadata:
-  arturo-version: "0.10.0"
-  review-date: "2026-10-30"
+  arturo-version: 0.10.0
+  review-date: 2026-10-30
   sources:
     - https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199
 ---

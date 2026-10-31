@@ -1,10 +1,10 @@
 ---
 metadata:
-  author: "Yanis Zafirópulos (drkameleon)"
-  license: "MIT"
-  package-version: "0.0.4"
-  arturo-version: "0.10.0"
-  review-date: "2026-10-29"
+  author: Yanis Zafirópulos (drkameleon)
+  license: MIT
+  package-version: 0.0.4
+  arturo-version: 0.10.0
+  review-date: 2026-10-29
   sources:
     - https://mimetypes.pkgr.art/
     - https://github.com/drkameleon/mimetypes.art/blob/v0.0.4/src/mimetypes.art
