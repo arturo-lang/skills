@@ -16,7 +16,7 @@ metadata:
 
 Use optionally for typed attribute interfaces in reusable functions and DSL commands. Keep DSL required operands positional and optional configuration in attributes; this preserves the generated bindings and evaluation behavior described below.
 
-Use [optionally](https://optionally.pkgr.art/) to generate attribute handling for Arturo functions. Requires Arturo 0.10.0 or newer. An import can download the package and execute its entrypoint.
+Use optionally to generate attribute handling for Arturo functions. Requires Arturo 0.10.0 or newer. An import can download the package and execute its entrypoint.
 
 ```art
 import {optionally}!

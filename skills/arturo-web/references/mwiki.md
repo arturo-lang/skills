@@ -9,11 +9,12 @@ metadata:
     - https://github.com/drkameleon/mwiki.art/blob/bace1e015ae93876b5669b52351ce4a1ad5fa1d8/README.md
     - https://github.com/drkameleon/mwiki.art/blob/bace1e015ae93876b5669b52351ce4a1ad5fa1d8/src/mwiki.art
     - https://arturo-lang.io/documentation/library/core/import/
+    - https://mwiki.pkgr.art/
 ---
 
 # MediaWiki in Arturo
 
-Use the [mwiki package](https://mwiki.pkgr.art/) for MediaWiki Action API integration. `import 'mwiki!` may download and execute the package; distinguish this from making wiki requests.
+Use the mwiki package for MediaWiki Action API integration. `import 'mwiki!` may download and execute the package; distinguish this from making wiki requests.
 
 ## Read operations
 

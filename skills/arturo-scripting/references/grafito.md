@@ -10,11 +10,12 @@ metadata:
     - https://github.com/drkameleon/grafito/blob/v0.2.12/grafito.art
     - https://grafito.pkgr.art/#command-reference
     - https://arturo-lang.io/documentation/library/core/import/
+    - https://grafito.pkgr.art/
 ---
 
 # Grafito graph databases
 
-Use [Grafito](https://grafito.pkgr.art/) when the task needs its graph DSL or SQLite-backed graph storage. Import with `import 'grafito!`; package import may download and execute code.
+Use Grafito when the task needs its graph DSL or SQLite-backed graph storage. Import with `import 'grafito!`; package import may download and execute code.
 
 The upstream repository also demonstrates `do.import {grafito.art}` for a local checkout; that path is relative to the checkout, not a registry import name.
 

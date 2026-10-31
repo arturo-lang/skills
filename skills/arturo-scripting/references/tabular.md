@@ -5,11 +5,14 @@ metadata:
   package-version: 0.2.0
   arturo-version: 0.10.0
   review-date: 2026-10-29
+  sources:
+    - https://tabular.pkgr.art/
+    - https://github.com/drkameleon/tabular.art/tree/v0.2.0
 ---
 
 # Tabular terminal tables
 
-Use [Tabular documentation](https://tabular.pkgr.art/) and [v0.2.0 source](https://github.com/drkameleon/tabular.art/tree/v0.2.0). Import may download a missing package and execute its entry file.
+Import may download a missing package and execute its entry file.
 
 `tabular` accepts a block of row blocks and returns a string; explicitly `print` the result when terminal output is wanted. Prepare rows as data rather than interpolating executable Arturo text. Keep row widths consistent and align header, alignment, and padding settings with the columns.
 

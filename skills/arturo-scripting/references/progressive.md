@@ -5,11 +5,14 @@ metadata:
   package-version: 0.0.3
   arturo-version: 0.10.0
   review-date: 2026-10-29
+  sources:
+    - https://progressive.pkgr.art/
+    - https://github.com/drkameleon/progressive.art/tree/v0.0.3
 ---
 
 # Progressive terminal progress
 
-Use [Progressive documentation](https://progressive.pkgr.art/) and [v0.0.3 source](https://github.com/drkameleon/progressive.art/tree/v0.0.3). Importing a missing package can download and execute it.
+Importing a missing package can download and execute it.
 
 Choose iterator wrappers for `loop`, `map`, `select`, or `filter`; keep the original iterator's processing logic. Call `processing` inside a wrapped iterator to supply status detail. Do not assume other iterators are wrapped.
 

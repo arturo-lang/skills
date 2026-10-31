@@ -8,11 +8,12 @@ metadata:
   sources:
     - https://github.com/Lulzx/schema.art/tree/v0.3.0
     - https://arturo-lang.io/documentation/library/core/import/
+    - https://schema.pkgr.art/
 ---
 
 # Schema validation
 
-Use [schema](https://schema.pkgr.art/) for whole-value validation. Requires Arturo 0.10.0 or newer. Check the project's installed release before changing existing schemas. Importing a missing package can download it and executes its entrypoint.
+Use schema for whole-value validation. Requires Arturo 0.10.0 or newer. Check the project's installed release before changing existing schemas. Importing a missing package can download it and executes its entrypoint.
 
 ```art
 import "schema"!

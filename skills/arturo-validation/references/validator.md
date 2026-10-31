@@ -13,7 +13,7 @@ metadata:
 
 # String validation
 
-Use [validator](https://validator.pkgr.art/) for string-format checks.
+Use validator for string-format checks.
 
 ```art
 import "validator"!

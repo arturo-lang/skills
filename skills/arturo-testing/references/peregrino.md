@@ -5,11 +5,14 @@ metadata:
   package-version: 0.1.2
   arturo-version: 0.10.0
   review-date: 2026-10-29
+  sources:
+    - https://peregrino.pkgr.art/
+    - https://github.com/drkameleon/peregrino/tree/v0.1.2
 ---
 
 # Peregrino benchmarking
 
-Use [Peregrino documentation](https://peregrino.pkgr.art/) and [v0.1.2 source](https://github.com/drkameleon/peregrino/tree/v0.1.2). The live registry's v0.1.2 overview documents the API below; older cached pages may show v0.0.2. Confirm installed options with `peregrino --help`. Package import may download and execute code.
+Confirm installed options with `peregrino --help`. Package import may download and execute code.
 
 The CLI runs command strings repeatedly. Use safe, bounded commands and account for their side effects on every run. Keep inputs, working directory, runtime, and cache conditions comparable; report run count with results. Benchmarks measure performance, not correctness.
 

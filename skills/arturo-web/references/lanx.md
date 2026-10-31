@@ -9,11 +9,13 @@ metadata:
     - https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/src/lanx.art
     - https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/src/cli.art
     - https://arturo-lang.io/documentation/library/core/import/
+    - https://lanx.pkgr.art/
+    - https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/README.md
 ---
 
 # Lanx static file server
 
-Use [Lanx](https://lanx.pkgr.art/) to serve a static directory. The upstream [README](https://github.com/drkameleon/lanx/blob/0d539d467f17671a7f2b873bbaff6492629d7cfd/README.md) documents CLI usage: `lanx` serves the current directory; `lanx ./public` serves a selected folder.
+Use Lanx to serve a static directory. `lanx` serves the current directory; `lanx ./public` serves a selected folder.
 
 Verify package installation and executable discovery before relying on the command. Do not infer flags from another static server.
 

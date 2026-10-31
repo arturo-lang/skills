@@ -13,7 +13,7 @@ metadata:
 
 # RSV serialization
 
-Use [rsv](https://rsv.pkgr.art/) for RSV row data. The package exposes `_VERSION`, `encode`, and `decode`. Follow its documented namespaced import; importing may download and evaluate the package.
+Use rsv for RSV row data. The package exposes `_VERSION`, `encode`, and `decode`. Follow its documented namespaced import; importing may download and evaluate the package.
 
 ```art
 rsv: import.lean "rsv"!
