@@ -1,6 +1,19 @@
+---
+metadata:
+  author: "Komo (asumbek)"
+  license: "MIT"
+  package-version: "0.1.1"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://rsv.pkgr.art/
+    - https://github.com/asumbek/art-rsv/blob/v0.1.1/rsv.art
+    - https://arturo-lang.io/documentation/library/core/import/
+---
+
 # RSV serialization
 
-Use [rsv](https://rsv.pkgr.art/) for RSV row data. The 0.1.1 package exposes `_VERSION`, `encode`, and `decode`. Follow its documented namespaced import; importing may download and evaluate the package.
+Use [rsv](https://rsv.pkgr.art/) for RSV row data. The package exposes `_VERSION`, `encode`, and `decode`. Follow its documented namespaced import; importing may download and evaluate the package.
 
 ```art
 rsv: import.lean "rsv"!
@@ -20,5 +33,3 @@ Construct rows with `@[]` when cells contain expressions or `null`: ordinary blo
 This release represents the serialized payload as an Arturo string with control markers, rather than exposing a `:binary` API. Preserve the payload exactly; line splitting, whitespace trimming, or ad hoc CSV escaping will corrupt its framing.
 
 Check actual file and transport byte behavior against the consumer's RSV implementation before claiming interoperability. The decoder's end-marker check is not a complete validation guarantee for arbitrary malformed input.
-
-Sources: [package signatures](https://rsv.pkgr.art/), [0.1.1 implementation](https://github.com/asumbek/art-rsv/blob/v0.1.1/rsv.art), [official import reference](https://arturo-lang.io/documentation/library/core/import/).

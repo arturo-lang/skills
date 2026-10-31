@@ -1,3 +1,13 @@
+---
+metadata:
+  author: "RickBarretto"
+  license: "MIT"
+  package-version: "0.1.0"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  source-revision: "v0.1.0"
+---
+
 # States finite state machines
 
 Use [States documentation](https://states.pkgr.art/) and [v0.1.0 source](https://github.com/RickBarretto/states.art/tree/v0.1.0). Package imports may download and execute code.

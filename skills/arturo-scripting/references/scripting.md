@@ -1,3 +1,9 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-30"
+---
+
 # CLI and local automation
 
 ## Arguments
@@ -56,10 +62,6 @@ For external processes, look up System/execute and System/process and their resu
 `err: try [ ... ]` captures an error value; `error? err` distinguishes failure. Assign a needed result inside the action because `try` itself reports null/error rather than the action's successful result. Test missing-file and invalid-input cases in an isolated directory.
 
 For cleanup that must continue after a failed removal, use [separate action and cleanup diagnostics](workflows.md#preserve-action-and-cleanup-failures). Verify that owned paths are gone: `try [delete path]` alone can report null even when deletion did not take effect.
-
-## Sources
-
-Sources:
 
 - [Language evaluation and scope](https://arturo-lang.io/documentation/language/).
 - [System/arg](https://arturo-lang.io/documentation/library/system/arg/), [Types/to](https://arturo-lang.io/documentation/library/types/to/), and [Exceptions/try](https://arturo-lang.io/documentation/library/exceptions/try/).

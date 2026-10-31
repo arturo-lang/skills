@@ -1,6 +1,19 @@
+---
+metadata:
+  author: "Yanis Zafirópulos (drkameleon)"
+  license: "MIT"
+  package-version: "0.3.0"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://github.com/drkameleon/mwiki.art/blob/bace1e015ae93876b5669b52351ce4a1ad5fa1d8/README.md
+    - https://github.com/drkameleon/mwiki.art/blob/bace1e015ae93876b5669b52351ce4a1ad5fa1d8/src/mwiki.art
+    - https://arturo-lang.io/documentation/library/core/import/
+---
+
 # MediaWiki in Arturo
 
-Use the [mwiki package](https://mwiki.pkgr.art/) for MediaWiki Action API integration. This guide covers version 0.3.0. `import 'mwiki!` may download and execute the package; distinguish this from making wiki requests.
+Use the [mwiki package](https://mwiki.pkgr.art/) for MediaWiki Action API integration. `import 'mwiki!` may download and execute the package; distinguish this from making wiki requests.
 
 ## Read operations
 
@@ -28,5 +41,3 @@ For a live read, construct a client with the user's intended endpoint, call `wik
 `wiki\editPage title content summary` requires a logged-in client and submits a full page text replacement or creation, obtaining a CSRF token internally. Prepare the target title, complete replacement text, and summary before performing an edit within the user's requested scope.
 
 The implementation reports an edit as successful when the response has an `edit` key; verify the resulting page when confirmation of the actual stored content matters. It exposes no conflict-resolution or revision-precondition interface.
-
-Sources: [upstream README](https://github.com/drkameleon/mwiki.art/blob/bace1e015ae93876b5669b52351ce4a1ad5fa1d8/README.md), [implementation](https://github.com/drkameleon/mwiki.art/blob/bace1e015ae93876b5669b52351ce4a1ad5fa1d8/src/mwiki.art), and [Arturo import reference](https://arturo-lang.io/documentation/library/core/import/).

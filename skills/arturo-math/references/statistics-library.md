@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/statistics
+    - https://arturo-lang.io/llms.txt
+---
+
 # Statistics: function selection
 
 Use for descriptive statistics on numeric collections. Population statistics are the defaults; inspect `.sample` support before choosing sample estimators. Decide how empty input, singleton samples, and non-numeric values should behave. Verify ordering requirements for `median` on the installed runtime.
@@ -14,7 +23,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [median](https://arturo-lang.io/documentation/library/statistics/median)       | Find the middle value; sort first when ordering behavior matters. | `median sort [5 1 3]`           |
 | [skewness](https://arturo-lang.io/documentation/library/statistics/skewness)   | Obtain population skewness of collection of numbers.              | `skewness [1 2 3 4]`            |
 | [variance](https://arturo-lang.io/documentation/library/statistics/variance)   | Obtain population variance of collection of numbers.              | `variance [1 2 3 4]`            |
-
-## Sources
-
-Sources: the [official Statistics module](https://arturo-lang.io/documentation/library/statistics); [official text reference](https://arturo-lang.io/llms.txt).

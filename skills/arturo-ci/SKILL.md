@@ -1,11 +1,11 @@
 ---
 name: arturo-ci
 description: Create, review, and troubleshoot Arturo GitHub Actions CI workflows using setup-arturo, Unitt tests, and bundler executable builds and release artifacts.
+metadata:
+  arturo-version: "0.10.0"
 ---
 
 # Arturo CI
-
-Examples: [official repository](https://github.com/arturo-lang/examples).
 
 Use [workflow guidance](references/workflows.md) to install Arturo with `arturo-lang/setup-arturo`, run tests, or build executables with `arturo-lang/bundler`. Inspect the project's existing workflow, test entry points, package metadata, and supported platforms before choosing jobs or a matrix.
 

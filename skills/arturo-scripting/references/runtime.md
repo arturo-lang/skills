@@ -1,3 +1,13 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/reflection/inspect
+    - https://arturo-lang.io/documentation/library/reflection/info
+    - https://arturo-lang.io/documentation/language
+---
+
 # Runtime signatures and Arturo defaults
 
 Check `arturo --version` and `arturo --help`. Query a signature without invoking the target:
@@ -19,5 +29,3 @@ Use lower camelCase for variables, labels, functions, and object/type names (`:s
 Expressions group right to left; function arity determines argument boundaries. Blocks remain data until evaluated. A supported literal argument enables mutation; use `new` for an independent copy and do not assume ordinary evaluated blocks create scope.
 
 Run bounded offline `.art` examples with `ensure [condition]` where possible. Report checks and relevant limitations. Use temporary directories for disk effects. Follow project tooling.
-
-Sources: [inspect](https://arturo-lang.io/documentation/library/reflection/inspect), [info](https://arturo-lang.io/documentation/library/reflection/info), and the [official language reference](https://arturo-lang.io/documentation/language).

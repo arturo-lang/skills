@@ -1,3 +1,9 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+---
+
 # Diagnostic patterns
 
 | Symptom                              | First check                                                                     |
@@ -25,8 +31,6 @@ When expected failure is part of the test, assert `error? err` or `throws? [...]
 Run `arturo --version` and consult `arturo --help`. Check Reflection/info and arity for builtin details before relying on a remembered signature. Preserve a minimal reproduction when documentation and the installed interpreter disagree, and describe the observed version-specific behavior.
 
 For performance issues, establish correct output first. Reflection/benchmark can time a bounded action. Memoization and in-place updates change resource use or aliasing; verify semantics before adopting them as fixes.
-
-## Sources
 
 - [Official reference](https://arturo-lang.io/llms.txt): Exceptions; Core/ensure; Reflection; Precedence and Evaluation; Scope and rules; In-place variable modification.
 - [Function definition](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/Function%20definition.art) provides a small comparison of explicit return and expression result.

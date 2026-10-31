@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/paths
+    - https://arturo-lang.io/llms.txt
+---
+
 # Paths: function selection
 
 Use for path resolution, components, listing, and normalization. `absolute` and `relative` refer to the script’s location as documented; test from a different working directory before assuming resolution behavior. `extract` also supports URLs and colors through attributes. Keep platform-specific separators and home expansion explicit.
@@ -14,7 +23,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [list](https://arturo-lang.io/documentation/library/paths/list)           | Obtain files in path.                                              | `list "."`                            |
 | [normalize](https://arturo-lang.io/documentation/library/paths/normalize) | Obtain normalized version of path.                                 | `normalize "one/../two"`              |
 | [relative](https://arturo-lang.io/documentation/library/paths/relative)   | Obtain relative path for path, based on current script's location. | `relative "helpers.art"`              |
-
-## Sources
-
-Sources: the [official Paths module](https://arturo-lang.io/documentation/library/paths); [official text reference](https://arturo-lang.io/llms.txt).

@@ -1,11 +1,11 @@
 ---
 name: arturo-collections
 description: Implement Arturo collection and text transformations using Collections, Iterators, Strings, and Sets. Use for blocks, dictionaries, ranges, data pipelines, sorting, regex matching, text processing, set operations, Recase case conversion, Unidecode transliteration, and RSV data.
+metadata:
+  arturo-version: "0.10.0"
 ---
 
 # Arturo collections
-
-Examples: [official repository](https://github.com/arturo-lang/examples).
 
 For iterator, dictionary, or text recipes, read [collection patterns](references/collections.md). Confirm signatures in the [official reference](https://arturo-lang.io/llms.txt) for the collection type being processed.
 

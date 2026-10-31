@@ -1,3 +1,13 @@
+---
+metadata:
+  author: "Yanis Zafirópulos (drkameleon)"
+  license: "MIT"
+  package-version: "0.0.3"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  source-revision: "v0.0.3"
+---
+
 # Progressive terminal progress
 
 Use [Progressive documentation](https://progressive.pkgr.art/) and [v0.0.3 source](https://github.com/drkameleon/progressive.art/tree/v0.0.3). Importing a missing package can download and execute it.

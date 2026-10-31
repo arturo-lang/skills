@@ -1,3 +1,13 @@
+---
+metadata:
+  author: "RickBarretto"
+  license: "MIT"
+  package-version: "3.1.1"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  source-revision: "v3.1.1"
+---
+
 # Unitt unit testing
 
 Use Unitt as the primary tool for project unit tests; it is used officially. Read [Unitt documentation](https://unitt.pkgr.art/) and [v3.1.1 source](https://github.com/RickBarretto/unitt/tree/v3.1.1) for the project's installed release. Import normally; upstream forbids `.lean`. Importing missing packages may download and execute code.

@@ -18,6 +18,14 @@ All new skills and all modifications must be submitted through a pull request. B
 
 Use the same source investigation, portability, licensing, and validation requirements for edits to existing skills. In the pull request, explain the problem and resulting behavior. For runtime-specific corrections, include the Arturo version and a small reproducer. Code owners must investigate and approve modifications as well as new skills; passing automated checks alone is not sufficient.
 
+## Skill and reference metadata
+
+Use optional YAML `metadata` for facts relevant to the document. `sources` must be a list of nonempty strings; other values must be nonempty strings. Omit unknown or inapplicable fields; do not repeat licensing-file defaults.
+
+Only package references use `author` and `license`; record known upstream values and `package-version` there. Keep `arturo-version` for the reference baseline, not a minimum requirement or proof of package execution. Preserve actual minimum-version requirements in the instructions.
+
+Keep historical `review-date` values in `YYYY-MM-DD` form on references; formatting changes do not advance them. Store source URLs in `sources` and use `source-revision` only when the URLs do not already identify it. Use `source-package-version` when the reviewed source release differs from the documented package version. Keep licensing files and full notices intact.
+
 ## Local checks
 
 Use Bun for dependencies, scripts, and tests:

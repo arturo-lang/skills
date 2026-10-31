@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/numbers
+    - https://arturo-lang.io/llms.txt
+---
+
 # Numbers: function selection
 
 Use for numerical functions, constants, aggregates, and numeric predicates. Check domains, angle units, floating error, and non-finite results. `epsilon` denotes Euler’s number here, not machine precision. Keep factorials, factorization, and primality inputs bounded.
@@ -68,7 +77,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [tan](https://arturo-lang.io/documentation/library/numbers/tan)                 | Compute the tangent of angle.                                                             | `print tan 0`             |
 | [tanh](https://arturo-lang.io/documentation/library/numbers/tanh)               | Compute the hyperbolic tangent of angle.                                                  | `print tanh 0`            |
 | [tau](https://arturo-lang.io/documentation/library/numbers/tau)                 | The number tau, mathematical constant.                                                    | `inspect tau`             |
-
-## Sources
-
-Sources: the [official Numbers module](https://arturo-lang.io/documentation/library/numbers); [official text reference](https://arturo-lang.io/llms.txt).

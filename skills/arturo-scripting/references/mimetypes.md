@@ -1,6 +1,19 @@
+---
+metadata:
+  author: "Yanis Zafirópulos (drkameleon)"
+  license: "MIT"
+  package-version: "0.0.4"
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://mimetypes.pkgr.art/
+    - https://github.com/drkameleon/mimetypes.art/blob/v0.0.4/src/mimetypes.art
+    - https://arturo-lang.io/documentation/library/core/import/
+---
+
 # MIME lookup
 
-Use [mimetypes](https://mimetypes.pkgr.art/) for extension-based MIME lookup. This guide covers version 0.0.4. Importing can download a missing package and execute its entrypoint.
+Use [mimetypes](https://mimetypes.pkgr.art/) for extension-based MIME lookup. Importing can download a missing package and execute its entrypoint.
 
 ```art
 import "mimetypes"!
@@ -18,5 +31,3 @@ mimetype.extensions "image/jpeg"
 Lookup uses a bundled database derived from mime-db. It does not inspect file bytes, prove the content matches the extension, or validate an upload. Normalize input casing deliberately when the application requires it; do not assume the implementation normalizes extensions.
 
 Once installed, test known, unknown, ambiguous, and uppercase extensions relevant to the application.
-
-Sources: [package reference](https://mimetypes.pkgr.art/), [0.0.4 implementation](https://github.com/drkameleon/mimetypes.art/blob/v0.0.4/src/mimetypes.art), [official import reference](https://arturo-lang.io/documentation/library/core/import/).

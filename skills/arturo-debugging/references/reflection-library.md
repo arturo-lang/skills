@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/reflection
+    - https://arturo-lang.io/llms.txt
+---
+
 # Reflection: function selection
 
 Use to discover runtime signatures, values, attributes, and execution context. Prefer `inspect info.get` for signatures. `attr`, `attr?`, and `attrs` read call attributes in the function context; benchmark only bounded work and keep diagnostic output separate from program output.
@@ -19,7 +28,3 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 | [stack](https://arturo-lang.io/documentation/library/reflection/stack)             | Obtain current stack.                                   | `1 2 3 inspect stack`                                 |
 | [standalone?](https://arturo-lang.io/documentation/library/reflection/standalone-) | Test whether current script runs from the command-line. | `standalone?`                                         |
 | [symbols](https://arturo-lang.io/documentation/library/reflection/symbols)         | Obtain currently defined symbols.                       | `inspect symbols`                                     |
-
-## Sources
-
-Sources: the [official Reflection module](https://arturo-lang.io/documentation/library/reflection); [official text reference](https://arturo-lang.io/llms.txt).

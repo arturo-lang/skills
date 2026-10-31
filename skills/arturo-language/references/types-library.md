@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/types
+    - https://arturo-lang.io/llms.txt
+---
+
 # Types: function selection
 
 Use for conversion, type predicates, and custom object definitions. Type names use lower camelCase, for example `:someObject`. A syntactic value inside a block can be inspected without resolving its words. `to` takes the type first; handle conversion failures explicitly.
@@ -57,7 +66,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [unit?](https://arturo-lang.io/documentation/library/types/unit-)                     | Test whether value is of type :unit.                            | ``unit? `m``                                                               |
 | [version?](https://arturo-lang.io/documentation/library/types/version-)               | Test whether value is of type :version.                         | `print version? 1.0.2`                                                     |
 | [word?](https://arturo-lang.io/documentation/library/types/word-)                     | Test whether value is of type :word.                            | `word? first [something x]`                                                |
-
-## Sources
-
-Sources: the [official Types module](https://arturo-lang.io/documentation/library/types); [official text reference](https://arturo-lang.io/llms.txt).

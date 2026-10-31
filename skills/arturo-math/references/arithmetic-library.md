@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/arithmetic
+    - https://arturo-lang.io/llms.txt
+---
+
 # Arithmetic: function selection
 
 Use for arithmetic across supported numeric types. Integer `div` differs from floating `fdiv`; select deliberately. Expressions group right to left without conventional operator precedence. A supported literal argument mutates its binding; a value argument returns a result.
@@ -19,7 +28,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [neg](https://arturo-lang.io/documentation/library/arithmetic/neg)       | Reverse sign of value and return it.                                                  | `print neg 1`       |
 | [pow](https://arturo-lang.io/documentation/library/arithmetic/pow)       | Compute the power of values.                                                          | `print pow 2 3`     |
 | [sub](https://arturo-lang.io/documentation/library/arithmetic/sub)       | Subtract values.                                                                      | `print sub 2 1`     |
-
-## Sources
-
-Sources: the [official Arithmetic module](https://arturo-lang.io/documentation/library/arithmetic); [official text reference](https://arturo-lang.io/llms.txt).

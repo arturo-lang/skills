@@ -1,3 +1,9 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-30"
+---
+
 # GitHub Actions for Arturo
 
 ## Install and test
@@ -88,8 +94,6 @@ Use the upstream [release workflow](https://github.com/arturo-lang/bundler/blob/
 Pass a version explicitly if archive names should include it; the bundler action reads `inputs.version` and does not itself extract a release tag.
 
 Give `contents: write` to the release publishing job when needed, keeping ordinary CI read-only. A `Resource not accessible by integration` error calls for inspecting that job's token permissions and event context. Verify that every matrix artifact exists before publishing; preserve failed build and test status.
-
-## Sources
 
 - [setup-arturo README](https://github.com/arturo-lang/setup-arturo/blob/59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7/README.md) and [action metadata](https://github.com/arturo-lang/setup-arturo/blob/59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7/action.yml).
 - [bundler README](https://github.com/arturo-lang/bundler/blob/856568f0f4c5baf6ee61e9a963abacda3dd4e2d9/README.md) and [action implementation](https://github.com/arturo-lang/bundler/blob/856568f0f4c5baf6ee61e9a963abacda3dd4e2d9/action.yml). Implementation takes precedence for archive naming and publication behavior.

@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/system
+    - https://arturo-lang.io/llms.txt
+---
+
 # System: function selection
 
 Use for CLI arguments, environment/process information, and local automation. `arg` preserves raw strings; `args` parses values. Do not dump environment variables while debugging. Inspect `execute` behavior and quote externally supplied arguments deliberately.
@@ -24,7 +33,3 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 | [superuser?](https://arturo-lang.io/documentation/library/system/superuser-) | Test whether current user has administrator/root privileges.                              | `superuser?`                     |
 | [sys](https://arturo-lang.io/documentation/library/system/sys)               | Obtain current system information.                                                        | `inspect sys`                    |
 | [terminate](https://arturo-lang.io/documentation/library/system/terminate)   | Kill process with id.                                                                     | `terminate childPid`             |
-
-## Sources
-
-Sources: the [official System module](https://arturo-lang.io/documentation/library/system); [official text reference](https://arturo-lang.io/llms.txt).

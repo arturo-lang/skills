@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-30"
+  sources:
+    - https://arturo-lang.io/documentation/language
+    - https://arturo-lang.io/llms.txt
+---
+
 # Numeric grouping, conversion, and boundaries
 
 Use these patterns when porting arithmetic or accepting numeric input. [checks.art](../examples/checks.art) asserts the contrasts below without network or filesystem effects.
@@ -31,9 +40,5 @@ The normal-case checks also assert that `average`, `variance`, and `median sort 
 A singleton has an average equal to its element and population variance zero. `variance` uses population variance by default; `.sample` changes the estimator: `[1 3]` has sample variance 2.0. Require at least two elements when your task calls for sample variance.
 
 Arturo 0.10.0 returns 0.0 for a singleton sample; the sample estimator is still mathematically undefined. Check overflow, non-finite values, and mixed numeric types for the intended inputs.
-
-## Sources
-
-Sources: [official language guide](https://arturo-lang.io/documentation/language), [official text reference](https://arturo-lang.io/llms.txt).
 
 Upstream [type-conversion tests](https://github.com/arturo-lang/arturo/blob/master/tests/unitt/lib/types/to.test.art) provide additional conversion examples.

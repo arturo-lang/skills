@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/logic
+    - https://arturo-lang.io/llms.txt
+---
+
 # Logic: function selection
 
 Use for logical predicates and the three logical values `true`, `false`, and `maybe`. Functions ending in `?` differ from Bitwise names without it. Blocks and already-evaluated logical values have different evaluation consequences; verify short-circuit behavior for the chosen form.
@@ -22,7 +31,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [true?](https://arturo-lang.io/documentation/library/logic/true-)   | Returns true if value is true; otherwise, it returns false.  | `true? true`          |
 | [xnor?](https://arturo-lang.io/documentation/library/logic/xnor-)   | Return the logical XNOR for the values.                      | `xnor? true true`     |
 | [xor?](https://arturo-lang.io/documentation/library/logic/xor-)     | Return the logical XOR for the values.                       | `xor? true false`     |
-
-## Sources
-
-Sources: the [official Logic module](https://arturo-lang.io/documentation/library/logic); [official text reference](https://arturo-lang.io/llms.txt).

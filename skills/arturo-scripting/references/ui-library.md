@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/ui
+    - https://arturo-lang.io/llms.txt
+---
+
 # Ui: function selection
 
 Use for native dialogs, notifications, clipboard access, and webviews. These operations need a supported desktop/runtime build and may block or alter user state. Examples are documentation-only here; do not invoke GUI or clipboard functions just to discover their signatures.
@@ -14,7 +23,3 @@ Examples are independent fragments; names such as `value`, `items`, `settings`, 
 | [popup](https://arturo-lang.io/documentation/library/ui/popup)     | Show popup dialog with title and message.          | `popup "Title" "Message"`                   |
 | [unclip](https://arturo-lang.io/documentation/library/ui/unclip)   | Obtain clipboard content.                          | `unclip`                                    |
 | [webview](https://arturo-lang.io/documentation/library/ui/webview) | Show webview window with url or html source.       | `webview "<html><body>Hello</body></html>"` |
-
-## Sources
-
-Sources: the [official Ui module](https://arturo-lang.io/documentation/library/ui); [official text reference](https://arturo-lang.io/llms.txt).

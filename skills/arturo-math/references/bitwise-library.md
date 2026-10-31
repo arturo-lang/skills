@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/bitwise
+    - https://arturo-lang.io/llms.txt
+---
+
 # Bitwise: function selection
 
 Use for integer or binary bit operations. These functions differ from the logical predicates ending in `?`. Check integer width, signed values, and shift limits before using a bit pattern as an external representation.
@@ -17,7 +26,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [shr](https://arturo-lang.io/documentation/library/bitwise/shr)   | Shift-right first value bits by second value. | `print shr 16 3` |
 | [xnor](https://arturo-lang.io/documentation/library/bitwise/xnor) | Compute the binary XNOR for the values.       | `print xnor 2 3` |
 | [xor](https://arturo-lang.io/documentation/library/bitwise/xor)   | Compute the binary XOR for the values.        | `print xor 2 3`  |
-
-## Sources
-
-Sources: the [official Bitwise module](https://arturo-lang.io/documentation/library/bitwise); [official text reference](https://arturo-lang.io/llms.txt).

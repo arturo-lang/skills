@@ -10,6 +10,18 @@ export async function validateLibrary(root: string): Promise<string[]> {
   for (const container of containers.filter((entry) => entry.isDirectory())) {
     const skillRoot = await realpath(resolve(root, "skills", container.name));
     const entrypoint = resolve(skillRoot, "SKILL.md");
+    let packageNames = new Set<string>();
+    try {
+      const notices = await readFile(
+        resolve(skillRoot, "THIRD-PARTY-NOTICES.md"),
+        "utf8",
+      );
+      packageNames = new Set(
+        [...notices.matchAll(/^## ([a-z0-9-]+)$/gm)].map((match) => match[1]),
+      );
+    } catch {
+      // Skills without external packages need no third-party notices.
+    }
     let content: string;
     try {
       content = await readFile(entrypoint, "utf8");
@@ -55,6 +67,77 @@ export async function validateLibrary(root: string): Promise<string[]> {
         }
         if (!entry.name.endsWith(".md")) continue;
         const markdown = await readFile(path, "utf8");
+        if (
+          path === entrypoint ||
+          relative(skillRoot, path).startsWith("references/")
+        ) {
+          const header = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(
+            markdown,
+          );
+          let metadata: unknown;
+          try {
+            const parsed = Bun.YAML.parse(header?.[1] ?? "") as {
+              metadata?: unknown;
+            } | null;
+            metadata = parsed?.metadata;
+          } catch {
+            errors.push(`${relative(root, path)}: invalid YAML frontmatter`);
+          }
+          const record =
+            metadata && typeof metadata === "object" && !Array.isArray(metadata)
+              ? (metadata as Record<string, unknown>)
+              : {};
+          if (
+            metadata !== undefined &&
+            (!metadata ||
+              typeof metadata !== "object" ||
+              Array.isArray(metadata))
+          ) {
+            errors.push(`${relative(root, path)}: metadata must be a mapping`);
+          }
+          if (
+            Object.entries(record).some(
+              ([key, value]) =>
+                key !== "sources" &&
+                (typeof value !== "string" || !value.trim()),
+            )
+          ) {
+            errors.push(
+              `${relative(root, path)}: metadata values must be strings`,
+            );
+          }
+          if (
+            "sources" in record &&
+            (!Array.isArray(record.sources) ||
+              record.sources.some(
+                (source) => typeof source !== "string" || !source.trim(),
+              ))
+          ) {
+            errors.push(
+              `${relative(root, path)}: metadata.sources must be a list of nonempty strings`,
+            );
+          }
+          if (
+            ("author" in record || "license" in record) &&
+            (!relative(skillRoot, path).startsWith("references/") ||
+              !packageNames.has(entry.name.replace(/\.md$/, "")))
+          ) {
+            errors.push(
+              `${relative(root, path)}: author and license belong only on package references`,
+            );
+          }
+          const date = record["review-date"];
+          if (
+            typeof date === "string" &&
+            (!/^\d{4}-\d{2}-\d{2}$/.test(date) ||
+              Number.isNaN(Date.parse(date)) ||
+              new Date(date).toISOString().slice(0, 10) !== date)
+          ) {
+            errors.push(
+              `${relative(root, path)}: invalid metadata.review-date`,
+            );
+          }
+        }
         for (const match of markdown.matchAll(/\[[^\]]*\]\(([^)]+)\)/g)) {
           const target = match[1];
           if (!target || /^(https?:|mailto:|#)/.test(target)) continue;

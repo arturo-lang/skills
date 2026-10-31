@@ -1,3 +1,11 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/collections
+---
+
 # Collections: function selection
 
 Use for blocks, dictionaries, ranges, and collection-like strings. Choose an operation by its result and accepted collection type. `contains? collection value` and `in? value collection` reverse argument order. Decide whether literal mutation is intended; direct `set` can affect shared storage. Bound combinations, permutations, and ranges.
@@ -54,7 +62,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [unique](https://arturo-lang.io/documentation/library/collections/unique)         | Obtain collection without duplicates.                                                   | `unique [1 2 1]`                                  |
 | [values](https://arturo-lang.io/documentation/library/collections/values)         | Obtain list of values for collection.                                                   | `values #[name: "Ada"]`                           |
 | [zero?](https://arturo-lang.io/documentation/library/collections/zero-)           | Test whether number or collection size is zero.                                         | `zero? 5-5`                                       |
-
-## Sources
-
-Sources: the [official Collections module](https://arturo-lang.io/documentation/library/collections); [official text reference](https://arturo-lang.io/llms.txt).

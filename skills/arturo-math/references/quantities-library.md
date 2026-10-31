@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/quantities
+    - https://arturo-lang.io/llms.txt
+---
+
 # Quantities: function selection
 
 Use for dimensional quantities, units, conversion, custom units, and physical constants. A backtick introduces a unit (see the examples below). Keep the quantity until unit validation is complete; `scalar` removes units. Check dimensions and precision rather than treating unlike quantities as plain numbers.
@@ -122,9 +131,5 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [volumetricFlow?](https://arturo-lang.io/documentation/library/quantities/volumetricflow-)                     | Test whether quantity describes Volumetric Flow.                                            | ``volumetricFlow? 5`m3/s``          |
 | [vonKlitzingConstant](https://arturo-lang.io/documentation/library/quantities/vonklitzingconstant)             | Von Klitzing constant; inspect its resistance value and units before using it in a formula. | `inspect vonKlitzingConstant`       |
 | [waveNumber?](https://arturo-lang.io/documentation/library/quantities/wavenumber-)                             | Test whether quantity describes Wave Number.                                                | ``waveNumber? 6`/m``                |
-
-## Sources
-
-Sources: the [official Quantities module](https://arturo-lang.io/documentation/library/quantities); [official text reference](https://arturo-lang.io/llms.txt).
 
 Use `convert value unit` or `in unit value`. Check `conforms?` before converting dimensions; extract a `scalar` only after validation. Conversions leave the source quantity unchanged.

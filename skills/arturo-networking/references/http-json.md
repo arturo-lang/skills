@@ -1,3 +1,9 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-30"
+---
+
 # HTTP and JSON patterns
 
 ## JSON
@@ -55,8 +61,6 @@ Ordinary function locals hold the parsed value; passing the response dictionary 
 Cleanup runs after the captured parse or validation failure, then a deliberate application error reaches the caller. Cleanup itself can fail and should be reported; the host should remove its temporary directory even if the program exits unsuccessfully.
 
 Remove the scratch file after success or parsing failure. Check live transport, timeouts, TLS, and retries separately.
-
-## Sources
 
 - [Official reference](https://arturo-lang.io/llms.txt): Net/request; Files/read, write; Exceptions/try; Collections/key?.
 - [JSON example](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/JSON.art).

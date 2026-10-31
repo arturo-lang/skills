@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/comparison
+    - https://arturo-lang.io/llms.txt
+---
+
 # Comparison: function selection
 
 Use for ordering, equality, and identity. `same?` is stricter than value equality. `between?` includes its endpoints. Confirm behavior for mixed types and custom objects instead of assuming another language’s coercion rules.
@@ -17,7 +26,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [lessOrEqual?](https://arturo-lang.io/documentation/library/comparison/lessorequal-)       | Test whether valueA =< valueB (less than or equal).        | `lessOrEqual? 5 2`    |
 | [notEqual?](https://arturo-lang.io/documentation/library/comparison/notequal-)             | Test whether valueA <> valueB (not equal).                 | `notEqual? 5 2`       |
 | [same?](https://arturo-lang.io/documentation/library/comparison/same-)                     | Test whether values are exactly the same (identity).       | `same? 1 2`           |
-
-## Sources
-
-Sources: the [official Comparison module](https://arturo-lang.io/documentation/library/comparison); [official text reference](https://arturo-lang.io/llms.txt).

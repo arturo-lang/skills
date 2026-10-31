@@ -1,3 +1,12 @@
+---
+metadata:
+  arturo-version: "0.10.0"
+  review-date: "2026-10-29"
+  sources:
+    - https://arturo-lang.io/documentation/library/io
+    - https://arturo-lang.io/llms.txt
+---
+
 # Io: function selection
 
 Use for terminal output, input, cursor control, and styling. Keep prompts and styling away from machine-readable stdout. Input can block; cursor operations require a terminal. Prefer `--no-color` during captured-output checks.
@@ -16,7 +25,3 @@ Fragments require surrounding input/resource bindings. Bound inputs; distinguish
 | [print](https://arturo-lang.io/documentation/library/io/print)       | Print value to screen with newline.                                          | `print "hello"`        |
 | [prints](https://arturo-lang.io/documentation/library/io/prints)     | Print value to screen.                                                       | `prints "hello"`       |
 | [terminal](https://arturo-lang.io/documentation/library/io/terminal) | Obtain info about terminal.                                                  | `inspect terminal`     |
-
-## Sources
-
-Sources: the [official Io module](https://arturo-lang.io/documentation/library/io); [official text reference](https://arturo-lang.io/llms.txt).
