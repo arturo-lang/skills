@@ -27,7 +27,10 @@ import {
 import { scenarioForLayout } from "./layout";
 import { scenarios } from "./scenarios";
 
+import { subscriptionResponse } from "./subscription";
+
 const argv = Bun.argv.slice(2);
+const subscription = argv.includes("--subscription");
 const value = (flag: string, fallback: string) => {
   const i = argv.indexOf(flag);
   return i < 0 ? fallback : argv[i + 1];
@@ -46,7 +49,7 @@ if (argv.includes("--list")) {
     "List: bun run evals --list\nRun (paid API): bun run evals --run --root CHECKOUT --mode automatic --repeat 3 [--scenario ID] [--packages-dir PATH] [--out PATH]",
   );
 } else {
-  if (!process.env.OPENAI_API_KEY)
+  if (!subscription && !process.env.OPENAI_API_KEY)
     throw new Error("OPENAI_API_KEY required; no model evaluations performed");
   const root = await realpath(value("--root", resolve(import.meta.dir, "..")));
   const mode = value("--mode", "automatic") as Mode;
@@ -159,6 +162,7 @@ if (argv.includes("--list")) {
         attempt,
         revision: revisionLabel,
         dirty: dirty.stdout,
+        transport: subscription ? "codex-subscription" : "responses-api",
         model: "gpt-6.1-sol",
         effort: "low",
         runtime,
@@ -216,7 +220,13 @@ if (argv.includes("--list")) {
       const started = Date.now();
       try {
         for (let turn = 0; turn < 16; turn++) {
-          const result = await response(input, process.env.OPENAI_API_KEY);
+          const result = subscription
+            ? await subscriptionResponse(
+                input,
+                { root: out, workspace, mode, executable, packages },
+                events,
+              )
+            : await response(input, process.env.OPENAI_API_KEY ?? "");
           events.push({ kind: "response", ...result });
           input.push(...result.output);
           const calls = result.output.filter(
@@ -300,7 +310,7 @@ if (argv.includes("--list")) {
         }
       }
       const usage = events
-        .filter((e) => e.kind === "response")
+        .filter((e) => e.kind === "response" && e.usage)
         .map(
           (e) =>
             e.usage as {
@@ -325,7 +335,11 @@ if (argv.includes("--list")) {
           ? "Verify the supplied cache/revisions; unavailable dependencies are infrastructure failures, not skill failures"
           : null,
         usage: {
-          requests: usage.length,
+          available: true,
+          accounting: subscription
+            ? "Codex thread cumulative usage; transport requests unavailable"
+            : "Responses API usage",
+          requests: subscription ? null : usage.length,
           cumulativeInputTokens: usage.reduce((n, u) => n + u.input_tokens, 0),
           outputTokens: usage.reduce((n, u) => n + u.output_tokens, 0),
           cachedInputTokens: usage.reduce(

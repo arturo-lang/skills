@@ -1,6 +1,6 @@
 ---
 name: arturo
-description: Write, explain, debug, test, or automate Arturo (.art) programs, including language semantics, standard-library APIs, external packages, data validation, CLI tools, HTTP, web content, and CI.
+description: Write, explain, debug, test, or automate Arturo (.art) programs, including language semantics, standard-library APIs, external packages and uncertain package names, data validation, CLI tools, HTTP, web content, and CI.
 metadata:
   arturo-version: 0.10.0
 ---
