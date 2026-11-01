@@ -28,7 +28,7 @@ export const scenarios: Scenario[] = [
     "Write solution.art with typed doubleValue (integer or floating input, exactly one doubled result), and changedFirst items value returning an independent flat block with its first element replaced, rejecting empty input. Follow Arturo conventions for expressive symbols, single-expression bodies and explicit multi-step bodies. Keep data and parameter blocks intact.",
     'ensure [@[doubleValue 4] = [8]]\nensure [@[doubleValue 2.5] = [5.0]]\nensure [throws? [doubleValue "4"]]\nitems: [1 2]\nensure [@[changedFirst items 9] = [[9 2]]]\nensure [items = [1 2]]\nensure [throws? [changedFirst [] 9]]',
     [
-      "Uses documented symbols such as $ and * rather than function/mul when writing new functions.",
+      "Uses documented symbols such as $ and * rather than function/mul when writing new functions; spells logical functions such as and?, or? and not? explicitly rather than using logical symbols.",
       "Uses -> for the single-expression function and assertions where appropriate; retains [] for data, typed parameters and the multi-step copy/update body.",
       "Keeps spacing, grouping and statement boundaries readable; does not change arity, evaluation, mutation or package predicates to shorten the code.",
     ],
