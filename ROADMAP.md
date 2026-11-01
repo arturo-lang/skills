@@ -18,6 +18,16 @@ Cover project loading, HTTP/JSON, structured data, filesystem/CLI, dates and dat
 
 Use [the evaluation workflow](evals/README.md) to separate activation, reference selection, guidance, compliance, correctness and infrastructure failures. Keep hidden checks outside agent workspaces; compare identical tasks and environments with recorded model settings, revisions and all attempts. Require observed evidence before claiming completion or performance improvements.
 
+## Verification priorities
+
+Use these acceptance gates to guide the next evidence-gathering work; the linked issues track active status. Implemented guidance and local checks do not establish agent compliance or hosted integration behavior.
+
+- [Selection and instruction compliance (#10)](https://github.com/arturo-lang/skills/issues/10): run each release scenario three times in no-skill, automatic-selection and explicit-reference conditions against recorded baseline and candidate revisions. Preserve model settings, runtime/package versions, traces, all attempts and held-out results. Review native testing, CI repair, package ambiguity, typed functions, HTML composition and assertion reporting separately before claiming reliability or context improvements.
+- [Hosted CI verification (#12)](https://github.com/arturo-lang/skills/issues/12): observe a clean hosted passing job and a deliberately failing assertion job using the documented Arturo/Unitt workflow. Record action revision, runner, runtime, package executable path, executed assertion totals and job URLs. Restore the passing tests. Repository packaging/runtime smoke jobs alone do not verify this application-testing workflow.
+- [Lanx clarification behavior (#14)](https://github.com/arturo-lang/skills/issues/14): observe the agent investigate an ambiguous “lynx” request in Arturo preview context and ask whether Lanx is intended before acquisition. Use #10's repeated evaluation procedure. Retain the separate opt-in HTML, binary-asset, missing-path and shutdown integration checks; successful server responses do not establish clarification behavior.
+
+Native Unitt lifecycle guidance, versioned HTML guidance, typed-function/formatting and assertion-reporting guidance, and the optional consumer-routing template have implementation and local verification evidence in [ADR 007](docs/decisions/2026-11-01-discovery-first-guidance.md). The [single-skill migration](docs/decisions/2026-11-01-single-arturo-skill.md) and [formatting decision](docs/decisions/2026-11-01-expressive-arturo-formatting.md) describe subsequent changes. Keep broader behavioral evaluation under #10 rather than treating these delivered documentation scopes as evidence of live-agent success. Consumer repositories must substitute and check their own routing paths.
+
 ## Evidence-driven maintenance
 
 Use demonstrated failures to prioritize changes. Measure the whole workflow, including discovery output and retries. Keep references navigable and packages independently documented. Record architecture changes in dated decisions instead of rewriting historical measurements or conclusions.
