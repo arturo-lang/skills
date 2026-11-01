@@ -1,0 +1,39 @@
+{
+  "baseline": "5ee2d7b",
+  "measurement": "Whitespace words and UTF-8 bytes including metadata; not model tokens.",
+  "before": {
+    "entries": {
+      "files": 10,
+      "words": 2483,
+      "bytes": 21235
+    },
+    "references": {
+      "files": 56,
+      "words": 22033,
+      "bytes": 242444
+    }
+  },
+  "after": {
+    "entries": {
+      "files": 10,
+      "words": 1711,
+      "bytes": 15262
+    },
+    "references": {
+      "files": 58,
+      "words": 15545,
+      "bytes": 134989
+    }
+  },
+  "reductionPercent": {
+    "entries": {
+      "words": 31.1,
+      "bytes": 28.1
+    },
+    "references": {
+      "words": 29.4,
+      "bytes": 44.3
+    }
+  },
+  "behavioralEvidence": "No live Sol Low runs; token and reliability targets remain unmeasured."
+}

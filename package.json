@@ -8,7 +8,13 @@
     "test": "bun test",
     "smoke": "bun run scripts/smoke.ts",
     "skills:list": "skills add . --list",
-    "smoke:packages": "bun run scripts/package-smoke.ts"
+    "smoke:packages": "bun run scripts/package-smoke.ts",
+    "evals": "bun run evals/run.ts",
+    "evals:summary": "bun run evals/summary.ts",
+    "evals:smoke": "bun run evals/smoke.ts",
+    "context:stats": "bun run scripts/context-stats.ts",
+    "smoke:html": "bun run scripts/html-smoke.ts",
+    "smoke:preview": "bun run scripts/preview-smoke.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.6.4",
