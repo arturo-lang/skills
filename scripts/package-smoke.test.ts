@@ -78,3 +78,22 @@ test("package lane refuses to run without explicit network opt-in", async () => 
   expect(await child.exited).not.toBe(0);
   expect(errors).toContain("--allow-network");
 });
+
+test("runner diagnostic probes cannot count as assertion success", async () => {
+  const { verifyNativeDiagnostic } = await import("./package-smoke");
+  expect(() =>
+    verifyNativeDiagnostic(
+      "uncaught",
+      0,
+      "Uncaught error in checks/arithmetic.check.art:\nPINNED-UNCAUGHT-FIXTURE",
+      "",
+    ),
+  ).not.toThrow();
+  expect(() =>
+    verifyNativeDiagnostic("empty", 1, "", "No test found!"),
+  ).not.toThrow();
+  expect(() => verifyNativeDiagnostic("empty", 0, "", "")).toThrow();
+  expect(() =>
+    verifyNativeDiagnostic("uncaught", 0, "TOTAL: 4 assertions", ""),
+  ).toThrow();
+});

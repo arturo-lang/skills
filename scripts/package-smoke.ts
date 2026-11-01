@@ -43,6 +43,25 @@ export function verifyNativeResult(
   }
 }
 
+export function verifyNativeDiagnostic(
+  kind: "uncaught" | "empty",
+  code: number,
+  output: string,
+  errors: string,
+): void {
+  const valid =
+    kind === "uncaught"
+      ? code === 0 &&
+        output.includes("Uncaught error in checks/arithmetic.check.art:") &&
+        output.includes("PINNED-UNCAUGHT-FIXTURE") &&
+        errors.trim() === ""
+      : code === 1 && output.trim() === "" && errors.includes("No test found!");
+  if (!valid || /TOTAL:\s*\d+ assertions/u.test(output))
+    throw new Error(
+      `${kind}: unexpected runner diagnostic exit=${code}\n${output}\n${errors}`,
+    );
+}
+
 async function run(command: string[], cwd: string) {
   const child = Bun.spawn(command, { cwd, stdout: "pipe", stderr: "pipe" });
   let timedOut = false;
@@ -116,6 +135,21 @@ if (import.meta.main) {
       }
       console.log(`PASS unitt 3.1.1 native/direct failure=${expectFailure}`);
     }
+    await writeFile(spec, 'throw "PINNED-UNCAUGHT-FIXTURE"\n');
+    const uncaught = await run([executable, "--no-color", cli], project);
+    verifyNativeDiagnostic(
+      "uncaught",
+      uncaught.code,
+      uncaught.output,
+      uncaught.errors,
+    );
+    console.log(
+      "PASS unitt 3.1.1 uncaught diagnostic (upstream exit-zero limitation)",
+    );
+    await rm(spec);
+    const empty = await run([executable, "--no-color", cli], project);
+    verifyNativeDiagnostic("empty", empty.code, empty.output, empty.errors);
+    console.log("PASS unitt 3.1.1 empty discovery diagnostic");
   } finally {
     await rm(workspace, { recursive: true, force: true });
   }

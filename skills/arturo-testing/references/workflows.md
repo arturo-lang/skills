@@ -95,4 +95,4 @@ bundle:
 
 ## Verification boundary
 
-The example is source-reviewed against the action revisions above. It has not established a clean hosted pass or a deliberately failing hosted job. Record the observed runner, runtime, package executable path and job URLs before claiming CI verification. In particular, Unitt 3.1.1 on Arturo 0.10.0 can exit zero on an uncaught child error or empty discovery; require evidence of executed assertions and inspect runner error output. Do not add a custom project runner merely to hide an upstream compatibility failure.
+The example is source-reviewed against the action revisions above. It has not established a clean hosted pass or a deliberately failing hosted job. Record the observed runner, runtime, package executable path and job URLs before claiming CI verification. In particular, Unitt 3.1.1 on Arturo 0.10.0 can exit zero on an uncaught child error; require evidence of executed assertions and inspect runner error output. Do not add a custom project runner merely to hide an upstream compatibility failure.

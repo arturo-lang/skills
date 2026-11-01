@@ -45,4 +45,4 @@ Place matching test files under `path`; `binary` selects the Arturo executable. 
 
 On Unitt 3.1.1 / Arturo 0.10.0, native discovery launches each file as a command-line child with `--filename:` for file-backed results. `standalone?` is true there too: suppress direct reporting when `args` contains `filename`. `unitt\report` expects standalone dictionary storage and fails on the native store. This guard was reproduced in the opt-in package lane; it is not a replacement runner.
 
-Uncaught runner errors and empty discovery can print an error yet exit zero on this runtime because upstream calls `exit 1`. Check executed summaries and error output as well as process status; zero alone is not proof of success.
+Uncaught runner errors can print an error yet exit zero on this runtime because upstream calls `exit 1`; empty discovery raises `No test found!` and exits 1. Check executed summaries and error output as well as process status; zero alone is not proof of success.
