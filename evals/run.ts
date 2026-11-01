@@ -127,7 +127,52 @@ if (argv.includes("--list")) {
       `Sandbox unavailable: ${runtime.stderr}; no model evaluations performed`,
     );
   await rm(preflight, { recursive: true, force: true });
-  for (const original of chosen) {
+  if (subscription) {
+    const workspace = await mkdtemp(
+      resolve(tmpdir(), "arturo-subscription-preflight-"),
+    );
+    const events: Event[] = [];
+    try {
+      await subscriptionResponse(
+        [
+          {
+            role: "developer",
+            content:
+              "Transport preflight. Use only the supplied bounded tools. No skills are installed.",
+          },
+          {
+            role: "user",
+            content:
+              'Use write_file to create probe.art containing print "SUBSCRIPTION-READY". Use read_file to read it back. Then use run_arturo to run print "SUBSCRIPTION-READY". Do not merely describe the steps.',
+          },
+        ],
+        { root: out, workspace, mode: "none", executable, packages },
+        events,
+      );
+      for (const name of ["write_file", "read_file", "run_arturo"])
+        if (!events.some((e) => e.kind === "tool" && e.name === name && e.ok))
+          throw new Error(
+            `Subscription preflight did not execute ${name}; no scored attempts collected`,
+          );
+      if (
+        !events.some(
+          (e) =>
+            e.kind === "tool" &&
+            e.name === "run_arturo" &&
+            String(e.text).includes("SUBSCRIPTION-READY"),
+        )
+      )
+        throw new Error("Subscription runtime preflight output missing");
+    } finally {
+      await writeFile(
+        resolve(out, "subscription-preflight.jsonl"),
+        events.map((e) => JSON.stringify(e)).join("\n"),
+      );
+      await rm(workspace, { recursive: true, force: true });
+    }
+  }
+  const harnessHash = await fingerprint(import.meta.dir);
+  campaign: for (const original of chosen) {
     const scenario = scenarioForLayout(
       original,
       inventory.map((s) => s.name),
@@ -154,6 +199,7 @@ if (argv.includes("--list")) {
       const events: Event[] = [];
       const metadata = {
         skillHash,
+        harnessHash,
         fixtureHash,
         packageHash,
         runId,
@@ -382,6 +428,7 @@ if (argv.includes("--list")) {
         (correctness as { passed?: boolean } | null)?.passed === false
       )
         process.exitCode = 1;
+      if (subscription && infrastructureError) break campaign;
     }
   }
 }

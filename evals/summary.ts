@@ -27,6 +27,8 @@ if (import.meta.main) {
             "Review needs reviewer, evidence and passed/failed status",
           );
         report.manualReviewStatus = review.status;
+        if (review.classification === "infrastructure")
+          report.infrastructureError = review.evidence;
       } catch (error) {
         if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
       }
