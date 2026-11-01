@@ -9,7 +9,7 @@ metadata:
 
 # Symbol aliases
 
-Prefer these aliases when writing Arturo; use the [formatting guidance](formatting.md) for expression blocks and layout. Follow their arity, evaluation, and mutation contracts; grouping still follows Arturo evaluation rules.
+Prefer non-logical aliases when writing Arturo; keep logical functions such as `and?`, `or?` and `not?` spelled out for readability. Choose `read`/`write` or `<<`/`>>` by context. This table catalogs available aliases, including logical symbols for recognition; it does not recommend using every alias. See [formatting guidance](formatting.md) for expression blocks and layout. Follow their arity, evaluation, and mutation contracts; grouping still follows Arturo evaluation rules.
 
 | Symbol | Function                                                                                      | Position |
 | ------ | --------------------------------------------------------------------------------------------- | -------- |
@@ -57,9 +57,10 @@ Prefer these aliases when writing Arturo; use the [formatting guidance](formatti
 | `>>`   | [`write`](https://arturo-lang.io/documentation/library/files/write/)                          | infix    |
 | `⊻`    | [`xor?`](https://arturo-lang.io/documentation/library/logic/xor-/)                            | infix    |
 
+- `>>` writes as `content >> destination`; `<< source` reads in prefix position. Use named `read`/`write` when attributes or the surrounding I/O workflow are clearer that way.
 - `<=` duplicates; `=<` compares. `<=>` checks inclusive bounds with three arguments.
 - `-->` converts quantities; inspect its accepted types before choosing a converter.
-- `∧`, `∨`, `¬`, `⊼`, and `⊻` alias logical predicates, not bitwise functions.
+- `∧`, `∨`, `¬`, `⊼`, and `⊻` alias logical predicates, not bitwise functions. Prefer their explicit names (`and?`, `or?`, `not?`, `nand?`, `xor?`) in new code.
 - `:` aliases `let`; distinguish labels (`name:`) and types (`:integer`).
 - `#[...]` constructs dictionaries; `#red` and hexadecimal color literals denote colors; use the [pinned color-name table](https://github.com/arturo-lang/arturo/blob/4e549e105c54af2e250381d578474b9064d9d4d2/src/vm/values/custom/vcolor.nim#L620-L1199) for named literals.
 - `->` is terminal-expression block syntax, outside this library-alias index. Keep `[...]` for multi-step bodies.

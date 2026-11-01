@@ -12,7 +12,9 @@ metadata:
 
 # Expressive Arturo syntax
 
-Prefer documented symbols to spelled-out built-ins in new code: `$` for `function`, arithmetic/comparison operators, `?` for `switch`, `??` for `coalesce`, and `@`/`./` for evaluated arrays/script-relative paths. The [symbol map](symbols.md) includes set and logical operators and their prefix/infix positions. Keep names when referring to APIs in metadata/diagnostics or when a package interface expects a name or literal predicate.
+Prefer documented symbols to spelled-out built-ins in new code: `$` for `function`, arithmetic/comparison operators, `?` for `switch`, `??` for `coalesce`, and `@`/`./` for evaluated arrays/script-relative paths. Keep logical functions explicit: use `and?`, `or?`, `not?`, `xor?`, `nand?` and similar names rather than their symbolic aliases. The [symbol map](symbols.md) catalogs available aliases and prefix/infix positions; availability is not a recommendation to use logical symbols. Keep names when referring to APIs in metadata/diagnostics or when a package interface expects a name or literal predicate.
+
+Choose I/O syntax by context rather than forcing aliases everywhere. `content >> destination` and `<< source` suit a simple, readable file flow. Prefer named calls when format attributes, explicit file interpretation or operand order need emphasis: `write.json settings "settings.json"`, `read.file.json "settings.json"`. Keep resource-selection and mutation behavior unchanged; `write` takes content before destination, while `>>` is infix and `<<` is prefix.
 
 Prefer `->` for a function, iterator, conditional action or assertion whose body is one terminal expression:
 
@@ -20,6 +22,7 @@ Prefer `->` for a function, iterator, conditional action or assertion whose body
 doubleValue: $[value :integer :floating] -> value * 2
 squares: map [1 2 3] 'value -> value ^ 2
 ensure -> squares = [1 4 9]
+ensure -> and? (not? empty? squares) (or? 2 > 1 false)
 labelFor: $[count :integer] -> ((count = 1) ? -> "item" -> "items")
 ```
 
@@ -27,7 +30,7 @@ Keep `[]` for data, parameter lists, empty blocks and multi-step bodies. A short
 
 ```art
 changedFirst: $[items :block value][
-    ensure -> ¬ empty? items
+    ensure -> not? empty? items
     result: new items
     set result 0 value
     result
