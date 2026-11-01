@@ -42,7 +42,7 @@ bun test
 bun run smoke
 ```
 
-`skills:list` checks CLI discovery without installing skills into an assistant. Smoke checks require `arturo` on PATH. Run them when Arturo is available; if it is unavailable, report that limitation in the pull request. Use `bun run format` for file types supported by Biome, including Markdown, and format Arturo files manually. Review [AGENTS.md](AGENTS.md) for additional repository guidance.
+`skills:list` checks CLI discovery without installing skills into an assistant. Smoke checks require `arturo` on PATH. Run them when Arturo is available; if it is unavailable, report that limitation in the pull request. Use `bun run format` for file types supported by Biome, including Markdown, and format Arturo files manually. For new Arturo examples, follow the [symbol and expression-block conventions](skills/arturo/references/formatting.md); preserve intentionally contrasting syntax in teaching examples. Review [AGENTS.md](AGENTS.md) for additional repository guidance.
 
 ## Optional package verification
 
