@@ -59,8 +59,14 @@ if (argv.includes("--list")) {
   if (!Number.isInteger(repeat) || repeat < 1 || repeat > 10)
     throw new Error("Repeat must be 1..10");
   const requested = value("--scenario", "all");
+  const ids = requested.split(",");
+  if (
+    requested !== "all" &&
+    ids.some((id) => !scenarios.some((s) => s.id === id))
+  )
+    throw new Error("Unknown scenario");
   const chosen = scenarios.filter(
-    (s) => requested === "all" || s.id === requested,
+    (s) => requested === "all" || ids.includes(s.id),
   );
   if (!chosen.length) throw new Error("Unknown scenario");
   const executable = await realpath(Bun.which("arturo") ?? "arturo");
