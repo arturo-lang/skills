@@ -9,7 +9,9 @@ export function percentile(values: number[], fraction: number): number | null {
 if (import.meta.main) {
   const root = resolve(Bun.argv[2] ?? ".");
   const reports = [];
-  for (const name of await readdir(root)) {
+  for (const entry of await readdir(root, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const name = entry.name;
     try {
       const report = JSON.parse(
         await readFile(resolve(root, name, "report.json"), "utf8"),

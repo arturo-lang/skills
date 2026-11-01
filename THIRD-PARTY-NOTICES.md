@@ -55,3 +55,7 @@ Checked against the installed packages and locked versions on 2026-10-30. These 
 The math skill includes an adapted catalog of 578 color names from Arturo commit `4e549e105c54af2e250381d578474b9064d9d4d2`. Upstream MIT copyright and license text are retained in the independently installable [math skill notice](skills/arturo/THIRD-PARTY-NOTICES.md#arturo-color-names). The [catalog](skills/arturo/references/color-names.md) records the exact source and changes.
 
 HTML prerelease guidance also reviews [v1.0.0-rc.1](https://github.com/RickBarretto/html.pkgr.art/tree/v1.0.0-rc.1); its additional copyright and license are retained in [the web skill notice](skills/arturo/THIRD-PARTY-NOTICES.md#html-current).
+
+## Evaluation trace archives
+
+Subscription evaluation archives may retain excerpts of runtime metadata and upstream package sources read during a task. Their original license texts and notices are retained in [the evidence notices](docs/evidence/2026-11-01-subscription/UPSTREAM-NOTICES.md). Recorded excerpts do not change the licensing of those sources.
