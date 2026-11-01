@@ -1,18 +1,18 @@
 ---
 name: arturo-debugging
-description: Diagnose and fix Arturo runtime errors, scope or aliasing bugs, and regressions using Exceptions and Reflection. Use for .art failures, error handling, runtime inspection, and call-attribute introspection.
+description: "Diagnose observed Arturo errors, unexpected results, scope/aliasing bugs, and regressions. Routine API introspection alone does not require this skill."
 metadata:
   arturo-version: 0.10.0
 ---
 
-# Debugging Guidelines
+# Diagnose Arturo failures
 
-- Reproduction: Capture the failing command, runtime version, error message, and expected behavior. Reduce the issue to a minimal, bounded example.
-- Diagnosis: Use the [symptom checklist](references/debugging.md) to choose what to investigate.
-- Runtime compatibility: Follow [runtime guidance](references/runtime.md) to check the installed version and signatures against the official reference.
-- Inspection: Choose tools from [Reflection](references/reflection-library.md). Keep diagnostics separate from program output.
-- Error handling: Follow [Exceptions](references/exceptions-library.md) to capture or propagate failures.
-- Regression testing: Add an `ensure [condition]` assertion that reproduces the bug and passes after the fix. Assert observable behavior rather than duplicating implementation logic.
-- Validation: Retest the original invocation and relevant edge cases. Report the root cause, changes, test results, and limitations.
+Reproduce the failing invocation and expected result on the installed runtime; reduce to a bounded case. Use the [symptom checklist](references/debugging.md) to choose the next check.
 
-[examples/errors.art](examples/errors.art) demonstrates offline assertions and captured errors. Avoid executing an arbitrary upstream example as a diagnostic: review its effects and cost first.
+For uncertain built-ins, `inspect info.get 'name` exposes positional `args`, optional `attrs`, and possible `returns` without calling the target. Read [runtime detail](references/runtime.md) only when interpreting it is unclear. Confirm suspected scope, mutation, or stack behavior with a small execution.
+
+- Read [Exceptions](references/exceptions-library.md) when capturing/propagating errors: `try` returns null/error, not the action result.
+- Read [Reflection](references/reflection-library.md) for call attributes or diagnostic APIs.
+- Add a regression for the observed failure; retest the original invocation. [errors.art](examples/errors.art) shows bounded assertions.
+
+Keep diagnostics separate from program output. Report the root cause and actual verification; do not execute an upstream example merely to inspect an API.

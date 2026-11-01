@@ -15,9 +15,4 @@ Query signatures with `inspect info.get 'close`; see [runtime inspection](runtim
 
 Examples are independent fragments; names such as `value`, `items`, `settings`, `client`, `server`, `db`, and `childPid` denote inputs or resources prepared by the surrounding program. They are not implicit globals. Examples require a connection or store and cleanup; use a disposable database.
 
-| Name                                                                  | Purpose / when to use                                                      | Example                                     |
-| --------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------- |
-| [close](https://arturo-lang.io/documentation/library/databases/close) | Close database.                                                            | `close db`                                  |
-| [open](https://arturo-lang.io/documentation/library/databases/open)   | Opens a new database connection and returns database.                      | `db: open.sqlite ":memory:"`                |
-| [query](https://arturo-lang.io/documentation/library/databases/query) | Execute command or block of commands in database and get returned rows.    | `query.with: ["Ada"] db "SELECT ? AS name"` |
-| [store](https://arturo-lang.io/documentation/library/databases/store) | Open a persistent key/value store; use for automatically saved local data. | `data: store "example-store"`               |
+For unknown function names, use [the databases module](https://arturo-lang.io/documentation/library/databases). Query the selected built-in with `inspect info.get 'name`; use a bounded probe for behavior absent from metadata.

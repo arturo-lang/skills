@@ -13,14 +13,6 @@ metadata:
 
 Net selection guide reviewed 2026-10-29 against the [Net library](https://arturo-lang.io/documentation/library/net) and [official reference](https://arturo-lang.io/llms.txt). These independent fragments require configured destinations or resources; they are documentation-only and can perform external actions. Keep destinations and credentials configurable. Verify server routes and lifecycle against the installed runtime.
 
-| Name                                                                  | Purpose / when to use                                      | Example                                                            |
-| --------------------------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------ |
-| [browse](https://arturo-lang.io/documentation/library/net/browse)     | Open URL with default browser.                             | `browse "https://example.com"`                                     |
-| [download](https://arturo-lang.io/documentation/library/net/download) | Download file from url to disk.                            | `download "https://example.com/file.txt"`                          |
-| [mail](https://arturo-lang.io/documentation/library/net/mail)         | Send mail using subject and message to selected recipient. | `mail.using: settings "recipient@example.com" "Subject" "Message"` |
-| [request](https://arturo-lang.io/documentation/library/net/request)   | Perform HTTP request to url with data and get response.    | `request "https://example.com" null`                               |
-| [serve](https://arturo-lang.io/documentation/library/net/serve)       | Start web server using routes.                             | `serve.port: 18966 [GET "/" ["hello"]]`                            |
-
 ## JSON
 
 Decode text with `data: read.json jsonText` and a local JSON file with `data: read.json "data.json"`. Use fixture content or a known path deliberately because `read` accepts several input forms.
@@ -80,3 +72,5 @@ Check live transport, timeouts, TLS, and retries separately.
 - [Official reference](https://arturo-lang.io/llms.txt): Net/request; Files/read, write; Exceptions/try; Collections/key?.
 - [JSON example](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/JSON.art).
 - [HTTP example](https://github.com/arturo-lang/examples/blob/60e7b92242e39fccdb764c505bb289e3a1e3d391/src/rosetta/HTTP.art).
+
+For unknown function names, use [the net module](https://arturo-lang.io/documentation/library/net). Query the selected built-in with `inspect info.get 'name`; use a bounded probe for behavior absent from metadata.

@@ -13,12 +13,4 @@ Use for TCP or UDP transport rather than HTTP abstractions. Socket examples requ
 
 Examples are independent fragments with prepared sockets and a peer; `client` and `server` are caller-supplied handles. Receive/accept can block.
 
-| Name                                                                    | Purpose / when to use                                          | Example                               |
-| ----------------------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------- |
-| [accept](https://arturo-lang.io/documentation/library/sockets/accept)   | Accept incoming connection and return corresponding socket.    | `client: accept server`               |
-| [connect](https://arturo-lang.io/documentation/library/sockets/connect) | Create new socket connection to server port.                   | `peer: connect.to: "127.0.0.1" 18966` |
-| [listen](https://arturo-lang.io/documentation/library/sockets/listen)   | Start listening on port and return new socket.                 | `server: listen 18966`                |
-| [receive](https://arturo-lang.io/documentation/library/sockets/receive) | Receive line of data from selected socket.                     | `receive.timeout: 100 client`         |
-| [send](https://arturo-lang.io/documentation/library/sockets/send)       | Send message to selected socket.                               | `send client "hello"`                 |
-| [send?](https://arturo-lang.io/documentation/library/sockets/send-)     | Send message to selected socket and return true if successful. | `send? client "hello"`                |
-| [unplug](https://arturo-lang.io/documentation/library/sockets/unplug)   | Close socket.                                                  | `unplug client`                       |
+For unknown function names, use [the sockets module](https://arturo-lang.io/documentation/library/sockets). Query the selected built-in with `inspect info.get 'name`; use a bounded probe for behavior absent from metadata.

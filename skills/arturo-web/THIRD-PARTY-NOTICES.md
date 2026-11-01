@@ -34,6 +34,35 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
+## html-current
+
+Additional HTML revision reviewed 2026-11-01: [v1.0.0-rc.1](https://github.com/RickBarretto/html.pkgr.art/tree/v1.0.0-rc.1). The current guide summarizes its API and adapts its composition patterns. Its upstream license is retained separately below; the legacy notice above remains unchanged.
+
+```text
+MIT License
+
+Copyright © 2019-2020 Yanis Zafirópulos (aka Dr.Kameleon)
+Copyright © 2024-2026 RickBarretto
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
 ## lanx
 
 Upstream: [drkameleon/lanx](https://github.com/drkameleon/lanx/tree/0d539d467f17671a7f2b873bbaff6492629d7cfd). Revision: `0d539d467f17671a7f2b873bbaff6492629d7cfd`. Author/maintainer: Yanis Zafirópulos (drkameleon). License: **MIT**.

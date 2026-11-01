@@ -13,12 +13,4 @@ Use for encodings, checksums, and hashes exposed by this runtime. Base64 and URL
 
 Query signatures with `inspect info.get 'crc`; see [runtime inspection](runtime.md) for metadata interpretation.
 
-Fragments require surrounding input/resource bindings. Bound inputs; distinguish literal mutation from returned values.
-
-| Name                                                                 | Purpose / when to use                   | Example                                                   |
-| -------------------------------------------------------------------- | --------------------------------------- | --------------------------------------------------------- |
-| [crc](https://arturo-lang.io/documentation/library/crypto/crc)       | Compute the CRC32 polynomial of string. | `print crc "The quick brown fox jumps over the lazy dog"` |
-| [decode](https://arturo-lang.io/documentation/library/crypto/decode) | Decode value (default: base-64).        | `print decode "TnVtcXVhbSBmdWdpZW5zIHJlc3BleGVyaXM="`     |
-| [digest](https://arturo-lang.io/documentation/library/crypto/digest) | Obtain digest for value (default: MD5). | `print digest "Hello world"`                              |
-| [encode](https://arturo-lang.io/documentation/library/crypto/encode) | Encode value (default: base-64).        | `print encode "Numquam fugiens respexeris"`               |
-| [hash](https://arturo-lang.io/documentation/library/crypto/hash)     | Obtain hash for value.                  | `print hash "hello"`                                      |
+For unknown function names, use [the crypto module](https://arturo-lang.io/documentation/library/crypto). Query the selected built-in with `inspect info.get 'name`; use a bounded probe for behavior absent from metadata.

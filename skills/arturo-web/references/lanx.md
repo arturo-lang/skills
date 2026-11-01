@@ -44,3 +44,9 @@ Binary handling differs across Arturo versions in the source; include an image o
 Choose a document root containing only the intended public assets. Directory listings hide hidden entries, but this is not an access-control guarantee for direct file requests. The public interface configures root and port, with no documented host-binding, authentication, or TLS option. Do not claim it binds exclusively to loopback.
 
 For a bounded manual integration check, use a disposable folder containing one HTML and one binary fixture, request those paths plus a missing path, then stop the server. Keep ordinary checks offline by inspecting configuration without calling `start`.
+
+## Preview handoff
+
+For an ambiguous “lynx” request in Arturo preview context, investigate Lanx and ask whether that is the intended package. Do not silently install either name. `arturo --package list` lists local packages; `remote` queries the registry. Verify the installed CLI before choosing options.
+
+After successful generation, give the working directory, selected document root, imports/dependencies, start command (`lanx ./public` when that is the actual output), reported address/port, and shutdown (`Ctrl+C` for the foreground CLI). Check generated HTML, one binary asset and a missing path; stop the listener even after a failed check. Do not infer loopback-only binding from a localhost preview URL.

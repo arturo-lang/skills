@@ -52,4 +52,6 @@ Checked against the installed packages and locked versions on 2026-10-30. These 
 
 ## Arturo color-name catalog
 
-The math skill includes an adapted catalog of 578 color names from Arturo commit `4e549e105c54af2e250381d578474b9064d9d4d2`. Upstream MIT copyright and license text are retained in the independently installable [math skill notice](skills/arturo-math/THIRD-PARTY-NOTICES.md#arturo-color-names). The [catalog](skills/arturo-math/references/colors.md#named-colors) records the exact source and changes.
+The math skill includes an adapted catalog of 578 color names from Arturo commit `4e549e105c54af2e250381d578474b9064d9d4d2`. Upstream MIT copyright and license text are retained in the independently installable [math skill notice](skills/arturo-math/THIRD-PARTY-NOTICES.md#arturo-color-names). The [catalog](skills/arturo-math/references/color-names.md) records the exact source and changes.
+
+HTML prerelease guidance also reviews [v1.0.0-rc.1](https://github.com/RickBarretto/html.pkgr.art/tree/v1.0.0-rc.1); its additional copyright and license are retained in [the web skill notice](skills/arturo-web/THIRD-PARTY-NOTICES.md#html-current).

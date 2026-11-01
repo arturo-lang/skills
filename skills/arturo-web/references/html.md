@@ -14,6 +14,8 @@ metadata:
 
 # HTML DSL — legacy 0.0.4
 
+For the incompatible prerelease API, use [1.0.0-rc.1 guidance](html-current.md).
+
 Use `html` for the experimental Arturo HTML generator. This guidance follows release 0.0.4 source and tests; the registry README contains little API documentation. Verify behavior against the chosen release before expanding the DSL.
 
 ```art

@@ -1,16 +1,16 @@
 ---
 name: arturo-packages
-description: Find, install, import, create, and publish Arturo packages using the official pkgr.art registry, package metadata, and versioned releases.
+description: "Discover, acquire, version, create, or publish Arturo packages through pkgr.art. Use for package-management problems; a known package import alone does not require this skill."
 metadata:
   arturo-version: 0.10.0
 ---
 
-# Arturo packages
+# Arturo package management
 
-Use [pkgr.art](https://pkgr.art/) to discover packages. Read the [package workflow](references/packages.md) for installation, imports, metadata, and publishing. Check `arturo --help` for the installed CLI before choosing flags.
+Use [pkgr.art](https://pkgr.art/) for discovery and [the workflow](references/packages.md) for acquisition/version selection, metadata, executable paths, or publishing. Check installed CLI options when uncertain: `remote` queries the registry; `list` lists local packages.
 
-Distinguish registry installation from evaluation: an import can download a missing package and execute its entry file. Establish the intended package, version, and repository before running it.
+Import can download a missing package and evaluates its entrypoint. Establish the intended name/release/repository; a branch is not a version pin. Query `inspect info.get 'import` for installed arguments/attributes; package APIs may need their release source instead.
 
-Keep local verification offline where possible; [examples/local-package.art](examples/local-package.art) checks a local package without registry access. Run it from this skill's directory with `arturo examples/local-package.art`; script-relative loading also supports invocation from another working directory.
+[local-package.art](examples/local-package.art) verifies a local package offline, including namespace isolation. Local source loading and parser visibility are language concerns; known package APIs stay with their task-specific guide.
 
-For publishing work, prepare and verify the package files, release details, and registry diff. Creating a release or submitting a registry PR is a separate external action; perform it when included in the user's requested scope. Do not treat a locally prepared entry as an already published package.
+For publication, verify package files and release/registry changes first. A local preparation or submitted registry PR is not an already published package.

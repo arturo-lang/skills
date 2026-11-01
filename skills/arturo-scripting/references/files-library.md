@@ -15,26 +15,8 @@ Query signatures with `inspect info.get 'copy`; see [runtime inspection](runtime
 
 Examples are independent fragments; names such as `value`, `items`, `settings`, `client`, `server`, `db`, and `childPid` denote inputs or resources prepared by the surrounding program. They are not implicit globals. Mutating and archive examples require disposable fixtures.
 
-| Name                                                                          | Purpose / when to use                                    | Example                            |
-| ----------------------------------------------------------------------------- | -------------------------------------------------------- | ---------------------------------- |
-| [copy](https://arturo-lang.io/documentation/library/files/copy)               | Copy file at path to destination.                        | `copy "input.txt" "copy.txt"`      |
-| [delete](https://arturo-lang.io/documentation/library/files/delete)           | Delete file at path.                                     | `delete "disposable.txt"`          |
-| [directory?](https://arturo-lang.io/documentation/library/files/directory-)   | Test whether path exists and corresponds to a directory. | `directory? "."`                   |
-| [exists?](https://arturo-lang.io/documentation/library/files/exists-)         | Test whether file/directory at path exists.              | `exists? "input.txt"`              |
-| [file?](https://arturo-lang.io/documentation/library/files/file-)             | Test whether path exists and corresponds to a file.      | `file? "input.txt"`                |
-| [hidden?](https://arturo-lang.io/documentation/library/files/hidden-)         | Test whether file/folder at path is hidden.              | `hidden? ".hidden"`                |
-| [move](https://arturo-lang.io/documentation/library/files/move)               | Move file at path to destination.                        | `move "input.txt" "moved.txt"`     |
-| [permissions](https://arturo-lang.io/documentation/library/files/permissions) | Check permissions of file.                               | `permissions "input.txt"`          |
-| [read](https://arturo-lang.io/documentation/library/files/read)               | Read file from path.                                     | `read "input.txt"`                 |
-| [rename](https://arturo-lang.io/documentation/library/files/rename)           | Rename file at path using new path name.                 | `rename "input.txt" "renamed.txt"` |
-| [symlink](https://arturo-lang.io/documentation/library/files/symlink)         | Create symbolic link of file to destination.             | `symlink "input.txt" "link.txt"`   |
-| [symlink?](https://arturo-lang.io/documentation/library/files/symlink-)       | Test whether path exists and corresponds to a symlink.   | `symlink? "link.txt"`              |
-| [timestamp](https://arturo-lang.io/documentation/library/files/timestamp)     | Obtain file timestamps.                                  | `timestamp "input.txt"`            |
-| [unzip](https://arturo-lang.io/documentation/library/files/unzip)             | Unzip archive to destination.                            | `unzip "output" "archive.zip"`     |
-| [volume](https://arturo-lang.io/documentation/library/files/volume)           | Obtain file size for path.                               | `volume "input.txt"`               |
-| [write](https://arturo-lang.io/documentation/library/files/write)             | Write content to file at path.                           | `write "hello" "output.txt"`       |
-| [zip](https://arturo-lang.io/documentation/library/files/zip)                 | Zip files to file at destination.                        | `zip "archive.zip" ["input.txt"]`  |
-
 For verified removal and separate action/cleanup errors, see [the cleanup workflow](workflows.md#preserve-action-and-cleanup-failures) and its [offline assertions](../examples/file-cleanup.art). On Arturo 0.10.0 Linux, `delete` can return normally with a path still present; catching errors alone does not establish removal.
 
 The workflow checks the postcondition and continues with later owned files.
+
+For unknown function names, use [the files module](https://arturo-lang.io/documentation/library/files). Query the selected built-in with `inspect info.get 'name`; use a bounded probe for behavior absent from metadata.
