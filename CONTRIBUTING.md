@@ -71,3 +71,7 @@ Use [the roadmap](ROADMAP.md) and [editorial template](templates/skill.md). Keep
 `bun run smoke:preview --allow-network` separately imports Lanx 0.2.0 (and dependencies), starts a bounded temporary listener, checks HTML/binary/404 responses, then verifies shutdown. The client uses loopback; this does not prove the server binds only to loopback. Package caches are retained. This lane is not run by default PR checks.
 
 The pinned Unitt lane also characterizes native uncaught exceptions and empty discovery separately from assertion pass/failure. On the recorded 0.10.0 runtime, an uncaught native child error exits zero but prints a runner diagnostic; it must not count as successful assertion execution. Empty discovery raises `No test found!` and exits 1.
+
+## Documentation and decision records
+
+Keep usage guides focused on stable procedures and contracts. Put architecture rationale, benchmark baselines, measurements, verification snapshots and environment-specific limitations in dated [decision records](DECISIONS.md) or evaluation artifacts. Records describe what was known on their date; append a new record for a changed decision or later result instead of refreshing old counts/status. Fix factual mistakes explicitly without making old evidence appear newer. Use issues and PR checks for active work status.
