@@ -1,0 +1,15 @@
+; Copyright © RickBarretto, Arturo programming language. MIT licensed.
+import ./{html}!
+ensure [{<p>&lt;&amp;&quot;</p>} = to :string markup\p {<&"}]
+child: fragment [p "<&"]
+ensure ["<div><p>&lt;&amp;</p></div>" = to :string markup\div child]
+ensure ["<b>trusted</b>" = to :string markup\raw "<b>trusted</b>"]
+ensure [throws? [markup\input "nonempty"]]
+ensure [throws? [markup\script "untrusted"]]
+ensure [2 = div 5 2]
+page: fragment [div [p "safe"]]
+ensure [2 = div 5 2]
+ensure ["<div><p>safe</p></div>" = to :string page]
+ensure ["<div><p>safe</p></div>" = to :string page]
+ensure ["<div></div>" = to :string markup\div []]
+print "html current ok"
