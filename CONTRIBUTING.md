@@ -18,6 +18,10 @@ All new skills and all modifications must be submitted through a pull request. B
 
 Use the same source investigation, portability, licensing, and validation requirements for edits to existing skills. In the pull request, explain the problem and resulting behavior. For runtime-specific corrections, include the Arturo version and a small reproducer. Code owners must investigate and approve modifications as well as new skills; passing automated checks alone is not sufficient.
 
+## Broad discovery and focused condensation
+
+Use [the broad-to-narrow authoring decision](docs/decisions/2026-11-01-broad-discovery-then-condensation.md) when substantially expanding or restructuring guidance: gather candidate capabilities and evidence broadly, then reconcile and condense into the smallest useful activation set and conditional references. Keep each package's guidance separate. Preserve a disposition for covered capabilities and validate the result with the intended lower-effort consumer; a shorter entry point is not proof of preserved coverage or better task completion. Model-specific authoring roles stay outside the portable skill.
+
 ## Skill and reference metadata
 
 Use optional YAML `metadata` for facts relevant to the document. `sources` must be a list of nonempty strings; other values must be nonempty strings. Omit unknown or inapplicable fields; do not repeat licensing-file defaults.
