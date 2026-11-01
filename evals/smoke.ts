@@ -70,7 +70,19 @@ try {
   );
   if (result.code || result.reason || result.stdout.trim() !== "isolated")
     throw new Error(JSON.stringify(result));
-  console.log("PASS isolated home/repository/resolver");
+  await writeFile(
+    resolve(workspace, ".child.art"),
+    'result: execute.code "arturo --version"\nensure [result\\code = 0]\nensure [contains? result\\output "arturo"]\nprint "child ok"',
+  );
+  const child = await boundedRun(
+    sandboxCommand(executable, workspace, [".child.art"]),
+    workspace,
+  );
+  if (child.code || child.reason || child.stdout.trim() !== "child ok")
+    throw new Error(JSON.stringify(child));
+  console.log(
+    "PASS isolated home/repository/resolver and native Arturo child resolution",
+  );
 } finally {
   await rm(workspace, { recursive: true, force: true });
 }

@@ -8,6 +8,7 @@ import {
   readdir,
   realpath,
   rm,
+  stat,
   writeFile,
 } from "node:fs/promises";
 import { tmpdir } from "node:os";
@@ -61,6 +62,9 @@ if (argv.includes("--list")) {
   const executable = await realpath(Bun.which("arturo") ?? "arturo");
   const packages = argv.includes("--packages-dir")
     ? await realpath(value("--packages-dir", ""))
+    : undefined;
+  const fixtures = argv.includes("--fixtures-dir")
+    ? await realpath(value("--fixtures-dir", ""))
     : undefined;
   const out = resolve(
     value("--out", await mkdtemp(resolve(tmpdir(), "arturo-evals-"))),
@@ -126,9 +130,23 @@ if (argv.includes("--list")) {
       // A new output directory prevents accidental overwriting of prior evidence.
       await mkdir(directory);
       const workspace = await mkdtemp(resolve(tmpdir(), "arturo-eval-task-"));
+      let fixtureHash: string | null = null;
+      let supplied: string[] = [];
+      if (fixtures) {
+        const fixture = resolve(fixtures, scenario.id);
+        try {
+          await stat(fixture);
+          fixtureHash = await fingerprint(fixture);
+          await cp(fixture, workspace, { recursive: true });
+          supplied = await readdir(workspace);
+        } catch (error) {
+          if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+        }
+      }
       const events: Event[] = [];
       const metadata = {
         skillHash,
+        fixtureHash,
         packageHash,
         runId,
         scenario: scenario.id,
@@ -180,7 +198,7 @@ if (argv.includes("--list")) {
       const input: Message[] = [
         {
           role: "developer",
-          content: `Complete the user task using the workspace tools. Write implementation artifacts to files. Use read_skill only for relevant guidance; there are no other installed skills. Runtime execution is bounded and offline; no GUI or package acquisition. ${packages ? "A read-only preprovisioned Arturo package cache is available; verify actual releases before use." : "No external packages are available; explain limits rather than invent execution results."}\n${guidance}`,
+          content: `Complete the user task using the workspace tools. Supplied task artifacts: ${supplied.join(", ") || "none"}. Write implementation artifacts to files. Use read_skill only for relevant guidance; there are no other installed skills. Runtime execution is bounded and offline; no GUI or package acquisition. ${packages ? "A read-only preprovisioned Arturo package cache is available; verify actual releases before use." : "No external packages are available; explain limits rather than invent execution results."}\n${guidance}`,
         },
         { role: "user", content: scenario.prompt },
       ];
