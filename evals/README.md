@@ -19,6 +19,8 @@ Run identical scenarios three times for each condition (`--mode none`, `automati
 
 Linux, Arturo, bubblewrap and `/usr/bin/prlimit` are required. The host refuses execution if sandbox preflight fails. Generated code runs with a private home, no network, no host repository/credentials, CPU/address-space/file/process limits, a ten-second deadline and bounded captured output. Agent tools expose only task artifacts and selected installed skill files. Hidden checks and rubrics are not supplied to the agent; grading begins after completion in a separate workspace. This is a constrained tool host, not proof of portability to every assistant.
 
+Use `--fixtures-dir ROOT` to seed raw project files or a reviewed package checkout from `ROOT/<scenario-id>/` into each fresh task workspace. The host records a fixture fingerprint and lists supplied top-level artifacts in the task context. Include only task inputs, never expected answers or grader files. Use identical fixtures for baseline/candidate comparisons.
+
 External package scenarios require a deliberately preprovisioned standard Arturo package directory via `--packages-dir PATH`. It is mounted read-only at the isolated package location. Match the exact releases in the scenario and record their source revisions; the harness does not acquire packages. GUI, live preview and hosted CI scenarios require human/integration review; runtime networking remains disabled. Package acquisition failures must be classified as infrastructure failures, not agent failures.
 
 ## Evidence and decisions
