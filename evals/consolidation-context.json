@@ -1,0 +1,28 @@
+{
+  "baseline": "aa0226a",
+  "measurement": "Whitespace words and UTF-8 bytes, including metadata; not model token usage.",
+  "before": {
+    "entry": {
+      "files": 10,
+      "words": 1711,
+      "bytes": 15262
+    },
+    "references": {
+      "files": 58,
+      "words": 15545,
+      "bytes": 134989
+    }
+  },
+  "after": {
+    "entry": {
+      "files": 1,
+      "words": 321,
+      "bytes": 2859
+    },
+    "references": {
+      "files": 57,
+      "words": 15045,
+      "bytes": 135307
+    }
+  }
+}

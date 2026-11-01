@@ -12,6 +12,7 @@ import {
   sandboxCommand,
   selection,
 } from "./host";
+import { scenarioForLayout } from "./layout";
 import { scenarios } from "./scenarios";
 import { percentile } from "./summary";
 
@@ -62,7 +63,7 @@ test("targeted reads return bounded matching lines", async () => {
   const result = await callTool(
     "read_skill",
     {
-      path: "arturo-language/references/inspection.md",
+      path: "arturo/references/inspection.md",
       start: 1,
       lines: 2,
       query: "info.get",
@@ -135,7 +136,7 @@ test("release matrix has unique tasks and explicit conditions resolve local refe
   for (const scenario of scenarios) {
     for (const name of scenario.required)
       expect(scenario.allowed).toContain(name);
-    for (const path of scenario.references)
+    for (const path of scenarioForLayout(scenario, ["arturo"]).references)
       expect(
         await safeRead(resolve(import.meta.dir, "../skills"), path),
       ).not.toBeEmpty();
@@ -196,4 +197,48 @@ test("coverage ledger retains independently shipped references and examples", as
   }
   for (const example of ledger.examples)
     expect(await Bun.file(resolve(root, example)).exists()).toBe(true);
+});
+
+test("one-skill layout keeps historical prompts and detects unrelated reference loads", () => {
+  const original = scenarios.find((s) => s.id === "native-unitt");
+  if (!original) throw new Error("Missing scenario");
+  expect(scenarioForLayout(original, ["arturo-testing"])).toBe(original);
+  const merged = scenarioForLayout(original, ["arturo"]);
+  expect(merged.prompt).toBe(original.prompt);
+  expect(merged.required).toEqual(["arturo"]);
+  expect(merged.references).toEqual(["arturo/references/unitt.md"]);
+  const result = selection(merged, [
+    {
+      kind: "tool",
+      name: "read_skill",
+      ok: true,
+      args: { path: "arturo/SKILL.md" },
+    },
+    {
+      kind: "tool",
+      name: "read_skill",
+      ok: true,
+      args: { path: "arturo/references/schema.md" },
+    },
+    {
+      kind: "tool",
+      name: "read_skill",
+      ok: true,
+      args: { path: "arturo/references/inspection.md" },
+    },
+  ]);
+  expect(result.missing).toEqual([]);
+  expect(result.irrelevantReferences).toEqual(["arturo/references/schema.md"]);
+  const negative = scenarios.find((s) => s.id === "non-arturo");
+  if (!negative) throw new Error("Missing negative scenario");
+  expect(
+    selection(scenarioForLayout(negative, ["arturo"]), [
+      {
+        kind: "tool",
+        name: "read_skill",
+        ok: true,
+        args: { path: "arturo/SKILL.md" },
+      },
+    ]).irrelevant,
+  ).toEqual(["arturo"]);
 });

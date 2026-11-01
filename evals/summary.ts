@@ -66,7 +66,9 @@ if (import.meta.main) {
           selectionFailures: runs.filter(
             (r) =>
               r.selection &&
-              (r.selection.missing.length || r.selection.irrelevant.length),
+              (r.selection.missing.length ||
+                r.selection.irrelevant.length ||
+                r.selection.irrelevantReferences?.length),
           ).length,
           medianInputTokens: percentile(inputs, 0.5),
           p90InputTokens: percentile(inputs, 0.9),
