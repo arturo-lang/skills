@@ -23,6 +23,17 @@ function task(
 }
 export const scenarios: Scenario[] = [
   task(
+    "expressive-syntax",
+    ["language"],
+    "Write solution.art with typed doubleValue (integer or floating input, exactly one doubled result), and changedFirst items value returning an independent flat block with its first element replaced, rejecting empty input. Follow Arturo conventions for expressive symbols, single-expression bodies and explicit multi-step bodies. Keep data and parameter blocks intact.",
+    'ensure [@[doubleValue 4] = [8]]\nensure [@[doubleValue 2.5] = [5.0]]\nensure [throws? [doubleValue "4"]]\nitems: [1 2]\nensure [@[changedFirst items 9] = [[9 2]]]\nensure [items = [1 2]]\nensure [throws? [changedFirst [] 9]]',
+    [
+      "Uses documented symbols such as $ and * rather than function/mul when writing new functions.",
+      "Uses -> for the single-expression function and assertions where appropriate; retains [] for data, typed parameters and the multi-step copy/update body.",
+      "Keeps spacing, grouping and statement boundaries readable; does not change arity, evaluation, mutation or package predicates to shorten the code.",
+    ],
+  ),
+  task(
     "typed-function",
     ["language"],
     "In solution.art define doubleValue accepting integer or floating numbers, returning exactly one doubled value. Reject text. Preserve polymorphism within that numeric contract.",
@@ -196,6 +207,10 @@ export const scenarios: Scenario[] = [
 ];
 // Explicit condition supplies task-specific references as well as the entrypoint.
 const references: Record<string, string[]> = {
+  "expressive-syntax": [
+    "arturo-language/references/language.md",
+    "arturo/references/formatting.md",
+  ],
   "typed-function": ["arturo-language/references/language.md"],
   "native-unitt": ["arturo-testing/references/unitt.md"],
   "ci-repair": ["arturo-testing/references/workflows.md"],
