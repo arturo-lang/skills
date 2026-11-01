@@ -76,6 +76,7 @@ async function run(command: string[], cwd: string) {
       child.exited,
     ]);
     if (timedOut) throw new Error(`${command[0]}: timed out after 120 seconds`);
+    console.log(JSON.stringify({ command, cwd, code, output, errors }));
     return { output, errors, code };
   } finally {
     clearTimeout(timeout);
@@ -91,6 +92,12 @@ if (import.meta.main) {
   const executable = Bun.which("arturo");
   if (!executable)
     throw new Error("Install Arturo and put arturo on PATH first.");
+  console.log(JSON.stringify({ bun: Bun.version, executable }));
+  console.log(
+    await new Response(
+      Bun.spawn([executable, "--version"], { stdout: "pipe" }).stdout,
+    ).text(),
+  );
   const workspace = await mkdtemp(resolve(tmpdir(), "arturo-packages-smoke-"));
   try {
     for (const [name, expectFailure] of [

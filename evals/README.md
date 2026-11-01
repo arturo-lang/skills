@@ -42,3 +42,13 @@ Offline adapter/host tests do not establish live model performance. Text explana
 ## Comparing the single-skill layout
 
 Prompts, executable checks and human rubrics remain fixed. The harness detects an installed `arturo` skill and translates required/allowed skill names and explicit-reference paths using [the relocation map](layout-migration.json). Ten-skill baselines keep their original routing expectations. For the consolidated layout, reports also flag unrelated reference loads using the original task domains; a single activated skill is not sufficient evidence of precise loading. Shared inspection and routing indexes do not count as unrelated domains. The CSV negative control must still avoid all Arturo guidance. No live model result is implied by this translation.
+
+## Subscription campaign
+
+A manual Codex subscription campaign is separate from the paid API benchmark above. Never fall back to API billing or purchased credits. Stop at included usage limits and preserve incomplete progress.
+
+Freeze immutable baseline and candidate commits, identical prompts, fixtures and graders. Run every release scenario three times in each of none, automatic and explicit conditions for both revisions (18 attempts per scenario). Use fresh sessions with no unrelated global/project instructions, plugins, skills or prior conversation. Verify isolation before scoring; keep hidden graders outside the session. Record the actual model, reasoning setting, CLI/runtime versions and exposed guidance; hold them fixed across the campaign.
+
+Start with native testing and ambiguity. Supplement the existing Lanx case with another package typo, an unknown name without a supported candidate, and a correct-name control. Grade investigation and targeted clarification before supplying follow-up answers. Do not rewrite historical benchmark prompts to add these cases.
+
+Save prompts, transcripts, reference reads, commands, generated artifacts and outcomes for every attempt. Review separately for missed guidance, incorrect guidance, ignored instructions, incorrect code and infrastructure failures. Keep failed attempts and reviewer evidence; all critical candidate repetitions must pass. Report regressions and unavailable metrics honestly. Subscription results do not establish API-harness performance. Until isolation and the complete matrix are observed, #10 and behavioral closure of #14 remain pending.

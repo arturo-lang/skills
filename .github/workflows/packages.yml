@@ -27,4 +27,13 @@ jobs:
           from: stable
           mode: full
       - run: arturo --version
-      - run: bun run smoke:packages --allow-network
+      - name: Verify package assertions
+        shell: bash
+        run: |
+          set -o pipefail
+          bun run smoke:packages --allow-network 2>&1 | tee package-evidence.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: package-evidence
+          path: package-evidence.log

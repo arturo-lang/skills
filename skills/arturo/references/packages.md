@@ -81,3 +81,7 @@ Replace these illustrative values. `entry` selects another entry file, `depends`
 4. Submit that change as a pull request. Registration takes effect after merge. Metadata and documentation come from the package repository.
 
 For later versions, publish new tagged releases in the registered repository. Check the package page and versioned import after publication; report pending merge or registry visibility accurately.
+
+## Uncertain package names
+
+Before acquisition, compare the requested name with project dependencies, local package metadata and authoritative registry or upstream documentation. Similar spelling alone does not establish identity. Ask a targeted clarification when ambiguity remains, naming a candidate only when evidence supports it. For example, in an Arturo preview task, investigate whether “lynx” means Lanx before importing or installing. Apply this procedure to every package; clear requests need no extra confirmation. Imports can acquire and execute code.
