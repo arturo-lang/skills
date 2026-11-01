@@ -118,7 +118,7 @@ Documentation is licensed under [CC BY 4.0](LICENSE-CC-BY-4.0.txt). Original sta
 
 ## Maintenance
 
-See [contribution requirements](CONTRIBUTING.md#maintenance) the [roadmap](ROADMAP.md), and the [dated decision log](DECISIONS.md).
+Track planned and active work in [GitHub issues](https://github.com/arturo-lang/skills/issues). See [contribution requirements](CONTRIBUTING.md#maintenance) and the [dated decision log](DECISIONS.md).
 
 ## Context and behavioral evaluation
 

@@ -50,7 +50,7 @@ Authors, upstream copyright statements, and license texts were checked on 2026-1
 
 ## Maintenance
 
-See [contribution requirements](CONTRIBUTING.md#maintenance) and the [roadmap](ROADMAP.md).
+See [contribution requirements](CONTRIBUTING.md#maintenance). Track planned and active work in [GitHub issues](https://github.com/arturo-lang/skills/issues).
 
 ## Runtime CI installation
 
