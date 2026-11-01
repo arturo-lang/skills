@@ -34,19 +34,15 @@ Do not use `inspect 'if` for a signature: it inspects the literal identifier and
 - `alias` and `infix?` identify an alias and whether it is used infix. They do not establish conventional arithmetic precedence.
 - `example` contains documentation strings, not automatically executed checks. `address`, `line`, and `source` are diagnostic metadata; an embedded source URL may name an older revision, so record `arturo --version` separately.
 
-## Observed signatures
+## Finding a name
 
-These are condensed readings of actual output, not a replacement for querying the installed runtime:
+When you know part of a name, filter runtime symbol names before printing:
 
-| Inspected name | How to read its output                                                                                                                                                                                                                              |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `if`           | Two arguments: `condition :any`, then `action :block :bytecode`. No attributes; returns `:nothing`.                                                                                                                                                 |
-| `unless`       | Same argument types as `if`; its description specifies the opposite condition.                                                                                                                                                                      |
-| `switch`       | Three arguments: `condition :any`, `action :block`, `alternative :block`. Returns `:any`; alias `?` is infix.                                                                                                                                       |
-| `case`         | Two arguments: `argument :any`, `matches :dictionary :block`. Metadata lists `:logical`, but documented examples also yield selected values; verify result-dependent uses.                                                                          |
-| `when`         | One `conditions :block` argument. `.any` is a logical flag; `.has: value` accepts `:any`. Metadata lists `:logical`.                                                                                                                                |
-| `function`     | Two arguments: `arguments :literal :block`, then `body :block`. `.import:` and `.export:` take blocks; `.memoize` and `.inline` are flags. Returns `:function`; `$` is prefix.                                                                      |
-| `sort`         | One argument accepting `:literal`, `:pathliteral`, `:dictionary`, or `:block`. `.descending` is a flag; `.by:` accepts a string or literal. Results include `:block` or `:nothing`; inspect literal mutation separately from value-returning calls. |
+```sh
+arturo --no-color -e "print select keys symbols 'name [contains? name {sort}]"
+```
+
+Then query only the selected symbol. For concept-to-function discovery, use the relevant official library module; do not dump every symbol's metadata. The runtime may expose symbols not available in another build.
 
 ## CLI verification
 

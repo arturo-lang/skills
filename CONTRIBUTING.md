@@ -61,3 +61,13 @@ Repository administrators should configure the target branch's GitHub ruleset or
 ## Maintenance
 
 Use [the roadmap](ROADMAP.md) and [editorial template](templates/skill.md). Keep verification notes with the relevant references. Verify interpreter changes, upstream API/package revisions, and reported discrepancies against official sources and minimal reproducers. Preserve historical review dates; distinguish source review, execution, and asserted results. The recorded baseline is Arturo 0.10.0 Linux amd64; other combinations remain unverified. Hosted runtime CI results must be observed before claiming they passed.
+
+## Behavioral evaluation and optional integration checks
+
+`bun run context:stats` measures document words/bytes, not model tokens. The [Sol Low harness](evals/README.md) runs separately from default checks; live model runs require explicit `--run` and an API key. `bun run evals:smoke` tests the held-out graders and isolation locally with Linux bubblewrap and networking disabled.
+
+`bun run smoke:html --source FILE --release 0.0.4` (or `1.0.0-rc.1`) executes a reviewed local HTML source in a disposable directory and prints its SHA-256. It does not download or authenticate that source; compare the supplied file to the intended upstream release before running it. The source executes with the caller's environment. No package source is bundled.
+
+`bun run smoke:preview --allow-network` separately imports Lanx 0.2.0 (and dependencies), starts a bounded temporary listener, checks HTML/binary/404 responses, then verifies shutdown. The client uses loopback; this does not prove the server binds only to loopback. Package caches are retained. This lane is not run by default PR checks.
+
+The pinned Unitt lane also characterizes native uncaught exceptions and empty discovery separately from assertion pass/failure. On the recorded 0.10.0 runtime, an uncaught native child error exits zero but prints a runner diagnostic; it must not count as successful assertion execution. Empty discovery raises `No test found!` and exits 1.
