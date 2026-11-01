@@ -11,6 +11,8 @@ export type Scenario = {
   required: string[];
   allowed: string[];
   references: string[];
+  allowedReferenceDomains?: string[];
+  referenceDomains?: Record<string, string[]>;
   check?: string;
   rubric?: string[];
   packages?: string[];
@@ -216,7 +218,7 @@ export async function callTool(
     if (context.mode === "none")
       throw new Error("No skills installed in this condition");
     if (
-      !/^arturo-[a-z-]+\/(SKILL\.md|references\/[\w.-]+\.md|examples\/[\w/.-]+\.art)$/.test(
+      !/^arturo(?:-[a-z-]+)?\/(SKILL\.md|references\/[\w.-]+\.md|examples\/[\w/.-]+\.art)$/.test(
         path,
       )
     )
@@ -321,6 +323,17 @@ export function selection(scenario: Scenario, events: Event[]) {
     loaded,
     missing: scenario.required.filter((name) => !loaded.includes(name)),
     irrelevant: loaded.filter((name) => !scenario.allowed.includes(name)),
+    irrelevantReferences: [
+      ...new Set(reads.map((e) => String((e.args as { path: string }).path))),
+    ].filter((path) => {
+      const domains = scenario.referenceDomains?.[path] ?? [];
+      return (
+        domains.length > 0 &&
+        !domains.some((domain) =>
+          scenario.allowedReferenceDomains?.includes(domain),
+        )
+      );
+    }),
     references: reads.filter((e) =>
       String((e.args as { path: string }).path).includes("/references/"),
     ).length,

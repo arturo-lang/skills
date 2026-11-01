@@ -24,6 +24,7 @@ import {
   sandboxCommand,
   selection,
 } from "./host";
+import { scenarioForLayout } from "./layout";
 import { scenarios } from "./scenarios";
 
 const argv = Bun.argv.slice(2);
@@ -123,7 +124,11 @@ if (argv.includes("--list")) {
       `Sandbox unavailable: ${runtime.stderr}; no model evaluations performed`,
     );
   await rm(preflight, { recursive: true, force: true });
-  for (const scenario of chosen) {
+  for (const original of chosen) {
+    const scenario = scenarioForLayout(
+      original,
+      inventory.map((s) => s.name),
+    );
     for (let attempt = 1; attempt <= repeat; attempt++) {
       const runId = `${scenario.id}-${mode}-${attempt}`;
       const directory = resolve(out, runId);
