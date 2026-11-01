@@ -238,7 +238,14 @@ const references: Record<string, string[]> = {
     "arturo-language/references/language.md",
     "arturo/references/formatting.md",
   ],
-  "package-typo": ["arturo-packages/references/packages.md"],
+  "preview-ambiguity": [
+    "arturo-web/references/lanx.md",
+    "arturo-packages/references/packages.md",
+  ],
+  "package-typo": [
+    "arturo-packages/references/packages.md",
+    "arturo-testing/references/unitt.md",
+  ],
   "package-unknown": ["arturo-packages/references/packages.md"],
   "package-clear": ["arturo-packages/references/packages.md"],
   "typed-function": ["arturo-language/references/language.md"],
