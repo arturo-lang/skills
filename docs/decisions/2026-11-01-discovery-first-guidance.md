@@ -1,4 +1,4 @@
-# ADR 001 — Discovery-first Arturo guidance
+# ADR 007 — Discovery-first Arturo guidance
 
 Copyright © RickBarretto, Arturo programming language.
 

@@ -1,4 +1,4 @@
-# ADR 002 — One Arturo skill with package references
+# ADR 008 — One Arturo skill with package references
 
 Copyright © RickBarretto, Arturo programming language.
 
@@ -8,7 +8,7 @@ This record captures the decision, measurements and validation on this date. It 
 
 ## Context and decision
 
-The user preferred one installation and activation point over ten domain skills. Replace the ten entry points with one self-contained `arturo` skill, superseding the architecture recommendation in [ADR 001](2026-11-01-discovery-first-guidance.md). Keep common semantics, runtime discovery and conditional routing in the entry point. Keep each external package in its own reference file with version/source metadata and notices, and retain the domain examples.
+The user preferred one installation and activation point over ten domain skills. Replace the ten entry points with one self-contained `arturo` skill, superseding the architecture recommendation in [ADR 007](2026-11-01-discovery-first-guidance.md). Keep common semantics, runtime discovery and conditional routing in the entry point. Keep each external package in its own reference file with version/source metadata and notices, and retain the domain examples.
 
 This was an explicit architecture preference, not a demonstrated model-performance improvement. Package APIs remain separate from package management; detailed library and package guidance loads on demand.
 
