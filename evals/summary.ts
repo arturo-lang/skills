@@ -37,7 +37,7 @@ if (import.meta.main) {
   }
   const groups = new Map<string, typeof reports>();
   for (const report of reports) {
-    const key = `${report.revision}/${report.skillHash}/${report.mode}`;
+    const key = `${report.transport ?? "responses-api"}/${report.revision}/${report.skillHash}/${report.mode}`;
     const group = groups.get(key) ?? [];
     group.push(report);
     groups.set(key, group);
@@ -73,7 +73,9 @@ if (import.meta.main) {
           medianInputTokens: percentile(inputs, 0.5),
           p90InputTokens: percentile(inputs, 0.9),
           medianRequests: percentile(
-            runs.map((r) => r.usage.requests),
+            runs
+              .map((r) => r.usage.requests)
+              .filter((n) => typeof n === "number"),
             0.5,
           ),
           medianElapsedMs: percentile(
