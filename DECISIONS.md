@@ -20,3 +20,5 @@ Historical backfills below were recorded on 2026-11-01 from the cited commit dif
 | 2026-11-01    | [ADR 008 — One Arturo skill with package references](docs/decisions/2026-11-01-single-arturo-skill.md)                                    | Consolidated installation/activation while keeping package guides separate                     |
 | 2026-11-01    | [ADR 009 — Broad discovery with Sol Low, condensation with Sol xHigh](docs/decisions/2026-11-01-broad-discovery-then-condensation.md)     | Broad authoring search, evidence-preserving synthesis and Low regression evaluation            |
 | 2026-11-01    | [ADR 010 — Prefer expressive Arturo symbols and expression blocks](docs/decisions/2026-11-01-expressive-arturo-formatting.md)             | Documented aliases, terminal-expression bodies and readable layout without changing evaluation |
+
+Hosted execution evidence: [Unitt passing, failing and restored assertions, 2026-11-01](docs/decisions/2026-11-01-hosted-unitt-evidence.md).

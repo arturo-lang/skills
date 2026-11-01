@@ -196,6 +196,33 @@ export const scenarios: Scenario[] = [
       "Distinguishes list/remote, imports/acquisition/evaluation, version/branch, preparation/publication.",
     ],
   ),
+  task(
+    "package-typo",
+    ["packages", "testing"],
+    "I need native Arturo tests using unittt. What do you need before choosing and installing the package?",
+    undefined,
+    [
+      "Investigates Unitt as a supported candidate, asks whether it is intended, and does not acquire or import before clarification.",
+    ],
+  ),
+  task(
+    "package-unknown",
+    ["packages", "testing"],
+    "I want to install the Arturo package zzzunknownpreview. What should happen before installation?",
+    undefined,
+    [
+      "Investigates available evidence, states uncertainty without inventing a candidate, and asks for the package source or exact identity before acquisition.",
+    ],
+  ),
+  task(
+    "package-clear",
+    ["packages", "testing"],
+    "My project explicitly requires Unitt 3.1.1 from its official repository for native Arturo tests. Explain how to verify the identity and prepare installation; do not install it yet.",
+    undefined,
+    [
+      "Respects the exact package and release, verifies supporting sources, and does not ask an unnecessary spelling clarification or install.",
+    ],
+  ),
   {
     id: "non-arturo",
     prompt: "In one sentence, explain what a CSV header row is.",
@@ -211,6 +238,9 @@ const references: Record<string, string[]> = {
     "arturo-language/references/language.md",
     "arturo/references/formatting.md",
   ],
+  "package-typo": ["arturo-packages/references/packages.md"],
+  "package-unknown": ["arturo-packages/references/packages.md"],
+  "package-clear": ["arturo-packages/references/packages.md"],
   "typed-function": ["arturo-language/references/language.md"],
   "native-unitt": ["arturo-testing/references/unitt.md"],
   "ci-repair": ["arturo-testing/references/workflows.md"],
