@@ -33,12 +33,12 @@ extraResult: $[x][
     x + 1
     return x * 2
 ]
-ensure [@[extraResult 3] = [4 6]]
+ensure -> @[extraResult 3] = [4 6]
 oneResult: $[x][
     intermediate: x + 1
     return intermediate * 2
 ]
-ensure [@[oneResult 3] = [8]]
+ensure -> @[oneResult 3] = [8]
 ```
 
 Use bindings for intermediate computations when the caller expects one result. `@[...]` collects all results, so it can reveal an accidental extra value that a single assignment or print might miss.
@@ -86,14 +86,14 @@ Function isolation does not protect a shared collection from `set`:
 nested: [[1 2] [3]]
 shared: nested
 set shared\0 0 9
-ensure [nested = [[9 2] [3]]]
+ensure -> nested = [[9 2] [3]]
 independent: new nested
 set independent\0 0 7
-ensure [nested = [[9 2] [3]]]
+ensure -> nested = [[9 2] [3]]
 changeFirst: $[items] -> set items\0 0 42
 changeFirst nested
-ensure [nested = [[42 2] [3]]]
-ensure [independent = [[7 2] [3]]]
+ensure -> nested = [[42 2] [3]]
+ensure -> independent = [[7 2] [3]]
 ```
 
 To implement `changedFirst items value`, clone with `new`, reject an empty outer or first inner block, set the cloned element, and return the clone.

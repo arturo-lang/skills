@@ -19,8 +19,8 @@ decodeProfile: $[response :dictionary scratchPath :string][
         ensure.that: "missing tags" -> key? profile 'tags
         ensure.that: "tags must be an array" -> block? profile\tags
     ]
-    if exists? scratchPath [delete scratchPath]
-    if error? failure [throw "invalid profile or staging failure"]
+    if exists? scratchPath -> delete scratchPath
+    if error? failure -> throw "invalid profile or staging failure"
     return profile
 ]
 
@@ -28,30 +28,30 @@ scratchPath: "response-fixture.json"
 body: {{"name":"Ada","active":false,"tags":[],"note":null}}
 response: #[status: 200 body: body]
 profile: decodeProfile response scratchPath
-ensure [false = profile\active]
-ensure [empty? profile\tags]
-ensure [null? profile\note]
-ensure [not? key? profile 'omitted]
-ensure [not? exists? scratchPath]
+ensure -> false = profile\active
+ensure -> empty? profile\tags
+ensure -> null? profile\note
+ensure -> not? key? profile 'omitted
+ensure -> not? exists? scratchPath
 ; No normalization or mutation of the response dictionary.
-ensure [body = response\body]
-ensure [profile = read.json write.json profile null]
+ensure -> body = response\body
+ensure -> profile = read.json write.json profile null
 
-ensure [throws? [decodeProfile null scratchPath]]
-ensure [throws? [decodeProfile #[status: 503 body: "unavailable"] scratchPath]]
-ensure [throws? [decodeProfile #[status: 200 body: "{broken"] scratchPath]]
-ensure [not? exists? scratchPath]
-ensure [throws? [decodeProfile #[status: 200 body: ""] scratchPath]]
-ensure [throws? [decodeProfile #[status: 200 body: "[]"] scratchPath]]
-ensure [throws? [decodeProfile #[status: 200 body: {{"name":"Ada"}}] scratchPath]]
-ensure [throws? [decodeProfile #[status: 200 body: {{"name":"Ada","active":"false","tags":[]}}] scratchPath]]
-ensure [not? exists? scratchPath]
+ensure -> throws? -> decodeProfile null scratchPath
+ensure -> throws? [decodeProfile #[status: 503 body: "unavailable"] scratchPath]
+ensure -> throws? [decodeProfile #[status: 200 body: "{broken"] scratchPath]
+ensure -> not? exists? scratchPath
+ensure -> throws? [decodeProfile #[status: 200 body: ""] scratchPath]
+ensure -> throws? [decodeProfile #[status: 200 body: "[]"] scratchPath]
+ensure -> throws? [decodeProfile #[status: 200 body: {{"name":"Ada"}}] scratchPath]
+ensure -> throws? [decodeProfile #[status: 200 body: {{"name":"Ada","active":"false","tags":[]}}] scratchPath]
+ensure -> not? exists? scratchPath
 ; Refuse a caller's existing file without deleting or overwriting it.
 write "keep this" scratchPath
-ensure [throws? [decodeProfile response scratchPath]]
-ensure ["keep this" = read.file scratchPath]
+ensure -> throws? -> decodeProfile response scratchPath
+ensure -> "keep this" = read.file scratchPath
 delete scratchPath
 ; A nonexistent parent directory produces an operational write failure.
-ensure [throws? [decodeProfile response "missing-response-directory/body.json"]]
-ensure [not? exists? "missing-response-directory/body.json"]
+ensure -> throws? -> decodeProfile response "missing-response-directory/body.json"
+ensure -> not? exists? "missing-response-directory/body.json"
 print "response workflow ok"

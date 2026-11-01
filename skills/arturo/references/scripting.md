@@ -33,8 +33,8 @@ To adapt the routine to a CLI, pass `arg` instead of the example blocks. Assign 
 
 ```art
 parsed: null
-err: try [parsed: countFrom arg]
-switch error? err [
+err: try -> parsed: countFrom arg
+(error? err) ? [
     print "Expected one nonnegative integer count"
 ][
     print parsed

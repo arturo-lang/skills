@@ -1,12 +1,12 @@
 ; Copyright © RickBarretto, Arturo programming language. MIT licensed.
 import ./{html}!
 ; Legacy 0.0.4 interpolates strings without escaping or sanitization.
-ensure [{<p><&"</p>} = html\element 'p {<&"}]
+ensure -> {<p><&"</p>} = html\element 'p {<&"}
 child: html\element 'p "<&"
 page: html\element 'div @[child]
-ensure [contains? page "<p><&</p>"]
-ensure [not? contains? page "&lt;"]
-ensure ["<b>trusted</b>" = fragment ["<b>trusted</b>"]]
-ensure ["<div></div>" = html\element 'div ""]
-ensure [2 = div 5 2]
+ensure -> contains? page "<p><&</p>"
+ensure -> not? contains? page "&lt;"
+ensure -> "<b>trusted</b>" = fragment ["<b>trusted</b>"]
+ensure -> "<div></div>" = html\element 'div ""
+ensure -> 2 = 5 / 2
 print "html legacy ok"

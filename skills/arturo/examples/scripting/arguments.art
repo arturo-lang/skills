@@ -1,3 +1,1 @@
-loop arg 'value [
-    print value
-]
+loop arg 'value -> print value

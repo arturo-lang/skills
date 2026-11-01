@@ -46,9 +46,9 @@ For a configured GET, keep the transport result distinct from the captured error
 
 ```art
 response: null
-transportError: try [response: request.timeout: timeoutValue endpoint null]
-if error? transportError [throw "request failed"]
-if null? response [throw "request returned no response"]
+transportError: try -> response: request.timeout: timeoutValue endpoint null
+if error? transportError -> throw "request failed"
+if null? response -> throw "request returned no response"
 ; Pass response to decodeProfile from the worked example below.
 profile: decodeProfile response scratchPath
 ```

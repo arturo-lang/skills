@@ -19,7 +19,7 @@ Import the selected checkout's `src/html.art` with a script-relative local path 
 
 ```art
 ; After loading the selected release:
-card: $[name :string][fragment [p name]]
+card: $[name :string] -> fragment [p name]
 page: fragment [section [card "Ana <reader>" card "João"]]
 print to :string page
 ```
