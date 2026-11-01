@@ -28,7 +28,7 @@ climax .template: 'plain [
         loud? 'l "uppercase greeting"
     ][
         message: append "Hello, " name
-        if opts\loud? [message: upper message]
+        if opts\loud? -> message: upper message
         print message
     ]
 ]

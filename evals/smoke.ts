@@ -8,7 +8,7 @@ import { scenarios } from "./scenarios";
 const solutions: Record<string, string> = {
   "expressive-syntax": `doubleValue: $[value :integer :floating] -> value * 2
 changedFirst: $[items :block value][
-    ensure -> ¬ empty? items
+    ensure -> not? empty? items
     result: new items
     set result 0 value
     result

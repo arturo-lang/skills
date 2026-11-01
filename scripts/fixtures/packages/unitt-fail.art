@@ -2,7 +2,7 @@ import.version:3.1.1 "unitt"!
 
 describe "pinned package verification" [
     it "propagates a failing assertion to the process status" [
-        expects.be: 'equal? @[4 add 1 2]
+        expects.be: 'equal? @[4 1 + 2]
     ]
 ]
 result: unitt\results

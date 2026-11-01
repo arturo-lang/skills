@@ -5,11 +5,9 @@ cleanupOwnedFiles: $[paths :block][
         failure: try [
             delete ownedPath
             ; A normal return from delete does not prove removal succeeded.
-            if exists? ownedPath [throw "owned path remains after cleanup"]
+            if exists? ownedPath -> throw "owned path remains after cleanup"
         ]
-        if error? failure [
-            'failures ++ #[path: ownedPath cause: failure]
-        ]
+        if error? failure -> 'failures ++ #[path: ownedPath cause: failure]
     ]
     return failures
 ]
@@ -33,7 +31,7 @@ runCleanupWorkflow: $[failAction? :logical failCleanup? :logical][
             ensure -> directory? firstPath
         ]
         ; A real write failure: a regular file cannot contain a child file.
-        if failAction? [write "blocked" secondPath ++ "/child.txt"]
+        if failAction? -> write "blocked" secondPath ++ "/child.txt"
         value: read.file secondPath
     ]
     cleanupErrors: cleanupOwnedFiles owned
@@ -53,22 +51,18 @@ loop @[false true] 'failAction? [
     loop @[false true] 'failCleanup? [
         report: runCleanupWorkflow failAction? failCleanup?
         ensure -> failAction? = error? report\actionError
-        switch failAction? [
-            ensure -> null? report\value
-        ][
-            ensure -> report\value = "second"
-        ]
+        failAction? ?
+            -> ensure -> null? report\value
+            -> ensure -> report\value = "second"
         ; Cleanup of the second file must run even if the first removal failed.
         ensure -> not? exists? "cleanup-second.txt"
-        switch failCleanup? [
+        failCleanup? ? [
             ensure -> 1 = size report\cleanupErrors
             issue: first report\cleanupErrors
             ensure -> issue\path = "cleanup-first.txt"
             ensure -> error? issue\cause
             ensure -> issue\cause\message = "owned path remains after cleanup"
-            if failAction? [
-                ensure -> not? (report\actionError\message = issue\cause\message)
-            ]
+            if failAction? -> ensure -> not? (report\actionError\message = issue\cause\message)
             ensure -> directory? "cleanup-first.txt"
             ; The test owns this empty directory and removes it explicitly.
             delete.directory "cleanup-first.txt"
