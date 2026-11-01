@@ -56,3 +56,5 @@ The following language libraries informed this roadmap. Their structures provide
 | [Python development skills](https://github.com/wshobson/agents/blob/main/plugins/python-development/skills/python-error-handling/SKILL.md) | Teach specific tasks through patterns, failure cases, worked examples, and deeper references.                               |
 
 Combine broad task coverage with explicit language foundations. Assume agents need Arturo fundamentals explained; do not rely on knowledge they may have for established languages. Preserve this repository's requirement that every skill installs independently, without required sibling references.
+
+Early-evaluation implementation (2026-11-01): [the Bun harness](evals/README.md) now defines 20 tasks and no-skill/automatic/explicit conditions for GPT-6.1 Sol Low. Offline adapter/host tests and nine positive/negative grader pairs pass; live repeated model runs remain pending API access. The [optimization audit](docs/sol-low-optimization.md) separates document-size reductions from unmeasured token/reliability targets. This does not satisfy the behavioral-evaluation exit criterion yet.
