@@ -19,7 +19,7 @@ Read the reference for the task:
 
 Package imports may download and evaluate code. Keep local generation and configuration checks separate from starting listeners, making wiki requests, or launching webviews.
 
-HTML blocks evaluate Arturo code, and the HTML package does not escape content or attribute values. Preserve the context-specific escaping described in its reference. Lanx serves the selected document root; inspect that root before starting it.
+HTML blocks evaluate Arturo code. The [HTML reference](references/html.md) covers legacy 0.0.4; check the installed API before applying its escaping rules. Lanx serves the selected document root; inspect that root before starting it.
 
 For MediaWiki edits, prepare the full replacement text and use the intended endpoint and title. MathJax and Mermaid require webview support and may load browser resources; do not assume offline rendering.
 
