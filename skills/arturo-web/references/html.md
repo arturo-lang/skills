@@ -12,12 +12,12 @@ metadata:
     - https://github.com/RickBarretto/html.pkgr.art/blob/v0.0.4/exp.art
 ---
 
-# HTML DSL
+# HTML DSL — legacy 0.0.4
 
 Use `html` for the experimental Arturo HTML generator. This guidance follows release 0.0.4 source and tests; the registry README contains little API documentation. Verify behavior against the chosen release before expanding the DSL.
 
 ```art
-import "html"!
+import.version:0.0.4 "html"!
 
 print html\element 'p "Hello"
 print html\element.class: "notice" 'div [
