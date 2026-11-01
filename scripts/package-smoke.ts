@@ -1,5 +1,5 @@
-import { mkdtemp, rm } from "node:fs/promises";
-import { tmpdir } from "node:os";
+import { cp, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { homedir, tmpdir } from "node:os";
 import { resolve } from "node:path";
 
 export function verifyPackageResult(
@@ -22,6 +22,47 @@ export function verifyPackageResult(
   }
 }
 
+export function verifyNativeResult(
+  expectFailure: boolean,
+  code: number,
+  output: string,
+  errors: string,
+): void {
+  const passed = expectFailure ? 3 : 4;
+  const failed = expectFailure ? 1 : 0;
+  if (
+    code !== (expectFailure ? 1 : 0) ||
+    errors.trim() !== "" ||
+    output.includes("Uncaught error") ||
+    !/TOTAL:\s+4 assertions/u.test(output) ||
+    !new RegExp(`PASSED:\\s+${passed} assertions?\\b`, "u").test(output) ||
+    !new RegExp(`FAILED:\\s+${failed} assertions?\\b`, "u").test(output) ||
+    (expectFailure && !output.trimEnd().endsWith("Some tests failed!"))
+  ) {
+    throw new Error(`native Unitt: exit ${code}\n${output}\n${errors}`);
+  }
+}
+
+async function run(command: string[], cwd: string) {
+  const child = Bun.spawn(command, { cwd, stdout: "pipe", stderr: "pipe" });
+  let timedOut = false;
+  const timeout = setTimeout(() => {
+    timedOut = true;
+    child.kill();
+  }, 120_000);
+  try {
+    const [output, errors, code] = await Promise.all([
+      new Response(child.stdout).text(),
+      new Response(child.stderr).text(),
+      child.exited,
+    ]);
+    if (timedOut) throw new Error(`${command[0]}: timed out after 120 seconds`);
+    return { output, errors, code };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 if (import.meta.main) {
   if (!Bun.argv.slice(2).includes("--allow-network")) {
     throw new Error(
@@ -37,31 +78,43 @@ if (import.meta.main) {
       ["unitt-pass.art", false],
       ["unitt-fail.art", true],
     ] as const) {
-      const child = Bun.spawn(
+      const { output, errors, code } = await run(
         [
           executable,
           "--no-color",
           resolve(import.meta.dir, "fixtures/packages", name),
         ],
-        { cwd: workspace, stdout: "pipe", stderr: "pipe" },
+        workspace,
       );
-      let timedOut = false;
-      const timeout = setTimeout(() => {
-        timedOut = true;
-        child.kill();
-      }, 120_000);
-      try {
-        const [output, errors, code] = await Promise.all([
-          new Response(child.stdout).text(),
-          new Response(child.stderr).text(),
-          child.exited,
-        ]);
-        if (timedOut) throw new Error(`${name}: timed out after 120 seconds`);
-        verifyPackageResult(name, expectFailure, code, output, errors);
-        console.log(`PASS unitt 3.1.1 ${name}`);
-      } finally {
-        clearTimeout(timeout);
+      verifyPackageResult(name, expectFailure, code, output, errors);
+      console.log(`PASS unitt 3.1.1 ${name}`);
+    }
+    const project = resolve(workspace, "native");
+    await cp(resolve(import.meta.dir, "fixtures/packages/native"), project, {
+      recursive: true,
+    });
+    // The exact-version import above populates this standard Arturo cache path.
+    const cli = resolve(
+      homedir(),
+      ".arturo/packages/cache/unitt/3.1.1/src/app.art",
+    );
+    const spec = resolve(project, "checks/arithmetic.check.art");
+    const passing = await readFile(spec, "utf8");
+    for (const expectFailure of [false, true, false]) {
+      await writeFile(
+        spec,
+        expectFailure ? passing.replace("[4 5]", "[4 6]") : passing,
+      );
+      for (const target of [cli, spec]) {
+        const result = await run([executable, "--no-color", target], project);
+        verifyNativeResult(
+          expectFailure,
+          result.code,
+          result.output,
+          result.errors,
+        );
       }
+      console.log(`PASS unitt 3.1.1 native/direct failure=${expectFailure}`);
     }
   } finally {
     await rm(workspace, { recursive: true, force: true });

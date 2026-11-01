@@ -1,0 +1,12 @@
+import.version:3.1.1 "unitt"!
+
+describe "native discovery" [
+    it "reports each loop iteration" [
+        loop [[1 2] [2 3] [3 4] [4 5]] 'pair [
+            expects.be: 'equal? @[pair\1 add pair\0 1]
+        ]
+    ]
+]
+
+if and? standalone? (not? key? args 'filename) ::
+    unitt\report 'full

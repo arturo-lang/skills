@@ -12,7 +12,7 @@ metadata:
 
 # Unitt unit testing
 
-Use Unitt as the primary tool for project unit tests; it is used officially. Import normally; upstream forbids `.lean`. Importing missing packages may download and execute code.
+Use Unitt for project unit tests. Upstream forbids `.lean`; imports may download and execute code.
 
 Prefer `describe`/`it`/`expects`. Assertions belong inside cases; `.be:` or `.to:` selects a predicate literal with evaluated arguments. Keep test inputs deterministic.
 
@@ -25,13 +25,13 @@ describe "addition" [
     ]
 ]
 
-if standalone? ::
+if and? standalone? (not? key? args 'filename) ::
     unitt\report 'full
 ```
 
-`report` exits with the result status; `.keep` continues execution. `'minimal` reports failures and summary. Guard standalone reporting so the CLI can collect results.
+`report` exits with the result status; `.keep` continues. `'minimal` reports failures and summary. The guard excludes native Unitt 3.1.1's `--filename` storage mode, which cannot use `report` on Arturo 0.10.0. Use runner totals: loops repeat assertions.
 
-Install with `arturo -p install unitt`, then run `unitt`. Configure project-root `config.art` (adapt paths to the project):
+Install with `arturo -p install unitt`, then run `unitt` for native discovery/reporting. Preserve existing paths; new projects can use root `config.art`:
 
 ```art
 path: "specs"

@@ -1,0 +1,3 @@
+path: "checks"
+suffix: ".check.art"
+binary: "arturo"

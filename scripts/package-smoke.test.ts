@@ -1,8 +1,30 @@
 import { expect, test } from "bun:test";
-import { verifyPackageResult } from "./package-smoke";
+import { verifyNativeResult, verifyPackageResult } from "./package-smoke";
 
 const assertionFailure =
   "PINNED-CASE-READY\nFAILED: 1 assertion\nSome tests failed!\n";
+
+test("native lane requires executed summaries, not just exit zero", () => {
+  verifyNativeResult(
+    false,
+    0,
+    "TOTAL: 4 assertions\nPASSED: 4 assertions\nFAILED: 0 assertions",
+    "",
+  );
+  verifyNativeResult(
+    true,
+    1,
+    "TOTAL: 4 assertions\nPASSED: 3 assertions\nFAILED: 1 assertion\nSome tests failed!",
+    "",
+  );
+  for (const output of [
+    "Uncaught error in checks/arithmetic.check.art: reporter failed",
+    "TOTAL: 0 assertions\nPASSED: 0 assertions\nFAILED: 0 assertions",
+    "TOTAL: 4 assertions\nPASSED: 3 assertions\nFAILED: 1 assertion",
+  ]) {
+    expect(() => verifyNativeResult(false, 0, output, "")).toThrow();
+  }
+});
 
 test("package lane accepts completed pass and intentional failure", () => {
   verifyPackageResult("pass", false, 0, "PINNED-CASE-READY", "");
