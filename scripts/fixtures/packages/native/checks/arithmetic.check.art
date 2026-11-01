@@ -8,5 +8,5 @@ describe "native discovery" [
     ]
 ]
 
-if and? standalone? (not? key? args 'filename) ::
+if standalone? ::
     unitt\report 'full

@@ -25,11 +25,11 @@ describe "addition" [
     ]
 ]
 
-if and? standalone? (not? key? args 'filename) ::
+if standalone? ::
     unitt\report 'full
 ```
 
-`report` exits with the result status; `.keep` continues. `'minimal` reports failures and summary. The guard excludes native Unitt 3.1.1's `--filename` storage mode, which cannot use `report` on Arturo 0.10.0. Use runner totals: loops repeat assertions.
+`report` exits with the result status; `.keep` continues. `'minimal` reports failures and summary. Use runner totals: loops repeat assertions.
 
 Install with `arturo -p install unitt`, then run `unitt` for native discovery/reporting. Preserve existing paths; new projects can use root `config.art`:
 
