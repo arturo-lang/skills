@@ -29,12 +29,12 @@ Define `double: $[x :integer] -> x * 2`, then call `double 4`. Prefer `$`, the a
 A final `return` does not erase earlier unconsumed results. For example:
 
 ```art
-extraResult: function [x][
+extraResult: $[x][
     x + 1
     return x * 2
 ]
 ensure [@[extraResult 3] = [4 6]]
-oneResult: function [x][
+oneResult: $[x][
     intermediate: x + 1
     return intermediate * 2
 ]
@@ -58,7 +58,7 @@ Control-flow words are actual [Core functions](https://arturo-lang.io/documentat
 
 In `when`, `[condition]` defers that condition until needed; a final `true [body]` supplies a fallback.
 
-Prefer `->` for a single-expression action or assertion: `ensure -> count >= 0`. It wraps one following terminal expression into a block, not an arbitrary sequence of statements. Keep explicit blocks for multi-step bodies.
+Prefer `->` for a single-expression action or assertion: `ensure -> count >= 0`. It wraps one following terminal expression into a block, not an arbitrary sequence of statements. Keep explicit blocks for multi-step bodies. See [formatting](formatting.md) for symbol choices, layout and grouped conditional expressions.
 
 Use parameter annotations such as `[count :integer]` for a concrete function contract, then `ensure` for range and state invariants before effects.
 
@@ -90,7 +90,7 @@ ensure [nested = [[9 2] [3]]]
 independent: new nested
 set independent\0 0 7
 ensure [nested = [[9 2] [3]]]
-changeFirst: function [items][set items\0 0 42]
+changeFirst: $[items] -> set items\0 0 42
 changeFirst nested
 ensure [nested = [[42 2] [3]]]
 ensure [independent = [[7 2] [3]]]

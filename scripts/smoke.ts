@@ -16,6 +16,7 @@ const cases: readonly (readonly [
 ])[] = [
   ["arturo/examples/packages/local-package.art", [], "packages ok"],
   ["arturo/examples/language/basics.art", [], "language ok"],
+  ["arturo/examples/language/formatting.art", [], "formatting ok"],
   ["arturo/examples/language/project/main.art", [], "project ok"],
   ["arturo/examples/collections/collections.art", [], "collections ok"],
   ["arturo/examples/scripting/arguments.art", [], ""],
