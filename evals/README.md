@@ -33,8 +33,12 @@ Review traces for unnecessary reference loads, repeated signature/version querie
 
 Release targets: no coverage/portability loss; critical cases pass all three repetitions; correctness/compliance do not regress; median skill/reference tokens fall 25% and total input 15% without more median retries. Those are targets, not measured results. Three repetitions detect obvious instability, not statistical certainty. Exact context-category token accounting needs a tokenizer or counting endpoint; byte totals cannot establish the 25% token target.
 
-The [coverage ledger](coverage.json) records original references, sources, catalog symbols and examples. Routine catalogs now route through official modules and installed `info.get`; semantic caveats and versioned package guidance remain local. [Optional consumer routing](../templates/consumer-routing.md) can be tested separately from automatic discovery; it is not injected into the default benchmark.
+The [coverage ledger](coverage.json) records original references, sources, catalog symbols and examples, with current destinations and previous paths. Routine catalogs now route through official modules and installed `info.get`; semantic caveats and versioned package guidance remain local. [Optional consumer routing](../templates/consumer-routing.md) can be tested separately from automatic discovery; it is not injected into the default benchmark.
 
 ## Current limits
 
 No live Sol Low runs are included: the implementation session has no API key. API adapter and host tests use offline fixtures. Code checks are not adversarial grading against a malicious model; text explanations and workflow claims require human review. Separate hosted CI and listener/GUI checks are needed before closing those issue acceptance criteria. Do not infer behavioral improvement from smaller documents or passing repository tests.
+
+## Comparing the single-skill layout
+
+The consolidation baseline is `aa0226a` (PR #20); `5ee2d7b` remains the earlier optimization baseline. Prompts, executable checks and human rubrics remain fixed. The harness detects an installed `arturo` skill and translates required/allowed skill names and explicit-reference paths using [the relocation map](layout-migration.json). Ten-skill baselines keep their original routing expectations. For the consolidated layout, reports also flag unrelated reference loads using the original task domains; a single activated skill is not sufficient evidence of precise loading. Shared inspection and routing indexes do not count as unrelated domains. The CSV negative control must still avoid all Arturo guidance. No live model result is implied by this translation.

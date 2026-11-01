@@ -36,7 +36,7 @@ Use task failures and documented gaps to prioritize focused functions, types, co
 
 Exit: standalone discovery and use pass, references remain navigable, metadata/context size is reviewed, and compatibility claims have recorded evidence.
 
-First focused improvement (2026-10-30): existing scripting guidance now covers [filesystem cleanup diagnostics](skills/arturo-scripting/references/workflows.md#preserve-action-and-cleanup-failures), prompted by the lifecycle coverage gap and a reproducer showing that `delete` can return normally without removing a path. The independently installable skill adds bounded offline assertions and keeps activation metadata unchanged. This is one verified workflow improvement; broader expansion and roadmap exit criteria remain open.
+First focused improvement (2026-10-30): existing scripting guidance now covers [filesystem cleanup diagnostics](skills/arturo/references/scripting-workflows.md#preserve-action-and-cleanup-failures), prompted by the lifecycle coverage gap and a reproducer showing that `delete` can return normally without removing a path. The independently installable skill adds bounded offline assertions and keeps activation metadata unchanged. This is one verified workflow improvement; broader expansion and roadmap exit criteria remain open.
 
 ## Research basis
 
@@ -58,3 +58,5 @@ The following language libraries informed this roadmap. Their structures provide
 Combine broad task coverage with explicit language foundations. Assume agents need Arturo fundamentals explained; do not rely on knowledge they may have for established languages. Preserve this repository's requirement that every skill installs independently, without required sibling references.
 
 Early-evaluation implementation (2026-11-01): [the Bun harness](evals/README.md) now defines 20 tasks and no-skill/automatic/explicit conditions for GPT-6.1 Sol Low. Offline adapter/host tests and nine positive/negative grader pairs pass; live repeated model runs remain pending API access. The [optimization audit](docs/sol-low-optimization.md) separates document-size reductions from unmeasured token/reliability targets. This does not satisfy the behavioral-evaluation exit criterion yet.
+
+Single-skill consolidation (2026-11-01): at the user's request, the ten installation entry points are replaced by `arturo`. All package guides remain separate reference files; shared runtime guidance is centralized. See [the migration and evidence](docs/skill-consolidation.md). Evaluation keeps the same task prompts/checks and translates routing expectations for the installed layout; model-level results remain pending API access.
