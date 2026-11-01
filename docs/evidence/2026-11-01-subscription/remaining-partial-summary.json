@@ -1,0 +1,2228 @@
+[
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "cli-identifiers",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": false,
+    "infrastructureError": "Error: Subscription server exited before completion",
+    "correctness": null,
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 0,
+      "outputTokens": 0,
+      "cachedInputTokens": 0,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "expressive-syntax",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 2
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 31773,
+      "outputTokens": 429,
+      "cachedInputTokens": 25984,
+      "reasoningTokens": 28
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "expressive-syntax",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 2
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 31766,
+      "outputTokens": 422,
+      "cachedInputTokens": 25984,
+      "reasoningTokens": 21
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "expressive-syntax",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 2
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 20704,
+      "outputTokens": 207,
+      "cachedInputTokens": 15360,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "iterator-scope",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 35378,
+      "outputTokens": 302,
+      "cachedInputTokens": 30848,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "iterator-scope",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 48837,
+      "outputTokens": 423,
+      "cachedInputTokens": 37632,
+      "reasoningTokens": 19
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "iterator-scope",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 71941,
+      "outputTokens": 663,
+      "cachedInputTokens": 60032,
+      "reasoningTokens": 9
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "nested-copy",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 88165,
+      "outputTokens": 1073,
+      "cachedInputTokens": 76288,
+      "reasoningTokens": 247
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "nested-copy",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 40679,
+      "outputTokens": 365,
+      "cachedInputTokens": 34432,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "nested-copy",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 81646,
+      "outputTokens": 1095,
+      "cachedInputTokens": 72832,
+      "reasoningTokens": 101
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "on-demand-signature",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 100865,
+      "outputTokens": 949,
+      "cachedInputTokens": 83072,
+      "reasoningTokens": 143
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "on-demand-signature",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 55826,
+      "outputTokens": 523,
+      "cachedInputTokens": 39552,
+      "reasoningTokens": 50
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "on-demand-signature",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 72929,
+      "outputTokens": 765,
+      "cachedInputTokens": 57984,
+      "reasoningTokens": 73
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "retain-matches",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 87498,
+      "outputTokens": 1077,
+      "cachedInputTokens": 68864,
+      "reasoningTokens": 169
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "retain-matches",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 55630,
+      "outputTokens": 566,
+      "cachedInputTokens": 41344,
+      "reasoningTokens": 21
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "retain-matches",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 74541,
+      "outputTokens": 900,
+      "cachedInputTokens": 64256,
+      "reasoningTokens": 188
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "sample-statistics",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 85551,
+      "outputTokens": 870,
+      "cachedInputTokens": 78976,
+      "reasoningTokens": 48
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "sample-statistics",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 102864,
+      "outputTokens": 1010,
+      "cachedInputTokens": 83200,
+      "reasoningTokens": 108
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "sample-statistics",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 75125,
+      "outputTokens": 716,
+      "cachedInputTokens": 54656,
+      "reasoningTokens": 90
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "typed-function",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 52807,
+      "outputTokens": 416,
+      "cachedInputTokens": 46080,
+      "reasoningTokens": 14
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "typed-function",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 52821,
+      "outputTokens": 419,
+      "cachedInputTokens": 46464,
+      "reasoningTokens": 11
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "typed-function",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 53054,
+      "outputTokens": 435,
+      "cachedInputTokens": 46464,
+      "reasoningTokens": 15
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "units-colors",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 40882,
+      "outputTokens": 343,
+      "cachedInputTokens": 36992,
+      "reasoningTokens": 20
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "units-colors",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 42966,
+      "outputTokens": 363,
+      "cachedInputTokens": 34688,
+      "reasoningTokens": 18
+    }
+  },
+  {
+    "group": "stage2-baseline-explicit",
+    "scenario": "units-colors",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "c2743e049cfab07e80f6e80acebfe7f2a26c1321",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 43024,
+      "outputTokens": 307,
+      "cachedInputTokens": 38016,
+      "reasoningTokens": 17
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "expressive-syntax",
+    "mode": "automatic",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 2
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 67901,
+      "outputTokens": 605,
+      "cachedInputTokens": 46976,
+      "reasoningTokens": 32
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "expressive-syntax",
+    "mode": "automatic",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 2
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 68947,
+      "outputTokens": 679,
+      "cachedInputTokens": 52608,
+      "reasoningTokens": 35
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "expressive-syntax",
+    "mode": "automatic",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 3
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 96984,
+      "outputTokens": 1096,
+      "cachedInputTokens": 87296,
+      "reasoningTokens": 145
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "iterator-scope",
+    "mode": "automatic",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 61351,
+      "outputTokens": 501,
+      "cachedInputTokens": 55680,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "iterator-scope",
+    "mode": "automatic",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 54045,
+      "outputTokens": 475,
+      "cachedInputTokens": 44032,
+      "reasoningTokens": 14
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "iterator-scope",
+    "mode": "automatic",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 60648,
+      "outputTokens": 505,
+      "cachedInputTokens": 37760,
+      "reasoningTokens": 16
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "nested-copy",
+    "mode": "automatic",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 70744,
+      "outputTokens": 784,
+      "cachedInputTokens": 62976,
+      "reasoningTokens": 69
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "nested-copy",
+    "mode": "automatic",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 109481,
+      "outputTokens": 1167,
+      "cachedInputTokens": 94336,
+      "reasoningTokens": 118
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "nested-copy",
+    "mode": "automatic",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 109053,
+      "outputTokens": 1531,
+      "cachedInputTokens": 95104,
+      "reasoningTokens": 184
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "on-demand-signature",
+    "mode": "automatic",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 41434,
+      "outputTokens": 369,
+      "cachedInputTokens": 36992,
+      "reasoningTokens": 35
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "on-demand-signature",
+    "mode": "automatic",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 51222,
+      "outputTokens": 513,
+      "cachedInputTokens": 46336,
+      "reasoningTokens": 27
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "on-demand-signature",
+    "mode": "automatic",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 82598,
+      "outputTokens": 747,
+      "cachedInputTokens": 75776,
+      "reasoningTokens": 90
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "retain-matches",
+    "mode": "automatic",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 128737,
+      "outputTokens": 1516,
+      "cachedInputTokens": 97536,
+      "reasoningTokens": 257
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "retain-matches",
+    "mode": "automatic",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 85218,
+      "outputTokens": 917,
+      "cachedInputTokens": 78208,
+      "reasoningTokens": 100
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "retain-matches",
+    "mode": "automatic",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 129272,
+      "outputTokens": 1418,
+      "cachedInputTokens": 119168,
+      "reasoningTokens": 191
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "sample-statistics",
+    "mode": "automatic",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 93126,
+      "outputTokens": 1145,
+      "cachedInputTokens": 82432,
+      "reasoningTokens": 123
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "sample-statistics",
+    "mode": "automatic",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": false,
+    "infrastructureError": "Error: Subscription server exited before completion",
+    "correctness": null,
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": [],
+      "missing": ["arturo"],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 0,
+      "outputTokens": 0,
+      "cachedInputTokens": 0,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "typed-function",
+    "mode": "automatic",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 42073,
+      "outputTokens": 406,
+      "cachedInputTokens": 37376,
+      "reasoningTokens": 10
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "typed-function",
+    "mode": "automatic",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 70111,
+      "outputTokens": 499,
+      "cachedInputTokens": 51328,
+      "reasoningTokens": 27
+    }
+  },
+  {
+    "group": "stage2-candidate-automatic",
+    "scenario": "typed-function",
+    "mode": "automatic",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 41669,
+      "outputTokens": 349,
+      "cachedInputTokens": 23040,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "expressive-syntax",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 2
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 31929,
+      "outputTokens": 448,
+      "cachedInputTokens": 26240,
+      "reasoningTokens": 16
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "expressive-syntax",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 2
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 46647,
+      "outputTokens": 557,
+      "cachedInputTokens": 22656,
+      "reasoningTokens": 67
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "expressive-syntax",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 2
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 31950,
+      "outputTokens": 471,
+      "cachedInputTokens": 26240,
+      "reasoningTokens": 37
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "iterator-scope",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 45397,
+      "outputTokens": 397,
+      "cachedInputTokens": 40448,
+      "reasoningTokens": 13
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "iterator-scope",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 49375,
+      "outputTokens": 416,
+      "cachedInputTokens": 37888,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "iterator-scope",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 45519,
+      "outputTokens": 406,
+      "cachedInputTokens": 35712,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "nested-copy",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 116765,
+      "outputTokens": 1504,
+      "cachedInputTokens": 97408,
+      "reasoningTokens": 287
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "nested-copy",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 2
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 131275,
+      "outputTokens": 1345,
+      "cachedInputTokens": 123008,
+      "reasoningTokens": 253
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "nested-copy",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 65885,
+      "outputTokens": 778,
+      "cachedInputTokens": 53376,
+      "reasoningTokens": 31
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "on-demand-signature",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 53577,
+      "outputTokens": 564,
+      "cachedInputTokens": 48512,
+      "reasoningTokens": 68
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "on-demand-signature",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 82840,
+      "outputTokens": 789,
+      "cachedInputTokens": 77184,
+      "reasoningTokens": 113
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "on-demand-signature",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "pending",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 35607,
+      "outputTokens": 354,
+      "cachedInputTokens": 30848,
+      "reasoningTokens": 20
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "retain-matches",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 121585,
+      "outputTokens": 1306,
+      "cachedInputTokens": 96384,
+      "reasoningTokens": 183
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "retain-matches",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 53299,
+      "outputTokens": 705,
+      "cachedInputTokens": 44672,
+      "reasoningTokens": 197
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "retain-matches",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 123917,
+      "outputTokens": 1363,
+      "cachedInputTokens": 115584,
+      "reasoningTokens": 155
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "sample-statistics",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 51650,
+      "outputTokens": 445,
+      "cachedInputTokens": 28416,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "sample-statistics",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 95534,
+      "outputTokens": 1064,
+      "cachedInputTokens": 87936,
+      "reasoningTokens": 109
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "sample-statistics",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 46217,
+      "outputTokens": 470,
+      "cachedInputTokens": 37760,
+      "reasoningTokens": 35
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "typed-function",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 30479,
+      "outputTokens": 168,
+      "cachedInputTokens": 24832,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "typed-function",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 53008,
+      "outputTokens": 449,
+      "cachedInputTokens": 46592,
+      "reasoningTokens": 13
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "typed-function",
+    "mode": "explicit",
+    "attempt": 3,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 1
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 41638,
+      "outputTokens": 318,
+      "cachedInputTokens": 35584,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "units-colors",
+    "mode": "explicit",
+    "attempt": 1,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": true,
+    "infrastructureError": "",
+    "correctness": {
+      "code": 0,
+      "stdout": "EVAL-PASS\n",
+      "stderr": "",
+      "reason": "",
+      "passed": true
+    },
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 0
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 74164,
+      "outputTokens": 760,
+      "cachedInputTokens": 57600,
+      "reasoningTokens": 105
+    }
+  },
+  {
+    "group": "stage2-candidate-explicit",
+    "scenario": "units-colors",
+    "mode": "explicit",
+    "attempt": 2,
+    "revision": "4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9",
+    "finished": false,
+    "infrastructureError": "Error: Subscription server exited before completion",
+    "correctness": null,
+    "manualReviewStatus": "not-required",
+    "selection": {
+      "loaded": ["arturo"],
+      "missing": [],
+      "irrelevant": [],
+      "irrelevantReferences": [],
+      "references": 2
+    },
+    "usage": {
+      "available": true,
+      "accounting": "Codex thread cumulative usage; transport requests unavailable",
+      "requests": null,
+      "cumulativeInputTokens": 0,
+      "outputTokens": 0,
+      "cachedInputTokens": 0,
+      "reasoningTokens": 0
+    }
+  }
+]

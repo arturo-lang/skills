@@ -1,6 +1,6 @@
 // Copyright © RickBarretto, Arturo programming language. MIT licensed.
 import { afterEach, expect, test } from "bun:test";
-import { mkdtemp, rm, symlink, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, rm, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 import {
@@ -241,4 +241,45 @@ test("one-skill layout keeps historical prompts and detects unrelated reference 
       },
     ]).irrelevant,
   ).toEqual(["arturo"]);
+});
+
+test("subscription summaries skip preflight files and honor infrastructure reviews", async () => {
+  const root = await temporary();
+  await mkdir(resolve(root, "attempt"));
+  await writeFile(resolve(root, "subscription-preflight.jsonl"), "{}\n");
+  await writeFile(
+    resolve(root, "attempt/report.json"),
+    JSON.stringify({
+      revision: "test",
+      skillHash: "test",
+      transport: "codex-subscription",
+      mode: "automatic",
+      finished: true,
+      infrastructureError: "",
+      correctness: null,
+      manualReviewStatus: "pending",
+      usage: { cumulativeInputTokens: 12, requests: null },
+      elapsedMs: 1,
+      contextBytes: { entry: 0, reference: 0 },
+    }),
+  );
+  await writeFile(
+    resolve(root, "attempt/review.json"),
+    JSON.stringify({
+      status: "failed",
+      reviewer: "test",
+      classification: "infrastructure",
+      evidence: "Tools unavailable",
+    }),
+  );
+  const result = await boundedRun(
+    [process.execPath, resolve(import.meta.dir, "summary.ts"), root],
+    root,
+  );
+  expect(result.code).toBe(0);
+  const summary = JSON.parse(result.stdout);
+  expect(summary.attempts).toBe(1);
+  expect(summary.infrastructureFailures).toBe(1);
+  expect(summary.verifiedSuccesses).toBe(0);
+  expect(summary.medianRequests).toBeNull();
 });
