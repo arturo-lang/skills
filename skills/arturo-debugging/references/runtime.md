@@ -8,19 +8,16 @@ metadata:
     - https://arturo-lang.io/documentation/language
 ---
 
-# Runtime signatures and Arturo defaults
+# Runtime discovery
 
-Check `arturo --version` and `arturo --help`. Query a signature without invoking the target:
+Use `arturo --version` once per environment; consult `--help` for uncertain CLI options. Query without invoking the target:
 
 ```sh
 arturo --no-color -e "inspect info.get 'sort"
 ```
 
-- Metadata: Use `info.get` for signatures, arguments, attributes, and return types. Use `inspect` for structure and `info` for compact documentation.
-- Arguments: Read `args` positionally. Multiple types are alternatives; attributes are optional and do not consume positional arguments.
-- Compatibility: Compare installed behavior with the [official reference](https://arturo-lang.io/llms.txt). When they disagree, preserve a minimal reproduction and describe the observed version-specific behavior.
-- Semantics: Expressions group right to left, and function arity determines argument boundaries. Infix aliases do not guarantee mathematical precedence.
-- Control flow: `if` and `switch` are callable functions, not reserved syntax.
-- Mutation: Literal arguments may mutate values; ordinary blocks return results. Use `new` for independent copies.
-- Naming: Prefer `lowerCamelCase`, prefix private helpers with `_`, and respect existing project conventions.
-- Filesystem diagnostics: Use temporary directories for filesystem operations.
+`args` is positional; listed types are alternatives. `attrs` are optional flags/values, not extra positional arguments. `returns` lists possible types; `:nothing` means no result. `inspect 'sort` inspects a literal, not the function; `info 'sort` is a compact alternative. Metadata examples/source links can lag the installed runtime.
+
+Arity and right-to-left grouping determine expression boundaries. Ordinary evaluated blocks share scope; functions normally isolate assignments. Literal/path-literal mutation is supported only by particular functions; direct updates can change shared storage. Use `new` for an independent copy.
+
+Run a small bounded probe for uncertain scope, evaluation, mutation, or edge behavior. Reuse established signatures; avoid reading all references or dumping all symbols. For unknown names, search the relevant official module linked from the task guide. Without Arturo, report behavior as unverified.

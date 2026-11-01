@@ -25,7 +25,7 @@ describe "addition" [
     ]
 ]
 
-if standalone? ::
+if and? standalone? not? key? args 'filename ::
     unitt\report 'full
 ```
 
@@ -42,3 +42,7 @@ binary: "arturo"
 Place matching test files under `path`; `binary` selects the Arturo executable. Run a guarded file directly with `arturo specs/example.spec.art`.
 
 `test`, `suite`, and `assert.with:` support older syntax. Conditional `.skip: logicalValue` skips `it` or standalone `test` cases when true. Version 3 removed `.prop`, `.static`, and `fatal`; `.prop` never generated property tests. Uncaught exceptions stop the runner.
+
+On Unitt 3.1.1 / Arturo 0.10.0, native discovery launches each file as a command-line child with `--filename:` for file-backed results. `standalone?` is true there too: suppress direct reporting when `args` contains `filename`. `unitt\report` expects standalone dictionary storage and fails on the native store. This guard was reproduced in the opt-in package lane; it is not a replacement runner.
+
+Uncaught runner errors and empty discovery can print an error yet exit zero on this runtime because upstream calls `exit 1`. Check executed summaries and error output as well as process status; zero alone is not proof of success.

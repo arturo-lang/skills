@@ -8,24 +8,16 @@ metadata:
     - https://arturo-lang.io/documentation/language
 ---
 
-# Runtime signatures and Arturo defaults
+# Runtime discovery
 
-Check `arturo --version` and `arturo --help`. Query a signature without invoking the target:
+Use `arturo --version` once per environment; consult `--help` for uncertain CLI options. Query without invoking the target:
 
 ```sh
 arturo --no-color -e "inspect info.get 'sort"
 ```
 
-`info.get` returns symbol metadata; `inspect` shows its structure and types. `inspect 'sort` inspects a literal identifier, not the function. `inspect var 'sort` retrieves the function value but only shows a built-in marker on Arturo 0.10.0. `info 'sort` offers a compact display.
+`args` is positional; listed types are alternatives. `attrs` are optional flags/values, not extra positional arguments. `returns` lists possible types; `:nothing` means no result. `inspect 'sort` inspects a literal, not the function; `info 'sort` is a compact alternative. Metadata examples/source links can lag the installed runtime.
 
-Read `args` in positional order. One named argument consumes one value; multiple types listed for it are alternatives. `attrs` contains optional flags and attribute-labels: `.descending` is a logical flag; `.by: 'name` passes a value. Attributes do not add positional arguments.
+Arity and right-to-left grouping determine expression boundaries. Ordinary evaluated blocks share scope; functions normally isolate assignments. Literal/path-literal mutation is supported only by particular functions; direct updates can change shared storage. Use `new` for an independent copy.
 
-`returns` lists possible result types; `:nothing` means no result. An infix alias does not imply conventional mathematical precedence. Descriptions, examples, and source locations are documentation, not proof of every runtime behavior; reduce and run the relevant case if they conflict.
-
-For example, `sort` has one collection argument. A literal or path-literal argument permits mutation; a block value requests a result. `if` has a condition and an action block, whereas `switch` has a condition and two blocks. Neither is reserved syntax: control flow uses callable functions.
-
-Use lower camelCase for variables, labels, functions, and object/type names (`:someObject`); prefix private helpers with `_`. Underscore-separated names mainly support external-format compatibility. Preserve the user's choices and existing project conventions.
-
-Expressions group right to left; function arity determines argument boundaries. Blocks remain data until evaluated. A supported literal argument enables mutation; use `new` for an independent copy and do not assume ordinary evaluated blocks create scope.
-
-Run bounded offline `.art` examples with `ensure [condition]` where possible. Report checks and relevant limitations. Use temporary directories for disk effects. Follow project tooling.
+Run a small bounded probe for uncertain scope, evaluation, mutation, or edge behavior. Reuse established signatures; avoid reading all references or dumping all symbols. For unknown names, search the relevant official module linked from the task guide. Without Arturo, report behavior as unverified.

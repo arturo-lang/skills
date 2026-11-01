@@ -18,22 +18,4 @@ metadata:
 - CLI validation: Verify exit codes and output. Printing an error message alone does not prove failure handling works.
 - Stack safety: Verify whether evaluated blocks leave additional values on the stack.
 
-| Name                                                                                       | Purpose / when to use                                  | Example                                    |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------ |
-| [arithmeticError](https://arturo-lang.io/documentation/library/exceptions/arithmeticerror) | An arithmetic error.                                   | `inspect arithmeticError`                  |
-| [assertionError](https://arturo-lang.io/documentation/library/exceptions/assertionerror)   | An assertion error.                                    | `inspect assertionError`                   |
-| [conversionError](https://arturo-lang.io/documentation/library/exceptions/conversionerror) | A conversion error.                                    | `inspect conversionError`                  |
-| [indexError](https://arturo-lang.io/documentation/library/exceptions/indexerror)           | An index error.                                        | `inspect indexError`                       |
-| [libraryError](https://arturo-lang.io/documentation/library/exceptions/libraryerror)       | A library error.                                       | `inspect libraryError`                     |
-| [nameError](https://arturo-lang.io/documentation/library/exceptions/nameerror)             | A name error.                                          | `inspect nameError`                        |
-| [packageError](https://arturo-lang.io/documentation/library/exceptions/packageerror)       | A package error.                                       | `inspect packageError`                     |
-| [runtimeError](https://arturo-lang.io/documentation/library/exceptions/runtimeerror)       | A generic runtime error.                               | `inspect runtimeError`                     |
-| [syntaxError](https://arturo-lang.io/documentation/library/exceptions/syntaxerror)         | A syntax error.                                        | `inspect syntaxError`                      |
-| [systemError](https://arturo-lang.io/documentation/library/exceptions/systemerror)         | A system error.                                        | `inspect systemError`                      |
-| [throw](https://arturo-lang.io/documentation/library/exceptions/throw)                     | Throw an error with message.                           | `throw "invalid input"`                    |
-| [throws?](https://arturo-lang.io/documentation/library/exceptions/throws-)                 | Perform action, and return true if errors were thrown. | `throws? [discard to :integer "invalid"]`  |
-| [try](https://arturo-lang.io/documentation/library/exceptions/try)                         | Perform action and catch possible errors.              | `err: try [discard to :integer "invalid"]` |
-| [typeError](https://arturo-lang.io/documentation/library/exceptions/typeerror)             | A type error.                                          | `inspect typeError`                        |
-| [uiError](https://arturo-lang.io/documentation/library/exceptions/uierror)                 | A UI error.                                            | `inspect uiError`                          |
-| [valueError](https://arturo-lang.io/documentation/library/exceptions/valueerror)           | A value error.                                         | `inspect valueError`                       |
-| [vmError](https://arturo-lang.io/documentation/library/exceptions/vmerror)                 | A VM error.                                            | `inspect vmError`                          |
+For unknown function names, use [the exceptions module](https://arturo-lang.io/documentation/library/exceptions). Query the selected built-in with `inspect info.get 'name`; use a bounded probe for behavior absent from metadata.

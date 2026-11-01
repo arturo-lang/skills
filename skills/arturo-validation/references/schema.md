@@ -9,6 +9,7 @@ metadata:
     - https://github.com/Lulzx/schema.art/tree/v0.3.0
     - https://arturo-lang.io/documentation/library/core/import/
     - https://schema.pkgr.art/
+    - https://github.com/Lulzx/schema.art/blob/v0.3.0/src/schema.art
 ---
 
 # Schema validation
@@ -37,3 +38,5 @@ With the package already available, check valid, invalid, missing-field, and une
 - Numeric bounds compare values; other bounds compare lengths. `of:` accepts a nested dictionary schema or an element constraint block. Regex matching covers the entire string, unlike a substring search.
 - `check` changes nothing. `coerce` returns a transformed copy without judging validity; `conform` coerces, checks, and returns the copy or `null`. Defaults apply only during coercion. Text parses into supported scalars; arbitrary values do not coerce into strings. To diagnose failed conformance, check the coerced value.
 - `example schema` is deterministic; `.random` varies fixtures. Regex and unsupported-type generation need an explicit `example:` value. Validate generated fixtures before relying on them.
+
+Conformance return contract rechecked against tagged source 2026-11-01: failure returns `null`; `check schema (coerce schema value)` obtains the corresponding faults. This is source review, not package execution.

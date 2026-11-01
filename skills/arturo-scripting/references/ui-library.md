@@ -15,11 +15,4 @@ Query signatures with `inspect info.get 'alert`; see [runtime inspection](runtim
 
 Examples are independent fragments; names such as `value`, `items`, `settings`, `client`, `server`, `db`, and `childPid` denote inputs or resources prepared by the surrounding program. They are not implicit globals. Requires a supported desktop and explicit interaction.
 
-| Name                                                               | Purpose / when to use                              | Example                                     |
-| ------------------------------------------------------------------ | -------------------------------------------------- | ------------------------------------------- |
-| [alert](https://arturo-lang.io/documentation/library/ui/alert)     | Show notification with title and message.          | `alert "Title" "Message"`                   |
-| [clip](https://arturo-lang.io/documentation/library/ui/clip)       | Set clipboard content to text.                     | `clip "example text"`                       |
-| [dialog](https://arturo-lang.io/documentation/library/ui/dialog)   | Show a file selection dialog and return selection. | `selected: dialog "Select a file"`          |
-| [popup](https://arturo-lang.io/documentation/library/ui/popup)     | Show popup dialog with title and message.          | `popup "Title" "Message"`                   |
-| [unclip](https://arturo-lang.io/documentation/library/ui/unclip)   | Obtain clipboard content.                          | `unclip`                                    |
-| [webview](https://arturo-lang.io/documentation/library/ui/webview) | Show webview window with url or html source.       | `webview "<html><body>Hello</body></html>"` |
+For unknown function names, use [the ui module](https://arturo-lang.io/documentation/library/ui). Query the selected built-in with `inspect info.get 'name`; use a bounded probe for behavior absent from metadata.

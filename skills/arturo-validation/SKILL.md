@@ -1,19 +1,17 @@
 ---
 name: arturo-validation
-description: Use schema for Arturo structured data validation, nested schemas, coercion, defaults, and fault diagnostics. Use validator for string validation, email, URL, IP, dates, and password rules.
+description: "Validate Arturo application data using Schema for structured values/coercion/defaults/faults, or Validator for string formats. Project test runners belong to testing."
 metadata:
   arturo-version: 0.10.0
 ---
 
-# Arturo validation and schemas
+# Arturo application data validation
 
-Choose validation by the input and required result:
+Read only the selected package guide:
 
-- [Schema](references/schema.md): whole values, nested dictionaries, required and optional fields, unknown keys, structured faults, coercion, defaults, and fixture generation.
-- [Validator](references/validator.md): string formats such as email, URL, IP, dates, encodings, and password rules.
+- [Schema](references/schema.md): nested values, required/unknown fields, defaults, coercion and fault diagnostics. `check` returns faults without mutation; `coerce` transforms a copy without validating; `conform` returns a coerced valid copy or `null`. Diagnose failure with `check schema (coerce schema value)`.
+- [Validator](references/validator.md): string formats; results are logical, not per-field diagnostics.
 
-Keep data validation distinct from transformation.
-- Schema's `check` leaves input unchanged;
-- Schema's `coerce` returns a transformed copy without validating it;
-- Schema's `conform` coerces and validates, returning a structured fault if the input is invalid.
-- Validator returns a `:logical` rather than field-level errors.
+Check the selected release and minimum runtime; imports may download/evaluate code. Package DSLs may not expose complete `info.get` metadata: use the relevant release source and small fixtures for uncertain behavior. Built-in metadata remains available through `inspect info.get 'name`.
+
+A format check does not establish reachability or identity. Ordinary tests/assertions do not require application-validation packages.

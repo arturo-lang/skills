@@ -1,33 +1,16 @@
 ---
 name: arturo-collections
-description: Implement Arturo collection and text transformations using Collections, Iterators, Strings, and Sets. Use for blocks, dictionaries, ranges, data pipelines, sorting, regex matching, text processing, set operations, Recase case conversion, Unidecode transliteration.
+description: "Transform Arturo collections and text: blocks, dictionaries, iterators, sets, sorting, regex, Recase case conversion, and Unidecode transliteration."
 metadata:
   arturo-version: 0.10.0
 ---
 
-### Arturo Collection
+# Arturo collections and text
 
-- Operations:
-  - Use `map` to transform
-  - `select` to retain matches
-  - `filter` to remove matches
-  - `fold` to accumulate
-  - `loop` for side effects
-- Mutation: Prefer returning transformed values. Mutate only intentionally using supported literal arguments; use `new` for independent copies.
-- Evaluation: Parenthesize conversions and calculations when right-to-left evaluation affects results.
-- Edge cases: Test empty and single-element collections, duplicates, missing keys, and relevant element types. Seed folds explicitly when necessary.
-- Validation: Use [examples/collections.art](examples/collections.art) for offline tests. Consult official documentation for specialized operations rather than assuming APIs exist.
+`map` transforms, `select` retains matches, `filter` removes matches, `fold` accumulates, and `loop` performs effects. Iterator arguments are temporary bindings; other assignments can persist. Literal arguments mutate only where supported; use `new` for independent copies.
 
-## Module references
+For an uncertain built-in, use `inspect info.get 'name`; inspect positional `args`, optional `attrs`, and `returns`, then probe relevant behavior. For unknown names, use the official module links in the relevant guide. [Runtime detail](references/runtime.md) is for metadata/evaluation uncertainty, not a prerequisite read.
 
-- [Collections](references/collections-library.md).
-- [Iterators](references/iterators-library.md).
-- [Sets](references/sets-library.md).
-- [Strings](references/strings-library.md).
+Load only the needed guide: [collections](references/collections-library.md) for access/copying, [iterators](references/iterators-library.md) for scope/empty inputs, [strings](references/strings-library.md) for Unicode/regex/interpolation, or [sets](references/sets-library.md) for duplicate/order behavior. [Offline assertions](examples/collections.art) cover these pitfalls.
 
-Query signatures with `inspect info.get 'functionName`; see [runtime guidance](references/runtime.md) when interpreting metadata.
-
-## External text and data packages
-
-- [Recase](references/recase.md): naming and case conversion.
-- [Unidecode](references/unidecode.md): ASCII transliteration.
+For external packages, load [Recase](references/recase.md) for identifier case conversion or [Unidecode](references/unidecode.md) for transliteration. Imports may download and evaluate code; neither operation guarantees unique identifiers.

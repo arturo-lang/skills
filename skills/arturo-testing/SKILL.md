@@ -1,16 +1,16 @@
 ---
 name: arturo-testing
-description: Use unitt (Unitt), the primary official Arturo testing tool, for unit tests, test suites, assertions, test runners, and regression tests. Use peregrino (Peregrino) for command benchmarks; configure GitHub Actions with setup-arturo and bundler for CI, executable builds, and artifacts.
+description: "Write and run Arturo project tests with Unitt, benchmark with Peregrino, or configure CI/bundling. Small ensure probes and application data validation alone do not require this skill."
 metadata:
   arturo-version: 0.10.0
 ---
 
-# Arturo testing and CI
+# Arturo project testing and CI
 
-- [Unitt](references/unitt.md): cases, assertions, discovery, reports, and older-syntax migration. Use deterministic fixtures and relevant normal, invalid, and boundary inputs; regressions should fail before the fix.
-- [Peregrino](references/peregrino.md): command benchmarks. Verify correctness separately; bound repetitions and account for each run's effects.
-- [GitHub Actions](references/workflows.md): setup-arturo, test jobs, bundler, artifacts, and release publishing. Inspect existing workflows, test entry points, package metadata, and target platforms first. Publish only within the requested scope.
+For project tests, read [Unitt](references/unitt.md) and prefer its native discovery/reporting with the project's configured paths. Use `describe`/`it`/`expects`; reserve `ensure` for small probes. Do not replace the runner with a compatibility wrapper without a versioned reproducer.
 
-Check the installed package release before choosing APIs; imports may download and evaluate code.
+Reports belong at native runner level or under a standalone guard that excludes native `filename` runs in directly runnable files. Derive executed assertion counts from runner output, including loop-generated assertions. Distinguish cases/files/assertions, acquisition errors, assertion failures, uncaught exceptions, and empty discovery.
 
-For package integration verification, use a separate opt-in job with an exact release import, such as `import.version:3.1.1 "unitt"!`. Check passing and deliberately failing suites' process status; distinguish acquisition errors from assertion failures. Bound execution, clean temporary workspaces, and record runtime/dependency versions and logs. Release pins do not establish immutable provenance; record source revisions when needed.
+Load [Peregrino](references/peregrino.md) only for command benchmarks, or [workflows](references/workflows.md) for GitHub Actions, bundling and artifacts. A local pass does not establish a hosted CI pass.
+
+Check the selected package release; imports may download/evaluate code. Built-in API uncertainty uses `inspect info.get 'name`; package APIs need their release guide/source. Keep pinned package integration separate from offline checks; exercise passing/failing runs and retain exit status, summary, and errors.

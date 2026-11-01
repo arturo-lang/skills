@@ -14,7 +14,7 @@ metadata:
 
 ## Install and test
 
-Use [Unitt test files](unitt.md) with assertions inside cases and a guarded standalone report.
+Use [Unitt test files](unitt.md) with assertions inside cases and a guarded direct report excluding native `filename` runs.
 
 ```yaml
 name: Arturo CI
@@ -31,6 +31,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Unitt
         run: arturo -p install unitt
+      - name: Add package executables to PATH
+        run: echo "$HOME/.arturo/packages/bin" >> "$GITHUB_PATH"
       - name: Run tests
         run: unitt
 ```
@@ -90,3 +92,7 @@ bundle:
 - Permissions: Use `contents: write` only for publishing jobs. Keep ordinary CI read-only. Investigate token permissions and event context when encountering `Resource not accessible by integration`.
 - Release validation: Confirm every matrix artifact exists before publishing. Never suppress build or test failures.
 - Authoritative references: Consult pinned revisions of the [setup-arturo](https://github.com/arturo-lang/setup-arturo/blob/59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7/README.md), [bundler](https://github.com/arturo-lang/bundler/blob/856568f0f4c5baf6ee61e9a963abacda3dd4e2d9/README.md), and [Unitt](https://github.com/RickBarretto/unitt/blob/v3.1.1/readme.md) documentation, alongside the [Arturo CLI](https://arturo-lang.io/documentation/command-line/). Prefer action implementation over documentation when behavior differs.
+
+## Verification boundary
+
+The example is source-reviewed against the action revisions above. It has not established a clean hosted pass or a deliberately failing hosted job. Record the observed runner, runtime, package executable path and job URLs before claiming CI verification. In particular, Unitt 3.1.1 on Arturo 0.10.0 can exit zero on an uncaught child error or empty discovery; require evidence of executed assertions and inspect runner error output. Do not add a custom project runner merely to hide an upstream compatibility failure.

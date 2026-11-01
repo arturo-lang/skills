@@ -14,24 +14,8 @@ metadata:
 
 Iterator arguments and injected indices temporarily shadow bindings, which are restored afterward; other assignments persist. Index injection uses `.with: 'i`; verify each iterator's parameters and attributes.
 
-Empty `map`, `select`, and `filter` return `[]`; seeded `fold` returns its seed without running the body. Use `map` for transformations, `select` to retain matches, `filter` to remove matches, `fold` to accumulate, and `loop` for effects. Examples below cover each form.
+Empty `map`, `select`, and `filter` return `[]`; seeded `fold` returns its seed without running the body. Use `map` for transformations, `select` to retain matches, `filter` to remove matches, `fold` to accumulate, and `loop` for effects. The [offline checks](../examples/collections.art) exercise these forms.
 
 Scope and empty-input patterns reviewed 2026-10-30.
 
-| Name                                                                          | Purpose / when to use                                                            | Example                                        |
-| ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------- |
-| [arrange](https://arturo-lang.io/documentation/library/iterators/arrange)     | Sort items in collection using value returned from action, in ascending order.   | `arrange ["aaa" "b" "cc"] 'item [size item]`   |
-| [chunk](https://arturo-lang.io/documentation/library/iterators/chunk)         | Chunk together consecutive items in collection that abide by condition.          | `chunk [1 3 2 4 5] 'item [even? item]`         |
-| [cluster](https://arturo-lang.io/documentation/library/iterators/cluster)     | Group together items in collection that abide by condition.                      | `cluster 1..6 'item [odd? item]`               |
-| [collect](https://arturo-lang.io/documentation/library/iterators/collect)     | Collect items from collection condition while is true.                           | `collect [1 3 4 5] 'item [odd? item]`          |
-| [enumerate](https://arturo-lang.io/documentation/library/iterators/enumerate) | Compute the number of collection's items that satisfy condition.                 | `enumerate 1..10 'item [odd? item]`            |
-| [every?](https://arturo-lang.io/documentation/library/iterators/every-)       | Test whether every item in collection satisfies condition.                       | `every? [2 4 6] 'item [even? item]`            |
-| [filter](https://arturo-lang.io/documentation/library/iterators/filter)       | Remove items whose predicate matches; use for exclusion, not selection.          | `filter 1..6 'item [even? item]`               |
-| [fold](https://arturo-lang.io/documentation/library/iterators/fold)           | Reduce collection from the left using action, returning the final accumulator.   | `fold.seed: 0 [1 2 3] [acc item] [acc + item]` |
-| [gather](https://arturo-lang.io/documentation/library/iterators/gather)       | Group items in collection by value returned from action, returning a dictionary. | `gather [1 2 3 4] 'item [item % 2]`            |
-| [loop](https://arturo-lang.io/documentation/library/iterators/loop)           | Iterate through collection, executing block for each item.                       | `loop [1 2 3] 'item [print item]`              |
-| [map](https://arturo-lang.io/documentation/library/iterators/map)             | Map items in collection to values returned from action.                          | `map 1..3 'item [item * 2]`                    |
-| [maximum](https://arturo-lang.io/documentation/library/iterators/maximum)     | Obtain item in collection with maximum value returned from action.               | `maximum ["a" "bbb" "cc"] 'item [size item]`   |
-| [minimum](https://arturo-lang.io/documentation/library/iterators/minimum)     | Obtain item in collection with minimum value returned from action.               | `minimum ["a" "bbb" "cc"] 'item [size item]`   |
-| [select](https://arturo-lang.io/documentation/library/iterators/select)       | Obtain items in collection that satisfy condition.                               | `select 1..6 'item [even? item]`               |
-| [some?](https://arturo-lang.io/documentation/library/iterators/some-)         | Test whether any of collection's items satisfy condition.                        | `some? [1 2 3] 'item [even? item]`             |
+For unknown function names, use [the iterators module](https://arturo-lang.io/documentation/library/iterators). Query the selected built-in with `inspect info.get 'name`; use a bounded probe for behavior absent from metadata.
