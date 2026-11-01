@@ -9,11 +9,11 @@
   <b>~ CODE IS ART ~</b>
 </p>
 
-Writing your first [Arturo](https://arturo-lang.io) script? Working through an error? Bringing an existing program to Arturo? These skills give your coding assistant language guidance, practical examples, and links to the official documentation to help you along the way.
+Writing your first [Arturo](https://arturo-lang.io) script? Working through an error? Bringing an existing program to Arturo? The Arturo skill gives your coding assistant language guidance, practical examples, and links to the official documentation to help you along the way.
 
-A **skill** is a small collection of instructions and references that an assistant can read while working on a task. You can browse them yourself, too. Each one lives in its own folder and can be installed independently.
+A **skill** is a small collection of instructions and references that an assistant can read while working on a task. You can browse them yourself, too. The skill installs as one self-contained folder, with detailed references loaded only as needed.
 
-[Get started](#get-started) · [Choose your skills](#choose-your-skills) · [Try it out](#try-it-out) · [Contribute](#contribute)
+[Get started](#get-started) · [Included guidance](#included-guidance) · [Try it out](#try-it-out) · [Contribute](#contribute)
 
 ## Get started
 
@@ -23,7 +23,7 @@ From the project where you want to use the skills, run:
 bunx skills add arturo-lang/skills
 ```
 
-Follow the prompts to choose skills and your coding assistant. Start with **arturo-language** for the language basics, then add the skills that fit your work.
+Choose **arturo** and your coding assistant. One entry point covers the language and its ecosystem; package and domain details remain separate references.
 
 You’ll need [Bun](https://bun.sh) to run these commands and Node.js 22.20 or later for the [skills CLI](https://github.com/vercel-labs/skills). To run Arturo programs, [install Arturo](https://arturo-lang.io/#download) and make sure `arturo` is on your PATH.
 
@@ -36,10 +36,10 @@ bunx skills add arturo-lang/skills --list
 Or choose exactly what to install and which assistants should receive it:
 
 ```sh
-bunx skills add arturo-lang/skills --skill arturo-language arturo-collections -a codex claude-code cursor
+bunx skills add arturo-lang/skills --skill arturo -a codex claude-code cursor
 ```
 
-Add `-g` for a user-wide installation. The CLI manages each assistant’s installation paths. The skills themselves follow the portable Agent Skills format and require no particular assistant, MCP server, or Bun runtime to read. If your assistant does not support the CLI, point it to a skill’s `SKILL.md` and the references inside that folder.
+Add `-g` for a user-wide installation. The CLI manages each assistant’s installation paths. The skill follows the portable Agent Skills format and requires no particular assistant, MCP server, or Bun runtime to read. If your assistant does not support the CLI, point it to the Arturo `SKILL.md` and the references inside that folder.
 
 ## Try it out
 
@@ -53,38 +53,22 @@ Once installed, open your coding assistant in the project and ask for something 
 
 Include your code, the result you expected, and any error output when you have them. You can also name a skill explicitly if you want the assistant to consult it.
 
-Prefer to explore on your own? Start with the [language skill](skills/arturo-language/SKILL.md) or its [small runnable example](skills/arturo-language/examples/basics.art).
+Prefer to explore on your own? Start with the [Arturo skill](skills/arturo/SKILL.md) or its [small runnable example](skills/arturo/examples/language/basics.art).
 
-## Choose your skills
+## Included guidance
 
-| Skill                                                    | When you might want it                                                                  |
-| -------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [arturo-language](skills/arturo-language/SKILL.md)       | Learn syntax, evaluation, functions, scope, and mutation                                |
-| [arturo-collections](skills/arturo-collections/SKILL.md) | Work with blocks, dictionaries, iterators, and text                                     |
-| [arturo-scripting](skills/arturo-scripting/SKILL.md)     | Build CLI tools and work with files, dates, encodings, databases, or desktop automation |
-| [arturo-debugging](skills/arturo-debugging/SKILL.md)     | Diagnose errors, use assertions, and check fixes                                        |
-| [arturo-math](skills/arturo-math/SKILL.md)               | Work with arithmetic, statistics, bits, units, and colors                               |
-| [arturo-networking](skills/arturo-networking/SKILL.md)   | Use HTTP/JSON, network utilities, TCP, and UDP                                          |
-| [arturo-testing](skills/arturo-testing/SKILL.md)         | Write tests, benchmark commands, and configure CI and bundling                          |
-| [arturo-validation](skills/arturo-validation/SKILL.md)   | Validate structured data and strings, or coerce values                                  |
-| [arturo-web](skills/arturo-web/SKILL.md)                 | Serve static files and work with HTML, MediaWiki, equations, or diagrams                |
-| [arturo-packages](skills/arturo-packages/SKILL.md)       | Find, install, import, and publish packages through pkgr.art                            |
+[arturo](skills/arturo/SKILL.md) covers language semantics, collections/text, math/units/colors, scripting/files/storage, networking, debugging, testing/CI, validation, packages and web workflows. It starts with runtime discovery using `info.get`, then routes to task-specific references rather than loading the full library.
 
-### Package guidance included
+- [Language and scope](skills/arturo/references/language.md), [symbols](skills/arturo/references/symbols.md), [project loading](skills/arturo/references/projects.md).
+- [Standard-library map](skills/arturo/references/library.md): domain caveats and bounded examples.
+- [Package index](skills/arturo/references/package-index.md): each external package has its own versioned file, including Unitt, Schema/Validator, HTML/Lanx, CLI/terminal packages, text packages, DSLs and service wrappers.
+- [Package management](skills/arturo/references/packages.md): registry discovery, acquisition, versions, local isolation and publication.
 
-Skills also cover external packages alongside the tasks they help with:
+Importing a package can download and evaluate code; installing this skill does not install Arturo packages. The single skill includes its own license texts and consolidated upstream notices.
 
-| Skill              | Packages                                                |
-| ------------------ | ------------------------------------------------------- |
-| arturo-testing     | Unitt, Peregrino; setup-arturo and bundler actions      |
-| arturo-validation  | schema, validator                                       |
-| arturo-scripting   | Climax, Progressive, Tabular, Tasks, MIMEtypes, Grafito |
-| arturo-language    | optionally, States, ArtSembly                           |
-| arturo-collections | Recase, Unidecode                                       |
-| arturo-networking  | Claude API client                                       |
-| arturo-web         | Lanx, HTML, mwiki (MediaWiki), MathJax, Mermaid         |
+### Migrating from the ten-skill suite
 
-Each skill keeps its package references, examples, and source links together. Importing a package can download and evaluate code; installing these skills does not install those Arturo packages.
+The previous `arturo-language`, `arturo-collections`, `arturo-math`, `arturo-scripting`, `arturo-networking`, `arturo-debugging`, `arturo-testing`, `arturo-validation`, `arturo-web`, and `arturo-packages` installation names are replaced by **arturo**. Reinstall with `--skill arturo`, update explicit invocations and project routing to that name, and remove obsolete installations through your assistant's skill manager to avoid duplicate guidance. Compatibility entry points are not shipped. Package guides and runnable examples remain available inside the new directory.
 
 ## Where the guidance comes from
 
@@ -123,7 +107,7 @@ Use `bun run format` for Biome-supported code, configuration, and Markdown; form
 To try your local changes in an assistant, run `bunx skills add .` from this checkout, or run the following from the project that should receive them, replacing the example path:
 
 ```sh
-bunx skills add /path/to/your/checkout --skill arturo-language arturo-collections -a codex claude-code cursor
+bunx skills add /path/to/your/checkout --skill arturo -a codex claude-code cursor
 ```
 
 The CLI discovers `skills/<name>/SKILL.md` directly; no custom manifest or npm publication is needed. See its [skill discovery documentation](https://github.com/vercel-labs/skills/blob/main/docs/creating-skills.md) for details.
@@ -138,6 +122,6 @@ See [contribution requirements](CONTRIBUTING.md#maintenance) and the [roadmap](R
 
 ## Context and behavioral evaluation
 
-Skills keep semantic pitfalls locally and use `inspect info.get 'name` for installed built-in signatures. Read only the references needed for the current task; package APIs stay with their domain guides. An optional [consuming-repository routing example](templates/consumer-routing.md) helps hosts that miss relevant guidance.
+The Arturo skill keeps semantic pitfalls locally and uses `inspect info.get 'name` for installed built-in signatures. Read only the references needed for the current task; package APIs stay with their domain guides. An optional [consuming-repository routing example](templates/consumer-routing.md) helps hosts that miss relevant guidance.
 
 Run `bun run context:stats` for document sizes and `bun run evals --list` for the Sol Low scenario matrix. See [evaluation instructions](evals/README.md) for isolated execution, automatic versus explicit selection, paid API opt-in, and evidence limits. Smaller files alone do not prove better task completion.

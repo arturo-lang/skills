@@ -2,22 +2,14 @@
 
 Copyright © RickBarretto, Arturo programming language.
 
-Adapt the block below into your application's `AGENTS.md` if your assistant does not reliably select installed Arturo skills. Replace the placeholders with the installed locations; install only what the project needs. This is optional application guidance, not a dependency between distributed skills.
+Adapt this block into your application's `AGENTS.md` when the host misses installed Arturo guidance. Replace the placeholder with the actual installation location; this template is not installed with the skill.
 
 ```markdown
-For Arturo work, select installed guidance by the task. Read its SKILL.md, then only the references needed for the operation. Do not load the entire suite.
+For Arturo (.art) work, read <arturo>/SKILL.md, then only references needed for the operation. Use info.get for uncertain built-ins and small runtime probes for behavior metadata cannot establish.
 
-- Language/evaluation/scope/mutation: <arturo-language>/SKILL.md.
-- Collections/text: <arturo-collections>/SKILL.md; numeric/units/colors: <arturo-math>/SKILL.md.
-- CLI/files/processes/storage: <arturo-scripting>/SKILL.md.
-- HTTP/JSON/sockets or built-in serve: <arturo-networking>/SKILL.md.
-- HTML/Lanx/MediaWiki/webviews: <arturo-web>/SKILL.md. Read the HTML reference matching the selected release before changing its DSL.
-- Observed failures: <arturo-debugging>/SKILL.md.
-- Project tests/native Unitt/CI/benchmarks: <arturo-testing>/SKILL.md. Read the runner reference before modifying test discovery/reporting.
-- Application data schemas/formats: <arturo-validation>/SKILL.md.
-- Package discovery/acquisition/versioning/metadata/publication: <arturo-packages>/SKILL.md.
+For an external package, select its own file through references/package-index.md. Read the HTML guide matching the selected release before changing its DSL, and read Unitt's guide before modifying test discovery/reporting. references/library.md maps standard-library domains to caveats; it is not a required reading list.
 
-Routine introspection does not require debugging; a small ensure probe does not require a project runner; importing a known domain package does not require package-management guidance. Combine skills when the requested work spans responsibilities.
+Small ensure probes do not require a project runner; application validation is separate from program tests. A cross-domain task can load several relevant references without loading the whole collection.
 ```
 
-Check the substituted paths and try selection scenarios from [the evaluation suite](../evals/README.md). Installing a skill does not prove that the host loaded it or followed its instructions.
+Check the substituted path and try the scenarios in [the evaluation suite](../evals/README.md). Installing a skill does not prove the host loaded it or followed its guidance. Replace old multi-skill routing rather than keeping both templates.

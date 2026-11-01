@@ -1,8 +1,10 @@
-# Arturo suite optimization for Sol Low
+# Historical Arturo suite optimization for Sol Low
 
 Copyright © RickBarretto, Arturo programming language.
 
-The suite retains ten independently installable skills. This pass changes routing and information access rather than removing language, standard-library, package, or domain capabilities. The baseline is `5ee2d7b`; the [coverage ledger](../evals/coverage.json) records all original references, catalog symbols, sources and examples, plus retained caveats and relocations.
+This report records PR #20 before consolidation. The [single-skill consolidation](skill-consolidation.md) supersedes its architecture recommendation at the user’s request; measurements and execution evidence here remain historical.
+
+That pass retained ten independently installable skills. This pass changes routing and information access rather than removing language, standard-library, package, or domain capabilities. The baseline is `5ee2d7b`; the [coverage ledger](../evals/coverage.json) records all original references, catalog symbols, sources and examples, plus retained caveats and relocations.
 
 ## Measured changes
 
