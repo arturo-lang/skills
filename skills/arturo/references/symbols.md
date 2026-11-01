@@ -9,7 +9,7 @@ metadata:
 
 # Symbol aliases
 
-Prefer these aliases when writing Arturo. Follow their arity, evaluation, and mutation contracts; grouping still follows Arturo evaluation rules.
+Prefer these aliases when writing Arturo; use the [formatting guidance](formatting.md) for expression blocks and layout. Follow their arity, evaluation, and mutation contracts; grouping still follows Arturo evaluation rules.
 
 | Symbol | Function                                                                                      | Position |
 | ------ | --------------------------------------------------------------------------------------------- | -------- |
