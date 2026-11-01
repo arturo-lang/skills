@@ -6,6 +6,14 @@ import { boundedRun, sandboxCommand } from "./host";
 import { scenarios } from "./scenarios";
 
 const solutions: Record<string, string> = {
+  "expressive-syntax": `doubleValue: $[value :integer :floating] -> value * 2
+changedFirst: $[items :block value][
+    ensure -> ¬ empty? items
+    result: new items
+    set result 0 value
+    result
+]`,
+
   "typed-function": "doubleValue: $[x :integer :floating][x * 2]",
   "nested-copy":
     "changedFirst: $[items :block value][ensure [not? empty? items] ensure [not? empty? first items] copy: new items set copy\\0 0 value return copy]",
