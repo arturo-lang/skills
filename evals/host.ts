@@ -1,4 +1,4 @@
-// Copyright © RickBarretto, Arturo programming language. MIT licensed.
+
 import { mkdir, readFile, realpath, writeFile } from "node:fs/promises";
 import { dirname, isAbsolute, relative, resolve } from "node:path";
 

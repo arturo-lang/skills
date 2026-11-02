@@ -1,6 +1,6 @@
 # Hosted Unitt assertion evidence
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 Observed 2026-11-01 for commit `1efcfbe4ff2028262aad761ddca5d2874db7ad64`.
 

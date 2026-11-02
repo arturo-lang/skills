@@ -1,6 +1,6 @@
 # ADR 003 — Preserve licensing and require owner investigation
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 Decision date: 2026-10-30. Recorded retrospectively: 2026-11-01. Evidence: [675eafa](https://github.com/arturo-lang/skills/commit/675eafa695646d8260e529c701d55519b639bba2), [ef75655](https://github.com/arturo-lang/skills/commit/ef75655d307a22bf153a3d017cbfdc137b352045), [fcbadc1](https://github.com/arturo-lang/skills/commit/fcbadc199c46093bc62b2b9ef4a9f533cf4ca250), [a5b25de](https://github.com/arturo-lang/skills/commit/a5b25de67d720cde60aba25490aad8c0b0d27737).
 

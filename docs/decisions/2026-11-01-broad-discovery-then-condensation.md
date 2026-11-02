@@ -1,6 +1,6 @@
 # ADR 009 — Broad discovery with Sol Low, condensation with Sol xHigh
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 Decision date and recording date: 2026-11-01. Basis: the maintainer's explicit instruction in the ADR follow-up. Historical precedents: [ADR 002](2026-10-29-expand-coverage-then-group-by-task.md), [ADR 006](2026-10-30-condense-metadata-and-reference-routing.md), and [ADR 008](2026-11-01-single-arturo-skill.md).
 

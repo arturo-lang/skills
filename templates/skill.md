@@ -1,6 +1,6 @@
 # Editorial template
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 - Task and activation boundary:
 - Inputs, assumptions, dependencies, and effects:

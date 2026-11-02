@@ -1,4 +1,4 @@
-// Copyright © RickBarretto, Arturo programming language. MIT licensed.
+
 import type { Event } from "./host";
 
 type Usage = {

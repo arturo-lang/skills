@@ -1,4 +1,4 @@
-// Copyright © RickBarretto, Arturo programming language. MIT licensed.
+
 import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";

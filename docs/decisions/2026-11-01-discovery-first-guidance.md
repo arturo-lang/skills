@@ -1,6 +1,6 @@
 # ADR 007 — Discovery-first Arturo guidance
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 Date: 2026-11-01. Source: [PR #20](https://github.com/arturo-lang/skills/pull/20). Baseline: `5ee2d7b`; implementation snapshot: `aa0226a`.
 

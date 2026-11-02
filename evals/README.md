@@ -1,6 +1,6 @@
 # Sol Low behavioral evaluation
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 This Bun harness lives outside distributed skills. It compares the same tasks with no skills, automatic selection, and explicitly supplied guidance, using `gpt-6.1-sol` with reasoning effort `low`. It uses the Responses API directly; it does not inherit this repository's instructions, global skills, or another agent's conversation. See [official tool-calling guidance](https://developers.openai.com/api/docs/guides/function-calling) and [model guidance](https://developers.openai.com/api/docs/guides/latest-model).
 

@@ -1,4 +1,4 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
+;  MIT licensed.
 
 doubleValue: $[value :integer :floating] -> value * 2
 labelFor: $[count :integer] -> ((count = 1) ? -> "item" -> "items")

@@ -1,4 +1,4 @@
-// Copyright © RickBarretto, Arturo programming language. MIT licensed.
+
 import { expect, test } from "bun:test";
 import { chmod, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";

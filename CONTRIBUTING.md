@@ -1,6 +1,6 @@
 # Contributing
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 All new skills and all modifications must be submitted through a pull request. Before merging, a code owner must investigate the change, verify its accuracy and scope, and approve it. The code owners are [RickBarretto](https://github.com/RickBarretto) and [Yanis Zafirópulos (drkameleon)](https://github.com/drkameleon), as listed in [.github/CODEOWNERS](.github/CODEOWNERS).
 

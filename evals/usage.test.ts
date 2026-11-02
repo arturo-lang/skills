@@ -1,4 +1,4 @@
-// Copyright © RickBarretto, Arturo programming language. MIT licensed.
+
 import { expect, test } from "bun:test";
 import type { Event } from "./host";
 import { recordedUsage } from "./usage";

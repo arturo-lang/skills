@@ -1,7 +1,5 @@
 # ADR 001 — Portable skills and repository verification
 
-Copyright © RickBarretto, Arturo programming language.
-
 Decision date: 2026-10-28, with CI/tooling follow-up on 2026-10-29. Recorded retrospectively: 2026-11-01. Evidence: [2112b2f](https://github.com/arturo-lang/skills/commit/2112b2f34495316696ae746ca7a4be4a88be83ca), [ad56d8b](https://github.com/arturo-lang/skills/commit/ad56d8bb549c374b40c99f485238e3431b8ed137), [de8b104](https://github.com/arturo-lang/skills/commit/de8b104b3c01004e51233bbbcaa10c1a33b35490).
 
 This record reconstructs the implemented choice from commit diffs and contemporary repository text. It does not establish an undocumented discussion, model configuration, or fresh verification result.

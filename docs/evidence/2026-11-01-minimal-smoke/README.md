@@ -1,6 +1,6 @@
 # Bounded smoke attempt
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 On 2026-11-01, one new language attempt ran against revision
 `74ed784e6a78e57b6911e72043348bfffe08d6ee`, using Codex 0.166.0,

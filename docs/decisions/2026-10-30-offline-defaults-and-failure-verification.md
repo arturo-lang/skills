@@ -1,6 +1,6 @@
 # ADR 005 — Separate integration checks and verify failure causes
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 Decision date: 2026-10-30. Recorded retrospectively: 2026-11-01. Evidence: [a790ae1](https://github.com/arturo-lang/skills/commit/a790ae1af2f0e777cf958e3cb231b1d070622b94), [b1608b1](https://github.com/arturo-lang/skills/commit/b1608b19f026871ee9a63e3e9ebf15fbca46975c), [cc5f040](https://github.com/arturo-lang/skills/commit/cc5f04060127d718bf1846f48d8050b0220374fe).
 

@@ -1,6 +1,6 @@
 # Minimal smoke continuation
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 The user authorized continuation after the first bounded language attempt on
 2026-11-01. No language rerun, API fallback, or delegated agent was used.
