@@ -1,7 +1,5 @@
 # Decision log
 
-
-
 Decision records capture context, the chosen approach, consequences and evidence as of a specific date. They are historical records, not live inventories or status dashboards. Add a new dated record when a decision changes; refer back to earlier records without refreshing their measurements or verification claims. Mark factual corrections explicitly. A recorded implementation does not replace required code-owner approval.
 
 Usage and contributor guides describe stable procedures. Issues, PR checks and evaluation artifacts carry active status and individual run results.
@@ -20,5 +18,7 @@ Historical backfills below were recorded on 2026-11-01 from the cited commit dif
 | 2026-11-01    | [ADR 008 — One Arturo skill with package references](docs/decisions/2026-11-01-single-arturo-skill.md)                                    | Consolidated installation/activation while keeping package guides separate                     |
 | 2026-11-01    | [ADR 009 — Broad discovery with Sol Low, condensation with Sol xHigh](docs/decisions/2026-11-01-broad-discovery-then-condensation.md)     | Broad authoring search, evidence-preserving synthesis and Low regression evaluation            |
 | 2026-11-01    | [ADR 010 — Prefer expressive Arturo symbols and expression blocks](docs/decisions/2026-11-01-expressive-arturo-formatting.md)             | Documented aliases, terminal-expression bodies and readable layout without changing evaluation |
+
+Historical source and verification notes: [archived source reviews](docs/decisions/2026-11-01-source-review-archive.md).
 
 Hosted execution evidence: [Unitt passing, failing and restored assertions, 2026-11-01](docs/decisions/2026-11-01-hosted-unitt-evidence.md).

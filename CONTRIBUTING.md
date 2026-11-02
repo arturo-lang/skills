@@ -1,7 +1,5 @@
 # Contributing
 
-
-
 All new skills and all modifications must be submitted through a pull request. Before merging, a code owner must investigate the change, verify its accuracy and scope, and approve it. The code owners are [RickBarretto](https://github.com/RickBarretto) and [Yanis Zafirópulos (drkameleon)](https://github.com/drkameleon), as listed in [.github/CODEOWNERS](.github/CODEOWNERS).
 
 ## Adding a skill
@@ -64,7 +62,7 @@ Repository administrators should configure the target branch's GitHub ruleset or
 
 ## Maintenance
 
-Use [GitHub issues](https://github.com/arturo-lang/skills/issues) for planned and active work and the [editorial template](templates/skill.md) for authoring. Keep verification notes with the relevant references. Verify interpreter changes, upstream API/package revisions, and reported discrepancies against official sources and minimal reproducers. Preserve historical review dates; distinguish source review, execution, and asserted results. The recorded baseline is Arturo 0.10.0 Linux amd64; other combinations remain unverified. Hosted runtime CI results must be observed before claiming they passed.
+Use [GitHub issues](https://github.com/arturo-lang/skills/issues) for planned and active work. Keep verification notes with the relevant references. Verify interpreter changes, upstream API/package revisions, and reported discrepancies against official sources and minimal reproducers. Preserve historical review dates; distinguish source review, execution, and asserted results. The recorded baseline is Arturo 0.10.0 Linux amd64; other combinations remain unverified. Hosted runtime CI results must be observed before claiming they passed.
 
 ## Behavioral evaluation and optional integration checks
 
