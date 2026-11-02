@@ -1,4 +1,3 @@
-
 import type { Scenario } from "./host";
 
 const skill = (name: string) => `arturo-${name}`;

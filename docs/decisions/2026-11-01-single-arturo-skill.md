@@ -1,7 +1,5 @@
 # ADR 008 — One Arturo skill with package references
 
-
-
 Date: 2026-11-01. Source: [PR #21](https://github.com/arturo-lang/skills/pull/21). Baseline: `aa0226a`; implementation snapshot: `9b511b6`.
 
 This record captures the decision, measurements and validation on this date. It is not a live inventory or a claim that later revisions have the same counts or results.

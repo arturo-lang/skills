@@ -1,7 +1,5 @@
 # ADR 009 — Broad discovery with Sol Low, condensation with Sol xHigh
 
-
-
 Decision date and recording date: 2026-11-01. Basis: the maintainer's explicit instruction in the ADR follow-up. Historical precedents: [ADR 002](2026-10-29-expand-coverage-then-group-by-task.md), [ADR 006](2026-10-30-condense-metadata-and-reference-routing.md), and [ADR 008](2026-11-01-single-arturo-skill.md).
 
 This records an authoring strategy, not a claim that the earlier commits used these model settings or that the strategy has been benchmarked. The reviewed commit messages do not establish historical model/effort attribution.

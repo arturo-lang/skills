@@ -1,7 +1,5 @@
 # ADR 007 — Discovery-first Arturo guidance
 
-
-
 Date: 2026-11-01. Source: [PR #20](https://github.com/arturo-lang/skills/pull/20). Baseline: `5ee2d7b`; implementation snapshot: `aa0226a`.
 
 This is a historical decision and evidence record, not a current progress report. Measurements, verification and outstanding work below describe the state on this date; subsequent results belong in new records or evaluation artifacts.

@@ -1,7 +1,5 @@
 # Hosted Unitt assertion evidence
 
-
-
 Observed 2026-11-01 for commit `1efcfbe4ff2028262aad761ddca5d2874db7ad64`.
 
 [Hosted job](https://github.com/arturo-lang/skills/actions/runs/41341604990/job/124952624323) completed successfully on Ubuntu 24.04.5, runner image `20261025.353.1`. Setup action revision: `59c9867a8c8564f0ad1cd4d1960e9fddd623c5b7`, stable/full selection. Installed Arturo: `0.10.0 Arizona Bark (amd64/linux)`; Bun: `1.3.12`.

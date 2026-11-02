@@ -1,7 +1,5 @@
 # Bounded smoke attempt
 
-
-
 On 2026-11-01, one new language attempt ran against revision
 `74ed784e6a78e57b6911e72043348bfffe08d6ee`, using Codex 0.166.0,
 GPT-6.1 Sol/low, ChatGPT authentication, and Arturo 0.10.0. No API fallback
