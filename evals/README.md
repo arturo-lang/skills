@@ -21,8 +21,6 @@ Linux, Arturo, bubblewrap and `/usr/bin/prlimit` are required. The host refuses 
 
 Use `--fixtures-dir ROOT` to seed raw project files or a reviewed package checkout from `ROOT/<scenario-id>/` into each fresh task workspace. The host records a fixture fingerprint and lists supplied top-level artifacts in the task context. Include only task inputs, never expected answers or grader files. Use identical fixtures for baseline/candidate comparisons.
 
-External package scenarios require a deliberately preprovisioned standard Arturo package directory via `--packages-dir PATH`. It is mounted read-only at the isolated package location. Match the exact releases in the scenario and record their source revisions; the harness does not acquire packages. GUI, live preview and hosted CI scenarios require human/integration review; runtime networking remains disabled. Package acquisition failures must be classified as infrastructure failures, not agent failures.
-
 ## Evidence and decisions
 
 The output also retains an immutable skill snapshot and SHA-256 fingerprints of skills and any supplied package directory. Each attempt writes metadata, prompts, JSONL API/tool events, generated artifacts and a report under a new directory. Raw API usage records total input/output, cached input and reasoning tokens per request; reports sum input across requests. Entry/reference/runtime/artifact bytes identify context sources but are **not token estimates**. Prompt files preserve injected descriptions and explicit references. Keep all attempts, including failures.
@@ -43,20 +41,8 @@ Offline adapter/host tests do not establish live model performance. Text explana
 
 Prompts, executable checks and human rubrics remain fixed. The harness detects an installed `arturo` skill and translates required/allowed skill names and explicit-reference paths using [the relocation map](layout-migration.json). Ten-skill baselines keep their original routing expectations. For the consolidated layout, reports also flag unrelated reference loads using the original task domains; a single activated skill is not sufficient evidence of precise loading. Shared inspection and routing indexes do not count as unrelated domains. The CSV negative control must still avoid all Arturo guidance. No live model result is implied by this translation.
 
-## Subscription campaign
+## Subscription transport
 
-A manual Codex subscription campaign is separate from the paid API benchmark above. Never fall back to API billing or purchased credits. Stop at included usage limits and preserve incomplete progress.
+The opt-in subscription transport remains available for language scenarios. It uses ChatGPT authentication, never API fallback. Historical package campaigns are retired: there is no requirement to finish their comparison matrix. Package scenarios cannot be selected for new runs.
 
-Freeze immutable baseline and candidate commits, identical prompts, fixtures and graders. Run every release scenario three times in each of none, automatic and explicit conditions for both revisions (18 attempts per scenario). Use fresh sessions with no unrelated global/project instructions, plugins, skills or prior conversation. Verify isolation before scoring; keep hidden graders outside the session. Record the actual model, reasoning setting, CLI/runtime versions and exposed guidance; hold them fixed across the campaign.
-
-Start with native testing and ambiguity. Supplement the existing Lanx case with another package typo, an unknown name without a supported candidate, and a correct-name control. Grade investigation and targeted clarification before supplying follow-up answers. Do not rewrite historical benchmark prompts to add these cases.
-
-Save prompts, transcripts, reference reads, commands, generated artifacts and outcomes for every attempt. Review separately for missed guidance, incorrect guidance, ignored instructions, incorrect code and infrastructure failures. Keep failed attempts and reviewer evidence; all critical candidate repetitions must pass. Report regressions and unavailable metrics honestly. Subscription results do not establish API-harness performance. Until isolation and the complete matrix are observed, #10 and behavioral closure of #14 remain pending.
-
-### Subscription transport
-
-`bun run evals --run --subscription --mode automatic --repeat 3 --scenario preview-ambiguity --out /tmp/arturo-subscription` uses the installed Codex app-server with `gpt-6.1-sol`/low and ChatGPT authentication forced. It never uses an API key. This opt-in transport creates a temporary private Codex home, copies authentication locally, disables shell, plugins, connected apps, delegation, web search and host skill discovery, then supplies the four bounded evaluation tools through the required code-mode host. A tool execution preflight must pass before scored attempts are collected. Startup warnings that code mode fails closed abort the transport. Temporary authentication is removed at completion; do not publish temporary homes. It requires Codex 0.166.0's experimental dynamic-tool protocol and local auth.json authentication; other credential backends are not implemented.
-
-Skill discovery is the harness inventory, not native Codex skill discovery. The fixed base instructions differ from the API transport. Reports identify the transport; summaries keep transports separate. Thread token totals are recorded from Codex events; API-request counts are unavailable. A fresh session has a three-minute deadline and at most 48 tool calls. The live campaign must separately provision reviewed external package sources and raw fixtures as described above. Retain pending manual review until all rubric criteria have been checked.
-
-`--scenario` also accepts comma-separated IDs for staged campaigns; each selected scenario still needs the complete repetition/condition/revision matrix. The [2026-11-01 subscription record](../docs/evidence/2026-11-01-subscription/README.md) retains invalid infrastructure attempts separately from the corrected comparisons. Do not merge the transports or replace failed attempts with reruns.
+Existing archives and offline review tools remain available. Historical package scenario fixtures are retained only for offline tests. See [transparency](../TRANSPARENCY.md) for results and limits.
