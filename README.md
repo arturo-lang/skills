@@ -66,10 +66,6 @@ Prefer to explore on your own? Start with the [Arturo skill](skills/arturo/SKILL
 
 Importing a package can download and evaluate code; installing this skill does not install Arturo packages. The single skill includes its own license texts and consolidated upstream notices.
 
-### Migrating from the ten-skill suite
-
-The previous `arturo-language`, `arturo-collections`, `arturo-math`, `arturo-scripting`, `arturo-networking`, `arturo-debugging`, `arturo-testing`, `arturo-validation`, `arturo-web`, and `arturo-packages` installation names are replaced by **arturo**. Reinstall with `--skill arturo`, update explicit invocations and project routing to that name, and remove obsolete installations through your assistant's skill manager to avoid duplicate guidance. Compatibility entry points are not shipped. Package guides and runnable examples remain available inside the new directory.
-
 ## Where the guidance comes from
 
 The library draws on the [official Arturo reference](https://arturo-lang.io/llms.txt) and [Arturo examples](https://github.com/arturo-lang/examples). References explain what functions do, when to use them, and how to try them, with links back to the source documentation.
