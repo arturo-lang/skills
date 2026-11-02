@@ -1,4 +1,4 @@
-// Copyright © RickBarretto, Arturo programming language. MIT licensed.
+
 import type { Scenario } from "./host";
 
 const skill = (name: string) => `arturo-${name}`;

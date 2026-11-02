@@ -1,6 +1,6 @@
 # ADR 008 — One Arturo skill with package references
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 Date: 2026-11-01. Source: [PR #21](https://github.com/arturo-lang/skills/pull/21). Baseline: `aa0226a`; implementation snapshot: `9b511b6`.
 

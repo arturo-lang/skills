@@ -1,7 +1,5 @@
 # Evaluation transparency
 
-Copyright © RickBarretto, Arturo programming language.
-
 This record describes the evidence available on 2026-11-01. The skill provides instructions and examples. Installing it does not guarantee that an assistant will read or follow them.
 
 ## What we observed

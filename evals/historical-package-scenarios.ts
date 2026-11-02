@@ -1,4 +1,4 @@
-// Copyright © RickBarretto, Arturo programming language. MIT licensed.
+
 // Historical fixtures for offline review tests only; never imported by the live runner.
 import type { Scenario } from "./host";
 

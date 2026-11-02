@@ -1,6 +1,6 @@
 # Subscription evaluation evidence
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 ## Frozen comparison
 

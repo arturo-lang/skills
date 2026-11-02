@@ -1,4 +1,4 @@
-// Copyright © RickBarretto, Arturo programming language. MIT licensed.
+
 import { readdir, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 

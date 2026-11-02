@@ -1,4 +1,4 @@
-// Copyright © RickBarretto, Arturo programming language. MIT licensed.
+
 import { expect, test } from "bun:test";
 import { createHash } from "node:crypto";
 import { access, readdir, readFile } from "node:fs/promises";

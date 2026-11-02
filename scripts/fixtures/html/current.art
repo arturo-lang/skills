@@ -1,4 +1,4 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
+;  MIT licensed.
 import ./{html}!
 ensure -> {<p>&lt;&amp;&quot;</p>} = to :string markup\p {<&"}
 child: fragment [p "<&"]

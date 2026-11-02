@@ -1,6 +1,6 @@
 # ADR 004 — Prefer semantic evidence and evaluate agents early
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 Decision date: 2026-10-30. Recorded retrospectively: 2026-11-01. Evidence: [4e82e08](https://github.com/arturo-lang/skills/commit/4e82e08e29b96e42e86e14f52b5c1024a1b067b9), [3b87f02](https://github.com/arturo-lang/skills/commit/3b87f02a8e5c0010119952d6117f31168c179340), [e385559](https://github.com/arturo-lang/skills/commit/e3855591f86ba4984ee7ca6fb4533f143aaa4c30), [d46e7f7](https://github.com/arturo-lang/skills/commit/d46e7f73a2dfc58d58e5d1a68f6a5b899d0f0626).
 

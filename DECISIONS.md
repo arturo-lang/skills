@@ -1,6 +1,6 @@
 # Decision log
 
-Copyright © RickBarretto, Arturo programming language.
+
 
 Decision records capture context, the chosen approach, consequences and evidence as of a specific date. They are historical records, not live inventories or status dashboards. Add a new dated record when a decision changes; refer back to earlier records without refreshing their measurements or verification claims. Mark factual corrections explicitly. A recorded implementation does not replace required code-owner approval.
 

@@ -1,4 +1,4 @@
-; Copyright © RickBarretto, Arturo programming language. MIT licensed.
+;  MIT licensed.
 import ./{html}!
 ; Legacy 0.0.4 interpolates strings without escaping or sanitization.
 ensure -> {<p><&"</p>} = html\element 'p {<&"}
