@@ -121,3 +121,5 @@ Track planned and active work in [GitHub issues](https://github.com/arturo-lang/
 The Arturo skill keeps semantic pitfalls locally and uses `inspect info.get 'name` for installed built-in signatures. Read only the references needed for the current task; package APIs stay with their domain guides. An optional [consuming-repository routing example](templates/consumer-routing.md) helps hosts that miss relevant guidance.
 
 Run `bun run context:stats` for document sizes and `bun run evals --list` for the Sol Low scenario matrix. See [evaluation instructions](evals/README.md) for isolated execution, automatic versus explicit selection, paid API opt-in, and evidence limits. Smaller files alone do not prove better task completion.
+
+See [evaluation transparency](TRANSPARENCY.md) for observed results, costs, and unfinished evaluation work. Package AI scenarios have been retired; local package verification remains available.

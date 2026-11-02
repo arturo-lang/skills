@@ -47,7 +47,7 @@ if (argv.includes("--list")) {
   );
 } else if (!argv.includes("--run")) {
   console.log(
-    "List: bun run evals --list\nRun (paid API): bun run evals --run --root CHECKOUT --mode automatic --repeat 3 [--scenario ID] [--packages-dir PATH] [--out PATH]",
+    "List: bun run evals --list\nRun (paid API): bun run evals --run --root CHECKOUT --mode automatic --repeat 3 [--scenario ID] [--out PATH]",
   );
 } else {
   if (!subscription && !process.env.OPENAI_API_KEY)
@@ -71,9 +71,9 @@ if (argv.includes("--list")) {
   );
   if (!chosen.length) throw new Error("Unknown scenario");
   const executable = await realpath(Bun.which("arturo") ?? "arturo");
-  const packages = argv.includes("--packages-dir")
-    ? await realpath(value("--packages-dir", ""))
-    : undefined;
+  if (argv.includes("--packages-dir"))
+    throw new Error("Package AI evaluation has been retired");
+  const packages: string | undefined = undefined;
   const fixtures = argv.includes("--fixtures-dir")
     ? await realpath(value("--fixtures-dir", ""))
     : undefined;

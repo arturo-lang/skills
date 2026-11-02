@@ -68,7 +68,7 @@ Use [GitHub issues](https://github.com/arturo-lang/skills/issues) for planned an
 
 ## Behavioral evaluation and optional integration checks
 
-`bun run context:stats` measures document words/bytes, not model tokens. The [Sol Low harness](evals/README.md) runs separately from default checks; live model runs require explicit `--run` and an API key. `bun run evals:smoke` tests the held-out graders and isolation locally with Linux bubblewrap and networking disabled.
+`bun run context:stats` measures document words/bytes, not model tokens. The [Sol Low harness](evals/README.md) runs separately from default checks; live model runs require explicit `--run` and either an API key or the opt-in subscription transport. `bun run evals:smoke` tests the held-out graders and isolation locally with Linux bubblewrap and networking disabled.
 
 `bun run smoke:html --source FILE --release 0.0.4` (or `1.0.0-rc.1`) executes a reviewed local HTML source in a disposable directory and prints its SHA-256. It does not download or authenticate that source; compare the supplied file to the intended upstream release before running it. The source executes with the caller's environment. No package source is bundled.
 

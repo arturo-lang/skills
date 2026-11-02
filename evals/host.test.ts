@@ -3,6 +3,7 @@ import { afterEach, expect, test } from "bun:test";
 import { mkdir, mkdtemp, rm, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
+import { historicalPackageScenarios } from "./historical-package-scenarios";
 import {
   boundedRun,
   callTool,
@@ -81,7 +82,9 @@ test("targeted reads return bounded matching lines", async () => {
 });
 
 test("selection distinguishes missing, irrelevant, and failed reads", () => {
-  const scenario = scenarios.find((s) => s.id === "native-unitt");
+  const scenario = historicalPackageScenarios.find(
+    (s) => s.id === "native-unitt",
+  );
   if (!scenario) throw new Error("Missing fixture");
   const result = selection(scenario, [
     {
@@ -200,7 +203,9 @@ test("coverage ledger retains independently shipped references and examples", as
 });
 
 test("one-skill layout keeps historical prompts and detects unrelated reference loads", () => {
-  const original = scenarios.find((s) => s.id === "native-unitt");
+  const original = historicalPackageScenarios.find(
+    (s) => s.id === "native-unitt",
+  );
   if (!original) throw new Error("Missing scenario");
   expect(scenarioForLayout(original, ["arturo-testing"])).toBe(original);
   const merged = scenarioForLayout(original, ["arturo"]);
@@ -282,4 +287,11 @@ test("subscription summaries skip preflight files and honor infrastructure revie
   expect(summary.infrastructureFailures).toBe(1);
   expect(summary.verifiedSuccesses).toBe(0);
   expect(summary.medianRequests).toBeNull();
+});
+
+test("live scenarios exclude retired package tasks", () => {
+  const retired = new Set(historicalPackageScenarios.map((s) => s.id));
+  expect(scenarios.some((s) => retired.has(s.id) || s.packages?.length)).toBe(
+    false,
+  );
 });
