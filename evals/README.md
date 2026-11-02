@@ -1,7 +1,5 @@
 # Sol Low behavioral evaluation
 
-
-
 This Bun harness lives outside distributed skills. It compares the same tasks with no skills, automatic selection, and explicitly supplied guidance, using `gpt-6.1-sol` with reasoning effort `low`. It uses the Responses API directly; it does not inherit this repository's instructions, global skills, or another agent's conversation. See [official tool-calling guidance](https://developers.openai.com/api/docs/guides/function-calling) and [model guidance](https://developers.openai.com/api/docs/guides/latest-model).
 
 ## Run
@@ -31,7 +29,7 @@ Review traces for unnecessary reference loads, repeated signature/version querie
 
 Define acceptance criteria before collecting results: preserve coverage and portability, require critical cases to pass each repetition, and compare correctness/compliance, context consumption and retries against the chosen baseline. Record numeric targets and outcomes with the dated evaluation evidence. Repeated runs detect instability but do not alone establish statistical certainty. Exact context-category token accounting needs a tokenizer or counting endpoint; byte totals cannot establish a token-reduction target.
 
-The [coverage ledger](coverage.json) records original references, sources, catalog symbols and examples, with current destinations and previous paths. Routine catalogs now route through official modules and installed `info.get`; semantic caveats and versioned package guidance remain local. [Optional consumer routing](../templates/consumer-routing.md) can be tested separately from automatic discovery; it is not injected into the default benchmark.
+The compact [coverage manifest](coverage.json) guards retained reference and example paths. Sources stay with individual references; [preservation checks](preservation.json) retain package metadata, license and upstream notice digests. Routine catalogs now route through official modules and installed `info.get`; semantic caveats and versioned package guidance remain local. [Optional consumer routing](../templates/consumer-routing.md) can be tested separately from automatic discovery; it is not injected into the default benchmark.
 
 ## Interpretation limits
 
@@ -39,10 +37,10 @@ Offline adapter/host tests do not establish live model performance. Text explana
 
 ## Comparing the single-skill layout
 
-Prompts, executable checks and human rubrics remain fixed. The harness detects an installed `arturo` skill and translates required/allowed skill names and explicit-reference paths using [the relocation map](layout-migration.json). Ten-skill baselines keep their original routing expectations. For the consolidated layout, reports also flag unrelated reference loads using the original task domains; a single activated skill is not sufficient evidence of precise loading. Shared inspection and routing indexes do not count as unrelated domains. The CSV negative control must still avoid all Arturo guidance. No live model result is implied by this translation.
+Prompts, executable checks and human rubrics remain fixed. The harness detects an installed `arturo` skill and translates required/allowed skill names and explicit-reference paths using the unchanged reference basenames in active scenarios. Ten-skill baselines keep their original routing expectations. For the consolidated layout, reports also flag unrelated reference loads using the [reference domain map](reference-domains.json); a single activated skill is not sufficient evidence of precise loading. Shared inspection and routing indexes do not count as unrelated domains. The CSV negative control must still avoid all Arturo guidance. No live model result is implied by this translation.
 
 ## Subscription transport
 
 The opt-in subscription transport remains available for language scenarios. It uses ChatGPT authentication, never API fallback. Historical package campaigns are retired: there is no requirement to finish their comparison matrix. Package scenarios cannot be selected for new runs.
 
-Existing archives and offline review tools remain available. Historical package scenario fixtures are retained only for offline tests. See [transparency](../TRANSPARENCY.md) for results and limits.
+Existing archives and offline review tools remain available. Offline tests use a small selection fixture and retired scenario IDs; the full historical package prompts remain in Git history. See [transparency](../TRANSPARENCY.md) for results and limits.

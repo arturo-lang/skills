@@ -1,6 +1,5 @@
-
 import type { Scenario } from "./host";
-import migration from "./layout-migration.json";
+import referenceDomains from "./reference-domains.json";
 
 /** Keep prompts/checks fixed while translating expectations for the installed layout. */
 export function scenarioForLayout(
@@ -13,13 +12,10 @@ export function scenarioForLayout(
     required: scenario.required.length ? ["arturo"] : [],
     allowed: scenario.allowed.length ? ["arturo"] : [],
     references: scenario.references.map((path) => {
-      const paths = migration.paths as Record<string, string>;
-      return (paths[`skills/${path}`] ?? `skills/${path}`).replace(
-        /^skills\//,
-        "",
-      );
+      // Active scenarios use unchanged reference basenames across layouts.
+      return path.replace(/^arturo-[^/]+\/references\//, "arturo/references/");
     }),
     allowedReferenceDomains: scenario.allowed,
-    referenceDomains: migration.referenceDomains,
+    referenceDomains,
   };
 }
