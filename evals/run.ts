@@ -28,6 +28,7 @@ import { scenarioForLayout } from "./layout";
 import { scenarios } from "./scenarios";
 
 import { subscriptionResponse } from "./subscription";
+import { recordedUsage } from "./usage";
 
 const argv = Bun.argv.slice(2);
 const subscription = argv.includes("--subscription");
@@ -361,17 +362,7 @@ if (argv.includes("--list")) {
           await rm(grading, { recursive: true, force: true });
         }
       }
-      const usage = events
-        .filter((e) => e.kind === "response" && e.usage)
-        .map(
-          (e) =>
-            e.usage as {
-              input_tokens: number;
-              output_tokens: number;
-              input_tokens_details?: { cached_tokens: number };
-              output_tokens_details?: { reasoning_tokens: number };
-            },
-        );
+      const usage = recordedUsage(events, subscription);
       const report = {
         ...metadata,
         elapsedMs: Date.now() - started,
@@ -387,7 +378,7 @@ if (argv.includes("--list")) {
           ? "Verify the supplied cache/revisions; unavailable dependencies are infrastructure failures, not skill failures"
           : null,
         usage: {
-          available: true,
+          available: usage.length > 0,
           accounting: subscription
             ? "Codex thread cumulative usage; transport requests unavailable"
             : "Responses API usage",
