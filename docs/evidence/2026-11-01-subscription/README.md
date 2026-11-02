@@ -1,7 +1,5 @@
 # Subscription evaluation evidence
 
-
-
 ## Frozen comparison
 
 Baseline: `c2743e049cfab07e80f6e80acebfe7f2a26c1321`. Candidate and harness: `4b7811bdb941e301fa8227dc6cff4d7ffa3ad3b9`. Model: `gpt-6.1-sol`, reasoning low, Codex CLI 0.166.0, Arturo 0.10.0 Linux amd64. Authentication was ChatGPT; no API key was provided.

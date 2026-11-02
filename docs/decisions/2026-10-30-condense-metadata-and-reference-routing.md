@@ -1,7 +1,5 @@
 # ADR 006 — Condense metadata and task routing
 
-
-
 Decision date: 2026-10-30. Recorded retrospectively: 2026-11-01. Evidence: [8668701](https://github.com/arturo-lang/skills/commit/86687011a38430db699c28475cc18d5e9d3e4cbb), [aed87ad](https://github.com/arturo-lang/skills/commit/aed87ad9e117905699e489a05970a83e8bbdef5f), [713c996](https://github.com/arturo-lang/skills/commit/713c996d9ea9c05fa37355c697ac1a57f97b84fc), [6198bc2](https://github.com/arturo-lang/skills/commit/6198bc2ddac5ca1e18ac4af62ce10a1443b37200).
 
 This record reconstructs the implemented choice from commit diffs and contemporary repository text. It does not establish an undocumented discussion, model configuration, or fresh verification result.

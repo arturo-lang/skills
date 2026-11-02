@@ -1,4 +1,3 @@
-
 import type { Event } from "./host";
 
 type Usage = {

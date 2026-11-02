@@ -1,7 +1,5 @@
 # Minimal smoke continuation
 
-
-
 The user authorized continuation after the first bounded language attempt on
 2026-11-01. No language rerun, API fallback, or delegated agent was used.
 Model/runtime settings remain GPT-6.1 Sol/low, Codex 0.166.0, and Arturo 0.10.0.

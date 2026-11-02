@@ -1,4 +1,3 @@
-
 import { readdir, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 export function percentile(values: number[], fraction: number): number | null {

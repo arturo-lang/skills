@@ -1,7 +1,5 @@
 # Optional consuming-repository routing
 
-
-
 Adapt this block into your application's `AGENTS.md` when the host misses installed Arturo guidance. Replace the placeholder with the actual installation location; this template is not installed with the skill.
 
 ```markdown

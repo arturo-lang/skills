@@ -1,7 +1,5 @@
 # ADR 010 — Prefer expressive Arturo symbols and expression blocks
 
-
-
 Decision and recording date: 2026-11-01. Basis: the maintainer's request for clean, expressive Arturo syntax. Reference baseline: Arturo 0.10.0, Linux amd64.
 
 ## Context and decision
