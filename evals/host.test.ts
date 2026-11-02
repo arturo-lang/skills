@@ -1,9 +1,8 @@
-
 import { afterEach, expect, test } from "bun:test";
 import { mkdir, mkdtemp, rm, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
-import { historicalPackageScenarios } from "./historical-package-scenarios";
+import type { Scenario } from "./host";
 import {
   boundedRun,
   callTool,
@@ -17,6 +16,13 @@ import { scenarioForLayout } from "./layout";
 import { scenarios } from "./scenarios";
 import { percentile } from "./summary";
 
+const selectionFixture: Scenario = {
+  id: "selection-fixture",
+  prompt: "Offline selection test.",
+  required: ["arturo-testing"],
+  allowed: ["arturo-testing", "arturo-language"],
+  references: ["arturo-testing/references/unitt.md"],
+};
 const roots: string[] = [];
 afterEach(async () => {
   await Promise.all(
@@ -82,10 +88,7 @@ test("targeted reads return bounded matching lines", async () => {
 });
 
 test("selection distinguishes missing, irrelevant, and failed reads", () => {
-  const scenario = historicalPackageScenarios.find(
-    (s) => s.id === "native-unitt",
-  );
-  if (!scenario) throw new Error("Missing fixture");
+  const scenario = selectionFixture;
   const result = selection(scenario, [
     {
       kind: "tool",
@@ -190,23 +193,18 @@ test("coverage ledger retains independently shipped references and examples", as
   const ledger = (await Bun.file(
     resolve(import.meta.dir, "coverage.json"),
   ).json()) as {
-    references: { reference: string; sources: string[] }[];
+    references: string[];
     examples: string[];
   };
   const root = resolve(import.meta.dir, "..");
-  for (const entry of ledger.references) {
-    expect(await Bun.file(resolve(root, entry.reference)).exists()).toBe(true);
-    expect(entry.sources.length).toBeGreaterThan(0);
-  }
+  for (const reference of ledger.references)
+    expect(await Bun.file(resolve(root, reference)).exists()).toBe(true);
   for (const example of ledger.examples)
     expect(await Bun.file(resolve(root, example)).exists()).toBe(true);
 });
 
 test("one-skill layout keeps historical prompts and detects unrelated reference loads", () => {
-  const original = historicalPackageScenarios.find(
-    (s) => s.id === "native-unitt",
-  );
-  if (!original) throw new Error("Missing scenario");
+  const original = selectionFixture;
   expect(scenarioForLayout(original, ["arturo-testing"])).toBe(original);
   const merged = scenarioForLayout(original, ["arturo"]);
   expect(merged.prompt).toBe(original.prompt);
@@ -290,7 +288,19 @@ test("subscription summaries skip preflight files and honor infrastructure revie
 });
 
 test("live scenarios exclude retired package tasks", () => {
-  const retired = new Set(historicalPackageScenarios.map((s) => s.id));
+  const retired = new Set([
+    "schema-contract",
+    "text-packages",
+    "native-unitt",
+    "ci-repair",
+    "preview-ambiguity",
+    "html-composition",
+    "cross-domain-site",
+    "package-management",
+    "package-typo",
+    "package-unknown",
+    "package-clear",
+  ]);
   expect(scenarios.some((s) => retired.has(s.id) || s.packages?.length)).toBe(
     false,
   );
